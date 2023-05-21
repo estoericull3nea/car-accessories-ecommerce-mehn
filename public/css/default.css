@@ -1,0 +1,25 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    font-family: 'Nunito', sans-serif;
+}
+
+:root {
+    --white: #F5F1EE;
+    --pure-black: black;
+    --dark-black: #58626C;
+    --main-color: #8F4F07;
+    --text-low-opacity: rgba(0, 0, 0, 0.563);
+}
+
+section {
+    padding: 50px 5%;
+}
