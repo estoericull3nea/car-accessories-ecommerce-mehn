@@ -92,6 +92,10 @@ app.get("/about_us", (req, res) => {
   res.render("about_us");
 });
 
+app.get("/home", (req, res) => {
+  res.render("main_homepage");
+});
+
 app.listen(port, () => {
   console.log(`App is running on port: ${port}`);
 });
