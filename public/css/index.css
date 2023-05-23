@@ -1,4 +1,6 @@
-@import url('./default.css');
-@import url('./homepage.css');
-@import url('./login.css');
-@import url('./register.css');
+@import url("./default.css");
+@import url("./homepage.css");
+@import url("./login.css");
+@import url("./register.css");
+@import url("./main_homepage.css");
+@import url("./about_us.css");

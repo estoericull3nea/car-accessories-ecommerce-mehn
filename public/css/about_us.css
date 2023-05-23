@@ -1,0 +1,182 @@
+.box {
+  overflow: hidden !important;
+}
+
+.box1 {
+  height: calc(100vh - 10vh);
+  /* height: 100vh; */
+  background: url("../images/svg_bg.svg") no-repeat center center/ cover;
+}
+
+.main-title {
+  text-align: center !important;
+  color: var(--white);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box1 {
+  padding: 60px 15%;
+}
+
+.box1 .main-body {
+  margin-top: 10rem;
+}
+
+.box1 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box1 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+}
+
+.box2 {
+  background: url("../images/svg_bg2.svg") no-repeat center center/ cover;
+  height: 100vh;
+}
+
+.box2 {
+  padding: 60px 15%;
+}
+
+.box2 h1 {
+  color: var(--pure_black);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box2 .main-body {
+  margin-top: 10rem;
+}
+
+.box2 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box2 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+}
+
+/* box3 */
+
+.box3 {
+  background: url("../images/svg_bg3.svg") no-repeat center center/ cover;
+  height: 100vh;
+}
+
+.box3 {
+  padding: 60px 15%;
+}
+
+.box3 h1 {
+  color: var(--pure_black);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box3 .main-body {
+  margin-top: 10rem;
+}
+
+.box3 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box3 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+}
+
+/* box 4 */
+
+.box4 {
+  background: url("../images/svg_bg4.svg") no-repeat center center/ cover;
+  height: 100vh;
+}
+
+.box4 {
+  padding: 60px 15%;
+}
+
+.box4 h1 {
+  color: var(--pure_black);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box4 .main-body {
+  margin-top: 10rem;
+}
+
+.box4 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box4 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+}
+
+/* box 5 */
+
+.box5 {
+  background: url("../images/svg_bg5.svg") no-repeat center center/ cover;
+  height: 100vh;
+}
+
+.box5 {
+  padding: 60px 15%;
+}
+
+.box5 h1 {
+  color: var(--pure_black);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box5 .main-body {
+  margin-top: 10rem;
+}
+
+.box5 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box5 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+}
+
+/* box 6 */
+
+.box6 {
+  background: url("../images/svg_bg6.svg") no-repeat center center/ cover;
+  height: 100vh;
+}
+
+.box6 {
+  padding: 60px 15%;
+}
+
+.box6 h1 {
+  color: var(--pure_black);
+  font-family: "Cabin Sketch", cursive;
+}
+
+.box6 .main-body {
+  margin-top: 6rem;
+}
+
+.box6 .main-body .title {
+  font-size: 1.3rem;
+}
+
+.box6 .main-body .body p {
+  margin-left: 3rem;
+  color: var(--text-low-opacity);
+  padding-block: 2rem;
+  font-size: 0.9rem;
+}
