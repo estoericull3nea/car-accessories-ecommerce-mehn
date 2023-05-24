@@ -30,22 +30,6 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
-// app.post('/register', async (req, res) => {
-//     try {
-//         const username = req.body.username;
-//         const password = req.body.username;
-//         const registerUser = new Register({
-//             username: username,
-//             password: password
-//         })
-
-//         const registered = await registerUser.save();
-//         res.status(201).render('index');
-//     } catch(e) {
-//         res.status(400).send(e);
-//     }
-// })
-
 app.post("/register", async (req, res) => {
   try {
     const password = req.body.password;

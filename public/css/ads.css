@@ -1,13 +1,13 @@
 @import "https://fonts.googleapis.com/css?family=Muli";
 
-* {
+/* * {
   margin: 0;
   padding: 0;
 }
 
 body {
   background: #ccc;
-}
+} */
 
 .carousel {
   width: 80%;
@@ -199,7 +199,7 @@ a.ep_title {
   background: rgba(204, 204, 204, 1);
   transform: skewX(-50deg);
   transform-origin: center left;
-  animation: loader 5s ease-in-out;
+  animation: loader 2s ease-in-out;
 }
 
 @keyframes loader {
