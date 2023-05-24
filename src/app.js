@@ -84,7 +84,7 @@ app.post("/login", async (req, res) => {
       res.send("password are not matching");
     }
   } catch (error) {
-    res.status(400).send("invalid email");
+    res.status(400).send("Account not found");
   }
 });
 
