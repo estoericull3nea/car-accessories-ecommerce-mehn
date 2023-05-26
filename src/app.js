@@ -52,9 +52,9 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.get("/main_homepage", (req, res) => {
-  res.render("main_homepage");
-});
+// app.get("/main_homepage", (req, res) => {
+//   res.render("main_homepage");
+// });
 
 app.post("/login", async (req, res) => {
   try {
@@ -65,7 +65,7 @@ app.post("/login", async (req, res) => {
     if (useremail.password === password) {
       res.status(200).render("main_homepage");
     } else {
-      res.send("password are not matching");
+      res.send("Email or Password is Incorrect");
     }
   } catch (error) {
     res.status(400).send("Account not found");

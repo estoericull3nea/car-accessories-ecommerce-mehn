@@ -241,19 +241,19 @@
       ></iframe>
     </div>
 
-    <div class="footer">
-
-    </div>
-
-    <script src="../index.js"></script>
+    {{>footer}}
+    {{! <script src="../index.js"></script> }}
     <script>
 
-      const sr = ScrollReveal({ distance: "40px", duration: 2500, reset: false,
+      const sr = ScrollReveal({ distance: "40px", duration: 2500, reset: true,
       }); sr.reveal(".box1", { delay: 200, origin: "top" }); sr.reveal(".box2",
       { delay: 200, origin: "left" }); sr.reveal(".box3", { delay: 200, origin:
       "right" }); sr.reveal(".box4", { delay: 200, origin: "left" });
       sr.reveal(".box5", { delay: 200, origin: "right" }); sr.reveal(".box6", {
-      delay: 200, origin: "left" });
+      delay: 200, origin: "left" }); sr.reveal(".pre-footer", { delay: 200,
+      origin: "left" });sr.reveal(".map", { delay: 500, origin: "bottom" });
     </script>
+    <script src="../index.js" src="jquery-3.6.4.min.js"></script>
+
   </body>
 </html>
