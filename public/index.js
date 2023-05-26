@@ -14,7 +14,7 @@ const signin = document.querySelector(".signin");
 const test = document.querySelector(".test");
 
 setTimeout(() => {
-  signin.classList.toggle("pop-up");
+  signin.classList.remove("pop-up");
 
   if (!signin.classList.contains("pop-up")) {
     test.style.cssText = `
