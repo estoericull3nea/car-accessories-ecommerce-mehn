@@ -1,92 +1,8 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index.css" />
-    {{! <link rel="stylesheet" href="../styles/index.css"> }}
-
-    <!-- boxicons cdn -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
-    />
-
-    <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900;1000&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- landing -->
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
-    ></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-  </head>
+  {{>head}}
   <body class="light">
 
-    <header>
-
-      <div class="logo-container">
-        <p class="logo-text">EA</p>
-        <a class="logo-item" href="#home"><img
-            src="../icons/tire.png"
-            alt=""
-          /></a>
-      </div>
-
-      <ul class="navlist">
-        <li><a href="http://localhost:3000/home">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="http://localhost:3000/about_us">About Us</a></li>
-        <li><a href="#contact-us">Our Team</a></li>
-      </ul>
-
-      <div class="btn-container">
-
-        <div class="menu-container">
-          <i class="bx bx-menu-alt-right"></i>
-        </div>
-
-        <div class="profile-container">
-          <i class="bx bx-user"></i>
-        </div>
-
-        <div class="search-container">
-          <input type="text" placeholder="Search..." />
-          <i class="bx bx-search-alt"></i>
-        </div>
-
-        <div class="theme-container">
-          <span class="default">Light</span>
-          <i class="bx bx-chevron-right"></i>
-
-          <ul class="theme-list">
-            <li class="item">Light</li>
-            <li class="item">Dark</li>
-            <li class="item">Game</li>
-          </ul>
-        </div>
-
-        <div class="cart-container">
-          <i class="bx bx-cart"></i>
-        </div>
-
-      </div>
-
-    </header>
+   {{>header}}
 
     <div class="box box2">
       <h1 class="main-title">About Us</h1>
@@ -245,7 +161,7 @@
     {{! <script src="../index.js"></script> }}
     <script>
 
-      const sr = ScrollReveal({ distance: "40px", duration: 2500, reset: true,
+      const sr = ScrollReveal({ distance: "40px", duration: 1000, reset: true,
       }); sr.reveal(".box1", { delay: 200, origin: "top" }); sr.reveal(".box2",
       { delay: 200, origin: "left" }); sr.reveal(".box3", { delay: 200, origin:
       "right" }); sr.reveal(".box4", { delay: 200, origin: "left" });

@@ -30,6 +30,14 @@ app.get("/register", (req, res) => {
   res.render("register");
 });
 
+app.get("/products", (req, res) => {
+  res.render("products");
+});
+
+app.get("/our-team", (req, res) => {
+  res.render("our_team");
+});
+
 app.post("/register", async (req, res) => {
   try {
     const password = req.body.password;

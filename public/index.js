@@ -102,7 +102,7 @@ $(document).ready(function () {
     n,
     next,
     id,
-    duration = 5000,
+    duration = 2000,
     current = 0;
 
   switches = $('.carousel input[name="switch"]');
