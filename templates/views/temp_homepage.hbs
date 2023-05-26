@@ -34,7 +34,7 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
     ></script>
   </head>
-  <body class="light">
+  <body class="light test">
 
     <header>
 
@@ -59,9 +59,9 @@
           <i class="bx bx-menu-alt-right"></i>
         </div>
 
-        <div class="signin-container">
+        {{! <div class="signin-container">
           <button class="btn btnToSignIn">Sign In</button>
-        </div>
+        </div> }}
 
         {{! <div class="search-container">
           <input type="text" placeholder="Search..." />
@@ -79,9 +79,9 @@
           </ul>
         </div> }}
 
-        {{! <div class="cart-container">
+        <div class="cart-container">
           <i class="bx bx-cart"></i>
-        </div> }}
+        </div>
 
       </div>
 
@@ -94,13 +94,37 @@
         <p>We're thrilled to have you here, ready to embark on an incredible
           shopping experience.</p>
         <h3>Involve. Inspire. Indulge.</h3>
-        <button class="btn btnToSignIn">Sign In</button>
+        {{! <button class="btn btnToSignIn">Sign In</button> }}
       </div>
 
       <div class="right-container">
         <div class="img-con">
           <img src="../images/main.jpg" alt="" />
         </div>
+      </div>
+      <div class="signin pop-up">
+        <form action="/login" method="POST">
+          <h1>Sign In</h1>
+
+          <div class="box">
+            <div class="input-control">
+              <i class="bx bx-envelope"></i>
+              <input type="text" placeholder="example@gmail.com" name="email" />
+            </div>
+            <div class="input-control">
+              <i class="bx bx-lock-alt"></i>
+              <input type="password" placeholder="Password" name="password" />
+            </div>
+
+            <button class="btnSignIn">Sign In</button>
+
+            <div class="lower">
+              <span>Don't have an account?</span>
+              <button class="btnRegister">Create</button>
+            </div>
+            <!-- <p class="x-button">X</p>                 -->
+          </div>
+        </form>
       </div>
 
     </section>

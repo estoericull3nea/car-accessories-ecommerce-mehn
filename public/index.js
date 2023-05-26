@@ -10,6 +10,20 @@ const btnTopSignIn = document.querySelectorAll(".btnToSignIn");
 const btnRegister = document.querySelector(".btnRegister");
 const btnToLogin = document.querySelector(".btnToLogin");
 
+const signin = document.querySelector(".signin");
+const test = document.querySelector(".test");
+
+setTimeout(() => {
+  signin.classList.toggle("pop-up");
+
+  if (!signin.classList.contains("pop-up")) {
+    test.style.cssText = `
+      background: rgba(0, 0, 0, 0.9);
+      z-index: -1;
+    `;
+  }
+}, 3000);
+
 if (btnForNav) {
   btnForNav.addEventListener("click", () => {
     nav.classList.toggle("open-navlist");

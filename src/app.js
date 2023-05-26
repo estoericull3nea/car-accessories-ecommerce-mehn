@@ -19,7 +19,7 @@ app.set("views", template_path);
 hbs.registerPartials(partials_path);
 
 app.get("/", (req, res) => {
-  res.render("homepage_notsignin");
+  res.render("temp_homepage");
 });
 
 app.get("/login", (req, res) => {
