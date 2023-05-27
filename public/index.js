@@ -18,7 +18,7 @@ setTimeout(() => {
 
   if (!signin.classList.contains("pop-up")) {
     test.style.cssText = `
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     `;
   }

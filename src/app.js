@@ -51,7 +51,8 @@ app.post("/register", async (req, res) => {
       });
 
       const registered = await newUser.save();
-      res.render("main_homepage");
+      // res.render("main_homepage");
+      res.redirect("/login");
     } else {
       res.send("password are not match");
     }
@@ -60,10 +61,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-// app.get("/main_homepage", (req, res) => {
-//   res.render("main_homepage");
-// });
-
 app.post("/login", async (req, res) => {
   try {
     const email = req.body.email;
@@ -71,7 +68,8 @@ app.post("/login", async (req, res) => {
 
     const useremail = await Register.findOne({ email: email });
     if (useremail.password === password) {
-      res.status(200).render("main_homepage");
+      // res.status(200).render("main_homepage");
+      res.redirect("/home");
     } else {
       res.send("Email or Password is Incorrect");
     }
