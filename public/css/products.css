@@ -1,0 +1,440 @@
+.products-area {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.products-area .box {
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+  display: grid;
+  place-items: center;
+}
+/* start code here */
+
+.hidden-batt-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-batt-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-batt-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-batt-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-batt-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-batt-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of batt */
+
+.hidden-brakes-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-brakes-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-brakes-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-brakes-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-brakes-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-brakes-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of brakes */
+
+.hidden-engine-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-engine-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-engine-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-engine-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-engine-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-engine-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of engine */
+
+.hidden-mags-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-mags-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-mags-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-mags-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-mags-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-mags-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of mags */
+
+.hidden-muffler-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-muffler-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-muffler-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-muffler-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-muffler-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-muffler-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of muffler */
+
+.hidden-radiator-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-radiator-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-radiator-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-radiator-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-radiator-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-radiator-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of radiator */
+
+.hidden-steering-wheel-box {
+  display: grid;
+  place-items: center;
+  grid-template-rows: 2fr 1fr;
+  height: 300px;
+  width: auto;
+}
+
+.hidden-steering-wheel-box .top-area img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.hidden-steering-wheel-box .top-area img:hover {
+  transform: scale(1.089);
+}
+
+.hidden-steering-wheel-box .bottom-area {
+  height: 100px;
+  text-align: center;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hidden-steering-wheel-box .bottom-area button {
+  padding: 5px 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hidden-steering-wheel-box .bottom-area button:hover {
+  background: var(--main-color);
+  color: var(--white);
+}
+/* end of steering wheel */
+/* end code here */
+
+.dropdown {
+  margin-left: 5%;
+  position: relative;
+}
+
+.dropdown .top-toggle {
+  display: inline-block;
+  border: 1px solid black;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.dropdown .selected {
+  display: inline-block;
+}
+
+.dropdown .bottom-toggle {
+  margin-top: 10px;
+  position: absolute;
+  left: -1%;
+  width: 150px;
+  background-color: grey;
+  z-index: 1;
+  border-radius: 10px;
+  padding: 10px;
+
+  display: none;
+}
+
+.dropdown .top-toggle.open-bottom + .bottom-toggle {
+  display: block !important;
+}
+.bx-chevron-right {
+  transition: 0.2s;
+}
+.dropdown .top-toggle.open-bottom > .bx-chevron-right {
+  transform: rotate(90deg);
+}
+
+.dropdown .bottom-toggle ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.dropdown .bottom-toggle ul li {
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.dropdown .bottom-toggle ul li:hover {
+  color: brown;
+  transform: translateX(-5px);
+}
+/* -------------------------------------- */
+.hidden-batt-box {
+  display: none !important;
+}
+
+.products-area.car-battery .hidden-batt-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+/* -------------------------------------- */
+.hidden-brakes-box {
+  display: none !important;
+}
+
+.products-area.car-brakes .hidden-brakes-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+/* -------------------------------------- */
+.hidden-engine-box {
+  display: none !important;
+}
+
+.products-area.car-engine .hidden-engine-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+/* -------------------------------------- */
+.hidden-muffler-box {
+  display: none !important;
+}
+
+.products-area.car-muffler .hidden-muffler-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+.hidden-radiator-box {
+  display: none !important;
+}
+
+.products-area.car-radiator .hidden-radiator-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+.hidden-steering-wheel-box {
+  display: none !important;
+}
+
+.products-area.car-steering-wheel .hidden-steering-wheel-box {
+  display: block !important;
+}
+/* -------------------------------------- */
+
+.hidden-mags-box {
+  display: none !important;
+}
+
+.products-area.car-mags .hidden-mags-box {
+  display: block !important;
+}
+/* -------------------------------------- */

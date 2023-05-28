@@ -30,7 +30,6 @@ if (btnForNav) {
     btnForNav.classList.toggle("bx-x");
   });
 }
-
 if (themeContainer) {
   themeContainer.addEventListener("click", (e) => {
     themeContainer.classList.toggle("open-theme-list");
@@ -78,6 +77,93 @@ if (btnToLogin) {
   });
 }
 
+const topToggle = document.querySelector(".top-toggle");
+const carItem = document.querySelectorAll(".car-item");
+const selected = document.querySelector(".selected");
+let itemSelected = "";
+if (topToggle) {
+  topToggle.addEventListener("click", () => {
+    topToggle.classList.toggle("open-bottom");
+    carItem.forEach((item) => {
+      item.addEventListener("click", () => {
+        itemSelected = item.innerText;
+        displayPicked(itemSelected);
+        selected.innerText = itemSelected;
+        topToggle.classList.remove("open-bottom");
+      });
+    });
+  });
+}
+
+// const carBattery = document.querySelector(".car-battery");
+const productsArea = document.querySelector(".products-area");
+function displayPicked(string) {
+  if (string === "Car Battery") {
+    productsArea.classList.add("car-battery");
+
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-engine");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Brakes") {
+    productsArea.classList.add("car-brakes");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-engine");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Engine") {
+    productsArea.classList.add("car-engine");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Mags") {
+    productsArea.classList.add("car-mags");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-engine");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Muffler") {
+    productsArea.classList.add("car-muffler");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-engine");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Radiator") {
+    productsArea.classList.add("car-radiator");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-engine");
+    productsArea.classList.remove("car-steering-wheel");
+  } else if (string === "Car Steering Wheel") {
+    productsArea.classList.add("car-steering-wheel");
+
+    productsArea.classList.remove("car-battery");
+    productsArea.classList.remove("car-mags");
+    productsArea.classList.remove("car-radiator");
+    productsArea.classList.remove("car-brakes");
+    productsArea.classList.remove("car-muffler");
+    productsArea.classList.remove("car-engine");
+  }
+}
 TweenMax.from(".navlist, .logo-container", 2, {
   opacity: 0,
   y: -20,
