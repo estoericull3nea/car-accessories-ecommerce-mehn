@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const hbs = require("hbs");
 require("./db/conn");
 const Register = require("./models/register");
 
@@ -9,33 +8,31 @@ const port = process.env.PORT || 3000;
 
 const static_path = path.join(__dirname, "../public");
 const template_path = path.join(__dirname, "../templates/views");
-const partials_path = path.join(__dirname, "../templates/partials");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(static_path));
-app.set("view engine", "hbs");
+app.set("view engine", "ejs");
 app.set("views", template_path);
-hbs.registerPartials(partials_path);
 
 app.get("/", (req, res) => {
-  res.render("temp_homepage");
+  res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
 });
 
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", { pageTitle: "Sign In" });
 });
 
 app.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", { pageTitle: "Sign Up" });
 });
 
 app.get("/products", (req, res) => {
-  res.render("products");
+  res.render("products", { pageTitle: "Products" });
 });
 
 app.get("/our-team", (req, res) => {
-  res.render("our_team");
+  res.render("our_team", { pageTitle: "Our Team" });
 });
 
 app.post("/register", async (req, res) => {
@@ -79,11 +76,11 @@ app.post("/login", async (req, res) => {
 });
 
 app.get("/about_us", (req, res) => {
-  res.render("about_us");
+  res.render("about_us", { pageTitle: "About Us" });
 });
 
 app.get("/home", (req, res) => {
-  res.render("main_homepage");
+  res.render("main_homepage", { pageTitle: "Welcome to EA" });
 });
 
 app.listen(port, () => {

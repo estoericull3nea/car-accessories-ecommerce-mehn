@@ -1,0 +1,34 @@
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="../images/main.jpg" />
+    <!-- {{>head}} -->
+    <%- include("partials/head") %>
+  </head>
+  <body class="light">
+    <%- include("partials/header") %>
+    <!-- {{>header}} -->
+
+    <section class="homepage">
+      <div class="left-container">
+        <h1>
+          Stylish & <span>High Performance Car Accessories Essentials</span>
+        </h1>
+        <p>
+          We're thrilled to have you here, ready to embark on an incredible
+          shopping experience.
+        </p>
+        <h3>Involve. Inspire. Indulge.</h3>
+        <button class="btn shop_now">Shop Now</button>
+      </div>
+
+      <div class="right-container">
+        <div class="img-con">
+          <img src="../images/main.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <%- include("partials/ads") %> <%- include("partials/footer") %>
+    <script src="../index.js" src="jquery-3.6.4.min.js"></script>
+  </body>
+</html>

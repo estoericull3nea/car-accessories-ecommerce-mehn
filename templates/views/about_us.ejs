@@ -1,11 +1,11 @@
 <html lang="en">
   <head>
-    <title>About Us</title>
-  {{>head}}
+    <!-- {{>head}} -->
+    <%- include('partials/head') %>
   </head>
   <body class="light">
-
-   {{>header}}
+    <%- include("partials/header") %>
+    <!-- {{>header}} -->
 
     <div class="box box2">
       <h1 class="main-title">About Us</h1>
@@ -27,7 +27,9 @@
     </div>
 
     <div class="box box1">
-      {{! <h1 class="main-title">Vision Mission</h1> }}
+      <!-- {{!
+      <h1 class="main-title">Vision Mission</h1>
+      }} -->
       <div class="main-body">
         <div class="title">
           <h3>Vision</h3>
@@ -35,15 +37,18 @@
         <div class="body">
           <p>
             EA Car Accessories aims to be one of the leading car accessories
-            stores worldwide.</p>
+            stores worldwide.
+          </p>
 
           <div class="title">
             <h3>Mission</h3>
           </div>
           <div class="body">
-            <p>To provide high quality car accessories and parts to our valued
+            <p>
+              To provide high quality car accessories and parts to our valued
               customers and establish a brand that the community will look
-              forward to when it comes to car accessories and parts</p>
+              forward to when it comes to car accessories and parts
+            </p>
           </div>
         </div>
       </div>
@@ -56,7 +61,8 @@
           <h3>Purpose</h3>
         </div>
         <div class="body">
-          <p>The purpose of a car accessories e-commerce website is to provide
+          <p>
+            The purpose of a car accessories e-commerce website is to provide
             customers with a convenient, accessible, and efficient platform to
             explore, select, and purchase car accessories while offering
             competitive pricing, reliable service, and a positive shopping
@@ -68,16 +74,20 @@
 
     <div class="pre-footer">
       <div class="top-con">
-        <h1 style="text-transform: uppercase;">Let's Dive In.</h1>
+        <h1 style="text-transform: uppercase">Let's Dive In.</h1>
       </div>
       <div class="bottom-con">
         <div class="left-con">
-          <h1 style="text-transform: uppercase; font-size: 1.2rem">Contact or
-            Visit Us</h1>
+          <h1 style="text-transform: uppercase; font-size: 1.2rem">
+            Contact or Visit Us
+          </h1>
 
           <div class="location-con">
             <i class="bx bx-current-location"></i>
-            <h3>15.953040, 120.356164. <br /> Matagdem, Pangasinan</h3>
+            <h3>
+              15.953040, 120.356164. <br />
+              Matagdem, Pangasinan
+            </h3>
           </div>
           <div class="email-con">
             <i class="bx bxs-envelope"></i>
@@ -90,14 +100,22 @@
         </div>
         <div class="right-con">
           <h1
-            style="text-transform: uppercase; font-size: 1.2rem; word-spacing: .3rem;"
-          >our hours</h1>
+            style="
+              text-transform: uppercase;
+              font-size: 1.2rem;
+              word-spacing: 0.3rem;
+            "
+          >
+            our hours
+          </h1>
           <div class="day">
-            {{! <h3>Monday</h3>
+            <!-- {{!
+            <h3>Monday</h3>
             <h3>Tuesday</h3>
             <h3>Thursday</h3>
             <h3>Friday</h3>
-            <h3>Saturday</h3> }}
+            <h3>Saturday</h3>
+            }} -->
 
             <div class="monday">
               <h3>Monday</h3>
@@ -123,7 +141,6 @@
               <h3>Saturday</h3>
               <i>8:00 AM - 6:00 PM</i>
             </div>
-
           </div>
           <div class="socmeds_of_site">
             <h1>Let's stay connected.</h1>
@@ -140,41 +157,44 @@
 
     <div class="map">
       <iframe
-      class="m1"
+        class="m1"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2523.201261644765!2d120.35738619590622!3d15.949821158175567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x339144a596b429f3%3A0xca348a3dfe7bc3c5!2sMatagdem%2C%20San%20Carlos%20City%2C%20Pangasinan!5e1!3m2!1sen!2sph!4v1684899051545!5m2!1sen!2sph"
         width="50%"
         height="500"
-        style="border:0;"
+        style="border: 0"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
 
       <iframe
-      class="m2"
-
+        class="m2"
         src="https://www.google.com/maps/embed?pb=!4v1684899285446!6m8!1m7!1sA25NJg17-g8uazjJngTbKQ!2m2!1d15.95293899593211!2d120.3561180000862!3f5.91263763731115!4f-2.953582242756383!5f0.7820865974627469"
         width="50%"
         height="500"
-        style="border:0;"
+        style="border: 0"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
 
-    {{>footer}}
-    {{! <script src="../index.js"></script> }}
+    <%- include("partials/footer") %>
+    <!-- {{>footer}} -->
+    <!-- {{!
+    <script src="../index.js"></script>
+    }} -->
     <script>
-
-      const sr = ScrollReveal({ distance: "40px", duration: 1500, reset: false,
-      }); sr.reveal("h3, p, strong, .main-title", { delay: 200, origin: "top" }); 
-  sr.reveal(".pre-footer", { delay: 200, origin: "bottom" });   
-  sr.reveal(".m2", { delay: 200, origin: "right" }); 
-  sr.reveal(".m1", { delay: 200, origin: "left" }); 
-      
+      const sr = ScrollReveal({
+        distance: "40px",
+        duration: 1500,
+        reset: false,
+      });
+      sr.reveal("h3, p, strong, .main-title", { delay: 200, origin: "top" });
+      sr.reveal(".pre-footer", { delay: 200, origin: "bottom" });
+      sr.reveal(".m2", { delay: 200, origin: "right" });
+      sr.reveal(".m1", { delay: 200, origin: "left" });
     </script>
     <script src="../index.js" src="jquery-3.6.4.min.js"></script>
-
   </body>
 </html>
