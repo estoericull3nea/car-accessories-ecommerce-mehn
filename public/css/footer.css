@@ -12,15 +12,27 @@
   position: relative;
 }
 
+.main-footer * {
+  border: 1px solid red;
+}
+
 .main-footer > div {
   width: 300px;
-  height: 50vh;
+  /* height: 50vh; */
 }
 
 .main-footer .logo-col {
   display: flex;
-  align-self: center;
+  align-self: flex-start;
   gap: 1rem;
+  cursor: pointer;
+  height: auto;
+}
+
+.main-footer .contact-col {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .main-footer .logo-col h1 {
@@ -28,6 +40,7 @@
   line-height: 1.1rem;
   letter-spacing: 0.3rem;
   margin-top: 1.8rem;
+  cursor: pointer;
 }
 
 .main-footer .logo-col img {
@@ -98,13 +111,30 @@
 }
 
 /* quick-links */
-.quick-links {
-  width: 150px !important;
+
+.main-footer .quick-links {
+  width: 200px !important;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .social,
 .help-con {
   width: 100px !important;
+}
+
+.main-footer .social {
+  width: 150px !important;
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
+}
+
+.main-footer .help-con {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .quick-links-title {
@@ -121,6 +151,12 @@
 
 .quick-links-title a:hover {
   text-decoration: underline;
+}
+
+.main-footer .any-queries {
+  display: flex;
+  align-self: flex-start;
+  flex-direction: column;
 }
 
 .any-queries .bottom-area {
