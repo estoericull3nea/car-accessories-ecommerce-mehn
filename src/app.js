@@ -35,6 +35,10 @@ app.get("/our-team", (req, res) => {
   res.render("our_team", { pageTitle: "Our Team" });
 });
 
+app.get("/cart", (req, res) => {
+  res.render("cart", { pageTitle: "Cart" });
+});
+
 app.post("/register", async (req, res) => {
   try {
     const password = req.body.password;
