@@ -4,7 +4,7 @@
 
   padding: 50px 2%;
 
-  /* height: 90vh; */
+  height: 90vh;
   width: 100%;
 
   display: flex;
@@ -214,4 +214,10 @@
   font-size: 0.8rem;
   color: var(--white);
   font-weight: 400;
+}
+
+@media (max-width: 725px) {
+  .main-footer {
+    height: auto;
+  }
 }
