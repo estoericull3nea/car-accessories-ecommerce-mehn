@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  height: 60vh;
+  height: 400px !important;
   min-width: 350px;
 
   background: url("../images/bg_form_img2.png") no-repeat center center/ cover;

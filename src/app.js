@@ -84,11 +84,12 @@ app.post("/login", async (req, res) => {
 
 app.post("/cart", async (req, res) => {
   try {
-    const { imgURL, title, price, description } = req.body;
+    const { imgURL, title, quantity, price, description } = req.body;
 
     const newProd = new Product({
       imgURL,
       title,
+      quantity,
       price,
       description,
     });
@@ -96,6 +97,16 @@ app.post("/cart", async (req, res) => {
     const added = await newProd.save();
   } catch (err) {
     res.status(400).send(err);
+  }
+});
+
+app.post("/delete-product", (req, res) => {
+  try {
+    Product.deleteOne({ _id: req.body.id }).then((result) => {
+      res.redirect("cart");
+    });
+  } catch (error) {
+    res.send(error);
   }
 });
 

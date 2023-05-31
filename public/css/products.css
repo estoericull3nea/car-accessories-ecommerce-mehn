@@ -5,9 +5,13 @@
 }
 
 .products-area .box {
-  height: 380px;
-  border: 2px solid black;
+  height: 400px;
   border-radius: 10px;
+  /* border: 2px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+    rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  border-radius: 10px; */
 
   display: grid;
   place-items: center;
@@ -15,7 +19,14 @@
 
 /* start code here */
 
-input {
+label {
+  text-align: left !important;
+  font-size: 0.5rem;
+  color: var(--text-low-opacity);
+  display: inline;
+}
+
+.products-area input {
   outline: none;
   border: none;
   background: transparent;
@@ -31,12 +42,19 @@ input {
 }
 
 .bottom-area {
+  margin-top: 3rem !important;
   padding: 0 10px;
 }
 
 .products-area img {
-  width: 260px;
-  height: 230px;
+  width: 100%;
+  height: 200px !important;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.products-area img:hover {
+  transform: scale(1.1);
 }
 
 .hidden-batt-box {
@@ -55,10 +73,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-batt-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-batt-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -74,6 +88,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-batt-box .bottom-area button:hover {
@@ -98,10 +113,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-brakes-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-brakes-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -116,7 +127,6 @@ input {
 }
 
 .bottom-area .description {
-  color: var(--text-low-opacity);
   font-size: 0.8rem;
 }
 
@@ -124,6 +134,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-brakes-box .bottom-area button:hover {
@@ -148,10 +159,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-engine-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-engine-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -167,6 +174,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-engine-box .bottom-area button:hover {
@@ -191,10 +199,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-mags-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-mags-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -210,6 +214,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-mags-box .bottom-area button:hover {
@@ -234,10 +239,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-muffler-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-muffler-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -253,6 +254,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-muffler-box .bottom-area button:hover {
@@ -277,10 +279,6 @@ input {
   cursor: pointer;
 }
 
-.hidden-radiator-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
 .hidden-radiator-box .bottom-area {
   height: 100px;
   text-align: center;
@@ -296,6 +294,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-radiator-box .bottom-area button:hover {
@@ -320,11 +319,7 @@ input {
   cursor: pointer;
 }
 
-.hidden-steering-wheel-box .top-area img:hover {
-  transform: scale(1.089);
-}
-
-.hidden-steering-wheel-box .bottom-area {
+.hidde .hidden-steering-wheel-box .bottom-area {
   height: 100px;
   text-align: center;
 
@@ -339,6 +334,7 @@ input {
   padding: 5px 0;
   border-radius: 10px;
   cursor: pointer;
+  width: 100%;
 }
 
 .hidden-steering-wheel-box .bottom-area button:hover {
