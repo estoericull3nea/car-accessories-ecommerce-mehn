@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 require("./db/conn");
 const Register = require("./models/register");
+const Product = require("./models/product");
 
 const port = process.env.PORT || 3000;
 
@@ -36,7 +37,9 @@ app.get("/our-team", (req, res) => {
 });
 
 app.get("/cart", (req, res) => {
-  res.render("cart", { pageTitle: "Cart" });
+  Product.find().then((products) => {
+    res.render("cart", { prods: products, pageTitle: "Cart" });
+  });
 });
 
 app.post("/register", async (req, res) => {
@@ -76,6 +79,23 @@ app.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(400).send("Account not found");
+  }
+});
+
+app.post("/cart", async (req, res) => {
+  try {
+    const { imgURL, title, price, description } = req.body;
+
+    const newProd = new Product({
+      imgURL,
+      title,
+      price,
+      description,
+    });
+
+    const added = await newProd.save();
+  } catch (err) {
+    res.status(400).send(err);
   }
 });
 

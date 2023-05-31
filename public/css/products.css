@@ -5,14 +5,39 @@
 }
 
 .products-area .box {
-  height: 300px;
+  height: 380px;
   border: 2px solid black;
   border-radius: 10px;
 
   display: grid;
   place-items: center;
 }
+
 /* start code here */
+
+input {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.top-area {
+  background-color: transparent;
+  color: transparent;
+}
+
+.bottom-area > button {
+  margin-top: 10px;
+}
+
+.bottom-area {
+  padding: 0 10px;
+}
+
+.products-area img {
+  width: 260px;
+  height: 230px;
+}
 
 .hidden-batt-box {
   display: grid;
@@ -81,11 +106,18 @@
   height: 100px;
   text-align: center;
 
-  padding: 10px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.bottom-area {
+  margin-top: 0.5rem;
+}
+
+.bottom-area .description {
+  color: var(--text-low-opacity);
+  font-size: 0.8rem;
 }
 
 .hidden-brakes-box .bottom-area button {
