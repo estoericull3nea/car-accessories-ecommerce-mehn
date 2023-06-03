@@ -97,8 +97,13 @@ if (topToggle) {
 
 // const carBattery = document.querySelector(".car-battery");
 const productsArea = document.querySelector(".products-area");
+const show = document.querySelectorAll(".show");
 function displayPicked(string) {
   if (string === "Car Battery") {
+    show.forEach((item) => {
+      item.style.cssText = `display: none !important;`;
+    });
+
     productsArea.classList.add("car-battery");
 
     productsArea.classList.remove("car-brakes");

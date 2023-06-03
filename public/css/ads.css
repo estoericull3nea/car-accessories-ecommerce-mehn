@@ -1,20 +1,11 @@
 @import "https://fonts.googleapis.com/css?family=Muli";
 
-/* * {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #ccc;
-} */
-
 .carousel {
-  width: 90%;
+  width: 95%;
   position: relative;
   padding-top: 380px;
   margin: 50px auto;
-  box-shadow: 0 10px 20px -5px rgba(92, 75, 72, 0.75);
+  box-shadow: 0 10px 20px -5px rgb(92, 75, 72);
 }
 
 .carousel input[name="switch"] {
