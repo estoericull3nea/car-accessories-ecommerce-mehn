@@ -6,30 +6,70 @@
   <body class="light">
     <%- include("partials/header") %>
     <!-- {{>header}} -->
-    <h1 style="text-align: center; margin-top: 1.5rem">Cart</h1>
+    <h1 class="cart-text">Cart</h1>
 
-    <section class="cart">
-      <% for(let p of prods) {%>
-      <div class="box">
-        <form action="/delete-product" method="post">
-          <input type="hidden" name="id" value="<%=p.id%>" />
-          <button class="x-icon-for-cart">x</button>
-        </form>
+    <div class="main_cart">
+      <table>
+        <thead>
+          <tr class="firstRow">
+            <th>#</th>
+            <th>Item</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Option</th>
 
-        <div class="top">
-          <img src="<%= p.imgURL%>" alt="" />
-        </div>
-        <div class="bottom">
-          <h3><%= p.title%></h3>
-          <h4><%= p.price%></h4>
-          <h4><%= p.quantity%></h4>
-          <p><%= p.description%></p>
-          <button type="submit">Checkout</button>
-          <button type="submit">Edit</button>
-        </div>
-      </div>
-      <% } %>
-    </section>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for(let i=0; i<cart.items.length; i++) { %>
+            <% let eachItem = cart.items[i] %>
+          <tr>
+            <td><%= i+1 %></td>
+            <td><img src="<%= eachItem.productId.imgURL %>" alt=""></td>
+            <td><%= eachItem.productId.title %></td>
+            <td><%= eachItem.productId.price %></td>
+            <td><%= eachItem.qty %></td>
+            <td class="description"><%= eachItem.productId.description %></td>
+            <form action="/delete-item-cart" method="post">
+            <input type="hidden" name="id" value="<%=eachItem.productId.id%>" />
+              <td><button type="submit" class="deleteBtn">Delete</button>
+            </form>
+          </tr>
+          <% } %>
+
+          <tr class="lastRow">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="price">Total Price: </td>
+            <td class="totalPrice"><%= cart.totalPrice %></td>
+            <td><button class="payNowBtn">Pay Now</button></button>
+            
+          </tr>
+
+
+          <!-- <tr>
+            <td>2</td>
+            <td>30</td>
+            <td>55</td>
+            <td>10</td>
+          </tr>
+
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+
+    <div class="main_cart"></div>
 
     <%- include("partials/footer") %>
     <script src="../index.js" src="jquery-3.6.4.min.js"></script>

@@ -20,6 +20,15 @@ app.get("/", (req, res) => {
   res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
 });
 
+app.use((req, res, next) => {
+  Register.findById("647a7b6d7ef10e245a6c674d")
+    .then((userInDb) => {
+      req.user = userInDb;
+      next();
+    })
+    .catch((err) => console.log(err));
+});
+
 app.get("/login", (req, res) => {
   res.render("login", { pageTitle: "Sign In" });
 });
@@ -37,9 +46,31 @@ app.get("/our-team", (req, res) => {
 });
 
 app.get("/cart", (req, res) => {
-  Product.find().then((products) => {
-    res.render("cart", { prods: products, pageTitle: "Cart" });
-  });
+  // Product.find().then((products) => {
+  //   res.render("cart", { prods: products, pageTitle: "Cart" });
+  // });
+  req.user
+    .populate("cart.items.productId")
+    .then((user) => {
+      res.render("cart", {
+        cart: user.cart,
+        pageTitle: "Cart",
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+app.post("/add-to-cart", (req, res) => {
+  // Product.findById(req.body.id)
+  //   .then((product) => {
+  //     req.user.addToCart(product).then((result) => console.log("added"));
+  //   })
+  //   .catch((err) => console.log(err));
+
+  req.user
+    .addToCart(req.body.id)
+    .then(() => console.log("added"))
+    .catch((err) => console.log(err));
 });
 
 app.post("/register", async (req, res) => {
@@ -103,11 +134,20 @@ app.post("/cart", async (req, res) => {
 app.post("/delete-product", (req, res) => {
   try {
     Product.deleteOne({ _id: req.body.id }).then((result) => {
-      res.redirect("cart");
+      res.redirect("home");
     });
   } catch (error) {
     res.send(error);
   }
+});
+
+app.post("/delete-item-cart", (req, res, next) => {
+  req.user
+    .removeCart(req.body.id)
+    .then(() => {
+      res.redirect("/cart");
+    })
+    .catch((err) => console.log(err));
 });
 
 app.get("/about_us", (req, res) => {
@@ -115,7 +155,13 @@ app.get("/about_us", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-  res.render("main_homepage", { pageTitle: "Welcome to EA" });
+  Product.find().then((products) => {
+    res.render("main_homepage", {
+      prods: products,
+      pageTitle: "Welcome to EA",
+      nameOfHeader: "List Items",
+    });
+  });
 });
 
 app.listen(port, () => {

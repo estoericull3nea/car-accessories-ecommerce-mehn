@@ -294,14 +294,14 @@ header .btn-container .menu-container {
   height: auto;
 }
 
-@keyframes img_rotate {
+/* @keyframes img_rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(-360deg);
   }
-}
+} */
 /* media queries */
 
 @media (max-width: 949px) {

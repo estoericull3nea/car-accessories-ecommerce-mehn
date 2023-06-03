@@ -3,14 +3,19 @@
   width: 100%;
 
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); */
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
   gap: 1rem;
+}
+
+.nameOfHeader {
+  text-align: center;
+  font-size: 3rem;
 }
 
 .cart .box {
   position: relative;
 
-  /* height: 440px; */
+  height: 220px;
   /* border: 1px solid black; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -31,16 +36,34 @@
   transition: 0.2s;
 }
 
-.cart form:hover {
-  transform: scale(1.5);
-}
-
 .cart .x-icon-for-cart {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   font-size: 1.2rem;
+  position: relative;
+}
+
+.addToCart {
+  position: absolute;
+  left: -98px;
+  bottom: -210px;
+}
+
+.editBtn {
+  position: absolute;
+  left: -202px;
+  bottom: -210px;
+}
+
+.cart .bottom button {
+  margin-top: 0.5rem;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 5px 0;
+  cursor: pointer;
+  width: 100px;
 }
 
 .top img {
@@ -59,15 +82,6 @@
 .cart .bottom p {
   color: var(--text-low-opacity);
   font-size: 0.8rem;
-}
-
-.cart .bottom button {
-  margin-top: 0.5rem;
-  border-radius: 10px;
-  border-width: 1px;
-  padding: 5px 0;
-  cursor: pointer;
-  width: 100px;
 }
 
 .cart .bottom button:hover {
