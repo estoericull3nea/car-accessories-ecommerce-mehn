@@ -131,6 +131,18 @@ app.post("/cart", async (req, res) => {
   }
 });
 
+app.get("/faq", (req, res) => {
+  res.render("faq", { pageTitle: "FAQ" });
+});
+
+app.get("/terms-and-conditions", (req, res) => {
+  res.render("terms_and_conditions", { pageTitle: "Terms and Condition" });
+});
+
+app.get("/privacy-policy", (req, res) => {
+  res.render("privacy_policy", { pageTitle: "Privacy Policy" });
+});
+
 app.post("/delete-product", (req, res) => {
   try {
     Product.deleteOne({ _id: req.body.id }).then((result) => {

@@ -1,0 +1,47 @@
+.faq h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.faq p {
+  color: var(--text-low-opacity);
+  font-size: 0.8rem;
+  padding: 0 5%;
+}
+
+.faq p.center {
+  text-align: center;
+  font-weight: 900;
+}
+
+.privacy_p h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.privacy_p p {
+  color: var(--text-low-opacity);
+  font-size: 0.8rem;
+  padding: 0 5%;
+}
+
+.privacy_p p.center {
+  text-align: center;
+  font-weight: 900;
+}
+
+.terms h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.terms p {
+  color: var(--text-low-opacity);
+  font-size: 0.8rem;
+  padding: 0 5%;
+}
+
+.terms p.center {
+  text-align: center;
+  font-weight: 900;
+}

@@ -12,7 +12,6 @@ const btnToLogin = document.querySelector(".btnToLogin");
 
 const signin = document.querySelector(".signin");
 const test = document.querySelector(".test");
-
 setTimeout(() => {
   signin.classList.remove("pop-up");
 
@@ -30,6 +29,7 @@ if (btnForNav) {
     btnForNav.classList.toggle("bx-x");
   });
 }
+
 if (themeContainer) {
   themeContainer.addEventListener("click", (e) => {
     themeContainer.classList.toggle("open-theme-list");

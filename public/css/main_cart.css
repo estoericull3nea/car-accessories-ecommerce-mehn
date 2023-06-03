@@ -1,5 +1,6 @@
 .main_cart {
-  height: 50vh;
+  /* height: 50vh; */
+  height: auto;
   display: flex;
   justify-content: center;
 
