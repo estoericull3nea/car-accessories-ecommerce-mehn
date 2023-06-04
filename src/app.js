@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use((req, res, next) => {
-  Register.findById("647a7b6d7ef10e245a6c674d")
+  Register.findById("647be9a408c78432d3537e7d")
     .then((userInDb) => {
       req.user = userInDb;
       next();
@@ -46,9 +46,6 @@ app.get("/our-team", (req, res) => {
 });
 
 app.get("/cart", (req, res) => {
-  // Product.find().then((products) => {
-  //   res.render("cart", { prods: products, pageTitle: "Cart" });
-  // });
   req.user
     .populate("cart.items.productId")
     .then((user) => {
@@ -60,16 +57,15 @@ app.get("/cart", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.post("/add-to-cart", (req, res) => {
-  // Product.findById(req.body.id)
-  //   .then((product) => {
-  //     req.user.addToCart(product).then((result) => console.log("added"));
-  //   })
-  //   .catch((err) => console.log(err));
-
+app.get("/profile", (req, res) => {
   req.user
-    .addToCart(req.body.id)
-    .then(() => console.log("added"))
+    .populate("cart.items.productId")
+    .then((user) => {
+      res.render("profile", {
+        cart: user.cart,
+        pageTitle: "Cart",
+      });
+    })
     .catch((err) => console.log(err));
 });
 
@@ -80,6 +76,8 @@ app.post("/register", async (req, res) => {
 
     if (password === cpassword) {
       const newUser = new Register({
+        fullName: req.body.fullName,
+        username: req.body.username,
         email: req.body.email,
         password: password,
         confirmPassword: cpassword,
@@ -111,6 +109,13 @@ app.post("/login", async (req, res) => {
   } catch (error) {
     res.status(400).send("Account not found");
   }
+});
+
+app.post("/add-to-cart", (req, res) => {
+  req.user
+    .addToCart(req.body.id)
+    .then(() => console.log("added"))
+    .catch((err) => console.log(err));
 });
 
 app.post("/cart", async (req, res) => {

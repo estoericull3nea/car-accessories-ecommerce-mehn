@@ -1,37 +1,48 @@
 const mongoose = require("mongoose");
 const Product = require("../models/product");
 
-const empSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    requried: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    requried: true,
-  },
-  confirmPassword: {
-    type: String,
-    required: true,
-  },
-  cart: {
-    items: [
-      {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
-          required: true,
+const empSchema = new mongoose.Schema(
+  {
+    fullName: {
+      type: String,
+      required: true,
+    },
+    username: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    confirmPassword: {
+      type: String,
+      required: true,
+    },
+    cart: {
+      items: [
+        {
+          productId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product",
+            required: true,
+          },
+          qty: {
+            type: Number,
+            required: true,
+          },
         },
-        qty: {
-          type: Number,
-          required: true,
-        },
-      },
-    ],
-    totalPrice: Number,
+      ],
+      totalPrice: Number,
+    },
   },
-});
+  { timestamps: true }
+);
 
 empSchema.methods.addToCart = async function (productId) {
   const product = await Product.findById(productId);

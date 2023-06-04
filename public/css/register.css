@@ -9,7 +9,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  height: 400px !important;
+  height: 450px !important;
   min-width: 350px;
 
   background: url("../images/bg_form_img2.png") no-repeat center center/ cover;
@@ -24,7 +24,7 @@
   grid-template-rows: 100px 1fr;
   place-items: center;
 
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 .register form h1 {
@@ -34,7 +34,7 @@
 .register form .box {
   grid-row: 2/3;
 
-  height: 250px;
+  height: 380px;
   width: 100%;
 
   display: flex;
@@ -87,7 +87,7 @@
 }
 .lower {
   position: absolute;
-  bottom: 10px;
+  bottom: 55px !important;
 }
 
 .lower span {
