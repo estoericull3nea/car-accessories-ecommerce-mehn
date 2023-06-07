@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/:id", (req, res, next) => {
-  const userID = "64800047e64e7bd3459bacd2";
+  const userID = "64801c2326bb5352867b235f"; // copy and paste the id here
   Register.findById(userID)
     .then((userInDb) => {
       req.user = userInDb;

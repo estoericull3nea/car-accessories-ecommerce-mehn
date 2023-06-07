@@ -30,6 +30,13 @@ if (btnForNav) {
   });
 }
 
+const shop_now = document.querySelector(".shop_now");
+if (shop_now) {
+  shop_now.addEventListener("click", () => {
+    window.location.href = "http://localhost:3000/products";
+  });
+}
+
 if (themeContainer) {
   themeContainer.addEventListener("click", (e) => {
     themeContainer.classList.toggle("open-theme-list");
@@ -177,23 +184,23 @@ function displayPicked(string) {
 //   });
 // }
 
-// TweenMax.from(".navlist, .logo-container", 2, {
-//   opacity: 0,
-//   y: -20,
-//   ease: Expo.easeInOut,
-// });
+TweenMax.from(".navlist, .logo-container", 2, {
+  opacity: 0,
+  y: -20,
+  ease: Expo.easeInOut,
+});
 
-// TweenMax.from(".left-container", 2.5, {
-//   opacity: 0,
-//   x: -30,
-//   ease: Expo.easeInOut,
-// });
+TweenMax.from(".left-container", 2.5, {
+  opacity: 0,
+  x: -30,
+  ease: Expo.easeInOut,
+});
 
-// TweenMax.from(".right-container", 3.5, {
-//   opacity: 0,
-//   x: 200,
-//   ease: Expo.ease,
-// });
+TweenMax.from(".right-container", 3.5, {
+  opacity: 0,
+  x: 200,
+  ease: Expo.ease,
+});
 
 // ads js
 $(document).ready(function () {
