@@ -169,6 +169,14 @@ function displayPicked(string) {
     productsArea.classList.remove("car-engine");
   }
 }
+
+// const payNowBtn = document.querySelector(".payNowBtn");
+// if (payNowBtn) {
+//   payNowBtn.addEventListener("click", () => {
+//     console.log(req.user);
+//   });
+// }
+
 // TweenMax.from(".navlist, .logo-container", 2, {
 //   opacity: 0,
 //   y: -20,

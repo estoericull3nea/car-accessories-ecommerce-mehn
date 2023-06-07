@@ -20,8 +20,9 @@ app.get("/", (req, res) => {
   res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
 });
 
-app.use((req, res, next) => {
-  Register.findById("647be9a408c78432d3537e7d")
+app.use("/:id", (req, res, next) => {
+  const userID = "64800047e64e7bd3459bacd2";
+  Register.findById(userID)
     .then((userInDb) => {
       req.user = userInDb;
       next();
@@ -63,7 +64,7 @@ app.get("/profile", (req, res) => {
     .then((user) => {
       res.render("profile", {
         cart: user.cart,
-        pageTitle: "Cart",
+        pageTitle: "Profile",
       });
     })
     .catch((err) => console.log(err));
