@@ -92,6 +92,7 @@ window.onload = function() {
     document.body.classList.remove("dark");
     document.body.classList.add("game");
   }
+  defaultActive.innerText = theme
 }
 
 btnTopSignIn.forEach((e) => {

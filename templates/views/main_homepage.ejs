@@ -43,7 +43,7 @@
             <h3><%= p.title%></h3>
             <h4><%= p.price%></h4>
             <h4><%= p.quantity%></h4>
-            <p><%= p.description%></p>
+            <p class="descript"><%= p.description%></p>
   
             <form action="/add-to-cart" method="post">
               <input type="hidden" name="id" value="<%=p.id%>" />

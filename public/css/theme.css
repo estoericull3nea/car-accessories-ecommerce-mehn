@@ -3,19 +3,23 @@ body.light {
   background: var(--white);
 }
 
+/* all in dark */
 body.dark {
-  color: var(--whitek);
+  color: var(--white);
   background: var(--pure-black);
 }
 
+/* very all */
 body.dark * {
   color: var(--white);
 }
 
+/* all icons */
 body.dark i.bx-search-alt {
   color: var(--pure-black);
 }
 
+/* header dark */
 body.dark header .btn-container .signin-container .btn:hover {
   color: var(--white);
   border-color: var(--main-color);
@@ -34,6 +38,7 @@ body.dark header .navlist li a:hover {
   color: var(--main-color);
 }
 
+/* homepage dark */
 body.dark .homepage .right-container .img-con::after {
   background-color: rgba(255, 255, 255, 0.4);
 }
@@ -50,3 +55,120 @@ body.dark .homepage {
   box-shadow: unset;
   box-shadow: 0 -27px 28px -18px var(--main-color) inset;
 }
+
+
+/* home box dark */
+body.dark .cart .box {
+  outline: 2px solid var(--main-color);
+  outline-offset: 5px;
+}
+
+body.dark .cart .box .descript {
+  color: var(--white);
+}
+
+body.dark .cart .box .addToCart {
+  background: var(--main-color);
+}
+
+body.dark .cart .box .addToCart:hover {
+  background: var(--white);
+  color: var(--pure-black);
+  border: 2px solid var(--main-color);
+}
+
+/* footer dark */
+body.dark .main-footer * {
+  color: var(--pure-black);
+}
+
+body.dark .main-footer .copyright {
+  color: var(--white);
+}
+
+/* main products */
+body.dark .top-toggle {
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+}
+
+body.dark .bottom-toggle {
+  background: var(--pure-black);
+}
+
+body.dark .top-area {
+  color: var(--pure-black);
+}
+
+body.dark .btnAddToCart {
+  background: var(--main-color);
+  color: var(--white);
+  outline: none;
+  border: none;
+}
+
+body.dark .btnAddToCart:hover {
+  background-color: var(--white) !important;
+  color: var(--pure-black) !important;
+}
+
+/* about us dark */
+
+body.dark .box2 {
+  background: var(--pure-black);
+}
+
+body.dark .box2 .body p {
+  color: var(--white);
+}
+
+body.dark .box1 {
+  background: var(--pure-black);
+}
+
+body.dark .box1 .body p {
+  color: var(--white);
+}
+
+body.dark .box3 {
+  background: var(--pure-black);
+}
+
+body.dark .box3 .body p {
+  color: var(--white);
+}
+
+/* cart dark */
+body.dark tr,
+body.dark td,
+body.dark th {
+  border: 1px solid var(--main-color);
+}
+
+body.dark .description {
+  color: var(--white);
+}
+
+body.dark .deleteBtn {
+  background: var(--main-color);
+  outline: none;
+  border: none;
+}
+
+body.dark .deleteBtn:hover {
+  background: var(--white);
+  color: var(--pure-black);
+  border: 2px solid var(--main-color);
+}
+
+body.dark .payNowBtn {
+  background: var(--main-color);
+  outline: none;
+  border: none;
+}
+
+body.dark .payNowBtn:hover {
+  background: var(--white);
+  color: var(--pure-black);
+}
+
