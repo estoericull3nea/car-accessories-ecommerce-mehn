@@ -3,31 +3,26 @@ const path = require("path");
 const app = express();
 require("./db/conn");
 const Register = require("./models/register");
-const Product = require("./models/product");
+const Product = require("./models/product"); 
 
 const port = process.env.PORT || 3000;
 
 const static_path = path.join(__dirname, "../public");
 const template_path = path.join(__dirname, "../templates/views");
 
+// setting middlewares
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
+
+// setting path
 app.use(express.static(static_path));
 app.set("view engine", "ejs");
 app.set("views", template_path);
 
+
+// setting router
 app.get("/", (req, res) => {
   res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
-});
-
-app.use("/:id", (req, res, next) => {
-  const userID = "64801c2326bb5352867b235f"; // copy and paste the id here
-  Register.findById(userID)
-    .then((userInDb) => {
-      req.user = userInDb;
-      next();
-    })
-    .catch((err) => console.log(err));
 });
 
 app.get("/login", (req, res) => {
@@ -36,38 +31,6 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
   res.render("register", { pageTitle: "Sign Up" });
-});
-
-app.get("/products", (req, res) => {
-  res.render("products", { pageTitle: "Products" });
-});
-
-app.get("/our-team", (req, res) => {
-  res.render("our_team", { pageTitle: "Our Team" });
-});
-
-app.get("/cart", (req, res) => {
-  req.user
-    .populate("cart.items.productId")
-    .then((user) => {
-      res.render("cart", {
-        cart: user.cart,
-        pageTitle: "Cart",
-      });
-    })
-    .catch((err) => console.log(err));
-});
-
-app.get("/profile", (req, res) => {
-  req.user
-    .populate("cart.items.productId")
-    .then((user) => {
-      res.render("profile", {
-        cart: user.cart,
-        pageTitle: "Profile",
-      });
-    })
-    .catch((err) => console.log(err));
 });
 
 app.post("/register", async (req, res) => {
@@ -86,6 +49,9 @@ app.post("/register", async (req, res) => {
 
       const registered = await newUser.save();
       // res.render("main_homepage");
+
+
+      
       res.redirect("/login");
     } else {
       res.send("password are not match");
@@ -112,12 +78,80 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.use(async (req, res, next) => {
+  latestUser = await Register.findOne().sort({ createdAt: -1 }).limit(1);
+  const userID = latestUser._id; // copy and paste the id here
+  Register.findById(userID)
+    .then((userInDb) => {
+      req.user = userInDb;
+      next();
+    })
+    .catch((err) => console.log(err));
+});
+
 app.post("/add-to-cart", (req, res) => {
   req.user
     .addToCart(req.body.id)
     .then(() => console.log("added"))
     .catch((err) => console.log(err));
 });
+
+app.get("/cart", (req, res) => {
+  req.user
+    .populate("cart.items.productId")
+    .then((user) => {
+      res.render("cart", {
+        cart: user.cart,
+        pageTitle: "Cart",
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+app.get("/profile", (req, res) => {
+  req.user
+    .populate("cart.items.productId")
+    .then((user) => {
+      res.render("profile", {
+        cart: user.cart,
+        pageTitle: "Profile",
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+app.post("/delete-item-cart", (req, res, next) => {
+  req.user
+    .removeCart(req.body.id)
+    .then(() => {
+      res.redirect("/cart");
+    })
+    .catch((err) => console.log(err));
+});
+
+
+
+
+
+
+
+app.get("/products", (req, res) => {
+  res.render("products", { pageTitle: "Products" });
+});
+
+app.get("/our-team", (req, res) => {
+  res.render("our_team", { pageTitle: "Our Team" });
+});
+
+
+
+
+
+
+
+
+
+
 
 app.post("/cart", async (req, res) => {
   try {
@@ -159,14 +193,7 @@ app.post("/delete-product", (req, res) => {
   }
 });
 
-app.post("/delete-item-cart", (req, res, next) => {
-  req.user
-    .removeCart(req.body.id)
-    .then(() => {
-      res.redirect("/cart");
-    })
-    .catch((err) => console.log(err));
-});
+
 
 app.get("/about_us", (req, res) => {
   res.render("about_us", { pageTitle: "About Us" });
@@ -181,6 +208,12 @@ app.get("/home", (req, res) => {
     });
   });
 });
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`App is running on port: ${port}`);
