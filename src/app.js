@@ -88,7 +88,7 @@ app.use(async (req, res, next) => {
 app.post("/add-to-cart", (req, res) => {
   req.user
     .addToCart(req.body.id)
-    .then(() => res.redirect('/home'))
+    .then(() => res.redirect('/home#cart-section'))
     .catch((err) => console.log(err));
 });
 
@@ -146,7 +146,7 @@ app.post("/cart", async (req, res) => {
     });
 
     const added = await newProd.save();
-    res.redirect('/products')
+    res.redirect('/products#prods-area')
   } catch (err) {
     res.status(400).send(err);
   }

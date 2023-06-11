@@ -184,11 +184,7 @@ function displayPicked(string) {
 //   });
 // }
 
-TweenMax.from(".navlist, .logo-container", 2, {
-  opacity: 0,
-  y: -20,
-  ease: Expo.easeInOut,
-});
+
 
 TweenMax.from(".left-container", 2.5, {
   opacity: 0,
