@@ -35,10 +35,6 @@
 
         <% for(let p of prods) {%>
         <div class="box">
-          <form action="/delete-list" method="post">
-            <input type="hidden" name="id" value="<%=p.id%>" />
-            <button class="x-icon-for-cart">x</button>
-          </form>
   
           <div class="top">
             <img src="<%= p.imgURL%>" alt="" />

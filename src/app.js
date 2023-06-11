@@ -146,6 +146,7 @@ app.post("/cart", async (req, res) => {
     });
 
     const added = await newProd.save();
+    res.redirect('/products')
   } catch (err) {
     res.status(400).send(err);
   }
