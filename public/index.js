@@ -217,6 +217,7 @@ function displayPicked(string) {
 
 
 
+
 TweenMax.from(".left-container", 2.5, {
   opacity: 0,
   x: -30,

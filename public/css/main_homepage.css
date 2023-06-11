@@ -154,6 +154,10 @@
   .homepage .left-container h3 {
     font-size: 1.6rem;
   }
+
+  header .btn-container .menu-container {
+    display: block !important;
+  }
 }
 
 @media (max-width: 824px) {
