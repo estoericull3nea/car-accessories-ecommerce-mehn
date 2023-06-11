@@ -1,7 +1,5 @@
 const router = require('express').Router();
 
-
-
 const { gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions, gPrivacyPolicy,gAboutUs, gHome } = require('../controllers/customer_controller')
 
 // setting router

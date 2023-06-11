@@ -1,5 +1,6 @@
 const Register = require("../models/register");
 const Product = require("../models/product"); 
+const AddedList = require("../models/added_list"); 
 
 const gTempHomepage = (req, res) => {
     res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
@@ -106,7 +107,6 @@ const gOurTeam = (req, res) => {
 const pCart = async(req, res) => {
     try {
         const { imgURL, title, quantity, price, description } = req.body;
-    
         const newProd = new Product({
           imgURL,
           title,
@@ -114,9 +114,24 @@ const pCart = async(req, res) => {
           price,
           description,
         });
-    
-        const added = await newProd.save();
-        res.redirect('/products#prods-area')
+
+        const ifExist = await AddedList.findOne({ imgURL: imgURL });
+        if(!ifExist) {
+            const newProd2 = new AddedList({
+                imgURL,
+                title,
+                quantity,
+                price,
+                description,
+              });
+        
+            const added = await newProd.save();
+            const added2 = await newProd2.save();
+            res.redirect('/products#prods-area')
+        } else {
+            res.redirect('/products#prods-area')
+        }
+        
       } catch (err) {
         res.status(400).send(err);
     }
