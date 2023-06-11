@@ -12,6 +12,9 @@ const btnToLogin = document.querySelector(".btnToLogin");
 
 const signin = document.querySelector(".signin");
 const test = document.querySelector(".test");
+
+
+
 setTimeout(() => {
   signin.classList.remove("pop-up");
 
@@ -37,6 +40,13 @@ if (shop_now) {
   });
 }
 
+function setTheme(theme) {
+  let body = document.querySelector('body')
+  body.className = ''
+  body.classList.add(theme)
+  localStorage.setItem('theme', theme)
+} 
+
 if (themeContainer) {
   themeContainer.addEventListener("click", (e) => {
     themeContainer.classList.toggle("open-theme-list");
@@ -48,20 +58,40 @@ if (themeContainer) {
 
         if (themeContainerText === "Light") {
           document.body.classList.add("light");
+          setTheme('Light')
           document.body.classList.remove("dark");
           document.body.classList.remove("game");
         } else if (themeContainerText === "Dark") {
           document.body.classList.remove("light");
           document.body.classList.add("dark");
+          setTheme('Dark')
           document.body.classList.remove("game");
         } else if (themeContainerText === "Game") {
           document.body.classList.remove("light");
           document.body.classList.remove("dark");
           document.body.classList.add("game");
+          setTheme('Game')
         }
       });
     });
   });
+}
+
+window.onload = function() {
+  let theme = localStorage.getItem('theme')
+  if (theme === "Light") {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+    document.body.classList.remove("game");
+  } else if (theme === "Dark") {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+    document.body.classList.remove("game");
+  } else if (theme === "Game") {
+    document.body.classList.remove("light");
+    document.body.classList.remove("dark");
+    document.body.classList.add("game");
+  }
 }
 
 btnTopSignIn.forEach((e) => {
