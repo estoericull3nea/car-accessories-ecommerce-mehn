@@ -30,31 +30,36 @@
     <%- include("partials/ads") %>
 
     <section class="cart">
-      <h1 class="nameOfHeader"><%=nameOfHeader%></h1>
+      <% if (prods != '') { %>
+        <h1 class="nameOfHeader">List Items</h1>
 
-      <% for(let p of prods) {%>
-      <div class="box">
-        <form action="/delete-product" method="post">
-          <input type="hidden" name="id" value="<%=p.id%>" />
-          <button class="x-icon-for-cart">x</button>
-        </form>
-
-        <div class="top">
-          <img src="<%= p.imgURL%>" alt="" />
-        </div>
-        <div class="bottom">
-          <h3><%= p.title%></h3>
-          <h4><%= p.price%></h4>
-          <h4><%= p.quantity%></h4>
-          <p><%= p.description%></p>
-
-          <form action="/add-to-cart" method="post">
+        <% for(let p of prods) {%>
+        <div class="box">
+          <form action="/delete-list" method="post">
             <input type="hidden" name="id" value="<%=p.id%>" />
-            <button class="addToCart" type="submit">Add To Cart</button>
+            <button class="x-icon-for-cart">x</button>
           </form>
+  
+          <div class="top">
+            <img src="<%= p.imgURL%>" alt="" />
+          </div>
+          <div class="bottom">
+            <h3><%= p.title%></h3>
+            <h4><%= p.price%></h4>
+            <h4><%= p.quantity%></h4>
+            <p><%= p.description%></p>
+  
+            <form action="/add-to-cart" method="post">
+              <input type="hidden" name="id" value="<%=p.id%>" />
+              <button class="addToCart" type="submit">Add To Cart</button>
+            </form>
+          </div>
         </div>
-      </div>
+        <% } %>
+      <% } else { %>
+        <h1 class="nameOfHeader">Empty List</h1>
       <% } %>
+      
     </section>
 
     <%- include("partials/footer") %>

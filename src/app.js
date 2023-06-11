@@ -19,7 +19,6 @@ app.use(express.static(static_path));
 app.set("view engine", "ejs");
 app.set("views", template_path);
 
-
 // setting router
 app.get("/", (req, res) => {
   res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
@@ -47,11 +46,8 @@ app.post("/register", async (req, res) => {
         confirmPassword: cpassword,
       });
 
-      const registered = await newUser.save();
-      // res.render("main_homepage");
+      await newUser.save();
 
-
-      
       res.redirect("/login");
     } else {
       res.send("password are not match");
@@ -92,7 +88,7 @@ app.use(async (req, res, next) => {
 app.post("/add-to-cart", (req, res) => {
   req.user
     .addToCart(req.body.id)
-    .then(() => console.log("added"))
+    .then(() => res.redirect('/home'))
     .catch((err) => console.log(err));
 });
 
@@ -108,17 +104,17 @@ app.get("/cart", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.get("/profile", (req, res) => {
-  req.user
-    .populate("cart.items.productId")
-    .then((user) => {
-      res.render("profile", {
-        cart: user.cart,
-        pageTitle: "Profile",
-      });
-    })
-    .catch((err) => console.log(err));
-});
+// app.get("/profile", (req, res) => {
+//   req.user
+//     .populate("cart.items.productId")
+//     .then((user) => {
+//       res.render("profile", {
+//         cart: user.cart,
+//         pageTitle: "Profile",
+//       });
+//     })
+//     .catch((err) => console.log(err));
+// });
 
 app.post("/delete-item-cart", (req, res, next) => {
   req.user
@@ -129,12 +125,6 @@ app.post("/delete-item-cart", (req, res, next) => {
     .catch((err) => console.log(err));
 });
 
-
-
-
-
-
-
 app.get("/products", (req, res) => {
   res.render("products", { pageTitle: "Products" });
 });
@@ -142,16 +132,6 @@ app.get("/products", (req, res) => {
 app.get("/our-team", (req, res) => {
   res.render("our_team", { pageTitle: "Our Team" });
 });
-
-
-
-
-
-
-
-
-
-
 
 app.post("/cart", async (req, res) => {
   try {
@@ -183,17 +163,15 @@ app.get("/privacy-policy", (req, res) => {
   res.render("privacy_policy", { pageTitle: "Privacy Policy" });
 });
 
-app.post("/delete-product", (req, res) => {
-  try {
-    Product.deleteOne({ _id: req.body.id }).then((result) => {
-      res.redirect("home");
-    });
-  } catch (error) {
-    res.send(error);
-  }
-});
-
-
+// app.post("/delete-list", (req, res) => {
+//   try {
+//     Product.deleteOne({ _id: req.body.id }).then((result) => {
+//       res.redirect("/home");
+//     });
+//   } catch (error) {
+//     res.send(error);
+//   }
+// });
 
 app.get("/about_us", (req, res) => {
   res.render("about_us", { pageTitle: "About Us" });
@@ -204,16 +182,9 @@ app.get("/home", (req, res) => {
     res.render("main_homepage", {
       prods: products,
       pageTitle: "Welcome to EA",
-      nameOfHeader: "List Items",
     });
   });
 });
-
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`App is running on port: ${port}`);
