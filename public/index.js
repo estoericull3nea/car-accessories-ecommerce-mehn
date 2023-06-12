@@ -79,20 +79,26 @@ if (themeContainer) {
 
 window.onload = function() {
   let theme = localStorage.getItem('theme')
+  defaultActive.innerText = 'Light'
+
   if (theme === "Light") {
     document.body.classList.add("light");
     document.body.classList.remove("dark");
     document.body.classList.remove("game");
+  defaultActive.innerText = theme
+
   } else if (theme === "Dark") {
     document.body.classList.remove("light");
     document.body.classList.add("dark");
     document.body.classList.remove("game");
+  defaultActive.innerText = theme
+
   } else if (theme === "Game") {
     document.body.classList.remove("light");
     document.body.classList.remove("dark");
     document.body.classList.add("game");
-  }
   defaultActive.innerText = theme
+  }
 }
 
 btnTopSignIn.forEach((e) => {
