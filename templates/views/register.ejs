@@ -12,33 +12,35 @@
           <div class="box">
             <div class="input-control">
               <i class="bx bx-user-circle"></i>
-              <input type="text" placeholder="Full Name" name="fullName" autofocus/>
+              <input type="text" placeholder="Given Name, First Name MI *" name="fullName" autofocus required/>
             </div>
 
             <div class="input-control">
               <i class="bx bx-user-plus"></i>
-              <input type="text" placeholder="Username" name="username" />
+              <input type="text" placeholder="Username *" name="username" required/>
             </div>
 
             <div class="input-control">
               <i class="bx bx-envelope"></i>
               <input
                 type="email"
-                placeholder="example@gmail.com"
+                placeholder="test@gmail.com *"
                 name="email"
+                required
               />
             </div>
             <div class="input-control">
               <i class="bx bx-lock-alt"></i>
-              <input type="password" placeholder="Password" name="password" />
+              <input class="pass" type="password" placeholder="Password *" name="password" required/>
             </div>
 
             <div class="input-control">
               <i class="bx bx-lock"></i>
               <input
                 type="password"
-                placeholder="Confirm Password"
+                placeholder="Confirm Password *"
                 name="confirmPassword"
+                required
               />
             </div>
 

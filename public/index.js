@@ -117,7 +117,12 @@ if (btnRegister) {
 if (btnToLogin) {
   btnToLogin.addEventListener("click", (e) => {
     e.preventDefault();
+
+
+    
     window.location.href = "http://localhost:3000/login";
+
+
   });
 }
 
@@ -214,15 +219,12 @@ function displayPicked(string) {
   }
 }
 
-// const payNowBtn = document.querySelector(".payNowBtn");
-// if (payNowBtn) {
-//   payNowBtn.addEventListener("click", () => {
-//     console.log(req.user);
-//   });
-// }
-
-
-
+const payNowBtn = document.querySelector(".payNowBtn");
+if (payNowBtn) {
+  payNowBtn.addEventListener("click", () => {
+    location.href = '/payment'
+  });
+}
 
 TweenMax.from(".left-container", 2.5, {
   opacity: 0,

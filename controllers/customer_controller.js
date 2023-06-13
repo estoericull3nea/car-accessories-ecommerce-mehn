@@ -16,25 +16,31 @@ const gRegister = (req, res) => {
 
 const pRegister = async (req, res) => {
     try {
+        const { email } = req.body
         const password = req.body.password;
         const cpassword = req.body.confirmPassword;
 
-    if (password === cpassword) {
+        const existingUser = await Register.findOne({ email })
+        if(existingUser) {
+            res.json('email already exist in database')
+        } else {
+            if (password === cpassword) {
 
-        const newUser = new Register({
-            fullName: req.body.fullName,
-            username: req.body.username,
-            email: req.body.email,
-            password: password,
-            confirmPassword: cpassword,
-        });
-
-        await newUser.save();
-
-        res.redirect("/login");
-    } else {
-        res.send("password are not match");
-    }
+                const newUser = new Register({
+                    fullName: req.body.fullName,
+                    username: req.body.username,
+                    email: req.body.email,
+                    password: password,
+                    confirmPassword: cpassword,
+                });
+        
+                await newUser.save();
+        
+                res.redirect("/login");
+            } else {
+                res.send("password are not match");
+            }
+        }
     } catch (err) {
         res.status(400).send(err);
     }
@@ -80,9 +86,9 @@ const gCart = (req, res) => {
     req.user
         .populate("cart.items.productId")
         .then((user) => {
-    res.render("cart", {
-        cart: user.cart,
-        pageTitle: "Cart",
+            res.render("cart", {
+            cart: user.cart,
+            pageTitle: "Cart",
     });
     }).catch((err) => console.log(err));
 }

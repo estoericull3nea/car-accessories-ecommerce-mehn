@@ -51,8 +51,11 @@
               <td></td>
               <td class="price">Total Price: </td>
               <td class="totalPrice"><%= cart.totalPrice %></td>
-              <td><button class="payNowBtn">Pay Now</button></button>
-              
+              <td>
+                <form action="/payment" method="POST">
+                  <button class="payNowBtn">Checkout</button>
+                </form>
+              </td>
             </tr>
           </tbody>
         </table>
