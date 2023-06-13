@@ -2,6 +2,12 @@ const Register = require("../models/register");
 const Product = require("../models/product"); 
 const AddedList = require("../models/added_list"); 
 
+const nodemailer = require('nodemailer');
+
+const Token = require("../models/token"); 
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
+
 const gTempHomepage = (req, res) => {
     res.render("temp_homepage", { pageTitle: "Welcome to EA, Sign In First" });
 }
@@ -13,19 +19,44 @@ const gLogin = (req, res) => {
 const gRegister = (req, res) => {
     res.render("register", { pageTitle: "Sign Up" });
 }
+// email service
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    auth: {
+        user: 'noreply050623@gmail.com',
+        pass: 'xlqhaxnjiowsxuyr'
+    }
+})
+
+// verify transport
+transporter.verify((err, success) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log('Ready For Messages');
+        console.log(success);
+    }
+})
+// end of email service
 
 const pRegister = async (req, res) => {
+
+
     try {
         const { email } = req.body
         const password = req.body.password;
         const cpassword = req.body.confirmPassword;
+
         const existingUser = await Register.findOne({ email })
-        if(existingUser) {
+
+        if (existingUser) {
             res.json('email already exist in database')
-        } else if(password.length <= 3) {
+        } else if (password.length <= 3) {
             res.json('password must be atleast 4 characters')
         } else {
             if (password === cpassword) {
+
 
                 const newUser = new Register({
                     fullName: req.body.fullName,
@@ -35,17 +66,74 @@ const pRegister = async (req, res) => {
                     confirmPassword: cpassword,
                 });
         
-                await newUser.save();
-        
-                res.redirect("/login");
+                await newUser.save()
+                    .then(user => {
+                    // sendVerificationEmail(result, res)
+                   
+                    const token = new Token({ _userId: user._id, token: crypto.randomBytes(16).toString('hex')})
+                    token.save().then( (err) => {
+
+                        if(err) {
+                            console.log(err);
+                        }
+
+                        const mailOptions = {
+                            to: user.email,
+                            from: 'noreply050623@gmail.com',
+                            subject: 'Acc Verification Token',
+                            html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`
+                        }
+
+                        transporter.sendMail(mailOptions, err => {
+                            if(err) {
+                                console.log('failed');
+                            }
+                            res.render('pleaseCheck')
+                        })
+
+                    }) // end token of save
+                }); // end of user save
+
+
+                // await newUser.save()
+                // res.redirect("/login");
+
+
             } else {
                 res.json("password are not match");
             }
         }
+
     } catch (err) {
         res.status(400).send(err);
     }
+
 }
+
+const pConfirmation = (req, res) => {
+    res.render('verified')
+}
+
+// const gVerify = (req, res) => {
+//     const email = req.user.email
+
+//     const mailOptions = {
+//         from: 'noreply050623@gmail.com',
+//         to: email,
+//         subject: 'Email Verification',
+//         text: 'Please click the link to verify your email.',
+//       };
+
+//       transporter.sendMail(mailOptions, (err, info) => {
+//         if(err) {
+//             console.log(err);
+//         } else {
+//             console.log('Email sent' + info.response);
+//         }
+//       })
+// }
+
+
 
 const pLogin = async (req, res) => {
     try {
@@ -172,5 +260,5 @@ const gHome = (req, res) => {
 
 
 module.exports = {
-    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome
+    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation
 }

@@ -25,13 +25,37 @@ setTimeout(() => {
     `;
   }
 }, 3000);
-
+let backToNormal = true;
+const allListItems = document.querySelectorAll('header .navlist li a')
 if (btnForNav) {
   btnForNav.addEventListener("click", () => {
     nav.classList.toggle("open-navlist");
     btnForNav.classList.toggle("bx-x");
+    if(nav.classList.contains('open-navlist')) {
+      allListItems.forEach(elem => {
+        elem.style.color = 'brown'
+      })
+    } else {
+      allListItems.forEach(elem => {
+        if(localStorage.getItem('theme') === 'Light') {
+          allListItems.forEach(elem => {
+            elem.style.color = 'black'
+          })
+        } else if (localStorage.getItem('theme') === 'Dark') {
+          allListItems.forEach(elem => {
+            elem.style.color = 'white'
+          })
+        } else {
+          allListItems.forEach(elem => {
+            elem.style.color = 'black'
+          })
+        }
+      })
+    }
   });
-}
+} 
+
+
 
 const shop_now = document.querySelector(".shop_now");
 if (shop_now) {
@@ -61,9 +85,15 @@ if (themeContainer) {
           setTheme('Light')
           document.body.classList.remove("dark");
           document.body.classList.remove("game");
+          allListItems.forEach(elem => {
+            elem.style.color = 'black'
+          })
         } else if (themeContainerText === "Dark") {
           document.body.classList.remove("light");
           document.body.classList.add("dark");
+          allListItems.forEach(elem => {
+            elem.style.color = 'white'
+          })
           setTheme('Dark')
           document.body.classList.remove("game");
         } else if (themeContainerText === "Game") {

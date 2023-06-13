@@ -33,7 +33,7 @@ header .navlist li:not(:last-child) {
 
 header .navlist li a {
   font-weight: 500;
-  color: var(--white);
+  color: var(--pure-black);
   font-size: 0.8rem;
 
   transition: color 0.2s ease;

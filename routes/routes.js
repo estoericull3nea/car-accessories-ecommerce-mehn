@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions, gPrivacyPolicy,gAboutUs, gHome } = require('../controllers/customer_controller')
+const { gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions, gPrivacyPolicy,gAboutUs, gHome, pConfirmation } = require('../controllers/customer_controller')
 
 // setting router
 router.get("/", gTempHomepage)
@@ -20,6 +20,8 @@ router.get("/terms-and-conditions", gTermsnConditions)
 router.get("/privacy-policy", gPrivacyPolicy)
 router.get("/about_us", gAboutUs)
 router.get("/home", gHome)
+router.get("/confirmation/:tokenId", pConfirmation)
+// router.get("/verify", gVerify)
 
 // router.get("/profile", (req, res) => {
 //   req.user
