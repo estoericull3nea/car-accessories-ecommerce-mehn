@@ -74,20 +74,22 @@
   <div class="any-queries">
     <h1 class="contact-title">Any Queries?</h1>
     <div class="bottom-area">
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <textarea
-        name="textarea"
-        id="textarea"
-        cols="10"
-        rows="10"
-        placeholder="Your Message"
-      ></textarea>
-      <button>Let's G!</button>
+      <form action="/contact-us" method="POST">
+        <input type="text" placeholder="Your Name" name="name"/>
+        <input type="email" placeholder="Your Email" name="email"/>
+        <textarea
+          id="textarea"
+          cols="10"
+          rows="10"
+          placeholder="Your Message"
+          name="message"
+        ></textarea>
+        <button type="submit">Let's G!</button>
+      </form>
     </div>
   </div>
 
   <h1 class="copyright">
-    &copy; Extraordinary AutoShop, Inc. All Rights Reserved 2023.
+    &copy; Extraordinary AutoParts, Inc. All Rights Reserved 2023.
   </h1>
 </footer>

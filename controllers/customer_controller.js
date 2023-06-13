@@ -1,6 +1,7 @@
 const Register = require("../models/register");
 const Product = require("../models/product"); 
 const AddedList = require("../models/added_list"); 
+const UserMessage = require("../models/messageAboutUs"); 
 
 const nodemailer = require('nodemailer');
 
@@ -51,9 +52,9 @@ const pRegister = async (req, res) => {
         const existingUser = await Register.findOne({ email })
 
         if (existingUser) {
-            res.json('email already exist in database')
-        } else if (password.length <= 3) {
-            res.json('password must be atleast 4 characters')
+            res.json('Email already exist in Database')
+        } else if (password.length <= 7) {
+            res.json('Password must have at least 8 characters.')
         } else {
             if (password === cpassword) {
 
@@ -258,7 +259,39 @@ const gHome = (req, res) => {
 }
 
 
+const pContactUsForm = (req, res) => {
+    const { name, email, message } = req.body 
+
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        auth: {
+            user: 'noreply050623@gmail.com',
+            pass: 'xlqhaxnjiowsxuyr'
+        }
+    })
+
+    const newMessage = new UserMessage({
+        name, email, message
+    })
+
+     newMessage.save().then( () => {
+        const mailOptions = {
+            to: 'palisocericson87@gmail.com',
+            from: email,
+            subject: 'User Queries! || New Contact Form',
+            text: message,
+        }
+
+        transporter.sendMail(mailOptions, err => {
+            if(err) {
+                console.log('failed');
+            }
+            res.render('sentMessage')
+        })
+    })
+}
 
 module.exports = {
-    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation
+    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation, pContactUsForm
 }
