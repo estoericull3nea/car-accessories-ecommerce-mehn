@@ -18,10 +18,13 @@
       <i class='bx bx-menu-alt-right'></i>
     </div>
 
-    <div class="search-container">
-      <input type="text" placeholder="Search..." />
-      <i class="bx bx-search-alt"></i>
-    </div>
+    <form action="/products/search-item" method="get">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." name="searchItem"/>
+        <i class="bx bx-search-alt"></i>
+      </div>
+    </form>
+    
 
     <div class="theme-container">
       <span class="default">Select Theme</span>

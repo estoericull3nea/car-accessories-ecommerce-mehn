@@ -2,6 +2,7 @@ const Register = require("../models/register");
 const Product = require("../models/product"); 
 const AddedList = require("../models/added_list"); 
 const UserMessage = require("../models/messageAboutUs"); 
+const AllProducts = require("../models/all_prods"); 
 
 const nodemailer = require('nodemailer');
 
@@ -292,6 +293,23 @@ const pContactUsForm = (req, res) => {
     })
 }
 
+const gSearchItem = (req, res) => {
+    const titleItem = req.query.searchItem
+    // Product.find().then((product) => {
+    //     res.render("searchItem", {
+    //         pageTitle: "Search Products",
+    //     });
+    // });
+
+    AllProducts.find({ title: titleItem }).then(prods => {
+        console.log(prods);
+        res.render("searchItem", {
+            pageTitle: "Search Products",
+            prods,
+        });
+    })
+}
+
 module.exports = {
-    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation, pContactUsForm
+    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation, pContactUsForm, gSearchItem
 }

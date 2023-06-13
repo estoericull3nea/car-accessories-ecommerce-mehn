@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <%- include("partials/head") %>
+    <!-- {{>head}} -->
+    <link rel="stylesheet" href="/css/index.css">
+    <style>
+      .test .box {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        gap: 1rem;
+
+        border: 2px solid var(--pure-black);
+        border-radius: 10px;
+        margin-block: 1rem;
+      }
+
+      .test .box .bottom {
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+      }
+
+      .addTo {
+        width: 100px;
+        align-self: flex-end;
+        justify-self: flex-end;
+        margin-right: 1rem;
+        padding: 5px;
+        background: var(--main-color);
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: var(--white);
+      }
+
+      .addTo:hover {
+        background: transparent;
+        border: 2px solid var(--main-color);
+        color: var(--pure-black);
+      }
+    </style>
+  </head>
+  <body class="light">
+    <%- include("partials/header") %> <%- include("partials/ads") %>
+
+    <section class="test" id="cart-section">
+        <% if (prods != '') { %>
+          <h1 class="nameOfHeader">Items</h1>
+  
+          <% for(let p of prods) {%>
+            <form action="/cart" method="post">
+          <div class="box">
+            <div class="top">
+          <input type="hidden" readonly class="top-area" name="imgURL" value="<%= p.imgURL %>">
+              <img src="<%= p.imgURL%>" alt="" />
+            </div>
+            <div class="bottom">
+            <input type="hidden" name="title" class="title" value="<%= p.title%>"></input>
+              <h3><%= p.title%></h3>
+
+            <input type="hidden" readonly name="price" class="price" value="<%= p.price%>"></input>
+              <h4><%= p.price%></h4>
+
+            <input type="hidden" readonly name="quantity" class="quantity" value="<%= p.quantity%>"></input>
+              <h4><%= p.quantity%></h4>
+
+            <input type="hidden" readonly name="description" class="description" value="<%= p.description%>">
+              <p class="descript"><%= p.description%></p>
+    
+                <button class="addTo" type="submit">Add To List</button>
+            </div>
+
+          </div>
+          </form>
+
+          <% } %>
+        <% } else { %>
+          <h1 class="nameOfHeader">None</h1>
+        <% } %>
+        
+      </section>
+    <%- include("partials/footer") %>
+
+    <script src="../index.js" src="jquery-3.6.4.min.js"></script>
+  </body>
+</html>
