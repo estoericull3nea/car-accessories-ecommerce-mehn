@@ -19,10 +19,11 @@ const pRegister = async (req, res) => {
         const { email } = req.body
         const password = req.body.password;
         const cpassword = req.body.confirmPassword;
-
         const existingUser = await Register.findOne({ email })
         if(existingUser) {
             res.json('email already exist in database')
+        } else if(password.length <= 3) {
+            res.json('password must be atleast 4 characters')
         } else {
             if (password === cpassword) {
 
@@ -38,7 +39,7 @@ const pRegister = async (req, res) => {
         
                 res.redirect("/login");
             } else {
-                res.send("password are not match");
+                res.json("password are not match");
             }
         }
     } catch (err) {

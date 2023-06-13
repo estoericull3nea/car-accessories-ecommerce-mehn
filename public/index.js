@@ -117,12 +117,7 @@ if (btnRegister) {
 if (btnToLogin) {
   btnToLogin.addEventListener("click", (e) => {
     e.preventDefault();
-
-
-    
     window.location.href = "http://localhost:3000/login";
-
-
   });
 }
 
