@@ -45,6 +45,10 @@ if (btnForNav) {
           allListItems.forEach(elem => {
             elem.style.color = 'white'
           })
+        } else if(localStorage.getItem('theme') === 'Game') {
+          allListItems.forEach(elem => {
+            elem.style.color = 'red !important'
+          })
         } else {
           allListItems.forEach(elem => {
             elem.style.color = 'black'

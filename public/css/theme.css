@@ -172,3 +172,6 @@ body.dark .payNowBtn:hover {
   color: var(--pure-black);
 }
 
+body.game * {
+  font-family: 'Press Start 2P', cursive;
+}

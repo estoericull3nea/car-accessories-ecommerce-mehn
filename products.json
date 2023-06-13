@@ -1,461 +1,471 @@
 [{
   "_id": {
-    "$oid": "647e52769c04939ba81ad728"
+    "$oid": "6488b74da8c872e8280efa43"
   },
   "imgURL": "../images/car_battery/car_batt1.jpg",
-  "title": "Car Battery",
+  "title": "Motolite Gold Battery",
   "quantity": 1,
   "price": 2999,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Designed for tropical use.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52799c04939ba81ad72b"
+    "$oid": "6488b7a5a8c872e8280efa85"
   },
   "imgURL": "../images/car_battery/car_batt2.jpg",
-  "title": "Car Battery",
+  "title": "Ruiyu Battery",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Providing high-quality solutions for.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e527a9c04939ba81ad72e"
+    "$oid": "6488b7b90b55b1b90d5a0630"
   },
   "imgURL": "../images/car_battery/car_batt3.jpg",
-  "title": "Car Battery",
+  "title": "Lite Car Battery",
   "quantity": 1,
   "price": 1900,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Rechargeable power source for vehicles.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e527a9c04939ba81ad731"
+    "$oid": "6488b7ba0b55b1b90d5a0641"
   },
   "imgURL": "../images/car_battery/car_batt4.jpg",
-  "title": "Car Battery",
+  "title": "PowerLine Car Battery",
   "quantity": 1,
-  "price": 1500,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2900,
+  "description": "High performance batteries.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e527c9c04939ba81ad734"
+    "$oid": "6488b7bb0b55b1b90d5a0652"
   },
   "imgURL": "../images/car_battery/car_batt5.jpg",
-  "title": "Car Battery",
+  "title": "Dyvinity Car Battery",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 3300,
+  "description": "Lead-acid battery that incorporates new technology.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52859c04939ba81ad737"
+    "$oid": "6488b7cd0b55b1b90d5a0689"
   },
   "imgURL": "../images/car_brakes/car_brakes1.jpg",
-  "title": "Car Brakes",
+  "title": "Akebono Car Brakes",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 3300,
+  "description": "Excellent braking performance and durability.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52869c04939ba81ad73a"
+    "$oid": "6488b7ce0b55b1b90d5a069a"
   },
   "imgURL": "../images/car_brakes/car_brakes2.jpg",
-  "title": "Car Brakes",
+  "title": "Brembo Car Brakes",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 3900,
+  "description": "Hydraulic by pressing the brake.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52869c04939ba81ad73d"
+    "$oid": "6488b7cf0b55b1b90d5a06ab"
   },
   "imgURL": "../images/car_brakes/car_brakes3.jpg",
-  "title": "Car Brakes",
+  "title": "Bosch Car Brakes",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 1900,
+  "description": "Stopping mechanism for automotive vehicles..",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52879c04939ba81ad740"
+    "$oid": "6488b7d00b55b1b90d5a06bc"
   },
   "imgURL": "../images/car_brakes/car_brakes4.jpg",
-  "title": "Car Brakes",
+  "title": "Normal Car Brakes",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4100,
+  "description": "Stopping mechanism for automotive vehicles..",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52889c04939ba81ad743"
-  },
-  "imgURL": "../images/car_brakes/car_brakes5.jpg",
-  "title": "Car Brakes",
-  "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647e52899c04939ba81ad746"
+    "$oid": "6488b7d10b55b1b90d5a06cd"
   },
   "imgURL": "../images/car_brakes/car_brakes6.jpg",
-  "title": "Car Brakes",
+  "title": "Normal Car Brakes",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2100,
+  "description": "Prioritize safety and stopping power.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e528c9c04939ba81ad749"
+    "$oid": "6488b7d10b55b1b90d5a06de"
+  },
+  "imgURL": "../images/car_brakes/car_brakes5.jpg",
+  "title": "AMB Car Brakes",
+  "quantity": 1,
+  "price": 5999,
+  "description": "Efficient stopping power.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b7d70b55b1b90d5a06ef"
   },
   "imgURL": "../images/car_engine/car_engine1.jpg",
-  "title": "Car Engine",
+  "title": "Ford Car Engine",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 21999,
+  "description": "Designed to deliver power and efficiency.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e528d9c04939ba81ad74c"
+    "$oid": "6488b7d80b55b1b90d5a0700"
   },
   "imgURL": "../images/car_engine/car_engine2.jpg",
-  "title": "Car Engine",
+  "title": "BMW Car Engine",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 22999,
+  "description": "Advanced engine technologies.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e528d9c04939ba81ad74f"
+    "$oid": "6488b7d90b55b1b90d5a0711"
   },
   "imgURL": "../images/car_engine/car_engine3.jpg",
-  "title": "Car Engine",
+  "title": "Honda Car Engine",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 30999,
+  "description": "Compact cars to larger engines.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e528e9c04939ba81ad752"
+    "$oid": "6488b7d90b55b1b90d5a0722"
   },
   "imgURL": "../images/car_engine/car_engine4.jpg",
-  "title": "Car Engine",
+  "title": "Mercedes-Benz Car Engine",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 40999,
+  "description": "High-performance V8 and V12 engines.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52999c04939ba81ad755"
+    "$oid": "6488b7e10b55b1b90d5a0733"
   },
   "imgURL": "../images/car_mags/car_wheel1.jpg",
-  "title": "Car Mags",
+  "title": "Enkei Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4999,
+  "description": "High-quality and lightweight alloy .",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529a9c04939ba81ad758"
+    "$oid": "6488b7e30b55b1b90d5a0744"
   },
   "imgURL": "../images/car_mags/car_wheel2.jpg",
-  "title": "Car Mags",
+  "title": "BBS Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2999,
+  "description": "Build quality and innovative designs.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529b9c04939ba81ad75b"
+    "$oid": "6488b7e30b55b1b90d5a0755"
   },
   "imgURL": "../images/car_mags/car_wheel3.jpg",
-  "title": "Car Mags",
+  "title": "OZ Racing Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 1800,
+  "description": "Lightweight and aerodynamic designs.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529b9c04939ba81ad75e"
+    "$oid": "6488b7e40b55b1b90d5a0766"
   },
   "imgURL": "../images/car_mags/car_wheel4.jpg",
-  "title": "Car Mags",
+  "title": "Vossen Car Mags",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Luxury and performance-oriented wheels.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529c9c04939ba81ad761"
+    "$oid": "6488b7e50b55b1b90d5a0777"
   },
   "imgURL": "../images/car_mags/car_wheel5.jpg",
-  "title": "Car Mags",
+  "title": "Rays Engineering Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2999,
+  "description": "Lightweight construction and strength.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529d9c04939ba81ad764"
+    "$oid": "6488b7e60b55b1b90d5a0788"
   },
   "imgURL": "../images/car_mags/car_wheel6.jpg",
-  "title": "Car Mags",
+  "title": "HRE Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2100,
+  "description": "Bespoke designs and exceptional craftsmanship.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529e9c04939ba81ad767"
+    "$oid": "6488b7e70b55b1b90d5a0799"
   },
   "imgURL": "../images/car_mags/car_wheel7.jpg",
-  "title": "Car Mags",
+  "title": "ADV.1 Car Mags",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Suit various vehicle applications.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e529e9c04939ba81ad76a"
+    "$oid": "6488b7e80b55b1b90d5a07aa"
   },
   "imgURL": "../images/car_mags/car_wheel8.jpg",
-  "title": "Car Mags",
+  "title": "Forgeline Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 3800,
+  "description": "For attention-grabbing aesthetics.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52a19c04939ba81ad76d"
+    "$oid": "6488b7ea0b55b1b90d5a07bb"
   },
   "imgURL": "../images/car_mags/car_wheel9.jpg",
-  "title": "Car Mags",
+  "title": "Rotiform Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4100,
+  "description": "Eye-catching aesthetics and durable .",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52a19c04939ba81ad770"
+    "$oid": "6488b7ea0b55b1b90d5a07cc"
   },
   "imgURL": "../images/car_mags/car_wheel10.jpg",
-  "title": "Car Mags",
+  "title": "TSW Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 3300,
+  "description": "Classic designs and durable construction.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52a29c04939ba81ad773"
+    "$oid": "6488b7eb0b55b1b90d5a07dd"
   },
   "imgURL": "../images/car_mags/car_wheel11.jpg",
-  "title": "Car Mags",
+  "title": "American Racing Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 5100,
+  "description": "Lightweight construction and stylish designs,.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52a39c04939ba81ad776"
+    "$oid": "6488b7ec0b55b1b90d5a07ee"
   },
   "imgURL": "../images/car_mags/car_wheel12.jpg",
-  "title": "Car Mags",
+  "title": "Konig Car Mags",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4100,
+  "description": "Stylish wheels for automotive vehicles.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52a59c04939ba81ad779"
+    "$oid": "6488b7ed0b55b1b90d5a07ff"
   },
   "imgURL": "../images/car_mags/car_wheel13.jpg",
-  "title": "Car Mags",
+  "title": "XXR Car Mags",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Stylish wheels for automotive vehicles..",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52aa9c04939ba81ad77c"
+    "$oid": "6488b7f20b55b1b90d5a0810"
   },
   "imgURL": "../images/car_muffler/car_muff1.jpg",
-  "title": "Car Muffler",
+  "title": "MagnaFlow Car Muffler",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 5999,
+  "description": "Optimize exhaust flow and reduce backpressure.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52ac9c04939ba81ad77f"
+    "$oid": "6488b7f30b55b1b90d5a0821"
+  },
+  "imgURL": "../images/car_muffler/car_muff2.jpg",
+  "title": "Flowmaster Car Muffler",
+  "quantity": 1,
+  "price": 5500,
+  "description": "A deep and throaty tone.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b7f40b55b1b90d5a0832"
   },
   "imgURL": "../images/car_muffler/car_muff3.jpg",
-  "title": "Car Muffler",
+  "title": "Borla Car Muffler",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 6999,
+  "description": "Crafted from high-quality stainless steel.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52ad9c04939ba81ad782"
+    "$oid": "6488b7f50b55b1b90d5a0843"
   },
   "imgURL": "../images/car_muffler/car_muff4.jpg",
-  "title": "Car Muffler",
+  "title": "Gibson Car Muffler",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 5100,
+  "description": "Aggressive tone and enhanced exhaust flow.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52ae9c04939ba81ad785"
-  },
-  "imgURL": "../images/car_muffler/car_muff5.jpg",
-  "title": "Car Muffler",
-  "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647e52af9c04939ba81ad788"
+    "$oid": "6488b7f60b55b1b90d5a0854"
   },
   "imgURL": "../images/car_muffler/car_muff6.jpg",
-  "title": "Car Muffler",
+  "title": "Walker Car Muffler",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Exhaust noise reduction and redirection.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b39c04939ba81ad78b"
+    "$oid": "6488b7f70b55b1b90d5a0865"
+  },
+  "imgURL": "../images/car_muffler/car_muff5.jpg",
+  "title": "Corsa Car Muffler",
+  "quantity": 1,
+  "price": 7999,
+  "description": "Reflective Sound Cancellation (RSC) technology.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b7fa0b55b1b90d5a0876"
   },
   "imgURL": "../images/car_radiator/car_radia1.jpg",
-  "title": "Car Radiator",
+  "title": "Denso Car Radiator",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Deliver efficient cooling performance.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b39c04939ba81ad78e"
+    "$oid": "6488b7fb0b55b1b90d5a0887"
   },
   "imgURL": "../images/car_radiator/car_radia2.jpg",
-  "title": "Car Radiator",
+  "title": "Mishimoto Car Radiator",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2100,
+  "description": "Improved cooling capacity and durability.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b49c04939ba81ad791"
+    "$oid": "6488b7fc0b55b1b90d5a0898"
   },
   "imgURL": "../images/car_radiator/car_radia3.jpg",
-  "title": "Car Radiator",
+  "title": "Koyo Car Radiator",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 1100,
+  "description": "Ensure efficient cooling.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b49c04939ba81ad794"
+    "$oid": "6488b7fd0b55b1b90d5a08a9"
   },
   "imgURL": "../images/car_radiator/car_radia4.jpg",
-  "title": "Car Radiator",
+  "title": "CSF Car Radiator",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4100,
+  "description": "Premium radiator and advanced designs.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b69c04939ba81ad797"
+    "$oid": "6488b7fe0b55b1b90d5a08ba"
   },
   "imgURL": "../images/car_radiator/car_radia5.jpg",
-  "title": "Car Radiator",
+  "title": "Nissens Car Radiator",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Engine cooling system heat exchanger.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52b99c04939ba81ad79a"
+    "$oid": "6488b8020b55b1b90d5a08cb"
   },
   "imgURL": "../images/steering_wheel/steer_wheel1.jpg",
-  "title": "Car Battery",
+  "title": "Momo Car Steering Wheel",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "High-quality steering wheels.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52ba9c04939ba81ad79d"
+    "$oid": "6488b8030b55b1b90d5a08dc"
   },
   "imgURL": "../images/steering_wheel/steer_wheel2.jpg",
-  "title": "Car Battery",
+  "title": "Sparco Car Steering Wheel",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 4100,
+  "description": "Ensuring optimal performance and control.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52ba9c04939ba81ad7a0"
+    "$oid": "6488b8030b55b1b90d5a08ed"
   },
   "imgURL": "../images/steering_wheel/steer_wheel3.jpg",
-  "title": "Car Battery",
+  "title": "Nardi Car Steering Wheel",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2100,
+  "description": "Genuine leather and wood.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52bb9c04939ba81ad7a3"
+    "$oid": "6488b8040b55b1b90d5a08fe"
   },
   "imgURL": "../images/steering_wheel/steer_wheel4.jpg",
-  "title": "Car Battery",
+  "title": "OMP Car Steering Wheel",
   "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "price": 2999,
+  "description": "Constructed with lightweight materials.",
   "__v": 0
 },{
   "_id": {
-    "$oid": "647e52bc9c04939ba81ad7a6"
-  },
-  "imgURL": "../images/steering_wheel/steer_wheel5.jpg",
-  "title": "Car Battery",
-  "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647e52bd9c04939ba81ad7a9"
-  },
-  "imgURL": "../images/steering_wheel/steer_wheel6.jpg",
-  "title": "Car Battery",
-  "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647e52bd9c04939ba81ad7ac"
-  },
-  "imgURL": "../images/steering_wheel/steer_wheel7.jpg",
-  "title": "Car Battery",
-  "quantity": 1,
-  "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
-  "__v": 0
-},{
-  "_id": {
-    "$oid": "647e52be9c04939ba81ad7af"
+    "$oid": "6488b8050b55b1b90d5a090f"
   },
   "imgURL": "../images/steering_wheel/steer_wheel8.jpg",
-  "title": "Car Battery",
+  "title": "Car Steering Wheel",
   "quantity": 1,
   "price": 3100,
-  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia.",
+  "description": "Primary control for vehicle direction.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b8050b55b1b90d5a0920"
+  },
+  "imgURL": "../images/steering_wheel/steer_wheel7.jpg",
+  "title": "NRG Car Steering Wheel",
+  "quantity": 1,
+  "price": 3100,
+  "description": "Sporty appearance and improved control.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b8060b55b1b90d5a0931"
+  },
+  "imgURL": "../images/steering_wheel/steer_wheel6.jpg",
+  "title": "Grant Car Steering Wheel",
+  "quantity": 1,
+  "price": 2999,
+  "description": "Suitable for various vehicle types.",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6488b8070b55b1b90d5a0942"
+  },
+  "imgURL": "../images/steering_wheel/steer_wheel5.jpg",
+  "title": "Personal Car Steering Wheel",
+  "quantity": 1,
+  "price": 3100,
+  "description": "Handcrafted with a focus on individuality and style.",
   "__v": 0
 }]

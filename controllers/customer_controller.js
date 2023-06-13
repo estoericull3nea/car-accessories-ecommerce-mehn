@@ -310,6 +310,15 @@ const gSearchItem = (req, res) => {
     })
 }
 
+const gProfile = (req, res) => {
+    const user = req.user
+    res.render('profile', {pageTitle: 'Profile', user})
+}
+
+const pLogout = (req, res) => {
+    res.redirect('/')
+}
+
 module.exports = {
-    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation, pContactUsForm, gSearchItem
+    gTempHomepage, gLogin, gRegister, pRegister, pLogin, usingMiddleware, pAddToCart, gCart, pDeleteItemCart, gProduct, gOurTeam, pCart, gFaq, gTermsnConditions,gPrivacyPolicy, gAboutUs, gHome, pConfirmation, pContactUsForm, gSearchItem, gProfile, pLogout
 }
