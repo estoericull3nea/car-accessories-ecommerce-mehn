@@ -31,34 +31,30 @@
 
     <section class="cart" id="cart-section">
       <% if (prods != '') { %>
-        <h1 class="nameOfHeader">List Items</h1>
+      <h1 class="nameOfHeader">List Items</h1>
 
-        <% for(let p of prods) {%>
-        <div class="box">
-  
-          <div class="top">
-            <img src="<%= p.imgURL%>" alt="" />
-          </div>
-          <div class="bottom">
-            <h3><%= p.title%></h3>
-            <h4><%= p.price%></h4>
-            <h4><%= p.quantity%></h4>
-            <p class="descript"><%= p.description%></p>
-  
-            <form action="/add-to-cart" method="post">
-              <input type="hidden" name="id" value="<%=p.id%>" />
-              <button class="addToCart" type="submit">Add To Cart</button>
-            </form>
-          </div>
+      <% for(let p of prods) {%>
+      <div class="box">
+        <div class="top">
+          <img src="<%= p.imgURL%>" alt="" />
         </div>
-        <% } %>
-      <% } else { %>
-        <h1 class="nameOfHeader">Empty List</h1>
+        <div class="bottom">
+          <h3><%= p.title%></h3>
+          <h4><%= p.price%></h4>
+          <h4><%= p.quantity%></h4>
+          <p class="descript"><%= p.description%></p>
+
+          <form action="/add-to-cart" method="post">
+            <input type="hidden" name="id" value="<%=p.id%>" />
+            <button class="addToCart" type="submit">Add To Cart</button>
+          </form>
+        </div>
+      </div>
+      <% } %> <% } else { %>
+      <h1 class="nameOfHeader">Empty List</h1>
       <% } %>
-      
     </section>
 
     <%- include("partials/footer") %>
-    <script src="../index.js" src="jquery-3.6.4.min.js"></script>
   </body>
 </html>

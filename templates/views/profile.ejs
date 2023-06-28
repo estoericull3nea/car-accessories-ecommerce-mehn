@@ -3,7 +3,6 @@
     <!-- {{>head}} -->
     <%- include("partials/head") %>
     <style>
-
       .area {
         height: 100vh;
         width: 100%;
@@ -11,7 +10,6 @@
         display: grid;
         place-content: center;
       }
-
 
       .area .top-logout {
         position: relative;
@@ -34,15 +32,13 @@
         margin-bottom: 5rem;
       }
 
-
       .i {
         color: var(--text-low-opacity);
         margin-left: 5rem;
-        font-size: .9rem;
+        font-size: 0.9rem;
         letter-spacing: 1px;
         font-weight: 400;
       }
-
     </style>
   </head>
   <body class="light">
@@ -60,15 +56,19 @@
 
         <div class="bottom">
           <h3>Full Name &nbsp;&nbsp;: <i class="i"><%= user.fullName %></i></h3>
-          <h3>Username  &nbsp;&nbsp;: <i class="i"><%= user.username %></i></h3>
-          <h3>Email     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <i class="i"><%= user.email %></i></h3>
-          <h3>Create At &nbsp;&nbsp;&nbsp;:<i class="i"> <%= user.createdAt %></i></h3>
-          <h3>Updated At&nbsp;: <i class="i"><%= user.updatedAt %></i> </h3>
+          <h3>Username &nbsp;&nbsp;: <i class="i"><%= user.username %></i></h3>
+          <h3>
+            Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+            <i class="i"><%= user.email %></i>
+          </h3>
+          <h3>
+            Create At &nbsp;&nbsp;&nbsp;:<i class="i"> <%= user.createdAt %></i>
+          </h3>
+          <h3>Updated At&nbsp;: <i class="i"><%= user.updatedAt %></i></h3>
         </div>
       </div>
     </div>
 
     <%- include("partials/footer") %>
-    <script src="../index.js" src="jquery-3.6.4.min.js"></script>
   </body>
 </html>
