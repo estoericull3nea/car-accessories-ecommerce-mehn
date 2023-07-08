@@ -43,7 +43,6 @@
               </form>
             </tr>
             <% } %>
-  
             <tr class="lastRow">
               <td></td>
               <td></td>
@@ -51,9 +50,17 @@
               <td></td>
               <td class="price">Total Price: </td>
               <td class="totalPrice"><%= cart.totalPrice %></td>
+
               <td>
                 <form action="/payment" method="POST">
-                  <button class="payNowBtn">Checkout</button>
+                <script
+                  src="//checkout.stripe.com/v2/checkout.js",
+                  class="stripe-button",
+                  data-key="pk_test_51NI9vwDfPidN2UcqC3WsTSwYUQqlqCZQixEtyEpUivYFZvKxA195eg8IRirPPk2HVCBmCf5leYeGoVkzNACmnYM900xMGM6mGg",
+                  data-locale="auto",
+                  data-description="Pay First",
+                  data-amount="<%=(cart.totalPrice * 0.018) * 100%>"
+                ></script>
                 </form>
               </td>
             </tr>

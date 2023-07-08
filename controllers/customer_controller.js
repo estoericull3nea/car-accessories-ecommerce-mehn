@@ -10,6 +10,13 @@ const Token = require('../models/token')
 const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
 
+const pk_test =
+  'pk_test_51NI9vwDfPidN2UcqC3WsTSwYUQqlqCZQixEtyEpUivYFZvKxA195eg8IRirPPk2HVCBmCf5leYeGoVkzNACmnYM900xMGM6mGg'
+
+const sk_test =
+  'sk_test_51NI9vwDfPidN2UcqQDKSupcUL3BqfDdz8Mo94LdFelzzNe5yL40PmM8NOmWU9Dbrm9aUNDTSuGJxJ9V9jDeF1XIS007VvlWeY2'
+
+const stripe = require('stripe')(sk_test)
 const gTempHomepage = (req, res) => {
   res.render('temp_homepage', { pageTitle: 'Welcome to EA, Sign In First' })
 }
@@ -302,11 +309,33 @@ const gSearchItem = (req, res) => {
 
 const gProfile = (req, res) => {
   const user = req.user
+  // console.log(user)
   res.render('profile', { pageTitle: 'Profile', user })
 }
 
 const pLogout = (req, res) => {
   res.redirect('/')
+}
+const pPayment = async (req, res) => {
+  const customer_creation = await stripe.customers
+    .create({
+      email: req.body.email,
+      source: req.body.stripeToken,
+    })
+    .then((customer) => {
+      stripe.charges
+        .create({
+          amount: 100 * 5,
+          description: 'test description',
+          currency: 'usd',
+          customer: customer.id,
+        })
+        .then(() => {
+          req.user.removeAllCart(req.user.id).then(() => {
+            res.render('payment_done')
+          })
+        })
+    })
 }
 
 module.exports = {
@@ -332,4 +361,5 @@ module.exports = {
   gSearchItem,
   gProfile,
   pLogout,
+  pPayment,
 }
