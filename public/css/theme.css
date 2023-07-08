@@ -56,7 +56,6 @@ body.dark .homepage {
   box-shadow: 0 -27px 28px -18px var(--main-color) inset;
 }
 
-
 /* home box dark */
 body.dark .cart .box {
   outline: 2px solid var(--main-color);
@@ -174,4 +173,149 @@ body.dark .payNowBtn:hover {
 
 body.game * {
   font-family: 'Press Start 2P', cursive;
+}
+
+body.game header .logo-container .logo-text {
+  font-size: 0.8rem;
+}
+
+body.game header .navlist li a {
+  font-size: 0.6rem;
+}
+
+body.game header .btn-container .search-container [type='text'] {
+  padding: 8px 10px;
+  font-size: 0.5rem;
+}
+
+body.game header .btn-container .theme-container span {
+  font-size: 0.6rem;
+}
+
+body.game header .btn-container .theme-container .theme-list li {
+  font-size: 0.5rem;
+}
+
+body.game .homepage .left-container h1 {
+  font-size: 1.2rem;
+}
+
+body.game .homepage .left-container p {
+  font-size: 0.5rem;
+}
+
+body.game .homepage .left-container button {
+  font-size: 0.5rem;
+}
+
+body.game .nameOfHeader {
+  font-size: 2rem;
+}
+
+body.game .cart .box .bottom {
+  line-height: 1.5;
+}
+
+body.game .cart .box .bottom h3 {
+  font-size: 0.8rem;
+}
+
+body.game .cart .box .bottom h4 {
+  font-size: 0.8rem;
+}
+
+body.game .cart .box .bottom h3 {
+  font-size: 0.8rem;
+}
+
+body.game .cart .box .bottom p {
+  font-size: 0.6rem;
+}
+
+body.game .cart .bottom button {
+  font-size: 0.5rem;
+}
+
+body.game .main-footer .logo-col h1 {
+  font-size: 0.7rem;
+}
+
+body.game .contact-title {
+  font-size: 0.8rem;
+}
+
+body.game .main-footer .contact-col .flex h1 {
+  font-size: 0.7rem;
+}
+
+body.game .flex + h1 {
+  font-size: 0.5rem;
+}
+
+body.game .quick-links-title a {
+  font-size: 0.6rem;
+}
+
+body.game .any-queries .bottom-area input {
+  font-size: 0.7rem;
+}
+
+body.game .any-queries .bottom-area button {
+  font-size: 0.7rem;
+  padding: 10px 0;
+}
+
+body.game .copyright {
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+body.game .dropdown .selected {
+  font-size: 0.7rem;
+}
+
+body.game .dropdown .bottom-toggle ul li {
+  font-size: 0.6rem;
+}
+
+body.game .products-area input {
+  font-size: 0.7rem;
+  padding-block: 3px;
+}
+
+body.game .btnAddToCart {
+  font-size: 0.6rem;
+  padding: 0 30px;
+}
+
+body.game .box2 h1 {
+  font-size: 2rem;
+}
+
+body.game .box2 .main-body .body p {
+  font-size: 0.7rem;
+}
+
+body.game .bottom-area .bottom {
+  line-height: 2;
+}
+
+body.game .bottom-area .bottom h3 {
+  font-size: 0.8rem;
+}
+
+body.game .bottom-area .bottom i {
+  font-size: 0.5rem;
+}
+
+body.game .firstRow {
+  font-size: 0.7rem;
+}
+
+body.game .cart-title {
+  font-size: 0.6rem;
+}
+
+body.game .description {
+  font-size: 0.6rem;
 }
