@@ -1,6 +1,6 @@
-// if (process.env.NODE_ENV !== 'production') {
-//   require('dotenv').load()
-// }
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 const express = require('express')
 const path = require('path')
@@ -8,7 +8,7 @@ const app = express()
 
 const mongoose = require('mongoose')
 
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000
 const myRoutes = require('./routes/routes')
 
 const static_path = path.join(__dirname, './public')
@@ -16,7 +16,7 @@ const template_path = path.join(__dirname, './templates/views')
 
 // setting connection
 mongoose
-  .connect('mongodb://127.0.0.1:27017/ecommerce-project', {
+  .connect(process.env.MONGODB_URI_COMPASS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -39,10 +39,7 @@ app.set('views', template_path)
 // routes
 app.use('/', myRoutes)
 
-// app.post('/payment', async(req, res) => {
-
-// })
-
-app.listen(port, () => {
-  console.log(`App is running on port: http://localhost:${port}`)
+// if listening
+app.listen(PORT, () => {
+  console.log(`App is running on port: http://localhost:${PORT}`)
 })

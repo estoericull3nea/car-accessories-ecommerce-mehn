@@ -1,3 +1,7 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 const Register = require('../models/register')
 const Product = require('../models/product')
 const AddedList = require('../models/added_list')
@@ -10,11 +14,8 @@ const Token = require('../models/token')
 const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
 
-const pk_test =
-  'pk_test_51NI9vwDfPidN2UcqC3WsTSwYUQqlqCZQixEtyEpUivYFZvKxA195eg8IRirPPk2HVCBmCf5leYeGoVkzNACmnYM900xMGM6mGg'
-
-const sk_test =
-  'sk_test_51NI9vwDfPidN2UcqQDKSupcUL3BqfDdz8Mo94LdFelzzNe5yL40PmM8NOmWU9Dbrm9aUNDTSuGJxJ9V9jDeF1XIS007VvlWeY2'
+const pk_test = process.env.PK_TEST
+const sk_test = process.env.SK_TEST
 
 const stripe = require('stripe')(sk_test)
 const gTempHomepage = (req, res) => {
@@ -30,11 +31,11 @@ const gRegister = (req, res) => {
 }
 // email service
 let transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
+  service: process.env.SERVICE,
+  host: process.env.HOST,
   auth: {
-    user: 'noreply050623@gmail.com',
-    pass: 'xlqhaxnjiowsxuyr',
+    user: process.env.USER_AUTH_FOR_MAILER,
+    pass: process.env.PASS_AUTH_FOR_MAILER,
   },
 })
 
@@ -85,7 +86,7 @@ const pRegister = async (req, res) => {
 
             const mailOptions = {
               to: user.email,
-              from: 'noreply050623@gmail.com',
+              from: process.env.USER_AUTH_FOR_MAILER,
               subject: 'Acc Verification Token',
               html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
             }
@@ -114,25 +115,6 @@ const pConfirmation = (req, res) => {
   res.render('verified')
 }
 
-// const gVerify = (req, res) => {
-//     const email = req.user.email
-
-//     const mailOptions = {
-//         from: 'noreply050623@gmail.com',
-//         to: email,
-//         subject: 'Email Verification',
-//         text: 'Please click the link to verify your email.',
-//       };
-
-//       transporter.sendMail(mailOptions, (err, info) => {
-//         if(err) {
-//             console.log(err);
-//         } else {
-//             console.log('Email sent' + info.response);
-//         }
-//       })
-// }
-
 const pLogin = async (req, res) => {
   try {
     const email = req.body.email
@@ -140,7 +122,6 @@ const pLogin = async (req, res) => {
 
     const useremail = await Register.findOne({ email: email })
     if (useremail.password === password) {
-      // res.status(200).render("main_homepage");
       res.redirect('/home')
     } else {
       res.send('Email or Password is Incorrect')
@@ -259,11 +240,11 @@ const pContactUsForm = (req, res) => {
   const { name, email, message } = req.body
 
   let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
+    service: process.env.SERVICE,
+    host: process.env.HOST,
     auth: {
-      user: 'noreply050623@gmail.com',
-      pass: 'xlqhaxnjiowsxuyr',
+      user: process.env.USER_AUTH_FOR_MAILER,
+      pass: process.env.PASS_AUTH_FOR_MAILER,
     },
   })
 
@@ -275,7 +256,7 @@ const pContactUsForm = (req, res) => {
 
   newMessage.save().then(() => {
     const mailOptions = {
-      to: 'palisocericson87@gmail.com',
+      to: process.env.MY_EMAIL,
       from: email,
       subject: 'User Queries! || New Contact Form',
       text: message,
@@ -292,11 +273,6 @@ const pContactUsForm = (req, res) => {
 
 const gSearchItem = (req, res) => {
   const titleItem = req.query.searchItem
-  // Product.find().then((product) => {
-  //     res.render("searchItem", {
-  //         pageTitle: "Search Products",
-  //     });
-  // });
 
   AllProducts.find({ title: titleItem }).then((prods) => {
     console.log(prods)
@@ -309,7 +285,6 @@ const gSearchItem = (req, res) => {
 
 const gProfile = (req, res) => {
   const user = req.user
-  // console.log(user)
   res.render('profile', { pageTitle: 'Profile', user })
 }
 
