@@ -3,10 +3,6 @@ const Product = require('../models/product')
 
 const empSchema = new mongoose.Schema(
   {
-    fullName: {
-      type: String,
-      required: true,
-    },
     username: {
       type: String,
       required: true,

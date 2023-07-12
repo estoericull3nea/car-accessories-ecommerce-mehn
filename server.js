@@ -17,6 +17,15 @@ const template_path = path.join(__dirname, './templates/views')
 const session = require('express-session')
 const flash = require('connect-flash')
 
+const compression = require('compression')
+const helmet = require('helmet')
+
+// const RateLimit = require('express-rate-limit')
+// const limiter = RateLimit({
+//   windowMs: 1 * 60 * 1000, // 1min
+//   max: 20, // 30 request per minute
+// })
+
 // setting connection
 mongoose
   .connect(process.env.MONGODB_URI_COMPASS, {
@@ -42,6 +51,13 @@ app.use(
   })
 )
 app.use(flash())
+app.use(compression())
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+)
+// app.use(limiter)
 
 // setting path
 app.use(express.static(static_path))
