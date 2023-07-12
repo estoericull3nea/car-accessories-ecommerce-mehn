@@ -16,10 +16,7 @@ const empSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    confirmPassword: {
-      type: String,
-      required: true,
-    },
+
     cart: {
       items: [
         {

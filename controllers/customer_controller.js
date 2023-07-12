@@ -18,6 +18,9 @@ const pk_test = process.env.PK_TEST
 const sk_test = process.env.SK_TEST
 
 const stripe = require('stripe')(sk_test)
+
+const bcrypt = require('bcrypt')
+
 const gTempHomepage = (_, res) => {
   res.render('temp_homepage', { pageTitle: 'Welcome to EA, Sign In First' })
 }
@@ -55,9 +58,7 @@ transporter.verify((err, success) => {
 
 const pRegister = async (req, res) => {
   try {
-    const { email } = req.body
-    const password = req.body.password
-    const cpassword = req.body.confirmPassword
+    const { email, password, confirmPassword } = req.body
 
     const existingUser = await Register.findOne({ email })
 
@@ -69,13 +70,13 @@ const pRegister = async (req, res) => {
       req.flash('message', 'Password must have at least 8 characters')
       res.redirect('/register')
     } else {
-      if (password === cpassword) {
+      if (password === confirmPassword) {
+        const hashedPassword = await bcrypt.hash(password, 10)
         const newUser = new Register({
           fullName: req.body.fullName,
           username: req.body.username,
           email: req.body.email,
-          password: password,
-          confirmPassword: cpassword,
+          password: hashedPassword,
         })
 
         await newUser.save().then((user) => {
@@ -125,12 +126,13 @@ const pConfirmation = (req, res) => {
 
 const pLogin = async (req, res) => {
   try {
-    const email = req.body.email
-    const password = req.body.password
+    const { email, password } = req.body
 
-    const useremail = await Register.findOne({ email: email })
+    const user = await Register.findOne({ email: email })
 
-    if (useremail.password === password) {
+    const decodePassword = await bcrypt.compare(password, user.password)
+
+    if (decodePassword) {
       res.redirect('/home')
     } else {
       req.flash('message', 'Email or Password is Incorrect')
