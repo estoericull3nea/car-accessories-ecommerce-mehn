@@ -1,26 +1,31 @@
+// for load env
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
 
+// for schemas
 const Register = require('../models/register')
 const Product = require('../models/product')
 const AddedList = require('../models/added_list')
 const UserMessage = require('../models/messageAboutUs')
 const AllProducts = require('../models/all_prods')
 
+// for email
 const nodemailer = require('nodemailer')
-
 const Token = require('../models/token')
 const crypto = require('crypto')
+
 const jwt = require('jsonwebtoken')
 
+// for stripe
 const pk_test = process.env.PK_TEST
 const sk_test = process.env.SK_TEST
-
 const stripe = require('stripe')(sk_test)
 
+// for user auth
 const bcrypt = require('bcrypt')
 
+// controllers
 const gTempHomepage = (_, res) => {
   res.render('temp_homepage', { pageTitle: 'Welcome to EA, Sign In First' })
 }
@@ -59,11 +64,9 @@ transporter.verify((err, success) => {
 const pRegister = async (req, res) => {
   try {
     const { email, password, confirmPassword } = req.body
-
     const existingUser = await Register.findOne({ email })
 
     if (existingUser) {
-      // res.json('Email already exist in Database')
       req.flash('message', 'Email already exist in Database')
       res.redirect('/register')
     } else if (password.length <= 7) {
@@ -80,8 +83,6 @@ const pRegister = async (req, res) => {
         })
 
         await newUser.save().then((user) => {
-          // sendVerificationEmail(result, res)
-
           const token = new Token({
             _userId: user._id,
             token: crypto.randomBytes(16).toString('hex'),
@@ -106,11 +107,7 @@ const pRegister = async (req, res) => {
             })
           }) // end token of save
         }) // end of user save
-
-        // await newUser.save()
-        // res.redirect("/login");
       } else {
-        // res.json('password are not match')
         req.flash('message', 'Password are not match')
         res.redirect('/register')
       }
@@ -120,7 +117,7 @@ const pRegister = async (req, res) => {
   }
 }
 
-const pConfirmation = (req, res) => {
+const pConfirmation = (_, res) => {
   res.render('verified')
 }
 
@@ -144,7 +141,7 @@ const pLogin = async (req, res) => {
   }
 }
 
-const usingMiddleware = async (req, res, next) => {
+const usingMiddleware = async (req, _, next) => {
   latestUser = await Register.findOne().sort({ createdAt: -1 }).limit(1)
   const userID = latestUser._id
 
@@ -175,7 +172,7 @@ const gCart = (req, res) => {
     .catch((err) => console.log(err))
 }
 
-const pDeleteItemCart = (req, res, next) => {
+const pDeleteItemCart = (req, res, _) => {
   req.user
     .removeCart(req.body.id)
     .then(() => {
@@ -184,11 +181,11 @@ const pDeleteItemCart = (req, res, next) => {
     .catch((err) => console.log(err))
 }
 
-const gProduct = (req, res) => {
+const gProduct = (_, res) => {
   res.render('products', { pageTitle: 'Products' })
 }
 
-const gOurTeam = (req, res) => {
+const gOurTeam = (_, res) => {
   res.render('our_team', { pageTitle: 'Our Team' })
 }
 
@@ -213,8 +210,8 @@ const pCart = async (req, res) => {
         description,
       })
 
-      const added = await newProd.save()
-      const added2 = await newProd2.save()
+      await newProd.save()
+      await newProd2.save()
       res.redirect('/products#prods-area')
     } else {
       res.redirect('/products#prods-area')
@@ -224,23 +221,23 @@ const pCart = async (req, res) => {
   }
 }
 
-const gFaq = (req, res) => {
+const gFaq = (_, res) => {
   res.render('faq', { pageTitle: 'FAQ' })
 }
 
-const gTermsnConditions = (req, res) => {
+const gTermsnConditions = (_, res) => {
   res.render('terms_and_conditions', { pageTitle: 'Terms and Condition' })
 }
 
-const gPrivacyPolicy = (req, res) => {
+const gPrivacyPolicy = (_, res) => {
   res.render('privacy_policy', { pageTitle: 'Privacy Policy' })
 }
 
-const gAboutUs = (req, res) => {
+const gAboutUs = (_, res) => {
   res.render('about_us', { pageTitle: 'About Us' })
 }
 
-const gHome = (req, res) => {
+const gHome = (_, res) => {
   Product.find().then((products) => {
     res.render('main_homepage', {
       prods: products,
@@ -301,11 +298,11 @@ const gProfile = (req, res) => {
   res.render('profile', { pageTitle: 'Profile', user })
 }
 
-const pLogout = (req, res) => {
+const pLogout = (_, res) => {
   res.redirect('/')
 }
 const pPayment = async (req, res) => {
-  const customer_creation = await stripe.customers
+  await stripe.customers
     .create({
       email: req.body.email,
       source: req.body.stripeToken,
