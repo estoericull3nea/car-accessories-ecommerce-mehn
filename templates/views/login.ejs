@@ -8,6 +8,9 @@
       <div class="signin">
         <form action="/login" method="POST">
           <h1>Sign In</h1>
+          <% if(message.length > 0) { %>
+          <span class="error-message"><%= message %></span>
+          <% } %>
 
           <div class="box">
             <div class="input-control">
@@ -36,14 +39,9 @@
               <span>Don't have an account?</span>
               <button class="btnRegister">Create</button>
             </div>
-            <!-- <p class="x-button">X</p>                 -->
           </div>
         </form>
       </div>
     </div>
-
-    <!-- {{!
-    <script src="../index.js"></script>
-    }} -->
   </body>
 </html>

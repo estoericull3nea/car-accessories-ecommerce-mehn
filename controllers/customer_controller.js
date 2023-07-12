@@ -18,16 +18,19 @@ const pk_test = process.env.PK_TEST
 const sk_test = process.env.SK_TEST
 
 const stripe = require('stripe')(sk_test)
-const gTempHomepage = (req, res) => {
+const gTempHomepage = (_, res) => {
   res.render('temp_homepage', { pageTitle: 'Welcome to EA, Sign In First' })
 }
 
 const gLogin = (req, res) => {
-  res.render('login', { pageTitle: 'Sign In' })
+  res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
 
 const gRegister = (req, res) => {
-  res.render('register', { pageTitle: 'Sign Up' })
+  res.render('register', {
+    pageTitle: 'Sign Up',
+    message: req.flash('message'),
+  })
 }
 // email service
 let transporter = nodemailer.createTransport({
@@ -59,9 +62,12 @@ const pRegister = async (req, res) => {
     const existingUser = await Register.findOne({ email })
 
     if (existingUser) {
-      res.json('Email already exist in Database')
+      // res.json('Email already exist in Database')
+      req.flash('message', 'Email already exist in Database')
+      res.redirect('/register')
     } else if (password.length <= 7) {
-      res.json('Password must have at least 8 characters.')
+      req.flash('message', 'Password must have at least 8 characters')
+      res.redirect('/register')
     } else {
       if (password === cpassword) {
         const newUser = new Register({
@@ -103,7 +109,9 @@ const pRegister = async (req, res) => {
         // await newUser.save()
         // res.redirect("/login");
       } else {
-        res.json('password are not match')
+        // res.json('password are not match')
+        req.flash('message', 'Password are not match')
+        res.redirect('/register')
       }
     }
   } catch (err) {
@@ -121,13 +129,16 @@ const pLogin = async (req, res) => {
     const password = req.body.password
 
     const useremail = await Register.findOne({ email: email })
+
     if (useremail.password === password) {
       res.redirect('/home')
     } else {
-      res.send('Email or Password is Incorrect')
+      req.flash('message', 'Email or Password is Incorrect')
+      res.redirect('/login')
     }
-  } catch (error) {
-    res.status(400).send('Account not found')
+  } catch (err) {
+    req.flash('message', 'Account Not Found, Please Register First')
+    res.redirect('/login')
   }
 }
 

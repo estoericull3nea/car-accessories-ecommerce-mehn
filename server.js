@@ -14,6 +14,9 @@ const myRoutes = require('./routes/routes')
 const static_path = path.join(__dirname, './public')
 const template_path = path.join(__dirname, './templates/views')
 
+const session = require('express-session')
+const flash = require('connect-flash')
+
 // setting connection
 mongoose
   .connect(process.env.MONGODB_URI_COMPASS, {
@@ -30,6 +33,15 @@ mongoose
 // setting middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(
+  session({
+    secret: 'ArabellaGraceJarilloCancino',
+    cookie: { maxAge: 60000 },
+    saveUninitialized: false,
+    resave: false,
+  })
+)
+app.use(flash())
 
 // setting path
 app.use(express.static(static_path))
