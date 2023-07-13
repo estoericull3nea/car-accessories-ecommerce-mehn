@@ -1,0 +1,9 @@
+div.img-control {
+  height: 90vh;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+div.empty-list-controller {
+  text-align: center;
+}

@@ -22,7 +22,7 @@
 
       <div class="right-container">
         <div class="img-con">
-          <img src="../images/main.jpg" alt="" />
+          <img src="../images/main.jpg" alt="empty_cart" loading="lazy" />
         </div>
       </div>
     </section>
@@ -51,7 +51,14 @@
         </div>
       </div>
       <% } %> <% } else { %>
-      <h1 class="nameOfHeader">Empty List</h1>
+      <div class="empty-list-controller">
+        <img
+          src="/images/empty-list-illustration.png"
+          alt="empty_list"
+          loading="lazy"
+        />
+        <h1 class="nameOfHeader">Empty List</h1>
+      </div>
       <% } %>
     </section>
 

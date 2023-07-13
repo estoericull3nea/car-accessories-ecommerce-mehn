@@ -8,7 +8,10 @@
     <!-- {{>header}} -->
     <!-- <h1 class="cart-text">Cart</h1> -->
     <% if (cart.items.length === 0) { %>
+      <div class="img-control">
+        <img src="/images/empty-cart-illustration.webp" alt="">
       <h1 class="cart-text">Empty Cart</h1>
+      </div>
 
     <% } else { %>
       <h1 class="cart-text">Cart</h1>
