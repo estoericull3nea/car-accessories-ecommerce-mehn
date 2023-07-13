@@ -1,6 +1,6 @@
 /* start of homepage */
 .homepage {
-  height: 90vh;
+  height: 95vh;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -39,7 +39,7 @@
 }
 
 .homepage .left-container h3 {
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
   font-size: 1.5rem;
   color: var(--main-color);
 }
@@ -71,7 +71,7 @@
 }
 
 .homepage .right-container .img-con::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -60px;
   left: 5%;
@@ -218,7 +218,7 @@
   }
 
   .homepage .left-container h3 {
-    font-family: "Cabin Sketch", cursive;
+    font-family: 'Cabin Sketch', cursive;
     font-size: 2rem;
     color: var(--main-color);
   }
@@ -238,7 +238,7 @@
 }
 
 @media (max-width: 485px) {
-  header .btn-container .search-container [type="text"] {
+  header .btn-container .search-container [type='text'] {
     width: 80px;
     padding: 3px 4px;
   }

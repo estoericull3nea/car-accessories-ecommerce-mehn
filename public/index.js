@@ -249,6 +249,13 @@ if (payNowBtn) {
   })
 }
 
+const logoutBtn = document.querySelector('.logout-btn')
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    localStorage.length > 0 ? localStorage.clear() : false
+  })
+}
+
 TweenMax.from('.left-container', 2.5, {
   opacity: 0,
   x: -30,

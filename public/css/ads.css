@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Muli";
+@import 'https://fonts.googleapis.com/css?family=Muli';
 
 .carousel {
   width: 95%;
@@ -6,9 +6,11 @@
   padding-top: 380px;
   margin: 50px auto;
   box-shadow: 0 10px 20px -5px rgb(92, 75, 72);
+
+  margin-top: 2rem !important;
 }
 
-.carousel input[name="switch"] {
+.carousel input[name='switch'] {
   display: none;
 }
 
@@ -27,19 +29,19 @@
   transition: all 0.5s;
 }
 
-.carousel input[name="switch"] ~ .thumb {
+.carousel input[name='switch'] ~ .thumb {
   z-index: -1;
 }
-.carousel input[name="switch"] ~ .thumb img {
+.carousel input[name='switch'] ~ .thumb img {
   opacity: 0;
   transform: scale(1.1);
 }
 
-.carousel input[name="switch"]:checked + .thumb {
+.carousel input[name='switch']:checked + .thumb {
   z-index: 0;
 }
 
-.carousel input[name="switch"]:checked + .thumb img {
+.carousel input[name='switch']:checked + .thumb img {
   opacity: 1;
   transform: scale(1);
 }
@@ -63,7 +65,7 @@ a.ep_title {
 .carousel .info > * {
   display: block;
   line-height: 1.5em;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
 
@@ -103,18 +105,18 @@ a.ep_title {
 }
 
 .carousel .info .ep_views_coms > *:before {
-  font-family: "FontAwesome";
+  font-family: 'FontAwesome';
   margin-right: 3px;
 }
 
 .ep_views:before {
-  content: "\f06e";
+  content: '\f06e';
 }
 .ep_coms:before {
-  content: "\f0e5";
+  content: '\f0e5';
 }
 .time_lapsed:before {
-  content: "\f017";
+  content: '\f017';
 }
 .time_lapsed {
   border: 1px solid #ccc;
@@ -125,35 +127,35 @@ a.ep_title {
   margin-left: 10px;
 }
 
-.carousel input[name="switch"] ~ .info {
+.carousel input[name='switch'] ~ .info {
   transform: scale(0);
 }
 
-.carousel input[name="switch"] ~ .info > * {
+.carousel input[name='switch'] ~ .info > * {
   opacity: 0;
   margin-left: 0px;
 }
 
-.carousel input[name="switch"]:checked + .thumb + .info {
+.carousel input[name='switch']:checked + .thumb + .info {
   transform: scale(1);
   transition: 0.5s;
 }
 
-.carousel input[name="switch"]:checked + .thumb + .info > * {
+.carousel input[name='switch']:checked + .thumb + .info > * {
   opacity: 1;
   margin-left: 15px;
   transition: all 0.3s;
 }
 
-.carousel input[name="switch"]:checked + .thumb + .info .title {
+.carousel input[name='switch']:checked + .thumb + .info .title {
   transition-delay: 0.5s;
 }
 
-.carousel input[name="switch"]:checked + .thumb + .info .ep_num_title {
+.carousel input[name='switch']:checked + .thumb + .info .ep_num_title {
   transition-delay: 0.6s;
 }
 
-.carousel input[name="switch"]:checked + .thumb + .info .ep_views_coms {
+.carousel input[name='switch']:checked + .thumb + .info .ep_views_coms {
   transition-delay: 0.7s;
 }
 
@@ -183,7 +185,7 @@ a.ep_title {
 .animate:after {
   left: 0;
   top: 0;
-  content: "";
+  content: '';
   position: absolute;
   width: 0%;
   height: 100%;

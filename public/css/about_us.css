@@ -5,13 +5,13 @@
 .main-title {
   text-align: center !important;
   color: var(--white);
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 /* box1 */
 .box1 {
   height: 100vh;
-  background: url("../images/svg_bg2.svg") no-repeat center center/ cover;
+  background: url('../images/svg_bg2.svg') no-repeat center center/ cover;
   text-align: center;
   margin-top: 1rem;
 }
@@ -44,7 +44,7 @@
 .box2 {
   /* height: 100vh; */
   height: calc(100vh - 10vh);
-  background: url("../images/svg_bg.svg") no-repeat center center/ cover;
+  background: url('../images/svg_bg.svg') no-repeat center center/ cover;
 }
 
 .box2 {
@@ -62,7 +62,7 @@
 
 .box2 h1 {
   color: var(--pure_black);
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .box2 .main-body {
@@ -82,7 +82,7 @@
 /* box3 */
 
 .box3 {
-  background: url("../images/svg_bg3.svg") no-repeat center center/ cover;
+  background: url('../images/svg_bg3.svg') no-repeat center center/ cover;
   height: 100vh;
   margin-top: 1rem;
 }
@@ -93,7 +93,7 @@
 
 .box3 h1 {
   color: var(--pure_black);
-  font-family: "Cabin Sketch", cursive;
+  font-family: 'Cabin Sketch', cursive;
 }
 
 .box3 .main-body {
@@ -114,11 +114,8 @@
   margin-top: 2rem;
   width: 100%;
   display: flex;
+  gap: 0.5rem;
   padding: 0 2%;
-}
-
-.map iframe:first-child {
-  padding-right: 1rem;
 }
 
 .pre-footer {
