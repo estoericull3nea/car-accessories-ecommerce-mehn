@@ -28,7 +28,7 @@ const helmet = require('helmet')
 
 // setting connection
 mongoose
-  .connect(process.env.MONGODB_URI_COMPASS, {
+  .connect(process.env.MONGODB_URI_ATLAS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

@@ -317,6 +317,22 @@ const pPayment = async (req, res) => {
         })
         .then(() => {
           req.user.removeAllCart(req.user.id).then(() => {
+            AddedList.deleteMany({})
+              .then(() => {
+                console.log('All items removed')
+              })
+              .catch((err) => {
+                console.error('Error removing items', err)
+              })
+
+            Product.deleteMany({})
+              .then(() => {
+                console.log('All items removed')
+              })
+              .catch((err) => {
+                console.error('Error removing items', err)
+              })
+
             res.render('payment_done')
           })
         })
