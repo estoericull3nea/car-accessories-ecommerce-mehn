@@ -212,6 +212,7 @@ const pCart = async (req, res) => {
 
       await newProd.save()
       await newProd2.save()
+
       res.redirect('/products#prods-area')
     } else {
       res.redirect('/products#prods-area')
