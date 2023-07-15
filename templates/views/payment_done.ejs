@@ -4,14 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payment Done</title>
-    <link rel="stylesheet" href="/css/payment_done.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        width: 100%;
+
+        display: grid;
+        place-content: center;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        color: green;
+        text-align: center;
+      }
+      .to_home {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      i {
+        color: blue;
+      }
+
+      a:hover {
+        text-decoration: none;
+      }
+
+     
+    </style>
   </head>
   <body>
     <div class="box-in-middle">
-      <h1>Payment Done</h1>
+      <img src="/images/payment_done.gif" alt="" />
+      <h2>Payment Success</h2>
     </div>
-    <h2>
-      <a href="/home"><button>Homepage</button></a>
-    </h2>
+    <div class="to_home">
+      <i class="bx bx-left-arrow-alt"></i>
+      <a href="/home"></i>home</a>
+    </div>
+    
   </body>
 </html>

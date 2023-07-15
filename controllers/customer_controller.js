@@ -290,6 +290,7 @@ const gSearchItem = (req, res) => {
     res.render('searchItem', {
       pageTitle: 'Search Products',
       prods,
+      titleItem,
     })
   })
 }
