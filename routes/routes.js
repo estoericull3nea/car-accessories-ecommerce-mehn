@@ -26,6 +26,14 @@ const {
   pPayment,
 } = require('../controllers/customer_controller')
 
+const isAuth = (req, res, next) => {
+  if (req.session.isAuth) {
+    next()
+  } else {
+    res.redirect('login')
+  }
+}
+
 // setting router
 router.get('/', gTempHomepage)
 router.get('/login', gLogin)
@@ -34,20 +42,20 @@ router.post('/register', pRegister)
 router.post('/login', pLogin)
 router.use(usingMiddleware)
 router.post('/add-to-cart', pAddToCart)
-router.get('/cart', gCart)
+router.get('/cart', isAuth, gCart)
 router.post('/delete-item-cart', pDeleteItemCart)
-router.get('/products', gProduct)
-router.get('/our-team', gOurTeam)
+router.get('/products', isAuth, gProduct)
+router.get('/our-team', isAuth, gOurTeam)
 router.post('/cart', pCart)
-router.get('/faq', gFaq)
-router.get('/terms-and-conditions', gTermsnConditions)
-router.get('/privacy-policy', gPrivacyPolicy)
-router.get('/about_us', gAboutUs)
-router.get('/home', gHome)
-router.get('/confirmation/:tokenId', pConfirmation)
+router.get('/faq', isAuth, gFaq)
+router.get('/terms-and-conditions', isAuth, gTermsnConditions)
+router.get('/privacy-policy', isAuth, gPrivacyPolicy)
+router.get('/about_us', isAuth, gAboutUs)
+router.get('/home', isAuth, gHome)
+router.get('/confirmation/:tokenId', isAuth, pConfirmation)
 router.post('/contact-us', pContactUsForm)
-router.get('/products/search-item', gSearchItem)
-router.get('/profile', gProfile)
+router.get('/products/search-item', isAuth, gSearchItem)
+router.get('/profile', isAuth, gProfile)
 router.post('/logout', pLogout)
 router.post('/payment', pPayment)
 

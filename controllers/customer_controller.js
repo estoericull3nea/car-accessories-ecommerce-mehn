@@ -51,12 +51,9 @@ let transporter = nodemailer.createTransport({
 })
 
 // verify transport
-transporter.verify((err, success) => {
+transporter.verify((err) => {
   if (err) {
     console.log(err)
-  } else {
-    console.log('Ready For Messages')
-    console.log(success)
   }
 })
 // end of email service
@@ -130,6 +127,7 @@ const pLogin = async (req, res) => {
     const decodePassword = await bcrypt.compare(password, user.password)
 
     if (decodePassword) {
+      req.session.isAuth = true
       res.redirect('/home')
     } else {
       req.flash('message', 'Email or Password is Incorrect')
@@ -300,8 +298,13 @@ const gProfile = (req, res) => {
   res.render('profile', { pageTitle: 'Profile', user })
 }
 
-const pLogout = (_, res) => {
-  res.redirect('/')
+const pLogout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err)
+    }
+    res.redirect('/')
+  })
 }
 const pPayment = async (req, res) => {
   await stripe.customers

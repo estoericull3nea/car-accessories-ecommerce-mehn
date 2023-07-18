@@ -20,6 +20,8 @@ const flash = require('connect-flash')
 const compression = require('compression')
 const helmet = require('helmet')
 
+const MongoDBSession = require('connect-mongodb-session')(session)
+
 // const RateLimit = require('express-rate-limit')
 // const limiter = RateLimit({
 //   windowMs: 1 * 60 * 1000, // 1min
@@ -33,11 +35,13 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    console.log('connection success')
+    console.log('MongoDB Connected')
   })
-  .catch((e) => {
-    console.log(`connection failed ${e}`)
-  })
+
+const store = new MongoDBSession({
+  uri: process.env.MONGODB_URI_COMPASS,
+  collection: 'user sessions',
+})
 
 // setting middlewares
 app.use(express.json())
@@ -48,6 +52,7 @@ app.use(
     cookie: { maxAge: 60000 },
     saveUninitialized: false,
     resave: false,
+    store: store,
   })
 )
 app.use(flash())
@@ -69,5 +74,5 @@ app.use('/', myRoutes)
 
 // if listening
 app.listen(PORT, () => {
-  console.log(`App is running on port: http://localhost:${PORT}`)
+  console.log(`Server Running`)
 })
