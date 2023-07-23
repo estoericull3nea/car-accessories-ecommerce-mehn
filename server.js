@@ -30,7 +30,7 @@ const MongoDBSession = require('connect-mongodb-session')(session)
 
 // setting connection
 mongoose
-  .connect(process.env.MONGODB_URI_ATLAS, {
+  .connect(process.env.MONGODB_URI_COMPASS, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

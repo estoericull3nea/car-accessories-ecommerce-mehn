@@ -66,8 +66,8 @@ const pRegister = async (req, res) => {
     if (existingUser) {
       req.flash('message', 'Email already exist in Database')
       res.redirect('/register')
-    } else if (password.length <= 7) {
-      req.flash('message', 'Password must have at least 8 characters')
+    } else if (password.length < 6) {
+      req.flash('message', 'Password must have at least 6 characters')
       res.redirect('/register')
     } else {
       if (password === confirmPassword) {
@@ -79,31 +79,33 @@ const pRegister = async (req, res) => {
           password: hashedPassword,
         })
 
-        await newUser.save().then((user) => {
-          const token = new Token({
-            _userId: user._id,
-            token: crypto.randomBytes(16).toString('hex'),
-          })
-          token.save().then((err) => {
-            if (err) {
-              console.log(err)
-            }
+        await newUser.save()
+        res.redirect('/login')
+        // .then((user) => {
+        //   const token = new Token({
+        //     _userId: user._id,
+        //     token: crypto.randomBytes(16).toString('hex'),
+        //   })
+        //   token.save().then((err) => {
+        //     if (err) {
+        //       console.log(err)
+        //     }
 
-            const mailOptions = {
-              to: user.email,
-              from: process.env.USER_AUTH_FOR_MAILER,
-              subject: 'Acc Verification Token',
-              html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
-            }
+        //     const mailOptions = {
+        //       to: user.email,
+        //       from: process.env.USER_AUTH_FOR_MAILER,
+        //       subject: 'Acc Verification Token',
+        //       html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
+        //     }
 
-            transporter.sendMail(mailOptions, (err) => {
-              if (err) {
-                console.log('failed')
-              }
-              res.render('pleaseCheck')
-            })
-          }) // end token of save
-        }) // end of user save
+        //     transporter.sendMail(mailOptions, (err) => {
+        //       if (err) {
+        //         console.log('failed')
+        //       }
+        //       res.render('pleaseCheck')
+        //     })
+        //   }) // end token of save
+        // }) // end of user save
       } else {
         req.flash('message', 'Password are not match')
         res.redirect('/register')
@@ -139,16 +141,20 @@ const pLogin = async (req, res) => {
   }
 }
 
-const usingMiddleware = async (req, _, next) => {
-  latestUser = await Register.findOne().sort({ createdAt: -1 }).limit(1)
-  const userID = latestUser._id
+const usingMiddleware = async (req, res, next) => {
+  const latestUser = await Register.findOne().sort({ createdAt: -1 }).limit(1)
+  if (!latestUser) {
+    res.redirect('/register')
+  } else {
+    const userID = await latestUser._id
 
-  Register.findById(userID)
-    .then((userInDb) => {
-      req.user = userInDb
-      next()
-    })
-    .catch((err) => console.log(err))
+    await Register.findById(userID)
+      .then((userInDb) => {
+        req.user = userInDb
+        next()
+      })
+      .catch((err) => console.log(err))
+  }
 }
 
 const pAddToCart = (req, res) => {
