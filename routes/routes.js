@@ -59,27 +59,4 @@ router.get('/profile', isAuth, gProfile)
 router.post('/logout', pLogout)
 router.post('/payment', pPayment)
 
-// router.get("/verify", gVerify)
-
-// router.get("/profile", (req, res) => {
-//   req.user
-//     .populate("cart.items.productId")
-//     .then((user) => {
-//       res.render("profile", {
-//         cart: user.cart,
-//         pageTitle: "Profile",
-//       });
-//     })
-//     .catch((err) => console.log(err));
-// });
-
-// router.post("/delete-list", (req, res) => {
-//   try {
-//     Product.deleteOne({ _id: req.body.id }).then((result) => {
-//       res.redirect("/home");
-//     });
-//   } catch (error) {
-//     res.send(error);
-//   }
-// });
 module.exports = router
