@@ -25,7 +25,7 @@ const bcrypt = require('bcrypt')
 
 // controllers
 const gTempHomepage = (_, res) => {
-  res.render('temp_homepage', { pageTitle: 'Welcome to EA, Sign In First' })
+  res.render('temp_homepage', { pageTitle: 'EA' })
 }
 
 const gLogin = (req, res) => {
@@ -229,7 +229,7 @@ const gFaq = (_, res) => {
 }
 
 const gTermsnConditions = (_, res) => {
-  res.render('terms_and_conditions', { pageTitle: 'Terms and Condition' })
+  res.render('terms_and_conditions', { pageTitle: 'Terms and Conditions' })
 }
 
 const gPrivacyPolicy = (_, res) => {
@@ -244,7 +244,7 @@ const gHome = (_, res) => {
   Product.find().then((products) => {
     res.render('main_homepage', {
       prods: products,
-      pageTitle: 'Welcome to EA',
+      pageTitle: 'EA',
     })
   })
 }
