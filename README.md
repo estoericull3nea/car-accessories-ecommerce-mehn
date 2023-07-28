@@ -27,8 +27,6 @@ EJS structures content (template engine), CSS styles presentation, modern JS add
     <dd>- uses an event-driven, non-blocking I/O model, making it efficient for handling concurrent operations and real-time applications..</dd>
   </dl>
 
- 
-
    <li>EXPRESS JS</li>
   <dl>
     <dd>- popular open-source web application framework for Node.js. It offers features such as routing, middleware support, and integration with various templating engines, allowing developers to quickly and efficiently build server-side applications in the Node.js environment.</dd>
@@ -47,7 +45,6 @@ EJS structures content (template engine), CSS styles presentation, modern JS add
     <dd>- for user authentication.</dd>
   </dl>
 
-  
   <li>Bcrypt</li>
   <dl>
     <dd>- for user password encryption and decryption</dd>
@@ -73,7 +70,6 @@ EJS structures content (template engine), CSS styles presentation, modern JS add
     <dd>- for payment</dd>
   </dl>
 
-  
 </ul>
 
 <h1>Conclusion</h1>
@@ -81,4 +77,3 @@ EJS structures content (template engine), CSS styles presentation, modern JS add
 <br>
 Live Site At.
 <a href="https://ecommerce-ea.onrender.com/">https://ecommerce-ea.onrender.com/</a>
-
