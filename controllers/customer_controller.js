@@ -3,9 +3,9 @@ require('dotenv').config()
 
 const User = require('../models/user')
 const Product = require('../models/product')
-const AddedList = require('../models/added_list')
-const UserMessage = require('../models/messageAboutUs')
-const AllProducts = require('../models/all_prods')
+const AddedList = require('../models/AddedList')
+const UserMessage = require('../models/message')
+const AllProducts = require('../models/allproduct')
 
 // for email
 const nodemailer = require('nodemailer')
