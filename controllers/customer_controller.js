@@ -201,7 +201,7 @@ const pLogin = async (req, res) => {
       })
     }
     // passed
-
+    req.session.isAuth = true
     res.redirect('/home')
   } catch (error) {
     console.log(error)
