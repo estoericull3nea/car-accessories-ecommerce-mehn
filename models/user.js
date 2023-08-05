@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const Product = require('../models/product')
+const Product = require('./product')
 
-const empSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -38,7 +38,7 @@ const empSchema = new mongoose.Schema(
   { timestamps: true }
 )
 
-empSchema.methods.addToCart = async function (productId) {
+UserSchema.methods.addToCart = async function (productId) {
   const product = await Product.findById(productId)
 
   if (product) {
@@ -62,7 +62,7 @@ empSchema.methods.addToCart = async function (productId) {
   }
 }
 
-empSchema.methods.removeCart = async function (productId) {
+UserSchema.methods.removeCart = async function (productId) {
   const cart = this.cart
   const isExisting = cart.items.findIndex(
     (objInItems) =>
@@ -76,12 +76,11 @@ empSchema.methods.removeCart = async function (productId) {
   }
 }
 
-empSchema.methods.removeAllCart = async function (productId) {
+UserSchema.methods.removeAllCart = async function (productId) {
   const cart = this.cart
   cart.items.splice(0, cart.items.length)
   this.cart.totalPrice = 0
   return this.save()
 }
 
-const Register = new mongoose.model('Register', empSchema)
-module.exports = Register
+module.exports = new mongoose.model('User', UserSchema)

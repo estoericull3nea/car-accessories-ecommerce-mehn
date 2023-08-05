@@ -1,7 +1,7 @@
 // for load env
 require('dotenv').config()
 
-const Register = require('../models/register')
+const User = require('../models/user')
 const Product = require('../models/product')
 const AddedList = require('../models/added_list')
 const UserMessage = require('../models/messageAboutUs')
@@ -59,7 +59,7 @@ const pRegister = async (req, res) => {
   try {
     // vars
     const { username, email, password, confirmPassword } = req.body
-    const user = await Register.findOne({ email })
+    const user = await User.findOne({ email })
     const errors = []
 
     // validations
@@ -88,7 +88,7 @@ const pRegister = async (req, res) => {
 
     // passed
     const hashedPass = await bcrypt.hash(password, 10)
-    const userToAdd = new Register({
+    const userToAdd = new User({
       username,
       email,
       password: hashedPass,
@@ -102,7 +102,7 @@ const pRegister = async (req, res) => {
 
   // try {
   //   const { username, email, password, confirmPassword } = req.body
-  //   const existingUser = await Register.findOne({ email })
+  //   const existingUser = await User.findOne({ email })
   //   if (existingUser) {
   //     req.flash('message', 'Email already registered.')
   //     res.redirect('/register')
@@ -174,7 +174,7 @@ const pLogin = async (req, res) => {
       })
     }
 
-    const user = await Register.findOne({ email })
+    const user = await User.findOne({ email })
 
     if (!user) {
       errors.push({ msg: 'Email not registered!' })
@@ -209,13 +209,13 @@ const pLogin = async (req, res) => {
 }
 
 const usingMiddleware = async (req, res, next) => {
-  const latestUser = await Register.findOne().sort({ createdAt: -1 }).limit(1)
+  const latestUser = await User.findOne().sort({ createdAt: -1 }).limit(1)
   if (!latestUser) {
     res.redirect('/register')
   } else {
     const userID = await latestUser._id
 
-    await Register.findById(userID)
+    await User.findById(userID)
       .then((userInDb) => {
         req.user = userInDb
         next()

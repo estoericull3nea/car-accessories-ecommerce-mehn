@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose')
 
-const prodAddedSchema = new mongoose.Schema({
+const ProdAddedSchema = new mongoose.Schema({
   imgURL: {
     type: String,
     requried: true,
@@ -21,6 +21,6 @@ const prodAddedSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-});
+})
 
-module.exports = new mongoose.model("prodAdded", prodAddedSchema);
+module.exports = new mongoose.model('prodAdded', ProdAddedSchema)
