@@ -7,11 +7,10 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Press Start 2P", cursive;
   text-decoration: none;
   list-style-type: none;
   scroll-behavior: smooth;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 :root {

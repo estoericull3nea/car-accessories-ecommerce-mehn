@@ -1,7 +1,6 @@
 // for load env
 require('dotenv').config()
 
-// for schemas
 const Register = require('../models/register')
 const Product = require('../models/product')
 const AddedList = require('../models/added_list')
@@ -58,60 +57,100 @@ transporter.verify((err) => {
 
 const pRegister = async (req, res) => {
   try {
-    const { email, password, confirmPassword } = req.body
-    const existingUser = await Register.findOne({ email })
+    // vars
+    const { username, email, password, confirmPassword } = req.body
+    const user = await Register.findOne({ email })
+    const errors = []
 
-    if (existingUser) {
-      req.flash('message', 'Email already exist in Database')
-      res.redirect('/register')
-    } else if (password.length < 6) {
-      req.flash('message', 'Password must have at least 6 characters')
-      res.redirect('/register')
-    } else {
-      if (password === confirmPassword) {
-        const hashedPassword = await bcrypt.hash(password, 10)
-        const newUser = new Register({
-          fullName: req.body.fullName,
-          username: req.body.username,
-          email: req.body.email,
-          password: hashedPassword,
-        })
-
-        await newUser.save()
-        res.redirect('/login')
-        // .then((user) => {
-        //   const token = new Token({
-        //     _userId: user._id,
-        //     token: crypto.randomBytes(16).toString('hex'),
-        //   })
-        //   token.save().then((err) => {
-        //     if (err) {
-        //       console.log(err)
-        //     }
-
-        //     const mailOptions = {
-        //       to: user.email,
-        //       from: process.env.USER_AUTH_FOR_MAILER,
-        //       subject: 'Acc Verification Token',
-        //       html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
-        //     }
-
-        //     transporter.sendMail(mailOptions, (err) => {
-        //       if (err) {
-        //         console.log('failed')
-        //       }
-        //       res.render('pleaseCheck')
-        //     })
-        //   }) // end token of save
-        // }) // end of user save
-      } else {
-        req.flash('message', 'Password are not match')
-        res.redirect('/register')
-      }
+    // validations
+    if (!username || !email || !password || !confirmPassword) {
+      errors.push({ msg: 'All fields is required!' })
     }
-  } catch (err) {
-    res.status(400).send(err)
+    if (password !== confirmPassword) {
+      errors.push({ msg: 'Password not match!' })
+    }
+    if (password.length < 6) {
+      errors.push({ msg: 'Password must atleast 6 chars!' })
+    }
+    if (user) {
+      errors.push({ msg: 'Email already registered!' })
+    }
+    if (errors.length > 0) {
+      return res.render('register', {
+        errors,
+        username,
+        email,
+        password,
+        confirmPassword,
+        pageTitle: 'Register',
+      })
+    }
+
+    // passed
+    const hashedPass = await bcrypt.hash(password, 10)
+    const userToAdd = new Register({
+      username,
+      email,
+      password: hashedPass,
+    })
+    await userToAdd.save()
+    req.flash('success_msg', 'You are now Registered!')
+    res.redirect('/login')
+  } catch (error) {
+    console.log(error.message)
   }
+
+  // try {
+  //   const { username, email, password, confirmPassword } = req.body
+  //   const existingUser = await Register.findOne({ email })
+  //   if (existingUser) {
+  //     req.flash('message', 'Email already registered.')
+  //     res.redirect('/register')
+  //   } else if (password.length < 6) {
+  //     req.flash('message', 'Password must have at least 6 characters')
+  //     res.redirect('/register')
+  //   } else {
+  //     if (password === confirmPassword) {
+  //       const hashedPassword = await bcrypt.hash(password, 10)
+  //       const newUser = new Register({
+  //         fullName: req.body.fullName,
+  //         username: req.body.username,
+  //         email: req.body.email,
+  //         password: hashedPassword,
+  //       })
+  //       await newUser.save()
+  //       res.redirect('/login')
+  //       // .then((user) => {
+  //       //   const token = new Token({
+  //       //     _userId: user._id,
+  //       //     token: crypto.randomBytes(16).toString('hex'),
+  //       //   })
+  //       //   token.save().then((err) => {
+  //       //     if (err) {
+  //       //       console.log(err)
+  //       //     }
+  //       //     const mailOptions = {
+  //       //       to: user.email,
+  //       //       from: process.env.USER_AUTH_FOR_MAILER,
+  //       //       subject: 'Acc Verification Token',
+  //       //       html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
+  //       //     }
+  //       //     transporter.sendMail(mailOptions, (err) => {
+  //       //       if (err) {
+  //       //         console.log('failed')
+  //       //       }
+  //       //       res.render('pleaseCheck')
+  //       //     })
+  //       //   }) // end token of save
+  //       // }) // end of user save
+  //     } else {
+  //       req.flash('message', 'Password are not match')
+  //       res.redirect('/register')
+  //     }
+  //   }
+  // } catch (err) {
+  //   res.status(400).send(err)
+  // }
 }
 
 const pConfirmation = (_, res) => {
@@ -120,22 +159,52 @@ const pConfirmation = (_, res) => {
 
 const pLogin = async (req, res) => {
   try {
+    // vars
     const { email, password } = req.body
+    const errors = []
 
-    const user = await Register.findOne({ email: email })
-
-    const decodePassword = await bcrypt.compare(password, user.password)
-
-    if (decodePassword) {
-      req.session.isAuth = true
-      res.redirect('/home')
-    } else {
-      req.flash('message', 'Email or Password is Incorrect')
-      res.redirect('/login')
+    // validations
+    if (!email || !password) {
+      errors.push({ msg: 'All fields is required!' })
+      return res.render('login', {
+        errors,
+        email,
+        password,
+        pageTitle: 'Login',
+      })
     }
-  } catch (err) {
-    req.flash('message', 'Account Not Found, Please Register First')
-    res.redirect('/login')
+
+    const user = await Register.findOne({ email })
+
+    if (!user) {
+      errors.push({ msg: 'Email not registered!' })
+      return res.render('login', {
+        errors,
+        email,
+        password,
+        pageTitle: 'Login',
+      })
+    }
+
+    const match = await bcrypt.compare(password, user.password)
+
+    if (!match) {
+      errors.push({ msg: 'Password not match!' })
+    }
+
+    if (errors.length > 0) {
+      return res.render('login', {
+        errors,
+        email,
+        password,
+        pageTitle: 'Login',
+      })
+    }
+    // passed
+
+    res.redirect('/home')
+  } catch (error) {
+    console.log(error)
   }
 }
 

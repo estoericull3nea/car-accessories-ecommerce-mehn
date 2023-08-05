@@ -1,68 +1,95 @@
 <html lang="en">
   <head>
-    <%- include("partials/head") %>
     <!-- {{>head}} -->
+    <%- include("partials/head") %>
+    <style>
+      * {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .login,
+      .register {
+        width: 100%;
+      }
+
+      body {
+        display: grid;
+        place-content: center;
+      }
+
+      form {
+        width: 350px;
+      }
+
+      .alert-danger {
+        height: 40px;
+      }
+
+      .btn-close {
+        font-size: 0.6rem;
+        height: 0px;
+      }
+
+      .p-error {
+        position: relative;
+        top: -8px;
+      }
+    </style>
   </head>
   <body class="light">
-    <div class="container">
-      <div class="register">
-        <form action="/register" method="POST">
-          <h1>Register</h1>
+    <div class="container pt-2 border border-black rounded">
+      <h1 class="text-center mb-0 mt-1">Register</h1>
+      <form action="/register" method="POST" class="pt-3 p-3 mb-0">
+        <!-- error -->
+        <%- include('./partials/messages') %>
+        <!-- end error -->
 
-          <% if(message.length > 0) { %>
-          <p class="error-message"><%= message %></p>
-          <% } %>
+        <div class="mb-1">
+          <label class="form-label mb-0">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            value="<%= typeof username != 'undefined' ? username : ''%>"
+          />
+        </div>
+        <div class="mb-1">
+          <label class="form-label mb-0">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            value="<%= typeof email != 'undefined' ? email : ''%>"
+          />
+        </div>
 
-          <div class="box">
-            <div class="input-control">
-              <i class="bx bx-user-plus"></i>
-              <input
-                type="text"
-                placeholder="Username *"
-                name="username"
-                required
-              />
-            </div>
+        <div class="mb-1">
+          <label class="form-label mb-0">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            value="<%= typeof password != 'undefined' ? password : ''%>"
+          />
+        </div>
 
-            <div class="input-control">
-              <i class="bx bx-envelope"></i>
-              <input
-                type="email"
-                placeholder="test@gmail.com *"
-                name="email"
-                required
-              />
-            </div>
-            <div class="input-control">
-              <i class="bx bx-lock-alt"></i>
-              <input
-                class="pass"
-                type="password"
-                placeholder="Password *"
-                name="password"
-                required
-              />
-            </div>
-
-            <div class="input-control">
-              <i class="bx bx-lock"></i>
-              <input
-                type="password"
-                placeholder="Confirm Password *"
-                name="confirmPassword"
-                required
-              />
-            </div>
-
-            <button class="btnSignIn">Register</button>
-
-            <div class="lower">
-              <span>Have an account?</span>
-              <button class="btnToLogin">Log In</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        <div class="mb-1">
+          <label class="form-label mb-0">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="confirmPassword"
+            value="<%= typeof confirmPassword != 'undefined' ? confirmPassword : ''%>"
+          />
+        </div>
+        <div class="mt-3 btn-login-container">
+          <button type="submit" class="btn btn-success login">Register</button>
+        </div>
+        <p class="mt-2 mb-0">Already have an account?</p>
+        <p class="">
+          <a href="/login" class="btn btn-outline-dark register"> Login </a>
+        </p>
+      </form>
     </div>
   </body>
 </html>

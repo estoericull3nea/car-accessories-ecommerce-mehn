@@ -2,46 +2,80 @@
   <head>
     <!-- {{>head}} -->
     <%- include("partials/head") %>
+    <style>
+      * {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .login,
+      .register {
+        width: 100%;
+      }
+
+      body {
+        display: grid;
+        place-content: center;
+      }
+
+      form {
+        width: 350px;
+      }
+
+      .alert-danger {
+        height: 40px;
+      }
+
+      .alert-success {
+        height: 40px;
+      }
+
+      .btn-close {
+        font-size: 0.6rem;
+        height: 0px;
+      }
+
+      .p-error {
+        position: relative;
+        top: -8px;
+      }
+    </style>
   </head>
   <body class="light">
-    <div class="container">
-      <div class="signin">
-        <form action="/login" method="POST">
-          <h1>Sign In</h1>
-          <% if(message.length > 0) { %>
-          <span class="error-message"><%= message %></span>
-          <% } %>
+    <div class="container pt-5 border border-black rounded">
+      <h1 class="text-center mb-0">Sign In</h1>
+      <form action="/login" method="POST" class="pt-3 p-3">
+        <!-- error -->
+        <%- include('./partials/messages') %>
+        <!-- end error -->
+        <div class="mb-3">
+          <label class="form-label mb-0">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            value="<%= typeof email != 'undefined' ? email : ''%>"
+          />
+        </div>
 
-          <div class="box">
-            <div class="input-control">
-              <i class="bx bx-envelope"></i>
-              <input
-                type="text"
-                placeholder="example@gmail.com *"
-                name="email"
-                autofocus
-                required
-              />
-            </div>
-            <div class="input-control">
-              <i class="bx bx-lock-alt"></i>
-              <input
-                type="password"
-                placeholder="Password *"
-                name="password"
-                required
-              />
-            </div>
+        <div class="mb-3">
+          <label class="form-label mb-0">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            value="<%= typeof password != 'undefined' ? password : ''%>"
+          />
+        </div>
 
-            <button class="btnSignIn">Sign In</button>
+        <button type="submit" class="btn btn-success login">Login</button>
 
-            <div class="lower">
-              <span>Don't have an account?</span>
-              <button class="btnRegister">Create</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        <p class="mt-2 mb-0">Dont' have an account?</p>
+        <p>
+          <a href="/register" class="btn btn-outline-dark register">
+            Register
+          </a>
+        </p>
+      </form>
     </div>
   </body>
 </html>
