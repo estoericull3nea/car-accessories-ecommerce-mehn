@@ -2,12 +2,14 @@
   <head>
     <!-- {{>head}} -->
     <%- include("partials/head") %>
+    <link rel="stylesheet" href="css/cart.css" />
+
   </head>
   <body class="light">
     <%- include("partials/header") %>
     
     <!-- {{>header}} -->
-    <!-- <h1 class="cart-text">Cart</h1> -->
+    <!-- <h1 class="cart-text">Cart</h1>  -->
     <% if (cart.items.length === 0) { %>
       <div class="img-control">
         <img src="/images/empty-cart-illustration.webp" alt="">

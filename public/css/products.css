@@ -1,3 +1,30 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  scroll-behavior: smooth;
+  font-family: 'Nunito', sans-serif;
+}
+
+:root {
+  --white: #f5f1ee;
+  --pure-black: black;
+  --dark-black: #58626c;
+  --main-color: #8f4f07;
+  --text-low-opacity: rgba(0, 0, 0, 0.563);
+}
+
+section {
+  padding: 50px 5%;
+}
+
 .products-area {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

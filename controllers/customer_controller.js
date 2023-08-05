@@ -153,10 +153,6 @@ const pRegister = async (req, res) => {
   // }
 }
 
-const pConfirmation = (_, res) => {
-  res.render('verified')
-}
-
 const pLogin = async (req, res) => {
   try {
     // vars
@@ -435,7 +431,6 @@ module.exports = {
   gPrivacyPolicy,
   gAboutUs,
   gHome,
-  pConfirmation,
   pContactUsForm,
   gSearchItem,
   gProfile,

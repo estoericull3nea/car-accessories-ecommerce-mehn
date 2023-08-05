@@ -1,11 +1,10 @@
 <html lang="en">
   <head>
-    <!-- {{>head}} -->
     <%- include('partials/head') %>
+    <link rel="stylesheet" href="css/aboutUs.css" />
   </head>
   <body class="light">
     <%- include("partials/header") %>
-    <!-- {{>header}} -->
 
     <div class="box box2">
       <h1 class="main-title">About Us</h1>
@@ -27,9 +26,6 @@
     </div>
 
     <div class="box box1">
-      <!-- {{!
-      <h1 class="main-title">Vision Mission</h1>
-      }} -->
       <div class="main-body">
         <div class="title">
           <h3>Vision</h3>
@@ -172,10 +168,7 @@
     </div>
 
     <%- include("partials/footer") %>
-    <!-- {{>footer}} -->
-    <!-- {{!
-    <script src="../index.js"></script>
-    }} -->
+
     <script>
       const sr = ScrollReveal({
         distance: '40px',

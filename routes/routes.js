@@ -18,7 +18,6 @@ const {
   gPrivacyPolicy,
   gAboutUs,
   gHome,
-  pConfirmation,
   pContactUsForm,
   gSearchItem,
   gProfile,
@@ -52,7 +51,6 @@ router.get('/terms-and-conditions', isAuth, gTermsnConditions)
 router.get('/privacy-policy', isAuth, gPrivacyPolicy)
 router.get('/about_us', isAuth, gAboutUs)
 router.get('/home', isAuth, gHome)
-router.get('/confirmation/:tokenId', isAuth, pConfirmation)
 router.post('/contact-us', pContactUsForm)
 router.get('/products/search-item', isAuth, gSearchItem)
 router.get('/profile', isAuth, gProfile)
