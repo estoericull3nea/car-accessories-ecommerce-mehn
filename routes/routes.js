@@ -1,7 +1,6 @@
 const router = require('express').Router()
 
 const {
-  gTempHomepage,
   gLogin,
   gRegister,
   pRegister,
@@ -34,7 +33,7 @@ const isAuth = (req, res, next) => {
 }
 
 // setting router
-router.get('/', gTempHomepage)
+router.get('/', gHome)
 router.get('/login', gLogin)
 router.get('/register', gRegister)
 router.post('/register', pRegister)
@@ -50,7 +49,6 @@ router.get('/faq', isAuth, gFaq)
 router.get('/terms-and-conditions', isAuth, gTermsnConditions)
 router.get('/privacy-policy', isAuth, gPrivacyPolicy)
 router.get('/about_us', isAuth, gAboutUs)
-router.get('/home', isAuth, gHome)
 router.post('/contact-us', pContactUsForm)
 router.get('/products/search-item', isAuth, gSearchItem)
 router.get('/profile', isAuth, gProfile)

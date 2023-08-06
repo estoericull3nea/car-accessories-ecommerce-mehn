@@ -23,9 +23,6 @@ const stripe = require('stripe')(sk_test)
 const bcrypt = require('bcrypt')
 
 // controllers
-const gTempHomepage = (_, res) => {
-  res.render('temp_homepage', { pageTitle: 'EA' })
-}
 
 const gLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
@@ -198,7 +195,7 @@ const pLogin = async (req, res) => {
     }
     // passed
     req.session.isAuth = true
-    res.redirect('/home')
+    res.redirect('/')
   } catch (error) {
     console.log(error)
   }
@@ -307,7 +304,7 @@ const gAboutUs = (_, res) => {
 
 const gHome = (_, res) => {
   Product.find().then((products) => {
-    res.render('main_homepage', {
+    res.render('homepage', {
       prods: products,
       pageTitle: 'EA',
     })
@@ -414,7 +411,6 @@ const pPayment = async (req, res) => {
 }
 
 module.exports = {
-  gTempHomepage,
   gLogin,
   gRegister,
   pRegister,
