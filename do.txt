@@ -1,0 +1,58 @@
+ea+logo      home products about us our team     search theme cart burger
+-----------------------------------
+<link rel="stylesheet" href="css/header.css" />
+
+<header>
+  <div class="logo-container">
+    <p class="logo-text">EA</p>
+    <a class="logo-item" href="#home"
+      ><img src="../icons/tire_transparent.png" alt=""
+    /></a>
+  </div>
+
+  <ul class="navlist">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/products">Products</a></li>
+    <li><a href="/about_us">About Us</a></li>
+    <li><a href="/our-team">Our Team</a></li>
+  </ul>
+
+  <div class="btn-container">
+    <div class="menu-container">
+      <i class="bx bx-menu-alt-right"></i>
+    </div>
+
+    <form action="/products/search-item" method="get">
+      <div class="search-container">
+        <input type="text" placeholder="Search..." name="searchItem" />
+        <i class="bx bx-search-alt"></i>
+      </div>
+    </form>
+
+    <div class="theme-container">
+      <span class="default">Select Theme</span>
+      <i class="bx bx-chevron-right"></i>
+
+      <ul class="theme-list">
+        <li class="item">Light</li>
+        <li class="item">Dark</li>
+        <li class="item">Game</li>
+      </ul>
+    </div>
+
+    <div class="profile-container">
+      <a style="color: var(--black)" href="/profile">
+        <i class="bx bx-user"></i>
+      </a>
+    </div>
+
+    <div class="cart-container">
+      <a style="color: var(--black)" href="/cart">
+        <i class="bx bx-cart"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+https://www.youtube.com/watch?v=zOtxP7ahi4M

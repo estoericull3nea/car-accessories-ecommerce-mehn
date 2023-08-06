@@ -253,7 +253,7 @@ const gProduct = (_, res) => {
 }
 
 const gOurTeam = (_, res) => {
-  res.render('our_team', { pageTitle: 'Our Team' })
+  res.render('ourTeam', { pageTitle: 'Our Team' })
 }
 
 const pCart = async (req, res) => {
@@ -302,7 +302,7 @@ const gPrivacyPolicy = (_, res) => {
 }
 
 const gAboutUs = (_, res) => {
-  res.render('about_us', { pageTitle: 'About Us' })
+  res.render('aboutUs', { pageTitle: 'About Us' })
 }
 
 const gHome = (_, res) => {

@@ -1,53 +1,123 @@
-<link rel="stylesheet" href="css/header.css" />
+<style>
+  .offcanvas {
+    width: 300px !important;
+  }
 
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .nav-item:hover {
+    color: #8f4f07;
+  }
+
+  .dropdown-item:active {
+    background: none;
+    color: #8f4f07;
+  }
+
+  .change {
+    width: 265px;
+  }
+</style>
 <header>
-  <div class="logo-container">
-    <p class="logo-text">EA</p>
-    <a class="logo-item" href="#home"
-      ><img src="../icons/tire_transparent.png" alt=""
-    /></a>
-  </div>
+  <nav class="navbar navbar-expand-md">
+    <div class="container">
+      <!-- logo -->
+      <a class="navbar-brand fs-4 fw-bold" href="#">EA</a>
 
-  <ul class="navlist">
-    <li><a href="/home">Home</a></li>
-    <li><a href="/products">Products</a></li>
-    <li><a href="/about_us">About Us</a></li>
-    <li><a href="/our-team">Our Team</a></li>
-  </ul>
+      <!-- menu -->
+      <button
+        class="navbar-toggler shadow-none border-0 fs-6"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="btn-container">
-    <div class="menu-container">
-      <i class="bx bx-menu-alt-right"></i>
-    </div>
+      <!-- sidebar -->
+      <div
+        class="offcanvas offcanvas-start"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel"
+      >
+        <div class="offcanvas-header border-warning border-bottom border-3">
+          <h5 class="offcanvas-title fs-6" id="offcanvasNavbarLabel">
+            ExtraOrdinary AutoParts
+          </h5>
+          <button
+            type="button"
+            class="btn-close shadow-none fs-6"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul
+            class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/home">Home</a>
+            </li>
 
-    <form action="/products/search-item" method="get">
-      <div class="search-container">
-        <input type="text" placeholder="Search..." name="searchItem" />
-        <i class="bx bx-search-alt"></i>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/products"
+                >Products</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/our-team"
+                >Our Team</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/about_us"
+                >About Us</a
+              >
+            </li>
+          </ul>
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-success dropdown-toggle get-started"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Get Started
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/login">Login</a></li>
+              <li><a class="dropdown-item" href="/register">Register</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </form>
-
-    <div class="theme-container">
-      <span class="default">Select Theme</span>
-      <i class="bx bx-chevron-right"></i>
-
-      <ul class="theme-list">
-        <li class="item">Light</li>
-        <li class="item">Dark</li>
-        <li class="item">Game</li>
-      </ul>
     </div>
-
-    <div class="profile-container">
-      <a style="color: var(--black)" href="/profile">
-        <i class="bx bx-user"></i>
-      </a>
-    </div>
-
-    <div class="cart-container">
-      <a style="color: var(--black)" href="/cart">
-        <i class="bx bx-cart"></i>
-      </a>
-    </div>
-  </div>
+  </nav>
 </header>
+
+<script>
+  const menu = document.querySelector('.navbar-toggler')
+  const getStarted = document.querySelector('.get-started')
+  const btnClose = document.querySelector('.btn-close')
+  if (menu) {
+    menu.addEventListener('click', () => {
+      getStarted.classList.toggle('change')
+    })
+  } else {
+    getStarted.classList.toggle('change')
+  }
+
+  if (btnClose) {
+    btnClose.addEventListener('click', () => {
+      getStarted.classList.remove('change')
+    })
+  }
+</script>
