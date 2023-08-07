@@ -55,7 +55,8 @@ app.use(express.static(static_path))
 app.set('view engine', 'ejs')
 app.set('views', template_path)
 
-app.use('/', require('./routes/routes'))
+app.use('/', require('./routes/indexRoute'))
+app.use('/auth', require('./routes/userRoute'))
 
 const start = () => {
   try {

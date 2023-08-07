@@ -43,7 +43,7 @@
   <body class="light">
     <div class="container pt-5 border border-black rounded">
       <h1 class="text-center mb-0">Sign In</h1>
-      <form action="/login" method="POST" class="pt-3 p-3">
+      <form action="/auth/login" method="POST" class="pt-3 p-3">
         <!-- error -->
         <%- include('./partials/messages') %>
         <!-- end error -->
@@ -71,7 +71,7 @@
 
         <p class="mt-2 mb-0">Dont' have an account?</p>
         <p>
-          <a href="/register" class="btn btn-outline-dark register">
+          <a href="/auth/register" class="btn btn-outline-dark register">
             Register
           </a>
         </p>

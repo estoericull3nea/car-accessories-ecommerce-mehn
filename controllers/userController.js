@@ -1,30 +1,9 @@
-// for load env
-require('dotenv').config()
-
-// models
 const User = require('../models/user')
-const Product = require('../models/product')
-const AddedList = require('../models/AddedList')
-const UserMessage = require('../models/message')
-const AllProducts = require('../models/allproduct')
 
-// for email
-const nodemailer = require('nodemailer')
-
-// for stripe
-const pk_test = process.env.PK_TEST
-const sk_test = process.env.SK_TEST
-const stripe = require('stripe')(sk_test)
-
-// to hash pass
-const bcrypt = require('bcrypt')
-
-// get login page
 const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
 
-// get register page
 const getRegister = (req, res) => {
   res.render('register', {
     pageTitle: 'Sign Up',
@@ -32,24 +11,6 @@ const getRegister = (req, res) => {
   })
 }
 
-// create transport for email
-let transporter = nodemailer.createTransport({
-  service: process.env.SERVICE,
-  host: process.env.HOST,
-  auth: {
-    user: process.env.USER_AUTH_FOR_MAILER,
-    pass: process.env.PASS_AUTH_FOR_MAILER,
-  },
-})
-
-// verify transport
-transporter.verify((err) => {
-  if (err) {
-    console.log(err)
-  }
-})
-
-// post register
 const postRegister = async (req, res) => {
   try {
     // vars
@@ -199,79 +160,6 @@ const postLogin = async (req, res) => {
   }
 }
 
-const getProducts = (_, res) => {
-  res.render('products', { pageTitle: 'Products' })
-}
-
-const getOurTeam = (_, res) => {
-  res.render('ourTeam', { pageTitle: 'Our Team' })
-}
-
-const getFAQ = (_, res) => {
-  res.render('faq', { pageTitle: 'FAQ' })
-}
-
-const getTermsAndConditions = (_, res) => {
-  res.render('terms_and_conditions', { pageTitle: 'Terms and Conditions' })
-}
-
-const getPrivacyPolicy = (_, res) => {
-  res.render('privacy_policy', { pageTitle: 'Privacy Policy' })
-}
-
-const getAboutUs = (_, res) => {
-  res.render('aboutUs', { pageTitle: 'About Us' })
-}
-
-const getHomepage = (_, res) => {
-  Product.find().then((products) => {
-    res.render('homepage', {
-      prods: products,
-      pageTitle: 'EA',
-    })
-  })
-}
-
-const postContactUsForm = (req, res) => {
-  const { name, email, message } = req.body
-
-  let transporter = nodemailer.createTransport({
-    service: process.env.SERVICE,
-    host: process.env.HOST,
-    auth: {
-      user: process.env.USER_AUTH_FOR_MAILER,
-      pass: process.env.PASS_AUTH_FOR_MAILER,
-    },
-  })
-
-  const newMessage = new UserMessage({
-    name,
-    email,
-    message,
-  })
-
-  newMessage.save().then(() => {
-    const mailOptions = {
-      to: process.env.MY_EMAIL,
-      from: email,
-      subject: 'User Queries! || New Contact Form',
-      text: message,
-    }
-
-    transporter.sendMail(mailOptions, (err) => {
-      if (err) {
-        console.log('failed')
-      }
-      res.render('sentMessage')
-    })
-  })
-}
-
-const getProfile = (req, res) => {
-  const user = req.user
-  res.render('profile', { pageTitle: 'Profile', user })
-}
-
 const postLogout = (req, res) => {
   req.session.destroy((err) => {
     if (err) {
@@ -286,14 +174,5 @@ module.exports = {
   getRegister,
   postRegister,
   postLogin,
-  getProducts,
-  getOurTeam,
-  getFAQ,
-  getTermsAndConditions,
-  getPrivacyPolicy,
-  getAboutUs,
-  getHomepage,
-  postContactUsForm,
-  getProfile,
   postLogout,
 }
