@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 const getLogin = (req, res) => {
@@ -55,58 +56,6 @@ const postRegister = async (req, res) => {
   } catch (error) {
     console.log(error.message)
   }
-
-  // try {
-  //   const { username, email, password, confirmPassword } = req.body
-  //   const existingUser = await User.findOne({ email })
-  //   if (existingUser) {
-  //     req.flash('message', 'Email already registered.')
-  //     res.redirect('/register')
-  //   } else if (password.length < 6) {
-  //     req.flash('message', 'Password must have at least 6 characters')
-  //     res.redirect('/register')
-  //   } else {
-  //     if (password === confirmPassword) {
-  //       const hashedPassword = await bcrypt.hash(password, 10)
-  //       const newUser = new Register({
-  //         fullName: req.body.fullName,
-  //         username: req.body.username,
-  //         email: req.body.email,
-  //         password: hashedPassword,
-  //       })
-  //       await newUser.save()
-  //       res.redirect('/login')
-  //       // .then((user) => {
-  //       //   const token = new Token({
-  //       //     _userId: user._id,
-  //       //     token: crypto.randomBytes(16).toString('hex'),
-  //       //   })
-  //       //   token.save().then((err) => {
-  //       //     if (err) {
-  //       //       console.log(err)
-  //       //     }
-  //       //     const mailOptions = {
-  //       //       to: user.email,
-  //       //       from: process.env.USER_AUTH_FOR_MAILER,
-  //       //       subject: 'Acc Verification Token',
-  //       //       html: `Please Verify Your Account by clicking this <a href="http://${req.headers.host}/confirmation/${token.token}">link</a>`,
-  //       //     }
-  //       //     transporter.sendMail(mailOptions, (err) => {
-  //       //       if (err) {
-  //       //         console.log('failed')
-  //       //       }
-  //       //       res.render('pleaseCheck')
-  //       //     })
-  //       //   }) // end token of save
-  //       // }) // end of user save
-  //     } else {
-  //       req.flash('message', 'Password are not match')
-  //       res.redirect('/register')
-  //     }
-  //   }
-  // } catch (err) {
-  //   res.status(400).send(err)
-  // }
 }
 
 const postLogin = async (req, res) => {
