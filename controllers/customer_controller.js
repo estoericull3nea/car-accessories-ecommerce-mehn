@@ -1,6 +1,7 @@
 // for load env
 require('dotenv').config()
 
+// models
 const User = require('../models/user')
 const Product = require('../models/product')
 const AddedList = require('../models/AddedList')
@@ -9,32 +10,29 @@ const AllProducts = require('../models/allproduct')
 
 // for email
 const nodemailer = require('nodemailer')
-const Token = require('../models/token')
-const crypto = require('crypto')
-
-const jwt = require('jsonwebtoken')
 
 // for stripe
 const pk_test = process.env.PK_TEST
 const sk_test = process.env.SK_TEST
 const stripe = require('stripe')(sk_test)
 
-// for user auth
+// to hash pass
 const bcrypt = require('bcrypt')
 
-// controllers
-
-const gLogin = (req, res) => {
+// get login page
+const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
 
-const gRegister = (req, res) => {
+// get register page
+const getRegister = (req, res) => {
   res.render('register', {
     pageTitle: 'Sign Up',
     message: req.flash('message'),
   })
 }
-// email service
+
+// create transport for email
 let transporter = nodemailer.createTransport({
   service: process.env.SERVICE,
   host: process.env.HOST,
@@ -50,9 +48,9 @@ transporter.verify((err) => {
     console.log(err)
   }
 })
-// end of email service
 
-const pRegister = async (req, res) => {
+// post register
+const postRegister = async (req, res) => {
   try {
     // vars
     const { username, email, password, confirmPassword } = req.body
@@ -150,7 +148,7 @@ const pRegister = async (req, res) => {
   // }
 }
 
-const pLogin = async (req, res) => {
+const postLogin = async (req, res) => {
   try {
     // vars
     const { email, password } = req.body
@@ -201,108 +199,31 @@ const pLogin = async (req, res) => {
   }
 }
 
-const usingMiddleware = async (req, res, next) => {
-  const latestUser = await User.findOne().sort({ createdAt: -1 }).limit(1)
-  if (!latestUser) {
-    res.redirect('/register')
-  } else {
-    const userID = await latestUser._id
-
-    await User.findById(userID)
-      .then((userInDb) => {
-        req.user = userInDb
-        next()
-      })
-      .catch((err) => console.log(err))
-  }
-}
-
-const pAddToCart = (req, res) => {
-  req.user
-    .addToCart(req.body.id)
-    .then(() => res.redirect('/home#cart-section'))
-    .catch((err) => console.log(err))
-}
-
-const gCart = (req, res) => {
-  req.user
-    .populate('cart.items.productId')
-    .then((user) => {
-      res.render('cart', {
-        cart: user.cart,
-        pageTitle: 'Cart',
-      })
-    })
-    .catch((err) => console.log(err))
-}
-
-const pDeleteItemCart = (req, res, _) => {
-  req.user
-    .removeCart(req.body.id)
-    .then(() => {
-      res.redirect('/cart')
-    })
-    .catch((err) => console.log(err))
-}
-
-const gProduct = (_, res) => {
+const getProducts = (_, res) => {
   res.render('products', { pageTitle: 'Products' })
 }
 
-const gOurTeam = (_, res) => {
+const getOurTeam = (_, res) => {
   res.render('ourTeam', { pageTitle: 'Our Team' })
 }
 
-const pCart = async (req, res) => {
-  try {
-    const { imgURL, title, quantity, price, description } = req.body
-    const newProd = new Product({
-      imgURL,
-      title,
-      quantity,
-      price,
-      description,
-    })
-
-    const ifExist = await AddedList.findOne({ imgURL: imgURL })
-    if (!ifExist) {
-      const newProd2 = new AddedList({
-        imgURL,
-        title,
-        quantity,
-        price,
-        description,
-      })
-
-      await newProd.save()
-      await newProd2.save()
-
-      res.redirect('/products#prods-area')
-    } else {
-      res.redirect('/products#prods-area')
-    }
-  } catch (err) {
-    res.status(400).send(err)
-  }
-}
-
-const gFaq = (_, res) => {
+const getFAQ = (_, res) => {
   res.render('faq', { pageTitle: 'FAQ' })
 }
 
-const gTermsnConditions = (_, res) => {
+const getTermsAndConditions = (_, res) => {
   res.render('terms_and_conditions', { pageTitle: 'Terms and Conditions' })
 }
 
-const gPrivacyPolicy = (_, res) => {
+const getPrivacyPolicy = (_, res) => {
   res.render('privacy_policy', { pageTitle: 'Privacy Policy' })
 }
 
-const gAboutUs = (_, res) => {
+const getAboutUs = (_, res) => {
   res.render('aboutUs', { pageTitle: 'About Us' })
 }
 
-const gHome = (_, res) => {
+const getHomepage = (_, res) => {
   Product.find().then((products) => {
     res.render('homepage', {
       prods: products,
@@ -311,7 +232,7 @@ const gHome = (_, res) => {
   })
 }
 
-const pContactUsForm = (req, res) => {
+const postContactUsForm = (req, res) => {
   const { name, email, message } = req.body
 
   let transporter = nodemailer.createTransport({
@@ -346,25 +267,12 @@ const pContactUsForm = (req, res) => {
   })
 }
 
-const gSearchItem = (req, res) => {
-  const titleItem = req.query.searchItem
-
-  AllProducts.find({ title: titleItem }).then((prods) => {
-    console.log(prods)
-    res.render('searchItem', {
-      pageTitle: 'Search Products',
-      prods,
-      titleItem,
-    })
-  })
-}
-
-const gProfile = (req, res) => {
+const getProfile = (req, res) => {
   const user = req.user
   res.render('profile', { pageTitle: 'Profile', user })
 }
 
-const pLogout = (req, res) => {
+const postLogout = (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       console.log(err)
@@ -372,64 +280,20 @@ const pLogout = (req, res) => {
     res.redirect('/')
   })
 }
-const pPayment = async (req, res) => {
-  await stripe.customers
-    .create({
-      email: req.body.email,
-      source: req.body.stripeToken,
-    })
-    .then((customer) => {
-      stripe.charges
-        .create({
-          amount: 100 * 5,
-          description: 'test description',
-          currency: 'usd',
-          customer: customer.id,
-        })
-        .then(() => {
-          req.user.removeAllCart(req.user.id).then(() => {
-            AddedList.deleteMany({})
-              .then(() => {
-                console.log('All items removed')
-              })
-              .catch((err) => {
-                console.error('Error removing items', err)
-              })
-
-            Product.deleteMany({})
-              .then(() => {
-                console.log('All items removed')
-              })
-              .catch((err) => {
-                console.error('Error removing items', err)
-              })
-
-            res.render('payment_done')
-          })
-        })
-    })
-}
 
 module.exports = {
-  gLogin,
-  gRegister,
-  pRegister,
-  pLogin,
-  usingMiddleware,
-  pAddToCart,
-  gCart,
-  pDeleteItemCart,
-  gProduct,
-  gOurTeam,
-  pCart,
-  gFaq,
-  gTermsnConditions,
-  gPrivacyPolicy,
-  gAboutUs,
-  gHome,
-  pContactUsForm,
-  gSearchItem,
-  gProfile,
-  pLogout,
-  pPayment,
+  getLogin,
+  getRegister,
+  postRegister,
+  postLogin,
+  getProducts,
+  getOurTeam,
+  getFAQ,
+  getTermsAndConditions,
+  getPrivacyPolicy,
+  getAboutUs,
+  getHomepage,
+  postContactUsForm,
+  getProfile,
+  postLogout,
 }

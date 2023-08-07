@@ -1,27 +1,20 @@
 const router = require('express').Router()
 
 const {
-  gLogin,
-  gRegister,
-  pRegister,
-  pLogin,
-  usingMiddleware,
-  pAddToCart,
-  gCart,
-  pDeleteItemCart,
-  gProduct,
-  gOurTeam,
-  pCart,
-  gFaq,
-  gTermsnConditions,
-  gPrivacyPolicy,
-  gAboutUs,
-  gHome,
-  pContactUsForm,
-  gSearchItem,
-  gProfile,
-  pLogout,
-  pPayment,
+  getLogin,
+  getRegister,
+  postRegister,
+  postLogin,
+  getProducts,
+  getOurTeam,
+  getFAQ,
+  getTermsAndConditions,
+  getPrivacyPolicy,
+  getAboutUs,
+  getHomepage,
+  postContactUsForm,
+  getProfile,
+  postLogout,
 } = require('../controllers/customer_controller')
 
 const isAuth = (req, res, next) => {
@@ -33,26 +26,19 @@ const isAuth = (req, res, next) => {
 }
 
 // setting router
-router.get('/', gHome)
-router.get('/login', gLogin)
-router.get('/register', gRegister)
-router.post('/register', pRegister)
-router.post('/login', pLogin)
-router.use(usingMiddleware)
-router.post('/add-to-cart', pAddToCart)
-router.get('/cart', isAuth, gCart)
-router.post('/delete-item-cart', pDeleteItemCart)
-router.get('/products', isAuth, gProduct)
-router.get('/our-team', isAuth, gOurTeam)
-router.post('/cart', pCart)
-router.get('/faq', isAuth, gFaq)
-router.get('/terms-and-conditions', isAuth, gTermsnConditions)
-router.get('/privacy-policy', isAuth, gPrivacyPolicy)
-router.get('/about_us', isAuth, gAboutUs)
-router.post('/contact-us', pContactUsForm)
-router.get('/products/search-item', isAuth, gSearchItem)
-router.get('/profile', isAuth, gProfile)
-router.post('/logout', pLogout)
-router.post('/payment', pPayment)
+router.get('/', getHomepage)
+router.get('/login', getLogin)
+router.get('/register', getRegister)
+router.post('/register', postRegister)
+router.post('/login', postLogin)
+router.get('/products', isAuth, getProducts)
+router.get('/our-team', isAuth, getOurTeam)
+router.get('/faq', isAuth, getFAQ)
+router.get('/terms-and-conditions', isAuth, getTermsAndConditions)
+router.get('/privacy-policy', isAuth, getPrivacyPolicy)
+router.get('/about_us', isAuth, getAboutUs)
+router.post('/contact-us', postContactUsForm)
+router.get('/profile', isAuth, getProfile)
+router.post('/logout', postLogout)
 
 module.exports = router
