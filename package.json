@@ -12,20 +12,15 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
-    "body-parser": "^1.20.2",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
-    "connect-mongodb-session": "^3.1.1",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "express-rate-limit": "^6.8.0",
     "express-session": "^1.17.3",
     "helmet": "^7.0.0",
-    "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
-    "nodemailer": "^6.9.4",
-    "stripe": "^12.14.0"
+    "nodemailer": "^6.9.4"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
