@@ -52,7 +52,7 @@ const postRegister = async (req, res) => {
     })
     await userToAdd.save()
     req.flash('success_msg', 'You are now Registered!')
-    res.redirect('/login')
+    res.redirect('/auth/login')
   } catch (error) {
     console.log(error.message)
   }

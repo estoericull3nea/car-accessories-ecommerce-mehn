@@ -19,16 +19,13 @@ transporter.verify((err) => {
 })
 
 const getHomepage = (_, res) => {
-  Product.find().then((products) => {
-    res.render('homepage', {
-      prods: products,
-      pageTitle: 'EA',
-    })
+  res.render('homepage', {
+    pageTitle: 'EA',
   })
 }
 
 const getOurTeam = (_, res) => {
-  res.render('ourTeam', { pageTitle: 'Our Team' })
+  res.render('team', { pageTitle: 'Our Team' })
 }
 
 const getFAQ = (_, res) => {
@@ -36,20 +33,15 @@ const getFAQ = (_, res) => {
 }
 
 const getTermsAndConditions = (_, res) => {
-  res.render('terms_and_conditions', { pageTitle: 'Terms and Conditions' })
+  res.render('terms', { pageTitle: 'Terms and Conditions' })
 }
 
 const getPrivacyPolicy = (_, res) => {
-  res.render('privacy_policy', { pageTitle: 'Privacy Policy' })
+  res.render('privacy', { pageTitle: 'Privacy Policy' })
 }
 
 const getAboutUs = (_, res) => {
-  res.render('aboutUs', { pageTitle: 'About Us' })
-}
-
-const getProfile = (req, res) => {
-  const user = req.user
-  res.render('profile', { pageTitle: 'Profile', user })
+  res.render('about', { pageTitle: 'About Us' })
 }
 
 const postContactUsForm = (req, res) => {
@@ -95,5 +87,4 @@ module.exports = {
   getAboutUs,
   getHomepage,
   postContactUsForm,
-  getProfile,
 }
