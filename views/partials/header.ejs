@@ -19,12 +19,23 @@
   .change {
     width: 265px;
   }
+
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    position: relative;
+    top: 2px;
+  }
 </style>
 <header>
   <nav class="navbar navbar-expand-md">
     <div class="container">
       <!-- logo -->
-      <a class="navbar-brand fs-4 fw-bold" href="#">EA</a>
+      <a class="navbar-brand fs-4 fw-bold" href="/">
+        <img src="icons/image.webp" alt="" width="35" />EA
+      </a>
 
       <!-- menu -->
       <button

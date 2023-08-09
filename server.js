@@ -44,6 +44,7 @@ app.set('views', path.join(__dirname, './views'))
 
 app.use('/', require('./routes/indexRoute'))
 app.use('/auth', require('./routes/userRoute'))
+app.use('/products', require('./routes/productRoute'))
 
 // error middleware
 app.use((req, res, next) => {
