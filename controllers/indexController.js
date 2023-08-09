@@ -18,30 +18,38 @@ transporter.verify((err) => {
   }
 })
 
-const getHomepage = (_, res) => {
+const getHomepage = (req, res) => {
+  const token = req.cookies['access_token']
+
   res.render('homepage', {
     pageTitle: 'EA',
+    token,
   })
 }
 
-const getOurTeam = (_, res) => {
-  res.render('team', { pageTitle: 'Our Team' })
+const getOurTeam = (req, res) => {
+  const token = req.cookies['access_token']
+  res.render('team', { pageTitle: 'Our Team', token })
 }
 
-const getFAQ = (_, res) => {
-  res.render('faq', { pageTitle: 'FAQ' })
+const getFAQ = (req, res) => {
+  const token = req.cookies['access_token']
+  res.render('faq', { pageTitle: 'FAQ', token })
 }
 
-const getTermsAndConditions = (_, res) => {
-  res.render('terms', { pageTitle: 'Terms and Conditions' })
+const getTermsAndConditions = (req, res) => {
+  const token = req.cookies['access_token']
+  res.render('terms', { pageTitle: 'Terms and Conditions', token })
 }
 
-const getPrivacyPolicy = (_, res) => {
-  res.render('privacy', { pageTitle: 'Privacy Policy' })
+const getPrivacyPolicy = (req, res) => {
+  const token = req.cookies['access_token']
+  res.render('privacy', { pageTitle: 'Privacy Policy', token })
 }
 
-const getAboutUs = (_, res) => {
-  res.render('about', { pageTitle: 'About Us' })
+const getAboutUs = (req, res) => {
+  const token = req.cookies['access_token']
+  res.render('about', { pageTitle: 'About Us', token })
 }
 
 const postContactUsForm = (req, res) => {

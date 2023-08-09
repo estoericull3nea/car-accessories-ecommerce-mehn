@@ -7,12 +7,14 @@ const session = require('express-session')
 const flash = require('connect-flash')
 const compression = require('compression')
 const helmet = require('helmet')
+const cookieParser = require('cookie-parser')
 
 const app = express()
 
 // setting middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+app.use(cookieParser())
 
 app.use(
   session({

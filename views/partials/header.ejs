@@ -83,6 +83,7 @@
               >
             </li>
           </ul>
+          <% if(!token) { %>
           <div class="btn-group" role="group">
             <button
               type="button"
@@ -99,6 +100,11 @@
               </li>
             </ul>
           </div>
+          <% } else { %>
+          <a href="/auth/logout" type="button" class="btn btn-success"
+            >Logout</a
+          >
+          <% } %>
         </div>
       </div>
     </div>

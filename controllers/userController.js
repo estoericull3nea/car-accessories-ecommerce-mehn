@@ -1,6 +1,8 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
+const { create_token } = require('../config/auth')
+
 const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
@@ -60,6 +62,8 @@ const postRegister = async (req, res) => {
 
 const postLogin = async (req, res) => {
   try {
+    res.clearCookie('access_token')
+
     // vars
     const { email, password } = req.body
     const errors = []
@@ -102,20 +106,26 @@ const postLogin = async (req, res) => {
       })
     }
     // passed
+
+    // creating cookie when login
+    const access_token = create_token(user)
+    res.cookie('access_token', access_token, {
+      maxAge: 3600000, // 1hr
+      httpOnly: true,
+      secure: true,
+    })
+    // ***********************
     req.session.isAuth = true
+
     res.redirect('/')
   } catch (error) {
     console.log(error)
   }
 }
 
-const postLogout = (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      console.log(err)
-    }
-    res.redirect('/')
-  })
+const getLogout = (req, res) => {
+  res.clearCookie('access_token')
+  res.redirect('/')
 }
 
 module.exports = {
@@ -123,5 +133,5 @@ module.exports = {
   getRegister,
   postRegister,
   postLogin,
-  postLogout,
+  getLogout,
 }
