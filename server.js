@@ -45,6 +45,19 @@ app.set('views', path.join(__dirname, './views'))
 app.use('/', require('./routes/indexRoute'))
 app.use('/auth', require('./routes/userRoute'))
 
+// error middleware
+app.use((req, res, next) => {
+  const error = new Error('Not Found!')
+  error.status = 404
+  next(error)
+})
+
+app.use((error, req, res, next) => {
+  res.status(error.status || 500)
+  const token = req.cookies['access_token']
+  res.render('notFound', { pageTitle: 'Page not found - EA', token })
+})
+
 const start = () => {
   try {
     require('./db/connect')(process.env.MONGODB_URI_COMPASS)

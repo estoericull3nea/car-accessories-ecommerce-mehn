@@ -1,0 +1,9 @@
+.image-container {
+  display: grid;
+  place-content: center;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 800px;
+}
