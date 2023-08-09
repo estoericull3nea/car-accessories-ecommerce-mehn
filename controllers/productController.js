@@ -1,11 +1,13 @@
 const Products = require('../models/Product')
 
 const getAllProducts = async (req, res) => {
-  const prods = await Products.find()
-  if (prods.length === 0) {
-    console.log('empty products')
+  try {
+    const product = await Products.find()
+    const token = req.cookies['access_token']
+    res.render('products', { pageTitle: 'Products', token, product })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
   }
-  console.log(prods)
 }
 
 const getProduct = (req, res) => {}

@@ -1,9 +1,7 @@
 [
   {
-    "_id": {
-      "$oid": "6488b74da8c872e8280efa43"
-    },
-    "imgURL": "../images/car_battery/car_batt1.jpg",
+    "_id": "6488b74da8c872e8280efa43",
+    "imgURL": "images/car_battery/car_batt1.jpg",
     "title": "Motolite Gold Battery",
     "quantity": 1,
     "price": 2999,
@@ -11,10 +9,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7a5a8c872e8280efa85"
-    },
-    "imgURL": "../images/car_battery/car_batt2.jpg",
+    "_id": "6488b7a5a8c872e8280efa85",
+    "imgURL": "images/car_battery/car_batt2.jpg",
     "title": "Ruiyu Battery",
     "quantity": 1,
     "price": 3100,
@@ -22,10 +18,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7b90b55b1b90d5a0630"
-    },
-    "imgURL": "../images/car_battery/car_batt3.jpg",
+    "id": "6488b7b90b55b1b90d5a0630",
+    "imgURL": "images/car_battery/car_batt3.jpg",
     "title": "Lite Car Battery",
     "quantity": 1,
     "price": 1900,
@@ -33,10 +27,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ba0b55b1b90d5a0641"
-    },
-    "imgURL": "../images/car_battery/car_batt4.jpg",
+    "id": "6488b7ba0b55b1b90d5a0641",
+    "imgURL": "images/car_battery/car_batt4.jpg",
     "title": "PowerLine Car Battery",
     "quantity": 1,
     "price": 2900,
@@ -44,10 +36,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7bb0b55b1b90d5a0652"
-    },
-    "imgURL": "../images/car_battery/car_batt5.jpg",
+    "id": "6488b7bb0b55b1b90d5a0652",
+    "imgURL": "images/car_battery/car_batt5.jpg",
     "title": "Dyvinity Car Battery",
     "quantity": 1,
     "price": 3300,
@@ -55,10 +45,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7cd0b55b1b90d5a0689"
-    },
-    "imgURL": "../images/car_brakes/car_brakes1.jpg",
+    "id": "6488b7cd0b55b1b90d5a0689",
+    "imgURL": "images/car_brakes/car_brakes1.jpg",
     "title": "Akebono Car Brakes",
     "quantity": 1,
     "price": 3300,
@@ -66,10 +54,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ce0b55b1b90d5a069a"
-    },
-    "imgURL": "../images/car_brakes/car_brakes2.jpg",
+    "id": "6488b7ce0b55b1b90d5a069a",
+    "imgURL": "images/car_brakes/car_brakes2.jpg",
     "title": "Brembo Car Brakes",
     "quantity": 1,
     "price": 3900,
@@ -77,10 +63,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7cf0b55b1b90d5a06ab"
-    },
-    "imgURL": "../images/car_brakes/car_brakes3.jpg",
+    "id": "6488b7cf0b55b1b90d5a06ab",
+    "imgURL": "images/car_brakes/car_brakes3.jpg",
     "title": "Bosch Car Brakes",
     "quantity": 1,
     "price": 1900,
@@ -88,10 +72,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d00b55b1b90d5a06bc"
-    },
-    "imgURL": "../images/car_brakes/car_brakes4.jpg",
+    "id": "6488b7d00b55b1b90d5a06bc",
+    "imgURL": "images/car_brakes/car_brakes4.jpg",
     "title": "Normal Car Brakes",
     "quantity": 1,
     "price": 4100,
@@ -99,10 +81,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d10b55b1b90d5a06cd"
-    },
-    "imgURL": "../images/car_brakes/car_brakes6.jpg",
+    "id": "6488b7d10b55b1b90d5a06cd",
+    "imgURL": "images/car_brakes/car_brakes6.jpg",
     "title": "Normal Car Brakes",
     "quantity": 1,
     "price": 2100,
@@ -110,10 +90,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d10b55b1b90d5a06de"
-    },
-    "imgURL": "../images/car_brakes/car_brakes5.jpg",
+    "id": "6488b7d10b55b1b90d5a06de",
+    "imgURL": "images/car_brakes/car_brakes5.jpg",
     "title": "AMB Car Brakes",
     "quantity": 1,
     "price": 5999,
@@ -121,10 +99,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d70b55b1b90d5a06ef"
-    },
-    "imgURL": "../images/car_engine/car_engine1.jpg",
+    "id": "6488b7d70b55b1b90d5a06ef",
+    "imgURL": "images/car_engine/car_engine1.jpg",
     "title": "Ford Car Engine",
     "quantity": 1,
     "price": 21999,
@@ -132,10 +108,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d80b55b1b90d5a0700"
-    },
-    "imgURL": "../images/car_engine/car_engine2.jpg",
+    "id": "6488b7d80b55b1b90d5a0700",
+    "imgURL": "images/car_engine/car_engine2.jpg",
     "title": "BMW Car Engine",
     "quantity": 1,
     "price": 22999,
@@ -143,10 +117,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d90b55b1b90d5a0711"
-    },
-    "imgURL": "../images/car_engine/car_engine3.jpg",
+    "id": "6488b7d90b55b1b90d5a0711",
+    "imgURL": "images/car_engine/car_engine3.jpg",
     "title": "Honda Car Engine",
     "quantity": 1,
     "price": 30999,
@@ -154,10 +126,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7d90b55b1b90d5a0722"
-    },
-    "imgURL": "../images/car_engine/car_engine4.jpg",
+    "id": "6488b7d90b55b1b90d5a0722",
+    "imgURL": "images/car_engine/car_engine4.jpg",
     "title": "Mercedes-Benz Car Engine",
     "quantity": 1,
     "price": 40999,
@@ -165,10 +135,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e10b55b1b90d5a0733"
-    },
-    "imgURL": "../images/car_mags/car_wheel1.jpg",
+    "id": "6488b7e10b55b1b90d5a0733",
+    "imgURL": "images/car_mags/car_wheel1.jpg",
     "title": "Enkei Car Mags",
     "quantity": 1,
     "price": 4999,
@@ -176,10 +144,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e30b55b1b90d5a0744"
-    },
-    "imgURL": "../images/car_mags/car_wheel2.jpg",
+    "id": "6488b7e30b55b1b90d5a0744",
+    "imgURL": "images/car_mags/car_wheel2.jpg",
     "title": "BBS Car Mags",
     "quantity": 1,
     "price": 2999,
@@ -187,10 +153,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e30b55b1b90d5a0755"
-    },
-    "imgURL": "../images/car_mags/car_wheel3.jpg",
+    "id": "6488b7e30b55b1b90d5a0755",
+    "imgURL": "images/car_mags/car_wheel3.jpg",
     "title": "OZ Racing Car Mags",
     "quantity": 1,
     "price": 1800,
@@ -198,10 +162,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e40b55b1b90d5a0766"
-    },
-    "imgURL": "../images/car_mags/car_wheel4.jpg",
+    "id": "6488b7e40b55b1b90d5a0766",
+    "imgURL": "images/car_mags/car_wheel4.jpg",
     "title": "Vossen Car Mags",
     "quantity": 1,
     "price": 3100,
@@ -209,10 +171,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e50b55b1b90d5a0777"
-    },
-    "imgURL": "../images/car_mags/car_wheel5.jpg",
+    "id": "6488b7e50b55b1b90d5a0777",
+    "imgURL": "images/car_mags/car_wheel5.jpg",
     "title": "Rays Engineering Car Mags",
     "quantity": 1,
     "price": 2999,
@@ -220,10 +180,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e60b55b1b90d5a0788"
-    },
-    "imgURL": "../images/car_mags/car_wheel6.jpg",
+    "id": "6488b7e60b55b1b90d5a0788",
+    "imgURL": "images/car_mags/car_wheel6.jpg",
     "title": "HRE Car Mags",
     "quantity": 1,
     "price": 2100,
@@ -231,10 +189,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e70b55b1b90d5a0799"
-    },
-    "imgURL": "../images/car_mags/car_wheel7.jpg",
+    "id": "6488b7e70b55b1b90d5a0799",
+    "imgURL": "images/car_mags/car_wheel7.jpg",
     "title": "ADV.1 Car Mags",
     "quantity": 1,
     "price": 3100,
@@ -242,10 +198,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7e80b55b1b90d5a07aa"
-    },
-    "imgURL": "../images/car_mags/car_wheel8.jpg",
+    "id": "6488b7e80b55b1b90d5a07aa",
+    "imgURL": "images/car_mags/car_wheel8.jpg",
     "title": "Forgeline Car Mags",
     "quantity": 1,
     "price": 3800,
@@ -253,10 +207,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ea0b55b1b90d5a07bb"
-    },
-    "imgURL": "../images/car_mags/car_wheel9.jpg",
+    "id": "6488b7ea0b55b1b90d5a07bb",
+    "imgURL": "images/car_mags/car_wheel9.jpg",
     "title": "Rotiform Car Mags",
     "quantity": 1,
     "price": 4100,
@@ -264,10 +216,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ea0b55b1b90d5a07cc"
-    },
-    "imgURL": "../images/car_mags/car_wheel10.jpg",
+    "id": "6488b7ea0b55b1b90d5a07cc",
+    "imgURL": "images/car_mags/car_wheel10.jpg",
     "title": "TSW Car Mags",
     "quantity": 1,
     "price": 3300,
@@ -275,10 +225,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7eb0b55b1b90d5a07dd"
-    },
-    "imgURL": "../images/car_mags/car_wheel11.jpg",
+    "id": "6488b7eb0b55b1b90d5a07dd",
+    "imgURL": "images/car_mags/car_wheel11.jpg",
     "title": "American Racing Car Mags",
     "quantity": 1,
     "price": 5100,
@@ -286,10 +234,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ec0b55b1b90d5a07ee"
-    },
-    "imgURL": "../images/car_mags/car_wheel12.jpg",
+    "id": "6488b7ec0b55b1b90d5a07ee",
+    "imgURL": "images/car_mags/car_wheel12.jpg",
     "title": "Konig Car Mags",
     "quantity": 1,
     "price": 4100,
@@ -297,10 +243,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7ed0b55b1b90d5a07ff"
-    },
-    "imgURL": "../images/car_mags/car_wheel13.jpg",
+    "id": "6488b7ed0b55b1b90d5a07ff",
+    "imgURL": "images/car_mags/car_wheel13.jpg",
     "title": "XXR Car Mags",
     "quantity": 1,
     "price": 3100,
@@ -308,10 +252,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f20b55b1b90d5a0810"
-    },
-    "imgURL": "../images/car_muffler/car_muff1.jpg",
+    "id": "6488b7f20b55b1b90d5a0810",
+    "imgURL": "images/car_muffler/car_muff1.jpg",
     "title": "MagnaFlow Car Muffler",
     "quantity": 1,
     "price": 5999,
@@ -319,10 +261,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f30b55b1b90d5a0821"
-    },
-    "imgURL": "../images/car_muffler/car_muff2.jpg",
+    "id": "6488b7f30b55b1b90d5a0821",
+    "imgURL": "images/car_muffler/car_muff2.jpg",
     "title": "Flowmaster Car Muffler",
     "quantity": 1,
     "price": 5500,
@@ -330,10 +270,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f40b55b1b90d5a0832"
-    },
-    "imgURL": "../images/car_muffler/car_muff3.jpg",
+    "id": "6488b7f40b55b1b90d5a0832",
+    "imgURL": "images/car_muffler/car_muff3.jpg",
     "title": "Borla Car Muffler",
     "quantity": 1,
     "price": 6999,
@@ -341,10 +279,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f50b55b1b90d5a0843"
-    },
-    "imgURL": "../images/car_muffler/car_muff4.jpg",
+    "id": "6488b7f50b55b1b90d5a0843",
+    "imgURL": "images/car_muffler/car_muff4.jpg",
     "title": "Gibson Car Muffler",
     "quantity": 1,
     "price": 5100,
@@ -352,10 +288,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f60b55b1b90d5a0854"
-    },
-    "imgURL": "../images/car_muffler/car_muff6.jpg",
+    "id": "6488b7f60b55b1b90d5a0854",
+    "imgURL": "images/car_muffler/car_muff6.jpg",
     "title": "Walker Car Muffler",
     "quantity": 1,
     "price": 3100,
@@ -363,10 +297,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7f70b55b1b90d5a0865"
-    },
-    "imgURL": "../images/car_muffler/car_muff5.jpg",
+    "id": "6488b7f70b55b1b90d5a0865",
+    "imgURL": "images/car_muffler/car_muff5.jpg",
     "title": "Corsa Car Muffler",
     "quantity": 1,
     "price": 7999,
@@ -374,10 +306,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7fa0b55b1b90d5a0876"
-    },
-    "imgURL": "../images/car_radiator/car_radia1.jpg",
+    "id": "6488b7fa0b55b1b90d5a0876",
+    "imgURL": "images/car_radiator/car_radia1.jpg",
     "title": "Denso Car Radiator",
     "quantity": 1,
     "price": 3100,
@@ -385,10 +315,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7fb0b55b1b90d5a0887"
-    },
-    "imgURL": "../images/car_radiator/car_radia2.jpg",
+    "id": "6488b7fb0b55b1b90d5a0887",
+    "imgURL": "images/car_radiator/car_radia2.jpg",
     "title": "Mishimoto Car Radiator",
     "quantity": 1,
     "price": 2100,
@@ -396,10 +324,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7fc0b55b1b90d5a0898"
-    },
-    "imgURL": "../images/car_radiator/car_radia3.jpg",
+    "id": "6488b7fc0b55b1b90d5a0898",
+    "imgURL": "images/car_radiator/car_radia3.jpg",
     "title": "Koyo Car Radiator",
     "quantity": 1,
     "price": 1100,
@@ -407,10 +333,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7fd0b55b1b90d5a08a9"
-    },
-    "imgURL": "../images/car_radiator/car_radia4.jpg",
+    "id": "6488b7fd0b55b1b90d5a08a9",
+    "imgURL": "images/car_radiator/car_radia4.jpg",
     "title": "CSF Car Radiator",
     "quantity": 1,
     "price": 4100,
@@ -418,10 +342,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b7fe0b55b1b90d5a08ba"
-    },
-    "imgURL": "../images/car_radiator/car_radia5.jpg",
+    "id": "6488b7fe0b55b1b90d5a08ba",
+    "imgURL": "images/car_radiator/car_radia5.jpg",
     "title": "Nissens Car Radiator",
     "quantity": 1,
     "price": 3100,
@@ -429,10 +351,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8020b55b1b90d5a08cb"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel1.jpg",
+    "id": "6488b8020b55b1b90d5a08cb",
+    "imgURL": "images/steering_wheel/steer_wheel1.jpg",
     "title": "Momo Car Steering Wheel",
     "quantity": 1,
     "price": 3100,
@@ -440,10 +360,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8030b55b1b90d5a08dc"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel2.jpg",
+    "id": "6488b8030b55b1b90d5a08dc",
+    "imgURL": "images/steering_wheel/steer_wheel2.jpg",
     "title": "Sparco Car Steering Wheel",
     "quantity": 1,
     "price": 4100,
@@ -451,10 +369,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8030b55b1b90d5a08ed"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel3.jpg",
+    "id": "6488b8030b55b1b90d5a08ed",
+    "imgURL": "images/steering_wheel/steer_wheel3.jpg",
     "title": "Nardi Car Steering Wheel",
     "quantity": 1,
     "price": 2100,
@@ -462,10 +378,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8040b55b1b90d5a08fe"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel4.jpg",
+    "id": "6488b8040b55b1b90d5a08fe",
+    "imgURL": "images/steering_wheel/steer_wheel4.jpg",
     "title": "OMP Car Steering Wheel",
     "quantity": 1,
     "price": 2999,
@@ -473,10 +387,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8050b55b1b90d5a090f"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel8.jpg",
+    "id": "6488b8050b55b1b90d5a090f",
+    "imgURL": "images/steering_wheel/steer_wheel8.jpg",
     "title": "Car Steering Wheel",
     "quantity": 1,
     "price": 3100,
@@ -484,10 +396,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8050b55b1b90d5a0920"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel7.jpg",
+    "id": "6488b8050b55b1b90d5a0920",
+    "imgURL": "images/steering_wheel/steer_wheel7.jpg",
     "title": "NRG Car Steering Wheel",
     "quantity": 1,
     "price": 3100,
@@ -495,10 +405,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8060b55b1b90d5a0931"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel6.jpg",
+    "id": "6488b8060b55b1b90d5a0931",
+    "imgURL": "images/steering_wheel/steer_wheel6.jpg",
     "title": "Grant Car Steering Wheel",
     "quantity": 1,
     "price": 2999,
@@ -506,10 +414,8 @@
     "__v": 0
   },
   {
-    "_id": {
-      "$oid": "6488b8070b55b1b90d5a0942"
-    },
-    "imgURL": "../images/steering_wheel/steer_wheel5.jpg",
+    "id": "6488b8070b55b1b90d5a0942",
+    "imgURL": "images/steering_wheel/steer_wheel5.jpg",
     "title": "Personal Car Steering Wheel",
     "quantity": 1,
     "price": 3100,
