@@ -1,15 +1,23 @@
 <html lang="en">
   <head>
-    <!-- {{>head}} -->
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="css/notFound.css" />
+    <style>
+      .image-container {
+        display: grid;
+        place-content: center;
+      }
+
+      .image-container img {
+        width: 100%;
+        max-width: 800px;
+      }
+    </style>
   </head>
   <body class="light">
     <%- include("partials/header") %>
-    <!-- {{>header}} -->
 
     <div class="image-container">
-      <img src="images/notFound.jpg" alt="page not found" />
+      <img src="/images/notFound.webp" alt="page not found" />
     </div>
 
     <%- include("partials/footer") %>

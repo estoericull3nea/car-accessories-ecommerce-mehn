@@ -10,7 +10,16 @@ const getAllProducts = async (req, res) => {
   }
 }
 
-const getProduct = (req, res) => {}
+const getProduct = async (req, res) => {
+  try {
+    const { id } = req.params
+    const product = await Products.findById({ _id: id })
+    const token = req.cookies['access_token']
+    res.render('viewOne', { pageTitle: 'Products', token, product })
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+}
 
 module.exports = {
   getAllProducts,

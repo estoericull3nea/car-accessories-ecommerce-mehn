@@ -7,7 +7,7 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style-type: none;
   scroll-behavior: smooth;
   font-family: 'Nunito', sans-serif;
@@ -41,11 +41,8 @@ section {
   position: relative;
 }
 
-/* target all div */
 .main-footer > div {
   width: auto;
-  /* border: 1px solid red; */
-  /* height: 50vh; */
 }
 
 /* logo col */
@@ -55,6 +52,7 @@ section {
   gap: 1rem;
   cursor: pointer;
   height: auto;
+  margin-right: 3rem;
 }
 
 .main-footer .logo-col h1 {
@@ -217,18 +215,16 @@ section {
 }
 
 .any-queries .bottom-area button {
-  border-radius: 10px;
-  color: var(--white);
-  outline: none;
-  border: none;
-  cursor: pointer;
+  border-radius: 5px;
   padding: 5px 0;
-  background-color: var(--pure-black);
-  transition: transform 0.2s ease;
+
+  background: transparent;
+  border: 1px solid #8f4f07;
 }
 
 .any-queries .bottom-area button:hover {
-  transform: scale(1.0599) !important;
+  border: 1px solid #8f4f07;
+  background: #8f4f07;
 }
 
 /* copyright */
@@ -248,40 +244,50 @@ section {
   gap: 1rem;
 }
 
-@media (max-width: 1236px) {
+@media (max-width: 1411px) {
   .main-footer {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     height: auto;
   }
+  .any-queries .bottom-area button {
+    color: white;
+  }
 }
 
-@media (max-width: 1034px) {
+@media (max-width: 1067px) {
   .main-footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  @media (max-width: 978px) {
+  @media (max-width: 1019px) {
     .main-footer {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
-  @media (max-width: 810px) {
+  @media (max-width: 879px) {
     .main-footer {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media (max-width: 678px) {
+  /* @media (max-width: 639px) {
     .copyright {
       bottom: 5px;
       font-size: 0.7rem;
       width: 100%;
       text-align: center;
     }
-  }
+  } */
 
-  @media (max-width: 588px) {
+  @media (max-width: 639px) {
+    .copyright {
+      bottom: 5px;
+      font-size: 0.7rem;
+      width: 100%;
+      text-align: center;
+    }
+
     .main-footer {
       grid-template-columns: 1fr;
       place-items: center;

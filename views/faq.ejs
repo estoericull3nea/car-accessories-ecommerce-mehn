@@ -1,69 +1,119 @@
-<link rel="stylesheet" href="css/faq.css" />
+<html lang="en">
+  <head>
+    <!-- {{>head}} -->
+    <%- include("partials/head") %>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
-<%- include("partials/header") %>
+      * {
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        list-style-type: none;
+        scroll-behavior: smooth;
+        font-family: 'Nunito', sans-serif;
+      }
 
-<section class="faq">
-  <h1>FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
-  <br /><br />
-  <h3>1. How can I place an order on Extraordinary AutoParts?</h3>
-  <p>
-    <br />
-    To place an order, simply browse our website and add the desired items to
-    your list and cart. Once you have finished selecting your products, proceed
-    to the checkout page. Provide the necessary shipping and payment
-    information, review your order, and complete the purchase. If you encounter
-    any difficulties, our customer support team is ready to assist you.
-  </p>
-  <br />
-  <h3>2. What payment methods do you accept?</h3>
-  <p>
-    <br />
-    We accept various payment methods, including major credit cards, debit
-    cards, GCash, and PayPal. All transactions are securely processed to ensure
-    the safety of your personal and financial information.
-  </p>
-  <br />
-  <h3>3. How long does shipping take?</h3>
-  <p>
-    <br />
-    Shipping times may vary depending on your location and the specific product.
-    We strive to process and ship orders as quickly as possible. Once your order
-    is confirmed, you will receive a shipping confirmation email with a tracking
-    number to monitor the progress of your package.
-  </p>
-  <br />
-  <h3>4. Do you offer international shipping?</h3>
-  <p>
-    <br />
-    Unfortunately not.
-  </p>
-  <br />
-  <h3>5. What is your return policy?</h3>
-  <p>
-    <br />
-    We want you to be completely satisfied with your purchase. If you receive a
-    defective or incorrect item, please contact our customer support within 7
-    days of delivery to arrange for a return or exchange.
-  </p>
-  <br />
-  <h3>6. Can I track the status of my order?</h3>
-  <p>
-    <br />
-    Yes, once your order is shipped, you will receive a confirmation email
-    containing a tracking number. You can use this tracking number to monitor
-    the progress of your shipment through the designated shipping carrier's
-    website.
-  </p>
-  <br />
-  <h3>7. Do you offer customer support?</h3>
-  <p>
-    <br />
-    Absolutely! We have a dedicated customer support team available to assist
-    you with any inquiries or concerns you may have. You can reach us through
-    email and phone. We are committed to providing prompt and helpful assistance
-    to ensure your satisfaction. If you have any further questions or need
-    assistance, please don't hesitate to reach out to us. We are here to help!
-  </p>
-</section>
+      :root {
+        --white: #f5f1ee;
+        --pure-black: black;
+        --dark-black: #58626c;
+        --main-color: #8f4f07;
+        --text-low-opacity: rgba(0, 0, 0, 0.563);
+      }
 
-<%- include("partials/footer") %>
+      section {
+        padding: 50px 5%;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        color: var(--text-low-opacity);
+        font-size: 0.9rem;
+        padding: 0 30%;
+      }
+
+      p.center {
+        text-align: center;
+        font-weight: 900;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        padding: 0 25%;
+      }
+    </style>
+  </head>
+  <body class="light">
+    <%- include("partials/header") %>
+    <!-- {{>header}} -->
+
+    <section>
+      <h1>FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
+
+      <h3>1. How can I place an order on Extraordinary AutoParts?</h3>
+      <p>
+        To place an order, simply browse our website and add the desired items
+        to your list and cart. Once you have finished selecting your products,
+        proceed to the checkout page. Provide the necessary shipping and payment
+        information, review your order, and complete the purchase. If you
+        encounter any difficulties, our customer support team is ready to assist
+        you.
+      </p>
+
+      <h3>2. What payment methods do you accept?</h3>
+      <p>
+        We accept various payment methods, including major credit cards, debit
+        cards, GCash, and PayPal. All transactions are securely processed to
+        ensure the safety of your personal and financial information.
+      </p>
+
+      <h3>3. How long does shipping take?</h3>
+      <p>
+        Shipping times may vary depending on your location and the specific
+        product. We strive to process and ship orders as quickly as possible.
+        Once your order is confirmed, you will receive a shipping confirmation
+        email with a tracking number to monitor the progress of your package.
+      </p>
+
+      <h3>4. Do you offer international shipping?</h3>
+      <p>Unfortunately not.</p>
+
+      <h3>5. What is your return policy?</h3>
+      <p>
+        We want you to be completely satisfied with your purchase. If you
+        receive a defective or incorrect item, please contact our customer
+        support within 7 days of delivery to arrange for a return or exchange.
+      </p>
+
+      <h3>6. Can I track the status of my order?</h3>
+      <p>
+        Yes, once your order is shipped, you will receive a confirmation email
+        containing a tracking number. You can use this tracking number to
+        monitor the progress of your shipment through the designated shipping
+        carrier's website.
+      </p>
+
+      <h3>7. Do you offer customer support?</h3>
+      <p>
+        Absolutely! We have a dedicated customer support team available to
+        assist you with any inquiries or concerns you may have. You can reach us
+        through email and phone. We are committed to providing prompt and
+        helpful assistance to ensure your satisfaction. If you have any further
+        questions or need assistance, please don't hesitate to reach out to us.
+        We are here to help!
+      </p>
+    </section>
+
+    <%- include("partials/footer") %>
+  </body>
+</html>

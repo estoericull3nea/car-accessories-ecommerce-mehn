@@ -28,13 +28,43 @@
     position: relative;
     top: 2px;
   }
+
+  /* btn */
+  .btn-brown {
+    border: 1px solid #8f4f07;
+    background: #8f4f07;
+  }
+
+  .btn-brown:hover {
+    background: transparent;
+    border: 1px solid #8f4f07;
+    color: black;
+  }
+
+  .btn-brown:active {
+    background: #8f4f07 !important;
+  }
+
+  .btn-brown:focus {
+    background: transparent !important;
+    color: black;
+  }
+
+  .btn-outline-brown {
+    border: 1px solid #8f4f07;
+    color: black;
+  }
+
+  .btn-outline-brown:hover {
+    background: #8f4f07;
+  }
 </style>
 <header>
   <nav class="navbar navbar-expand-md">
     <div class="container">
       <!-- logo -->
       <a class="navbar-brand fs-4 fw-bold" href="/">
-        <img src="icons/image.webp" alt="" width="35" />EA
+        <img src="/icons/image.webp" alt="" width="35" />EA
       </a>
 
       <!-- menu -->
@@ -98,7 +128,7 @@
           <div class="btn-group" role="group">
             <button
               type="button"
-              class="btn btn-success dropdown-toggle get-started"
+              class="btn btn-success dropdown-toggle get-started btn-brown"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
