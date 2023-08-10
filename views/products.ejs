@@ -70,10 +70,10 @@
               <%= product[i].description %>
             </p>
             <div class="buttons">
-              <form action="/products/<%= product[i]._id %>" method="GET">
-                <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
+              <form action="/products/<%=product[i]._id%>" method="GET">
+                 <button href="#" class="btn btn-outline-dark">View Details</button>
               </form>
-              <a href="#" class="btn btn-outline-dark">View Details</a>
+              <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
             </div>
              
           </div>

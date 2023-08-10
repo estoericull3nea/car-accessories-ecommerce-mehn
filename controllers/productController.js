@@ -1,5 +1,4 @@
 const Products = require('../models/Product')
-
 const getAllProducts = async (req, res) => {
   try {
     const product = await Products.find()
@@ -14,8 +13,9 @@ const getProduct = async (req, res) => {
   try {
     const { id } = req.params
     const product = await Products.findById({ _id: id })
+
     const token = req.cookies['access_token']
-    res.render('viewOne', { pageTitle: 'Products', token, product })
+    res.render('viewOne', { pageTitle: 'test', token, product })
   } catch (error) {
     res.status(500).json({ message: error.message })
   }

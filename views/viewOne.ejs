@@ -2,7 +2,7 @@
   <head>
     <!-- {{>head}} -->
     <%- include("partials/head") %>
-    
+
     <style>
       .parent {
         display: grid;
@@ -21,7 +21,6 @@
         position: relative;
         height: 400px;
         cursor: pointer;
-
       }
       .btn-primary {
         position: relative;
@@ -54,33 +53,21 @@
   </head>
   <body class="light">
     <%- include("partials/header") %>
-    
-    
-    <div class="parent">
-    <% for(let i=0; i<product.length; i++) { %>
-        <div class="card" style="width: 18rem">
-          <img src="<%= product[i].imgURL %>" class="card-img-top" alt="<%= product[i].imgURL %>" />
-          <div class="card-body">
-            <h5 class="card-title"><%= product[i].title %></h5>
-            <p class="card-text">
-              ₱ <%= product[i].price %>
-            </p>
-            <p class="card-text">
-              <%= product[i].description %>
-            </p>
-            <div class="buttons">
-              <form action="/products/<%= product[i]._id %>" method="GET">
-                <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
-              </form>
-              <a href="#" class="btn btn-outline-dark">View Details</a>
-            </div>
-             
-          </div>
-        </div>
-   <% } %>
-  </div>
 
-   
+    <div class="parent">
+      <div class="card" style="width: 18rem">
+        <img
+          src="<%=product.imgURL %>"
+          class="card-img-top"
+          alt="<%= product.imgURL %>"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= product.title %></h5>
+          <p class="card-text">₱ <%= product.price %></p>
+          <p class="card-text"><%= product.description %></p>
+        </div>
+      </div>
+    </div>
 
     %> <%- include("partials/footer") %>
   </body>
