@@ -125,7 +125,8 @@ const postLogin = async (req, res) => {
 
 const getLogout = (req, res) => {
   res.clearCookie('access_token')
-  res.redirect('/')
+  req.flash('success_msg', 'Logged out!')
+  res.redirect('/auth/login')
 }
 
 module.exports = {
