@@ -1,70 +1,45 @@
 <html lang="en">
   <head>
-    <!-- {{>head}} -->
     <%- include("partials/head") %>
 
     <style>
-      .parent {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-        place-items: center;
-
-        margin-inline: 5%;
-        margin-top: 2rem;
-      }
-      .card-img-top {
-        height: 200px;
-      }
-
       .card {
-        position: relative;
-        height: 400px;
-        cursor: pointer;
-      }
-      .btn-primary {
-        position: relative;
+        margin-inline: 10%;
       }
 
-      .buttons {
-        display: flex;
-        justify-content: space-around;
-
-        position: absolute;
-        bottom: 15px;
+      .col-sm-4 {
+        width: 260px;
+        padding: 1rem;
       }
 
-      .buttons .btn:first-child {
-        margin-right: 1.5rem;
-      }
-
-      /* btn */
-      .btn-brown {
-        border: 1px solid #8f4f07;
-        background: #8f4f07;
-      }
-
-      .btn-brown:hover {
-        background: transparent;
-        border: 1px solid #8f4f07;
-        color: black;
+      .col-sm-8 {
+        margin-top: 2rem;
       }
     </style>
   </head>
   <body class="light">
     <%- include("partials/header") %>
 
-    <div class="parent">
-      <div class="card" style="width: 18rem">
-        <img
-          src="<%=product.imgURL %>"
-          class="card-img-top"
-          alt="<%= product.imgURL %>"
-        />
-        <div class="card-body">
-          <h5 class="card-title"><%= product.title %></h5>
-          <p class="card-text">₱ <%= product.price %></p>
-          <p class="card-text"><%= product.description %></p>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-sm-4">
+          <img
+            src="<%=product.imgURL %>"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-sm-8">
+          <div class="card-body">
+            <h5 class="card-title"><%=product.title %></h5>
+            <p class="card-text">₱ <%=product.price %></p>
+            <p class="card-text">
+              <small class="text-body-secondary">
+                <%=product.description %></small
+              >
+            </p>
+            <button class="btn btn-primary btn-brown">Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>
