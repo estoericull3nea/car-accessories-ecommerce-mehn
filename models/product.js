@@ -21,6 +21,10 @@ const ProductSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  descFull: {
+    type: String,
+    required: true,
+  },
 })
 
 module.exports = new mongoose.model('Product', ProductSchema)

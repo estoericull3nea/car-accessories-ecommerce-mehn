@@ -5,6 +5,7 @@
     "quantity": 1,
     "price": 2999,
     "description": "Designed for tropical use.",
+    "descFull": "Created specifically to thrive within the equatorial climatic conditions and the lush verdant landscapes of the tropics, this ingeniously engineered marvel seamlessly amalgamates form and function. Crafted with an unwavering focus on durability, adaptability, and resilience, it is meticulously optimized to endure the relentless humidity, scorching temperatures, and abundant precipitation that characterize tropical regions",
     "__v": 0
   },
   {
@@ -13,6 +14,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Providing high-quality solutions for.",
+    "descFull": "Dedicated to furnishing superlative and unparalleled resolutions for a diverse spectrum of intricate challenges, this innovative entity consistently endeavors to transcend conventional boundaries and establish new pinnacles of excellence. With an unwavering commitment to precision, sophistication, and efficacy, it is resolutely poised to cater to the multifaceted and exacting demands posed by an array of complex quandaries.",
     "__v": 0
   },
   {
@@ -21,6 +23,7 @@
     "quantity": 1,
     "price": 1900,
     "description": "Rechargeable power source for vehicles.",
+    "descFull": "An advanced and sustainable energy reservoir meticulously designed to fulfill the dynamic energy requirements of modern vehicular transportation, this rechargeable power source represents a paradigm shift in propulsive technology. Engineered with an unswerving focus on efficiency, longevity, and environmental stewardship, it seamlessly integrates within the vehicular framework to provide an uninterrupted wellspring of energy for diverse mobility needs.",
     "__v": 0
   },
   {
@@ -29,6 +32,7 @@
     "quantity": 1,
     "price": 2900,
     "description": "High performance batteries.",
+    "descFull": "Exemplifying the epitome of energy storage innovation, these high-performance batteries transcend conventional limits to redefine the parameters of power and endurance. Meticulously engineered with an unwavering focus on optimizing energy density, efficiency, and lifespan, they stand as a testament to the fusion of cutting-edge materials, advanced electrochemical processes, and visionary design.",
     "__v": 0
   },
   {
@@ -37,6 +41,7 @@
     "quantity": 1,
     "price": 3300,
     "description": "Lead-acid battery that incorporates new technology.",
+    "descFull": "Introducing an extraordinary evolution in energy storage, the lead-acid battery infused with groundbreaking technology emerges as a testament to the relentless march of innovation within the realm of electrochemical systems. Seamlessly integrating venerable lead-acid chemistry with the frontiers of contemporary engineering, this paradigm-shifting creation redefines the very essence of traditional power storage.",
     "__v": 0
   },
   {
@@ -45,6 +50,7 @@
     "quantity": 1,
     "price": 3300,
     "description": "Excellent braking performance and durability.",
+    "descFull": "Unveiling a realm of unparalleled automotive safety and reliability, the braking system characterized by its exceptional braking performance and unwavering durability stands as a resplendent testament to the fusion of advanced engineering and cutting-edge materials.",
     "__v": 0
   },
   {
@@ -53,6 +59,7 @@
     "quantity": 1,
     "price": 3900,
     "description": "Hydraulic by pressing the brake.",
+    "descFull": "Through a meticulously orchestrated and intricately choreographed sequence of mechanical interactions, the hydraulic braking system, activated by the deliberate act of pressing upon the brake pedal, stands as a testament to the harmonious convergence of fluid dynamics, precision engineering, and vehicular control.",
     "__v": 0
   },
   {
@@ -60,7 +67,8 @@
     "title": "Bosch Car Brakes",
     "quantity": 1,
     "price": 1900,
-    "description": "Stopping mechanism for automotive vehicles..",
+    "description": "Stopping mechanism for automotive vehicles.",
+    "descFull": "The stopping mechanism, a fundamental cornerstone of automotive safety and control, emerges as a sophisticated arrangement of interconnected components, working collaboratively to transform vehicular motion into a state of controlled rest.",
     "__v": 0
   },
   {
@@ -69,6 +77,7 @@
     "quantity": 1,
     "price": 4100,
     "description": "Stopping mechanism for automotive vehicles..",
+    "descFull": "Facilitated by hydraulic principles, this mechanism orchestrates the transmission of force from the driver's input to the brake calipers, which then clamp onto the brake pads, creating friction against the rotating brake discs. This frictional interaction",
     "__v": 0
   },
   {
@@ -77,6 +86,7 @@
     "quantity": 1,
     "price": 2100,
     "description": "Prioritize safety and stopping power.",
+    "descFull": "Placing paramount importance on both the security of passengers and the efficacy of bringing vehicles to a halt, the design approach emphasizes a steadfast commitment to safety and formidable stopping power.",
     "__v": 0
   },
   {
@@ -85,6 +95,7 @@
     "quantity": 1,
     "price": 5999,
     "description": "Efficient stopping power.",
+    "descFull": "Aiming to provide a blend of optimal efficacy and responsive performance, the focus lies on delivering a stopping capability that is both efficient and potent. This entails an engineering approach that is dedicated to achieving a harmonious balance between the force applied when braking and the resulting deceleration",
     "__v": 0
   },
   {
@@ -93,6 +104,7 @@
     "quantity": 1,
     "price": 21999,
     "description": "Designed to deliver power and efficiency.",
+    "descFull": "Meticulously crafted with the purpose of providing both robust power delivery and streamlined efficiency, the design is driven by the aspiration to offer a balanced synthesis of forceful performance and optimal resource utilization.",
     "__v": 0
   },
   {
@@ -101,6 +113,7 @@
     "quantity": 1,
     "price": 22999,
     "description": "Advanced engine technologies.",
+    "descFull": "At the forefront of innovation within vehicular propulsion, advanced engine technologies represent a pioneering stride towards enhancing the efficiency, performance, and environmental compatibility of internal combustion powerplants. ",
     "__v": 0
   },
   {
@@ -109,6 +122,7 @@
     "quantity": 1,
     "price": 30999,
     "description": "Compact cars to larger engines.",
+    "descFull": "Transitioning from the realm of compact cars to the domain of larger engines, the evolution signifies a shift towards accommodating enhanced power and capabilities. This journey involves adapting to the requirements of larger vehicles and their respective demands for increased torque and performance.",
     "__v": 0
   },
   {
@@ -117,6 +131,7 @@
     "quantity": 1,
     "price": 40999,
     "description": "High-performance V8 and V12 engines.",
+    "descFull": "Embarking on the spectrum of vehicular power, the landscape is adorned with the presence of high-performance V8 and V12 engines, representing the epitome of internal combustion prowess.",
     "__v": 0
   },
   {
@@ -124,7 +139,8 @@
     "title": "Enkei Car Mags",
     "quantity": 1,
     "price": 4999,
-    "description": "High-quality and lightweight alloy .",
+    "description": "High-quality and lightweight alloy.",
+    "descFull": "Crafted with an unwavering commitment to excellence, the utilization of a high-quality and lightweight alloy epitomizes the fusion of meticulous material selection and engineering finesse.",
     "__v": 0
   },
   {
@@ -133,6 +149,7 @@
     "quantity": 1,
     "price": 2999,
     "description": "Build quality and innovative designs.",
+    "descFull": "Elevating standards through meticulous attention to construction and embracing visionary creativity in design, the focus centers on achieving superior build quality and pioneering innovation.",
     "__v": 0
   },
   {
@@ -141,6 +158,7 @@
     "quantity": 1,
     "price": 1800,
     "description": "Lightweight and aerodynamic designs.",
+    "descFull": "Showcasing an emphasis on both weight efficiency and streamlined aerodynamics, the spotlight falls on crafting designs that are both lightweight and optimized for superior airflow.",
     "__v": 0
   },
   {
@@ -149,6 +167,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Luxury and performance-oriented wheels.",
+    "descFull": "Presenting an intersection of opulence and high-performance capabilities, the spotlight shines on luxury and performance-oriented wheels that seamlessly fuse refined elegance with dynamic prowess.",
     "__v": 0
   },
   {
@@ -157,6 +176,7 @@
     "quantity": 1,
     "price": 2999,
     "description": "Lightweight construction and strength.",
+    "descFull": "Bringing together the virtues of reduced weight and robust strength, the focus is on employing lightweight construction techniques that don't compromise structural integrity. ",
     "__v": 0
   },
   {
@@ -165,6 +185,7 @@
     "quantity": 1,
     "price": 2100,
     "description": "Bespoke designs and exceptional craftsmanship.",
+    "descFull": "Celebrating the realm of individualized artistry, bespoke designs stand as a testament to the unique creative expressions tailored to each client's desires. This pursuit embodies a dedication to transcending mass production, crafting products that are an embodiment of personal identity and taste.",
     "__v": 0
   },
   {
@@ -173,6 +194,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Suit various vehicle applications.",
+    "descFull": "Celebrating the realm of individualized artistry, bespoke designs stand as a testament to the unique creative expressions tailored to each client's desires.",
     "__v": 0
   },
   {
@@ -181,6 +203,7 @@
     "quantity": 1,
     "price": 3800,
     "description": "For attention-grabbing aesthetics.",
+    "descFull": "Crafted with the specific intention of captivating visual allure and seizing attention, these designs are meticulously curated to exhibit aesthetics that demand immediate notice. This pursuit of attention-grabbing appeal is underpinned by a meticulous consideration of elements such as form, color, texture, and composition, all orchestrated to elicit a profound and instantaneous visual impact",
     "__v": 0
   },
 
@@ -190,6 +213,7 @@
     "quantity": 1,
     "price": 3300,
     "description": "Classic designs and durable construction.",
+    "descFull": "Rooted in timeless elegance, classic designs serve as enduring testaments to aesthetic refinement while being paired with construction that stands the test of time. This fusion embodies a dedication to transcending fleeting trends, crafting products that resonate with a sense of perennial style.",
     "__v": 0
   },
   {
@@ -197,7 +221,8 @@
     "title": "American Racing Car Mags",
     "quantity": 1,
     "price": 5100,
-    "description": "Lightweight construction and stylish designs,.",
+    "description": "Lightweight construction and stylish designs.",
+    "descFull": "Achieving a delicate equilibrium between reduced weight and captivating aesthetics, the focus lies in employing lightweight construction techniques that harmonize seamlessly with stylish designs.",
     "__v": 0
   },
 
@@ -207,6 +232,7 @@
     "quantity": 1,
     "price": 5999,
     "description": "Optimize exhaust flow and reduce backpressure.",
+    "descFull": "Striving for enhanced engine performance, the goal is to optimize exhaust flow by creating a pathway that minimizes obstructions and allows gases to exit with increased efficiency. This optimization process is aimed at reducing backpressure, a phenomenon where exhaust gases encounter resistance as they exit the engine, which can impede performance.",
     "__v": 0
   },
   {
@@ -215,6 +241,7 @@
     "quantity": 1,
     "price": 5500,
     "description": "A deep and throaty tone.",
+    "descFull": "Emitting a resonant and richly textured sound, the focus is on achieving a deep and throaty tone that adds a distinctive auditory dimension to the vehicle's presence. This sound profile is carefully crafted to imbue the vehicle's exhaust note with a robust and evocative character that resonates with enthusiasts and observers alike.",
     "__v": 0
   },
   {
@@ -223,6 +250,7 @@
     "quantity": 1,
     "price": 6999,
     "description": "Crafted from high-quality stainless steel.",
+    "descFull": "Emitting a resonant and richly textured sound, the focus is on achieving a deep and throaty tone that adds a distinctive auditory dimension to the vehicle's presence. This sound profile is carefully crafted to imbue the vehicle's exhaust note with a robust and evocative character that resonates with enthusiasts and observers alike.",
     "__v": 0
   },
   {
@@ -231,6 +259,7 @@
     "quantity": 1,
     "price": 5100,
     "description": "Aggressive tone and enhanced exhaust flow.",
+    "descFull": "Delivering an assertive and commanding auditory presence, the focus is on achieving an aggressive tone that resonates with power and authority. This is coupled with an emphasis on enhancing exhaust flow, wherein the design optimizes the pathway for exhaust gases to exit the system with heightened efficiency.",
     "__v": 0
   },
   {
@@ -239,6 +268,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Exhaust noise reduction and redirection.",
+    "descFull": "Dedicated to creating a more subdued auditory experience, the emphasis is on exhaust noise reduction through meticulous engineering and design strategies. ",
     "__v": 0
   },
   {
@@ -247,6 +277,7 @@
     "quantity": 1,
     "price": 7999,
     "description": "Reflective Sound Cancellation (RSC) technology.",
+    "descFull": "Employing innovative Reflective Sound Cancellation (RSC) technology, the focus is on refining the auditory landscape by intelligently manipulating sound waves. This advanced approach involves the use of precisely designed components that strategically reflect and cancel out specific frequencies, resulting in a reduction of unwanted noise.",
     "__v": 0
   },
   {
@@ -255,6 +286,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Deliver efficient cooling performance.",
+    "descFull": "With a paramount emphasis on efficacy, the aim is to bestow systems with the capacity to provide efficient cooling performance. This objective entails a meticulous alignment of engineering principles and design considerations, facilitating the dissipation of heat in a manner that optimally regulates temperature. ",
     "__v": 0
   },
   {
@@ -263,6 +295,7 @@
     "quantity": 1,
     "price": 2100,
     "description": "Improved cooling capacity and durability.",
+    "descFull": "Focusing on enhancement, the objective is to achieve improved cooling capacity coupled with heightened durability. This pursuit involves the refinement of systems to bolster their capability in dissipating heat effectively.",
     "__v": 0
   },
   {
@@ -271,6 +304,7 @@
     "quantity": 1,
     "price": 1100,
     "description": "Ensure efficient cooling.",
+    "descFull": "With a steadfast commitment to maintaining optimal temperature management, the objective is to ensure the seamless and effective cooling of systems. This endeavor encompasses the employment of strategic engineering methodologies and design considerations that collectively contribute to the prevention of overheating.",
     "__v": 0
   },
   {
@@ -279,6 +313,7 @@
     "quantity": 1,
     "price": 4100,
     "description": "Premium radiator and advanced designs.",
+    "descFull": "Embracing excellence, the focus centers on incorporating a premium radiator imbued with advanced designs. This entails the integration of high-quality materials, intricate engineering, and innovative construction methodologies to form a radiator that stands as a pinnacle of craftsmanship. ",
     "__v": 0
   },
   {
@@ -287,6 +322,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Engine cooling system heat exchanger.",
+    "descFull": "At the heart of the engine cooling system, the heat exchanger plays a crucial role in regulating temperature. This component facilitates the transfer of heat from the engine coolant to the surrounding air, ensuring that the engine operates within the optimal temperature range.",
     "__v": 0
   },
   {
@@ -295,6 +331,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "High-quality steering wheels.",
+    "descFull": "Exemplifying excellence, high-quality steering wheels stand as a testament to meticulous craftsmanship and premium materials. With an unwavering dedication to detail, these steering wheels are carefully designed and constructed to provide an ergonomic and tactilely pleasing interface for drivers.",
     "__v": 0
   },
   {
@@ -303,6 +340,7 @@
     "quantity": 1,
     "price": 4100,
     "description": "Ensuring optimal performance and control.",
+    "descFull": "Dedicated to achieving the utmost effectiveness, the focus is on ensuring optimal performance and control. This commitment entails a meticulous approach to engineering and design, with the aim of creating products that excel in their intended functions.",
     "__v": 0
   },
   {
@@ -311,6 +349,7 @@
     "quantity": 1,
     "price": 2100,
     "description": "Genuine leather and wood.",
+    "descFull": "Incorporating authenticity and natural elegance, the emphasis lies in utilizing genuine leather and wood materials. This choice reflects a commitment to quality and sophistication, as these materials are carefully selected for their inherent beauty and timeless appeal.",
     "__v": 0
   },
   {
@@ -319,6 +358,7 @@
     "quantity": 1,
     "price": 2999,
     "description": "Constructed with lightweight materials.",
+    "descFull": "Crafted with a focus on weight efficiency, the products are constructed using lightweight materials. This approach involves the integration of advanced materials that prioritize reduced mass without compromising structural integrity.",
     "__v": 0
   },
   {
@@ -327,6 +367,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Primary control for vehicle direction.",
+    "descFull": "Serving as the core command for guiding vehicle movement, the primary control for vehicle direction is a pivotal interface that empowers drivers with the ability to steer and navigate. ",
     "__v": 0
   },
   {
@@ -335,6 +376,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Sporty appearance and improved control.",
+    "descFull": "Boasting a dynamic and vibrant aesthetic, the emphasis is on a sporty appearance that effortlessly blends sleek design with energetic flair. This visual identity acts as a compelling representation of the vehicle's agility and capability, capturing attention and evoking excitement.",
     "__v": 0
   },
   {
@@ -343,6 +385,7 @@
     "quantity": 1,
     "price": 2999,
     "description": "Suitable for various vehicle types.",
+    "descFull": "Adaptable to a range of vehicle categories, the design is versatile and well-suited for various vehicle types. This flexibility is achieved through thoughtful engineering and considerations that ensure compatibility with diverse automotive contexts.",
     "__v": 0
   },
   {
@@ -351,6 +394,7 @@
     "quantity": 1,
     "price": 3100,
     "description": "Handcrafted with a focus on individuality and style.",
+    "descFull": "Meticulously crafted with an unwavering emphasis on uniqueness and personal expression, the focus is on creating products that resonate with individuality and refined style.",
     "__v": 0
   }
 ]

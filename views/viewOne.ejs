@@ -12,15 +12,18 @@
         padding: 1rem;
       }
 
-      .col-sm-8 {
+      .product-h1 {
+        font-family: 'Cabin Sketch', cursive;
+        text-align: center;
         margin-top: 2rem;
       }
     </style>
   </head>
   <body class="light">
     <%- include("partials/header") %>
+    <h1 class="product-h1">Product</h1>
 
-    <div class="card mb-3">
+    <div class="card mb-5">
       <div class="row g-0">
         <div class="col-sm-4">
           <img
@@ -34,9 +37,7 @@
             <h5 class="card-title"><%=product.title %></h5>
             <p class="card-text">₱ <%=product.price %></p>
             <p class="card-text">
-              <small class="text-body-secondary">
-                <%=product.description %></small
-              >
+              <small class="text-body-secondary"> <%=product.descFull %></small>
             </p>
             <button class="btn btn-primary btn-brown">Add to Cart</button>
           </div>
