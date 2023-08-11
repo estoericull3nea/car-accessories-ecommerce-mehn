@@ -21,17 +21,14 @@
   --text-low-opacity: rgba(0, 0, 0, 0.563);
 }
 
-section {
-  padding: 50px 5%;
-}
-
-/* start of homepage */
 .homepage {
   height: 100vh;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   overflow-x: hidden;
+
+  padding-inline: 15%;
 
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -127,7 +124,26 @@ section {
     transform: rotate(-360deg);
   }
 }
-/* media queries */
+.carousel {
+  margin: 2rem;
+}
+
+.carousel img {
+  height: 550px;
+  border-radius: 5px;
+}
+
+.accordion {
+  padding-inline: 20%;
+  margin-block: 10rem;
+}
+
+.accordion .accordion-header {
+  background: red;
+}
+.accordion .faq-h1 {
+  font-family: 'Cabin Sketch', cursive;
+}
 
 @media (max-width: 949px) {
   header .navlist {
