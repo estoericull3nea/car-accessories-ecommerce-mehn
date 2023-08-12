@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Products = require('../models/Product')
+const Product = require('../models/Product')
 
 const UserSchema = new mongoose.Schema(
   {
@@ -39,11 +39,13 @@ const UserSchema = new mongoose.Schema(
 )
 
 UserSchema.methods.addToCart = async function (productId) {
-  const product = await Product.findById(productId)
+  const product = await Product.findById(productId) // getting productId from product
 
   if (product) {
-    const cart = this.cart
+    // pag meron
+    const cart = this.cart // asign this.cart to cart for readability
     const isExisting = cart.items.findIndex(
+      // check if existing in your cart
       (objInItems) =>
         new String(objInItems.productId).trim() ===
         new String(product._id).trim()

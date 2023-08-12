@@ -1,7 +1,6 @@
 require('dotenv').config()
 
 const { sign, verify } = require('jsonwebtoken')
-
 const create_token = (user) => {
   const access_token = sign({ id: user.id }, process.env.ACCESS_TOKEN)
   return access_token
