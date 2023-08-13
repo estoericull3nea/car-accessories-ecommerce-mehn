@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+// vars
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 3000
@@ -8,14 +9,13 @@ const flash = require('connect-flash')
 const compression = require('compression')
 const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
-
 const app = express()
 
 // setting middlewares
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser())
+app.use(express.urlencoded({ extended: false }))
 
+app.use(cookieParser())
 app.use(
   session({
     secret: process.env.SECRET,
@@ -24,6 +24,7 @@ app.use(
     resave: false,
   })
 )
+
 app.use(flash())
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg')
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
   res.locals.error = req.flash('error')
   next()
 })
+
 app.use(compression())
 app.use(
   helmet({
@@ -59,6 +61,7 @@ app.use((error, req, res, next) => {
   res.render('notFound', { pageTitle: 'Page not found - EA', token })
 })
 
+// function to start
 const start = () => {
   try {
     require('./db/connect')(process.env.MONGODB_URI_COMPASS)

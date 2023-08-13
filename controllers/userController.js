@@ -1,8 +1,9 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
-const { create_token } = require('../config/auth')
+const { createToken } = require('../config/auth')
 
+// getting
 const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
@@ -45,14 +46,16 @@ const postRegister = async (req, res) => {
       })
     }
 
-    // passed
+    // validations passed
     const hashedPass = await bcrypt.hash(password, 10)
     const userToAdd = new User({
       username,
       email,
       password: hashedPass,
     })
+
     await userToAdd.save()
+
     req.flash('success_msg', 'You are now Registered!')
     res.redirect('/auth/login')
   } catch (error) {
@@ -62,7 +65,7 @@ const postRegister = async (req, res) => {
 
 const postLogin = async (req, res) => {
   try {
-    res.clearCookie('access_token')
+    res.clearCookie('access_token') // clearing cookie then replace by new one
 
     // vars
     const { email, password } = req.body
@@ -105,17 +108,17 @@ const postLogin = async (req, res) => {
         pageTitle: 'Login',
       })
     }
-    // passed
 
-    // creating cookie when login
-    const access_token = create_token(user)
+    // validations passed
+    const access_token = createToken(user) // creating cookie when login
     res.cookie('access_token', access_token, {
       maxAge: 3600000, // 1hr
-      httpOnly: true,
+      httpOnly: true, // can't access in client side
       secure: true,
     })
-    // ***********************
-    req.session.isAuth = true
+
+    req.session.isAuth = true // setting isAuth to true for validation purposes
+    req.session.user = user // saving the user in the db
 
     res.redirect('/')
   } catch (error) {
@@ -124,8 +127,9 @@ const postLogin = async (req, res) => {
 }
 
 const getLogout = (req, res) => {
-  res.clearCookie('access_token')
-  req.flash('success_msg', 'Logged out!')
+  res.clearCookie('access_token') // clearing session
+  req.session.destroy() // clearing session
+  // req.flash('success_msg', 'Logged out!')
   res.redirect('/auth/login')
 }
 
