@@ -21,9 +21,6 @@ transporter.verify((err) => {
 // getting
 const getHomepage = (req, res) => {
   const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
-  console.log('-----------------------------------')
-  console.log(req.session.user)
-  console.log('-----------------------------------')
 
   res.render('homepage', {
     pageTitle: 'EA',
