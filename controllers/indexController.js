@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const UserMessage = require('../models/message')
+const UserMessage = require('../models/Message')
 const nodemailer = require('nodemailer')
 
 let transporter = nodemailer.createTransport({
@@ -20,7 +20,7 @@ transporter.verify((err) => {
 
 // getting
 const getHomepage = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token'] // check token if generated
 
   res.render('homepage', {
     pageTitle: 'EA',
@@ -29,27 +29,27 @@ const getHomepage = (req, res) => {
 }
 
 const getOurTeam = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token']
   res.render('team', { pageTitle: 'Our Team', token })
 }
 
 const getFAQ = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token']
   res.render('faq', { pageTitle: 'FAQ', token })
 }
 
 const getTermsAndConditions = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token']
   res.render('terms', { pageTitle: 'Terms and Conditions', token })
 }
 
 const getPrivacyPolicy = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token']
   res.render('privacy', { pageTitle: 'Privacy Policy', token })
 }
 
 const getAboutUs = (req, res) => {
-  const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
+  const token = req.cookies['access_token']
   res.render('about', { pageTitle: 'About Us', token })
 }
 // end of getting

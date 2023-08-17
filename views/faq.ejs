@@ -3,53 +3,20 @@
     <!-- {{>head}} -->
     <%- include("partials/head") %>
     <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
+      .faq {
+        padding-inline: 25%;
       }
 
-      * {
-        padding: 0;
-        margin: 0;
-        text-decoration: none;
-        list-style-type: none;
-        scroll-behavior: smooth;
-        font-family: 'Nunito', sans-serif;
+      .faq p {
+        padding-inline: 10%;
+        margin-block: 2rem;
       }
 
-      :root {
-        --white: #f5f1ee;
-        --pure-black: black;
-        --dark-black: #58626c;
-        --main-color: #8f4f07;
-        --text-low-opacity: rgba(0, 0, 0, 0.563);
-      }
-
-      section {
-        padding: 50px 5%;
-      }
-
-      h1 {
+      .main-header {
         text-align: center;
-        font-size: 2rem;
         margin-bottom: 2rem;
-      }
-
-      p {
-        color: var(--text-low-opacity);
-        font-size: 0.9rem;
-        padding: 0 30%;
-      }
-
-      p.center {
-        text-align: center;
-        font-weight: 900;
-      }
-
-      h3 {
-        font-size: 1.5rem;
-        padding: 0 25%;
+        font-family: 'Cabin Sketch', cursive;
+        font-size: 3rem;
       }
     </style>
   </head>
@@ -57,8 +24,8 @@
     <%- include("partials/header") %>
     <!-- {{>header}} -->
 
-    <section>
-      <h1>FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
+    <section class="faq">
+      <h1 class="main-header">FREQUENTLY ASKED QUESTIONS (FAQ)</h1>
 
       <h3>1. How can I place an order on Extraordinary AutoParts?</h3>
       <p>
