@@ -24,6 +24,9 @@ const ProductSchema = new mongoose.Schema({
   descFull: {
     type: String,
   },
+  typeOfItem: {
+    type: String,
+  },
 })
 
 module.exports = new mongoose.model('Product', ProductSchema)

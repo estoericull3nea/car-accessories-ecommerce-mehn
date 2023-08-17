@@ -14,10 +14,19 @@ const getAllProducts = async (req, res) => {
 const getProduct = async (req, res) => {
   try {
     const { id } = req.params
+
     const product = await Products.findById({ _id: id }) // find item by id
+    const findThis = product.typeOfItem
+
+    const similarProds = await Products.find({ typeOfItem: findThis })
 
     const token = req.cookies['access_token'] // checking token purposes if valid token, logout will be display, get started otherwise
-    res.render('viewOne', { pageTitle: 'test', token, product })
+    res.render('viewOne', {
+      pageTitle: 'Product',
+      token,
+      product,
+      similarProds,
+    })
   } catch (error) {
     res.status(500).json({ message: error.message })
   }

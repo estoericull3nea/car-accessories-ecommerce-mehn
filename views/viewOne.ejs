@@ -12,17 +12,45 @@
         padding: 1rem;
       }
 
-      .product-h1 {
+      .product-header {
         font-family: 'Cabin Sketch', cursive;
-        text-align: center;
         margin-top: 2rem;
+      }
+
+      .parent {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        place-items: center;
+
+        margin-inline: 5%;
+        margin-top: 2rem;
+      }
+
+      .card-similar {
+        height: 450px;
+
+        position: relative;
+      }
+
+      .card-img-top {
+        height: 200px;
+        padding: 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 1rem;
+
+        position: absolute;
+        bottom: 10px;
+        left: 23px;
       }
     </style>
   </head>
-  <body class="light">
+  <body>
     <%- include("partials/header") %>
-    <h1 class="product-h1">Product</h1>
-
+    <h1 class="container product-header">Product</h1>
     <div class="card mb-5">
       <div class="row g-0">
         <div class="col-sm-4">
@@ -43,6 +71,32 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <h1 class="container product-header">Similar Products</h1>
+
+    <div class="parent">
+      <% for(let i=0; i<similarProds.length; i++) { %>
+          <div class="card card-similar" style="width: 18rem">
+            <img src="<%= similarProds[i].imgURL %>" class="card-img-top" alt="<%= similarProds[i].imgURL %>" />
+            <div class="card-body">
+              <h5 class="card-title"><%= similarProds[i].title %></h5>
+              <p class="card-text">
+                ₱ <%= similarProds[i].price %>
+              </p>
+              <p class="card-text">
+                <%= similarProds[i].description %>
+              </p>
+              <div class="buttons">
+                <form action="/products/<%=similarProds[i]._id%>" method="GET">
+                   <button href="#" class="btn btn-outline-dark">View Details</button>
+                </form>
+                <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
+              </div>
+               
+            </div>
+          </div>
+     <% } %>
     </div>
 
     %> <%- include("partials/footer") %>
