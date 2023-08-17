@@ -24,7 +24,7 @@ const postRegister = async (req, res) => {
 
     // validations
     if (!username || !email || !password || !confirmPassword) {
-      errors.push({ msg: 'All fields is required!' })
+      errors.push({ msg: 'All fields are required!' })
     }
     if (password !== confirmPassword) {
       errors.push({ msg: 'Password not match!' })
@@ -73,7 +73,7 @@ const postLogin = async (req, res) => {
 
     // validations
     if (!email || !password) {
-      errors.push({ msg: 'All fields is required!' })
+      errors.push({ msg: 'All fields are required!' })
       return res.render('login', {
         errors,
         email,
