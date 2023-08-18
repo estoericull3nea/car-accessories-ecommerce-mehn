@@ -8,11 +8,9 @@ const {
   getLogout,
 } = require('../controllers/userController')
 
-router.get('/login', getLogin)
-router.get('/register', getRegister)
+router.route('/login').get(getLogin).post(postLogin)
+router.route('/register').get(getRegister).post(postRegister)
 
-router.post('/register', postRegister)
-router.post('/login', postLogin)
 router.get('/logout', getLogout)
 
 module.exports = router

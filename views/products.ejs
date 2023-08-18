@@ -14,8 +14,10 @@
         margin-inline: 5%;
         margin-top: 2rem;
       }
+
       .card-img-top {
         height: 200px;
+
       }
 
       .card {
@@ -23,6 +25,7 @@
         height: 400px;
         cursor: pointer;
       }
+
       .btn-primary {
         position: relative;
       }
@@ -54,6 +57,15 @@
       .carousel {
         height: 600px;
       }
+      .parent .card .bookmark {
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+   
+      
     </style>
   </head>
   <body class="light">
@@ -126,8 +138,21 @@
     <div class="parent">
     <% for(let i=0; i<product.length; i++) { %>
         <div class="card" style="width: 18rem">
+          <form action="#">
+            <button type="submit">
+              <span class="bookmark" title="bookmark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                </svg>
+                
+              </span>
+            </button>
+            
+          </form>
+           
           <img src="<%= product[i].imgURL %>" class="card-img-top" alt="<%= product[i].imgURL %>" />
           <div class="card-body">
+           
             <h5 class="card-title"><%= product[i].title %></h5>
             <p class="card-text">
               ₱ <%= product[i].price %>
@@ -136,7 +161,7 @@
               <%= product[i].description %>
             </p>
             <div class="buttons">
-              <form action="/products/<%=product[i]._id%>" method="GET">
+              <form action="/products/<%=product[i].id%>" method="GET">
                  <button href="#" class="btn btn-outline-dark">View Details</button>
               </form>
               <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>

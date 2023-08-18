@@ -93,7 +93,7 @@
           <%= similarProds[i].description %>
         </p>
         <div class="buttons">
-          <form action="/products/<%=similarProds[i]._id%>" method="GET">
+          <form action="/products/<%=similarProds[i].id%>" method="GET">
              <button href="#" class="btn btn-outline-dark">View Details</button>
           </form>
           <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
