@@ -126,17 +126,31 @@ const postLogin = async (req, res) => {
   }
 }
 
+const usingMiddleware = async (req, res, next) => {
+  try {
+    if (req.session.user) {
+      const findUserTest = await User.findById({ _id: req.session.user._id })
+      req.user = findUserTest
+      next()
+    } else {
+      // res.redirect('/auth/login')
+      // res.send('log in first')
+      next()
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 const addToCart = (req, res) => {
   // can't add to cart
   try {
-    if (!req.session.user) {
-      console.log(req.session.user._id)
+    if (!req.user) {
       res.send('login first')
     } else {
-      console.log(req.session.user._id)
-      req.session.user
+      req.user
         .addToCart(req.body.id)
-        .then(() => console.log('done'))
+        .then(() => res.send('added to cart'))
         .catch((err) => console.log(err))
     }
   } catch (error) {
@@ -158,4 +172,5 @@ module.exports = {
   postLogin,
   getLogout,
   addToCart,
+  usingMiddleware,
 }

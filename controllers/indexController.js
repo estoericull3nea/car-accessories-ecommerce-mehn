@@ -19,9 +19,11 @@ transporter.verify((err) => {
 })
 
 // getting
-const getHomepage = (req, res) => {
+const getHomepage = async (req, res) => {
   const token = req.cookies['access_token'] // check token if generated
-  // console.log(req.user)
+
+  const User = require('../models/User')
+
   res.render('homepage', {
     pageTitle: 'EA',
     token,
