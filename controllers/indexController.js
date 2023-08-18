@@ -21,6 +21,7 @@ transporter.verify((err) => {
 // getting
 const getHomepage = (req, res) => {
   const token = req.cookies['access_token'] // check token if generated
+  // console.log(req.user)
   res.render('homepage', {
     pageTitle: 'EA',
     token,

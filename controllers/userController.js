@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const User = require('../models/User')
 
 const { createToken } = require('../config/auth')
@@ -118,7 +118,7 @@ const postLogin = async (req, res) => {
     })
 
     req.session.isAuth = true // setting isAuth to true for validation purposes
-    req.session.user = user // saving the user in the db
+    req.session.user = user
 
     res.redirect('/')
   } catch (error) {
@@ -129,13 +129,12 @@ const postLogin = async (req, res) => {
 const addToCart = (req, res) => {
   // can't add to cart
   try {
-    req.user = req.session.user
-    if (!req.user) {
-      console.log(req.user)
+    if (!req.session.user) {
+      console.log(req.session.user._id)
       res.send('login first')
     } else {
-      console.log(req.user)
-      req.user
+      console.log(req.session.user._id)
+      req.session.user
         .addToCart(req.body.id)
         .then(() => console.log('done'))
         .catch((err) => console.log(err))

@@ -5,6 +5,7 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 3000
 const session = require('express-session')
+const MongoDBSession = require('connect-mongodb-session')(session)
 const flash = require('connect-flash')
 const compression = require('compression')
 const helmet = require('helmet')
@@ -15,6 +16,11 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+const store = new MongoDBSession({
+  uri: process.env.MONGODB_URI_COMPASS,
+  collection: 'user sessions',
+})
+
 app.use(cookieParser())
 app.use(
   session({
@@ -22,6 +28,7 @@ app.use(
     cookie: { maxAge: 3600000 }, // expires in 1hr
     saveUninitialized: false,
     resave: false,
+    store: store,
   })
 )
 
