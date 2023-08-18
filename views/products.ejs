@@ -164,7 +164,10 @@
               <form action="/products/<%=product[i].id%>" method="GET">
                  <button href="#" class="btn btn-outline-dark">View Details</button>
               </form>
-              <button type="submit" href="#" class="btn btn-primary btn-brown">Add to cart</button>
+              <form action="/products" method="POST">
+                <input type="hidden" name="id" value="<%= product[i].id %>">
+                <button type="submit" href="#" class="btn btn-primary btn-brown" >Add to cart</button>
+              </form>
             </div>
              
           </div>

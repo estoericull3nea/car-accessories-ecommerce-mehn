@@ -32,7 +32,23 @@ const getProduct = async (req, res) => {
   }
 }
 
+const addToCart = (req, res) => {
+  try {
+    if (!req.session.user) {
+      res.send('login first')
+    } else {
+      req.session.user
+        .addToCart(req.body.id)
+        .then(() => console.log('done'))
+        .catch((err) => console.log(err))
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   getAllProducts,
   getProduct,
+  addToCart,
 }
