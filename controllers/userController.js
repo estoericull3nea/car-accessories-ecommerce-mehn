@@ -126,6 +126,25 @@ const postLogin = async (req, res) => {
   }
 }
 
+const addToCart = (req, res) => {
+  // can't add to cart
+  try {
+    req.user = req.session.user
+    if (!req.user) {
+      console.log(req.user)
+      res.send('login first')
+    } else {
+      console.log(req.user)
+      req.user
+        .addToCart(req.body.id)
+        .then(() => console.log('done'))
+        .catch((err) => console.log(err))
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 const getLogout = (req, res) => {
   res.clearCookie('access_token') // clearing session
   req.session.destroy() // clearing session
@@ -139,4 +158,5 @@ module.exports = {
   postRegister,
   postLogin,
   getLogout,
+  addToCart,
 }
