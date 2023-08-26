@@ -2,6 +2,7 @@
   <head>
     <!-- {{>head}} -->
     <%- include("partials/head") %>
+    <link rel="stylesheet" href="css/ads.css" />
     
     <style>
 
@@ -16,63 +17,57 @@
       }
 
       .card-img-top {
-        height: 200px;
-
+        height: 130px;
       }
 
       .card {
         position: relative;
-        height: 400px;
         cursor: pointer;
+        transition: transform 200ms ease;
+        height: 300px;
+      }
+
+      .card:hover {
+        transform: scale(1.039);
       }
 
       .btn-primary {
         position: relative;
       }
 
-      .buttons {
-        display: flex;
-        justify-content: space-around;
-
-        position: absolute;
-        bottom: 15px;
-      }
-
-      .buttons .btn:first-child {
-        margin-right: 1.5rem;
-      }
-
-      /* btn */
-      .btn-brown {
-        border: 1px solid #8f4f07;
-        background: #8f4f07;
-      }
-
-      .btn-brown:hover {
-        background: transparent;
-        border: 1px solid #8f4f07;
-        color: black;
-      }
-
-      .carousel {
-        height: 600px;
-      }
+     
       .parent .card .bookmark {
-
         position: absolute;
         top: 5px;
         right: 5px;
     }
 
-   
+    /* card body */
+    .card-title {
+    margin: 0;
+    margin-top: .8rem;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: .8rem;
+    }
+
+    .btn {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+    }
+
+    .carousel {
+        height: 600px;
+      }
       
     </style>
   </head>
   <body class="light">
     <%- include("partials/header") %>
-
-    <!--  -->
-    <link rel="stylesheet" href="css/ads.css" />
 
     <div class="main-ads">
       <div class="carousel">
@@ -132,26 +127,19 @@
         </div>
       </div>
     </div>
-
-    <!--  -->
     
-     <!-- error -->
      <%- include('./partials/messages') %>
-     <!-- end error -->
+
     <div class="parent">
     <% for(let i=0; i<product.length; i++) { %>
-        <div class="card" style="width: 18rem">
-          <form action="#">
-            <button type="submit">
+        <a  href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
+           
               <span class="bookmark" title="bookmark">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
                   <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
                 </svg>
-                
               </span>
-            </button>
             
-          </form>
            
           <img src="<%= product[i].imgURL %>" class="card-img-top" alt="<%= product[i].imgURL %>" />
           <div class="card-body">
@@ -163,22 +151,16 @@
             <p class="card-text">
               <%= product[i].description %>
             </p>
-            <div class="buttons">
-              <form action="/products/<%=product[i].id%>" method="GET">
-                 <button href="#" class="btn btn-outline-dark">View Details</button>
-              </form>
+            
               <form action="/auth" method="POST">
                 <input type="hidden" name="id" value="<%= product[i].id %>">
                 <button type="submit" href="#" class="btn btn-primary btn-brown" >Add to cart</button>
               </form>
-            </div>
              
           </div>
-        </div>
+        </a>
    <% } %>
-  </div>
-
-   
+      </div>
 
     %> <%- include("partials/footer") %>
   </body>
