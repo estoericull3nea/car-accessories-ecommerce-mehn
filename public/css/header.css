@@ -1,197 +1,71 @@
-header {
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 10px 5%;
-
-  box-shadow: 0px -20px 36px -28px var(--main-color) inset;
-  position: relative;
+header .offcanvas {
+  width: 300px !important;
 }
 
-/* all icons */
-i {
+header .nav-link {
+  font-size: 0.8rem;
+}
+
+header .nav-item:hover {
+  color: #8f4f07;
+}
+
+header .dropdown-item:active {
+  background: none;
+  color: #8f4f07;
+}
+
+header .change {
+  width: 265px;
+}
+
+header .navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  position: relative;
+  top: 2px;
+}
+
+/* btn */
+header .btn-brown {
+  border: 1px solid #8f4f07;
+  background: #8f4f07;
+}
+
+header .btn-brown:hover {
+  background: #754106;
+  border: 1px solid #8f4f07;
+}
+
+header .btn-brown:active {
+  background: #8f4f07 !important;
+}
+
+header .btn-brown:focus {
+  background: transparent !important;
+  color: black;
+}
+
+header .btn-outline-brown {
+  border: 1px solid #8f4f07;
+  color: black;
+}
+
+header .btn-outline-brown:hover {
+  background: #8f4f07;
+}
+
+header .bi-cart4 {
   vertical-align: middle;
+  margin-left: 5px;
 }
 
-header img {
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-}
-/* start of navlist */
-header .navlist {
-  display: flex;
-  align-items: center;
+header .badge {
+  font-size: 0.6rem;
 }
 
-header .navlist li:not(:last-child) {
-  margin-right: 2rem;
+header .profile {
+  margin-inline: 10px;
 }
-
-header .navlist li a {
-  font-weight: 500;
-  color: var(--pure-black);
-  font-size: 0.8rem;
-
-  transition: color 0.2s ease;
-}
-header .navlist li a:hover {
-  color: var(--main-color);
-}
-
-/* start of logo container */
-header .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.1rem;
-}
-
-header .logo-container .logo-text {
-  font-size: 1.5rem;
-  font-weight: 1000;
-  cursor: pointer;
-}
-
-/* start of btn container */
-header .btn-container {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-/* --- */
-header .btn-container .search-container {
-  display: flex;
-  align-items: center;
-
-  position: relative;
-}
-
-header .btn-container .search-container [type='text'] {
-  border-radius: 20px;
-  padding: 3px 10px;
-
-  border: 1px solid var(--pure-black);
-  color: var(--text-low-opacity);
-}
-
-header .btn-container .search-container i {
-  position: absolute;
-  right: 3%;
-}
-/* --- */
-.btn {
-  padding: 5px 20px;
-  border-radius: 5px;
-  background-color: var(--main-color);
-  border: 1px solid var(--main-color);
-  cursor: pointer;
-  color: var(--white);
-
-  animation: signin_animation 1s infinite forwards alternate ease-in-out;
-}
-
-.btn:hover {
-  background-color: transparent;
-  color: var(--pure-black);
-  border: 1px solid var(--pure-black);
-}
-/* --- */
-header .btn-container .theme-container {
-  border: 1px solid var(--pure-black);
-  border-radius: 5px;
-  padding: 0 5px;
-
-  cursor: pointer;
-
-  position: relative;
-}
-
-header .btn-container .theme-container .theme-list {
-  position: absolute;
-  top: 45px;
-  left: -10px;
-
-  padding: 20px;
-  text-align: center;
-
-  color: white;
-
-  display: grid;
-  place-items: center;
-  z-index: 9;
-
-  display: none;
-}
-
-header
-  .btn-container
-  .theme-container.open-theme-list
-  .theme-list
-  li:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-header .btn-container .theme-container.open-theme-list .theme-list {
-  display: block;
-  display: grid;
-  place-items: center;
-
-  background: var(--main-color);
-  border-radius: 5px;
-}
-
-header .btn-container .theme-container .theme-list li {
-  transition: all 0.2s ease-in-out;
-  font-size: 0.7rem;
-}
-
-header .btn-container .theme-container .theme-list li:hover {
-  color: var(--white);
-  transform: translateX(-5px);
-}
-
-header .btn-container .theme-container i {
-  margin-left: -0.3rem;
-  transition: transform 0.2s ease;
-}
-
-header .btn-container .theme-container.open-theme-list i {
-  transform: rotate(90deg);
-}
-
-header .btn-container .theme-container span {
-  font-size: 0.8rem;
-}
-
-/* --- */
-header .btn-container .cart-container {
-  font-size: 1rem;
-  cursor: pointer;
-}
-/* --- */
-header .btn-container .menu-container {
-  font-size: 1rem;
-  cursor: pointer;
-
-  display: none;
-}
-
-.profile-container {
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-/* animation */
-
-@keyframes signin_animation {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(2px);
-  }
-}
-/* end of header */
