@@ -117,10 +117,6 @@ p {
   padding: 10px;
 }
 
-.btn-brown:focus {
-  color: black !important;
-}
-
 .dropdown-menu .dropdown-item {
   cursor: pointer;
   width: 200px;
@@ -130,4 +126,23 @@ p {
   background: brown;
   color: white;
   border-radius: 5px;
+}
+
+.btn-brown {
+  border: 1px solid #8f4f07;
+  background: hsl(32, 91%, 29%);
+}
+
+.btn-brown:hover {
+  background: #754106;
+  border: 1px solid #8f4f07;
+}
+
+.btn-brown:active {
+  background: #8f4f07 !important;
+}
+
+.btn-brown:focus {
+  background: transparent !important;
+  color: black;
 }
