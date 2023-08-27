@@ -69,8 +69,31 @@
               >
             </li>
 
-            <!-- profile -->
-            <li class="profile">
+            <% if(!token) { %>
+            <li class="nav-item login-register">
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic outlined example"
+              >
+                <a
+                  href="/auth/register"
+                  type="button"
+                  class="btn btn-outline-primary btn-register-login btn-sm"
+                >
+                  Register
+                </a>
+                <a
+                  href="/auth/login"
+                  type="button"
+                  class="btn btn-outline-primary btn-register-login btn-sm"
+                >
+                  Login
+                </a>
+              </div>
+            </li>
+            <% } else { %>
+            <li class="profile nav-item">
               <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -88,11 +111,12 @@
                 </svg>
               </a>
             </li>
+            <% } %>
 
             <!-- end of profile -->
 
             <!-- cart -->
-            <li class="cart position-relative">
+            <li class="cart position-relative nav-item">
               <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

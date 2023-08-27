@@ -69,3 +69,17 @@ header .badge {
 header .profile {
   margin-inline: 10px;
 }
+
+header .login-register {
+  margin-inline: 10px;
+}
+
+header .btn-register-login {
+  border: 2px solid #8f4f07;
+  color: black;
+}
+
+header .btn-register-login:hover {
+  background: #8f4f07;
+  border: 2px solid #8f4f07;
+}
