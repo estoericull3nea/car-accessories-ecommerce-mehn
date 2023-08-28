@@ -8,63 +8,67 @@
   margin-top: 2rem;
 }
 
-.card-img-top {
+.parent .card-img-top {
   height: 150px;
   padding: 5px;
 }
 
-.card {
+.parent .card {
   position: relative;
   cursor: pointer;
   transition: transform 200ms ease;
   height: 350px;
   width: 230px !important;
+
+  border: 1px solid #8f500747;
 }
 
-.card:hover {
+.parent .card:hover {
   transform: scale(1.039);
 }
 
-.btn-primary {
-  position: relative;
+.parent .card:hover > .bookmark {
+  display: block !important;
 }
 
 .parent .card .bookmark {
   position: absolute;
   top: 5px;
   right: 5px;
+
+  display: none;
 }
 
 /* card body */
-.card-title {
+.parent .card-title {
   margin: 0;
   margin-top: 0.8rem;
 }
 
-p {
+.parent p {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 0.8rem;
 }
 
-.btn {
+.btn-down {
   position: absolute;
   bottom: 15px;
   left: 15px;
 }
 
-.carousel {
+.main-ads .carousel {
   height: 600px;
 }
 
-.btn-search {
+.search-container .btn-search {
   position: relative;
   bottom: 0;
   left: 0;
   color: white;
 }
 
-.btn-search:hover {
+.search-container .btn-search:hover {
   color: white;
 }
 
@@ -80,10 +84,6 @@ p {
   margin-inline: 10%;
 }
 
-.main-products .left {
-  border: 1px solid red;
-}
-
 .main-products .left .btn {
   position: relative;
   bottom: 0;
@@ -92,15 +92,15 @@ p {
 }
 
 .main-products .search-filter label {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 
 .main-products .search-filter {
-  border: 1px solid black;
-
   display: flex;
   flex-direction: column;
+
+  border-top: 1px solid #8f500747;
 
   padding: 10px;
 }
@@ -109,20 +109,31 @@ p {
   margin-top: 20px;
 }
 
-.pagination {
+.navigation .pagination {
   margin-top: 2rem;
 }
 
 .dropdown-center {
+  border-top: 1px solid #8f500747;
+
   padding: 10px;
 }
 
-.dropdown-menu .dropdown-item {
+.dropdown-center .dropdown-menu .dropdown-item {
   cursor: pointer;
   width: 200px;
 }
 
-.dropdown-menu .dropdown-item:hover {
+.dropdown-center .dropdown-toggle:focus {
+  color: black;
+  vertical-align: center;
+}
+
+.dropdown-center .dropdown-toggle::after {
+  vertical-align: middle;
+}
+
+.dropdown-center .dropdown-menu .dropdown-item:hover {
   background: brown;
   color: white;
   border-radius: 5px;
@@ -145,4 +156,22 @@ p {
 .btn-brown:focus {
   background: transparent !important;
   color: black;
+}
+
+.main-products .sort-price {
+  border-top: 1px solid #8f500747;
+  border-bottom: 1px solid #8f500747;
+
+  padding: 10px;
+}
+
+.main-products .sort-price .btn-filter {
+  margin-top: 1rem;
+}
+
+.main-products .sort-price input {
+  width: 276px;
+  padding: 5px 10px;
+  border: 1px solid #8f4f07;
+  border-radius: 5px;
 }
