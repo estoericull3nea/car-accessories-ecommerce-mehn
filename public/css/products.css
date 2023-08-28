@@ -61,7 +61,7 @@
   height: 600px;
 }
 
-.search-container .btn-search {
+/* .search-container .btn-search {
   position: relative;
   bottom: 0;
   left: 0;
@@ -70,11 +70,14 @@
 
 .search-container .btn-search:hover {
   color: white;
-}
+} */
 
 .search-container {
   display: flex;
   justify-content: end;
+
+  width: 50%;
+  margin-bottom: 2rem;
 }
 
 .main-products {

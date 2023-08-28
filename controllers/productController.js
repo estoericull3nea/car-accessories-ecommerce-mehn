@@ -3,7 +3,12 @@ const UserModel = require('../models/User')
 // getting
 const getAllProducts = async (req, res) => {
   try {
-    // -------------
+    // search item
+    const searchItem = req.query.value
+    const searchProduct = await Products.findOne({ title: searchItem })
+    console.log(searchProduct)
+
+    // filter many
     const { value1, value2, value3, value4, value5, value6, value7 } = req.query
     const pickedObject = {}
 
@@ -36,12 +41,15 @@ const getAllProducts = async (req, res) => {
         }
       }
 
+      const product = await Products.find({})
+
       const token = req.cookies['access_token']
       res.render('products', {
         pageTitle: 'Products',
         token,
         anotherArray,
         haveLength,
+        product,
       })
     } else {
       const product = await Products.find()

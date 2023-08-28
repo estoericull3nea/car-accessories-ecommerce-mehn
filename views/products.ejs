@@ -72,13 +72,23 @@
     <!-- end of ads -->
     
     <!-- search -->
-    <div class="container search-container">
+    <!-- <div class="container search-container">
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search product ..." aria-label="Search">
         <button class="btn btn-brown btn-search" type="submit">Search</button>
       </form>
-    </div>
+    </div> -->
     <!-- end of search -->
+
+    <form action="/products" method="GET" class="container search-container">
+      <input class="form-control" list="datalistOptions" placeholder="Type to search..." name="value">
+      <datalist id="datalistOptions">
+        <% for(let i=0; i<product.length; i++) { %>
+            <option value="<%= product[i].title %>">
+       <% } %>
+      </datalist>
+    </form>
+    
 
     <!-- products -->
     <div class="main-products">
@@ -168,6 +178,8 @@
 
       </div>
       <div class="right">
+
+       
             <% if(haveLength) { %>
 
               <div class="parent">
@@ -207,6 +219,7 @@
 
            <% } else { %>
             <div class="parent">
+            
               <% for(let i=0; i<product.length; i++) { %>
                   <a  href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
                      
