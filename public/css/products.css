@@ -178,3 +178,8 @@
   border: 1px solid #8f4f07;
   border-radius: 5px;
 }
+
+.main-products .sort-price .form-select-sm {
+  width: 135px;
+  margin-bottom: 10px;
+}

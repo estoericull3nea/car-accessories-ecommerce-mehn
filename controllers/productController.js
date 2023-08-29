@@ -4,9 +4,25 @@ const UserModel = require('../models/User')
 const getAllProducts = async (req, res) => {
   try {
     // search item
-    const searchItem = req.query.value
-    const searchProduct = await Products.findOne({ title: searchItem })
-    console.log(searchProduct)
+    const searchOneItem = req.query.value
+    const productBasedOnSearch = await Products.findOne({
+      title: searchOneItem,
+    })
+
+    // price
+    const inputPriceRange = req.query.priceRange
+    const optionForPrice = req.query.option
+    let findThisPriceRange
+
+    if (optionForPrice === 'less') {
+      findThisPriceRange = await Products.find({
+        price: { $lt: inputPriceRange },
+      })
+    } else if (optionForPrice === 'greater') {
+      findThisPriceRange = await Products.find({
+        price: { $gt: inputPriceRange },
+      })
+    }
 
     // filter many
     const { value1, value2, value3, value4, value5, value6, value7 } = req.query
@@ -50,6 +66,8 @@ const getAllProducts = async (req, res) => {
         anotherArray,
         haveLength,
         product,
+        productBasedOnSearch,
+        findThisPriceRange,
       })
     } else {
       const product = await Products.find()
@@ -59,6 +77,8 @@ const getAllProducts = async (req, res) => {
         token,
         product,
         haveLength,
+        productBasedOnSearch,
+        findThisPriceRange,
       })
     }
   } catch (error) {

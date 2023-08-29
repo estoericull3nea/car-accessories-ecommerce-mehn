@@ -80,6 +80,7 @@
     </div> -->
     <!-- end of search -->
 
+    <!-- new search -->
     <form action="/products" method="GET" class="container search-container">
       <input class="form-control" list="datalistOptions" placeholder="Type to search..." name="value">
       <datalist id="datalistOptions">
@@ -88,6 +89,7 @@
        <% } %>
       </datalist>
     </form>
+    <!--  -->
     
 
     <!-- products -->
@@ -139,35 +141,20 @@
 
         </div>
         <br>
-        <!-- dropdown -->
-        <div class="dropdown-center">
-        <br>
-
-          <h4> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-diagram-2" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H11a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 5 7h2.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM3 11.5A1.5 1.5 0 0 1 4.5 10h1A1.5 1.5 0 0 1 7 11.5v1A1.5 1.5 0 0 1 5.5 14h-1A1.5 1.5 0 0 1 3 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1A1.5 1.5 0 0 1 9 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
-          </svg>Filter One</h4>
-          <button class="container btn btn-secondary dropdown-toggle btn-brown" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            All
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item">Battery</a></li>
-            <li><a class="dropdown-item">Brakes</a></li>
-            <li><a class="dropdown-item">Engine</a></li>
-            <li><a class="dropdown-item">Mags</a></li>
-            <li><a class="dropdown-item">Muffler</a></li>
-            <li><a class="dropdown-item">Radiator</a></li>
-            <li><a class="dropdown-item">Steering Wheel</a></li>
-          </ul>
-        </div>
-        <br>
-        <!-- end of dropdown -->
+       
 
         <div class="sort-price">
           <form>
             <br>
             <h4>Filter By Price</h4>
+
+            <select name="option" class="form-select form-select-sm" aria-label="Small select example">
+              <option selected value="greater">Greater Than</option>
+              <option value="less">Less Than</option>
+            </select>
+
             <label>
-                <input type="number" name="option1"  min="1" placeholder="Input price"> 
+                <input type="number" name="priceRange"  min="1" placeholder="Input price"> 
             </label>
             <br>
             
@@ -178,23 +165,89 @@
 
       </div>
       <div class="right">
+        <!-- filtered by checkboxes -->
 
-       
-            <% if(haveLength) { %>
-
-              <div class="parent">
-
-              <% for(let i=0; i<anotherArray.length; i++) { %>
-
-                  <a  href="/products/<%=anotherArray[i].id%>" class="card" style="width: 18rem">
+        <!-- filter by search -->
+          <% if(productBasedOnSearch) { %>
+            <div class="parent">
+            <a  href="/products/<%=productBasedOnSearch.id%>" class="card" style="width: 18rem">
                      
+              <span class="bookmark" title="bookmark">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                </svg>
+              </span>
+            
+           
+          <img src="<%= productBasedOnSearch.imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch.imgURL %>" />
+          <div class="card-body">
+           
+            <h5 class="card-title"><%= productBasedOnSearch.title %></h5>
+            <p class="card-text">
+              ₱ <%= productBasedOnSearch.price %>
+            </p>
+            <p class="card-text">
+              <%= productBasedOnSearch.description %>
+            </p>
+            
+              <form action="/auth" method="POST">
+                <input type="hidden" name="id" value="<%= productBasedOnSearch.id %>">
+                <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
+              </form>
+             
+          </div>
+        </a>
+      </div>
+      <br>
+          <% } %>
+          <!-- -->
+
+          <% if(findThisPriceRange) { %>
+            <h4 class="text-center"><%= findThisPriceRange.length %> Item(s)</h4>
+            <div class="parent">
+              <% for(let i=0; i<findThisPriceRange.length; i++) { %>
+                  <a  href="/products/<%=findThisPriceRange[i].id%>" class="card" style="width: 18rem">
                         <span class="bookmark" title="bookmark">
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
                             <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
                           </svg>
                         </span>
-                      
+                    <img src="<%= findThisPriceRange[i].imgURL %>" class="card-img-top" alt="<%= findThisPriceRange[i].imgURL %>" />
+                    <div class="card-body">
                      
+                      <h5 class="card-title"><%= findThisPriceRange[i].title %></h5>
+                      <p class="card-text">
+                        ₱ <%= findThisPriceRange[i].price %>
+                      </p>
+                      <p class="card-text">
+                        <%= findThisPriceRange[i].description %>
+                      </p>
+                        <form action="/auth" method="POST">
+                          <input type="hidden" name="id" value="<%= findThisPriceRange[i].id %>">
+                          <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
+                        </form>
+                       
+                    </div>
+                  </a>
+             <% } %>
+                </div> <!-- end of parent -->
+                <br>
+                  <hr>
+                  <% if(!findThisPriceRange.length === 0) { %>
+                      <hr>
+                 <% } %>  
+         <% } %>
+       
+
+            <% if(haveLength) { %>
+              <div class="parent">
+              <% for(let i=0; i<anotherArray.length; i++) { %>
+                  <a  href="/products/<%=anotherArray[i].id%>" class="card" style="width: 18rem">
+                        <span class="bookmark" title="bookmark">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                            <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                          </svg>
+                        </span>
                     <img src="<%= anotherArray[i].imgURL %>" class="card-img-top" alt="<%= anotherArray[i].imgURL %>" />
                     <div class="card-body">
                      
@@ -205,7 +258,6 @@
                       <p class="card-text">
                         <%= anotherArray[i].description %>
                       </p>
-                      
                         <form action="/auth" method="POST">
                           <input type="hidden" name="id" value="<%= anotherArray[i].id %>">
                           <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
@@ -214,12 +266,10 @@
                     </div>
                   </a>
              <% } %>
-
-                </div>
-
-           <% } else { %>
+                </div> <!-- end of parent -->
+           <% } else{ %>
+            <!-- all -->
             <div class="parent">
-            
               <% for(let i=0; i<product.length; i++) { %>
                   <a  href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
                      
