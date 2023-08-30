@@ -4,9 +4,10 @@ const UserModel = require('../models/User')
 const getAllProducts = async (req, res) => {
   try {
     // search item
-    const searchOneItem = req.query.value
-    const productBasedOnSearch = await Products.findOne({
-      title: searchOneItem,
+    const searchOneItem = req.query.search
+
+    const productBasedOnSearch = await Products.find({
+      title: { $regex: searchOneItem, $options: 'i' },
     })
 
     // price

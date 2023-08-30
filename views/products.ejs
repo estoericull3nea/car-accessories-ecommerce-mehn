@@ -82,7 +82,7 @@
 
     <!-- new search -->
     <form action="/products" method="GET" class="container search-container">
-      <input class="form-control" list="datalistOptions" placeholder="Type to search..." name="value">
+      <input class="form-control" list="datalistOptions" placeholder="Type to search..." name="search">
       <datalist id="datalistOptions">
         <% for(let i=0; i<product.length; i++) { %>
             <option value="<%= product[i].title %>">
@@ -169,37 +169,50 @@
 
         <!-- filter by search -->
           <% if(productBasedOnSearch) { %>
-            <div class="parent">
-            <a  href="/products/<%=productBasedOnSearch.id%>" class="card" style="width: 18rem">
-                     
-              <span class="bookmark" title="bookmark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-                  <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-                </svg>
-              </span>
-            
+
            
-          <img src="<%= productBasedOnSearch.imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch.imgURL %>" />
-          <div class="card-body">
-           
-            <h5 class="card-title"><%= productBasedOnSearch.title %></h5>
-            <p class="card-text">
-              ₱ <%= productBasedOnSearch.price %>
-            </p>
-            <p class="card-text">
-              <%= productBasedOnSearch.description %>
-            </p>
-            
-              <form action="/auth" method="POST">
-                <input type="hidden" name="id" value="<%= productBasedOnSearch.id %>">
-                <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
-              </form>
-             
+
+            <h4 class="text-center"><%= productBasedOnSearch.length %> Item(s)</h4>
+
+              <div class="parent">
+                <% for(let i=0; i<productBasedOnSearch.length; i++) { %>
+
+                  
+                <a  href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
+                         
+                  <span class="bookmark" title="bookmark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                      <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                    </svg>
+                  </span>
+                
+               
+              <img src="<%= productBasedOnSearch[i].imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch[i].imgURL %>" />
+              <div class="card-body">
+               
+                <h5 class="card-title"><%= productBasedOnSearch[i].title %></h5>
+                <p class="card-text">
+                  ₱ <%= productBasedOnSearch[i].price %>
+                </p>
+                <p class="card-text">
+                  <%= productBasedOnSearch[i].description %>
+                </p>
+                
+                  <form action="/auth" method="POST">
+                    <input type="hidden" name="id" value="<%= productBasedOnSearch[i].id %>">
+                    <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
+                  </form>
+                 
+              </div>
+            </a>
+
+            <% } %>
+
           </div>
-        </a>
-      </div>
+           
       <br>
-          <% } %>
+          <% }  %>
+             
           <!-- -->
 
           <% if(findThisPriceRange) { %>
