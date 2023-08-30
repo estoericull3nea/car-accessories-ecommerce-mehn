@@ -3,6 +3,9 @@ const UserModel = require('../models/User')
 // getting
 const getAllProducts = async (req, res) => {
   try {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
     // search item
     const searchOneItem = req.query.search
 
@@ -69,6 +72,7 @@ const getAllProducts = async (req, res) => {
         product,
         findThisPriceRange,
         productBasedOnSearch,
+        cartCount,
       })
     } else {
       const product = await Products.find()
@@ -80,6 +84,7 @@ const getAllProducts = async (req, res) => {
         haveLength,
         findThisPriceRange,
         productBasedOnSearch,
+        cartCount,
       })
     }
   } catch (error) {
@@ -89,6 +94,8 @@ const getAllProducts = async (req, res) => {
 
 const getProduct = async (req, res) => {
   try {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
     const { id } = req.params
 
     const product = await Products.findById({ _id: id })
@@ -102,6 +109,7 @@ const getProduct = async (req, res) => {
       token,
       product,
       similarProds,
+      cartCount,
     })
   } catch (error) {
     res.status(500).json({ message: error.message })

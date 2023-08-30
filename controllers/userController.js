@@ -148,7 +148,6 @@ const usingMiddleware = async (req, res, next) => {
 const addToCart = async (req, res) => {
   try {
     if (!req.user) {
-      // res.send('login first')
       req.flash('error_msg', 'Login first!')
       res.redirect('/auth/login')
     } else {
@@ -161,7 +160,6 @@ const addToCart = async (req, res) => {
             message: 'Added.',
             wait: false,
           })
-          // console.log(req.body)
           res.redirect('/products')
         })
         .catch((err) => console.log(err))
