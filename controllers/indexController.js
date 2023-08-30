@@ -24,49 +24,87 @@ transporter.verify((err) => {
 const getHomepage = async (req, res) => {
   const token = req.cookies['access_token'] // check token if generated
 
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
 
-  res.render('homepage', {
-    pageTitle: 'EA',
-    token,
-    cartCount,
-  })
+    res.render('homepage', {
+      pageTitle: 'EA',
+      token,
+      cartCount,
+    })
+  } else {
+    res.render('homepage', {
+      pageTitle: 'EA',
+      token,
+      cartCount: 0,
+    })
+  }
 }
 
 const getOurTeam = async (req, res) => {
   const token = req.cookies['access_token']
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
-  res.render('team', { pageTitle: 'Our Team', token, cartCount })
+
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('team', { pageTitle: 'Our Team', token, cartCount })
+  } else {
+    res.render('team', { pageTitle: 'Our Team', token, cartCount: 0 })
+  }
 }
 
 const getFAQ = async (req, res) => {
   const token = req.cookies['access_token']
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
-  res.render('faq', { pageTitle: 'FAQ', token, cartCount })
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('faq', { pageTitle: 'FAQ', token, cartCount })
+  } else {
+    res.render('faq', { pageTitle: 'FAQ', token, cartCount: 0 })
+  }
 }
 
 const getTermsAndConditions = async (req, res) => {
   const token = req.cookies['access_token']
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
-  res.render('terms', { pageTitle: 'Terms and Conditions', token, cartCount })
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('terms', { pageTitle: 'Terms and Conditions', token, cartCount })
+  } else {
+    res.render('terms', {
+      pageTitle: 'Terms and Conditions',
+      token,
+      cartCount: 0,
+    })
+  }
 }
 
 const getPrivacyPolicy = async (req, res) => {
   const token = req.cookies['access_token']
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
-  res.render('privacy', { pageTitle: 'Privacy Policy', token, cartCount })
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('privacy', { pageTitle: 'Privacy Policy', token, cartCount })
+  } else {
+    res.render('privacy', { pageTitle: 'Privacy Policy', token, cartCount: 0 })
+  }
 }
 
 const getAboutUs = async (req, res) => {
   const token = req.cookies['access_token']
-  const user = await UserModel.findById({ _id: req.session.user._id })
-  const cartCount = user.cart.items.length
-  res.render('about', { pageTitle: 'About Us', token, cartCount })
+  if (req.session.user) {
+    const user = await UserModel.findById({ _id: req.session.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('about', { pageTitle: 'About Us', token, cartCount })
+  } else {
+    res.render('about', { pageTitle: 'About Us', token, cartCount: 0 })
+  }
 }
 // end of getting
 

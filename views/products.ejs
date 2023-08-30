@@ -1,16 +1,15 @@
 <html lang="en">
   <head>
-    <!-- {{>head}} -->
     <%- include("partials/head") %>
     <link rel="stylesheet" href="css/ads.css" />
     <link rel="stylesheet" href="css/products.css" />
   </head>
   <body class="light">
-    <!-- navbar -->
+
+
     <%- include("partials/header") %>
-    <!--  -->
+
     
-    <!-- ads -->
     <div class="main-ads">
       <div class="carousel">
         <input type="radio" name="switch" id="id1" />
@@ -69,85 +68,84 @@
         </div>
       </div>
     </div>
-    <!-- end of ads -->
-    
-    <!-- search -->
-    <!-- <div class="container search-container">
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search product ..." aria-label="Search">
-        <button class="btn btn-brown btn-search" type="submit">Search</button>
-      </form>
-    </div> -->
-    <!-- end of search -->
 
-    <!-- new search -->
+
     <form action="/products" method="GET" class="container search-container">
       <input class="form-control" list="datalistOptions" placeholder="Type to search..." name="search">
       <datalist id="datalistOptions">
+
         <% for(let i=0; i<product.length; i++) { %>
             <option value="<%= product[i].title %>">
-       <% } %>
+        <% } %>
+
       </datalist>
     </form>
-    <!--  -->
-    
 
-    <!-- products -->
     <div class="main-products">
       <div class="left">
         <div class="search-filter">
+
         <br>
 
           <h4><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
             <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
           </svg> Filter Many</h4>
          
-          <form action="/products" method="GET">
-            <label>
-                <input type="checkbox" value="Battery" name="value1"> Battery
-            </label>
-            <br>
-            <label>
-                <input type="checkbox" value="Brakes" name="value2"> Brakes
-            </label>
-            <br>
+            <form action="/products" method="GET">
 
-            <label>
-              <input type="checkbox" value="Engine" name="value3"> Engine
-          </label>
-          <br>
-          <label>
-              <input type="checkbox" value="Mags" name="value4"> Mags
-          </label>
-          <br>
+                <label>
+                    <input type="checkbox" value="Battery" name="value1"> Battery
+                </label>
+                
+                <br>
 
-          <label>
-            <input type="checkbox" value="Muffler" name="value5"> Muffler
-        </label>
-        <br>
+                <label>
+                    <input type="checkbox" value="Brakes" name="value2"> Brakes
+                </label>
 
-        <label>
-          <input type="checkbox" value="Radiator" name="value6"> Radiator
-      </label>
-          <br>
+                <br>
 
-        <label>
-          <input type="checkbox" value="Steering Wheel" name="value7"> Steering Wheel
-      </label>
-      <br>
-            
-            <input type="submit" value="Filter" class="btn btn-primary btn-brown">
-        </form>
+                <label>
+                  <input type="checkbox" value="Engine" name="value3"> Engine
+                </label>
 
+                <br>
+
+                <label>
+                    <input type="checkbox" value="Mags" name="value4"> Mags
+                </label>
+
+                <br>
+
+                <label>
+                  <input type="checkbox" value="Muffler" name="value5"> Muffler
+                </label>
+
+                <br>
+
+                <label>
+                  <input type="checkbox" value="Radiator" name="value6"> Radiator
+                </label>
+
+                <br>
+
+                <label>
+                  <input type="checkbox" value="Steering Wheel" name="value7"> Steering Wheel
+                </label>
+
+                <br>
+
+                <input type="submit" value="Filter" class="btn btn-primary btn-brown">
+            </form>
         </div>
+
         <br>
-       
 
         <div class="sort-price">
           <form>
             <br>
-            <h4>Filter By Price</h4>
 
+            <h4>Filter By Price</h4>
             <select name="option" class="form-select form-select-sm" aria-label="Small select example">
               <option selected value="greater">Greater Than</option>
               <option value="less">Less Than</option>
@@ -156,59 +154,51 @@
             <label>
                 <input type="number" name="priceRange"  min="1" placeholder="Input price"> 
             </label>
+
             <br>
             
             <button type="submit" class="btn btn-primary btn-brown btn-filter">Filter</button>
         </form>
         <br>
         </div>
-
       </div>
       <div class="right">
-        <!-- filtered by checkboxes -->
 
-        <!-- filter by search -->
           <% if(productBasedOnSearch.length > 0) { %>
             <h4 class="text-center"><%= productBasedOnSearch.length %> Item(s)</h4>
               <div class="parent">
                 <% for(let i=0; i<productBasedOnSearch.length; i++) { %>
-                  
-                <a  href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
-                         
-                  <span class="bookmark" title="bookmark">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-                      <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-                    </svg>
-                  </span>
-                
-               
-              <img src="<%= productBasedOnSearch[i].imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch[i].imgURL %>" />
-              <div class="card-body">
-               
-                <h5 class="card-title"><%= productBasedOnSearch[i].title %></h5>
-                <p class="card-text">
-                  ₱ <%= productBasedOnSearch[i].price %>
-                </p>
-                <p class="card-text">
-                  <%= productBasedOnSearch[i].description %>
-                </p>
-                
-                  <form action="/auth" method="POST">
-                    <input type="hidden" name="id" value="<%= productBasedOnSearch[i].id %>">
-                    <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
-                  </form>
-                 
-              </div>
-            </a>
 
+                    <a href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
+                      <span class="bookmark" title="bookmark">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                          <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                        </svg>
+                      </span>
+                    
+                      <img src="<%= productBasedOnSearch[i].imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch[i].imgURL %>" />
+                    
+                      <div class="card-body">
+                        <h5 class="card-title"><%= productBasedOnSearch[i].title %></h5>
+                        <p class="card-text">
+                          ₱ <%= productBasedOnSearch[i].price %>
+                        </p>
+                        <p class="card-text">
+                          <%= productBasedOnSearch[i].description %>
+                        </p>
+
+                          <form action="/auth" method="POST">
+                            <input type="hidden" name="id" value="<%= productBasedOnSearch[i].id %>">
+                            <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
+                          </form>
+                      </div>
+                    </a>
             <% } %>
 
           </div>
-      <br>
-          <% }  %>
+          <br>
+          <% } %>
              
-          <!-- -->
-
           <% if(findThisPriceRange) { %>
             <h4 class="text-center"><%= findThisPriceRange.length %> Item(s)</h4>
             <div class="parent">
@@ -237,7 +227,7 @@
                     </div>
                   </a>
              <% } %>
-                </div> <!-- end of parent -->
+                </div>
                 <br>
                   <hr>
                   <% if(!findThisPriceRange.length === 0) { %>
@@ -269,13 +259,11 @@
                           <input type="hidden" name="id" value="<%= anotherArray[i].id %>">
                           <button type="submit" href="#" class="btn btn-primary btn-brown btn-down" >Add to cart</button>
                         </form>
-                       
                     </div>
                   </a>
              <% } %>
-                </div> <!-- end of parent -->
+                </div> 
            <% } else{ %>
-            <!-- all -->
             <div class="parent">
               <% for(let i=0; i<product.length; i++) { %>
                   <a  href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
@@ -309,11 +297,8 @@
                 </div>
            <% } %>
       </div>
-
     </div>
-    <!-- end of products -->
 
-    <!-- pagination -->
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item">
@@ -327,11 +312,7 @@
         </li>
       </ul>
     </nav>
-    <!-- end of pagination -->
 
-    <!-- footer -->
-    %> <%- include("partials/footer") %>
-    <!-- end of footer -->
-
+     <%- include("partials/footer") %>
   </body>
 </html>

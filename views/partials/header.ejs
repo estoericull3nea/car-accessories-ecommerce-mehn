@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="/css/header.css" />
 
-<!-- header -->
 <header>
   <!-- nav -->
   <nav class="navbar navbar-expand-md">
@@ -9,7 +8,7 @@
       <a class="navbar-brand fs-4 fw-bold" href="/">
         <img src="/icons/image.webp" alt="" width="35" />EA
       </a>
-      <!--  -->
+      <!-- end logo -->
 
       <!-- hamburger -->
       <button
@@ -22,7 +21,7 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <!--  -->
+      <!-- end hamburger -->
 
       <!-- sidebar -->
       <div
@@ -44,6 +43,7 @@
           ></button>
         </div>
         <div class="offcanvas-body">
+          <!-- links -->
           <ul
             class="navbar-nav justify-content-end flex-grow-1 pe-3 align-items-center"
           >
@@ -69,6 +69,7 @@
               >
             </li>
 
+            <!-- login/register -->
             <% if(!token) { %>
             <li class="nav-item login-register">
               <div
@@ -92,7 +93,9 @@
                 </a>
               </div>
             </li>
+            <!-- end login/register -->
             <% } else { %>
+            <!-- profile -->
             <li class="profile nav-item">
               <a href="#">
                 <svg
@@ -111,9 +114,8 @@
                 </svg>
               </a>
             </li>
+            <!-- end profile -->
             <% } %>
-
-            <!-- end of profile -->
 
             <!-- cart -->
             <li class="cart position-relative nav-item">
@@ -139,11 +141,12 @@
                 </span>
               </a>
             </li>
-            <!-- end of cart -->
+            <!-- end cart -->
           </ul>
+          <!-- end links -->
         </div>
       </div>
-      <!--  -->
+      <!-- end sidebar -->
     </div>
   </nav>
   <!--  -->
