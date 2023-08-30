@@ -7,7 +7,7 @@ const getAllProducts = async (req, res) => {
     const searchOneItem = req.query.search
 
     const productBasedOnSearch = await Products.find({
-      title: { $regex: searchOneItem, $options: 'i' },
+      title: { $regex: `${searchOneItem}`, $options: 'i' },
     })
 
     // price
@@ -67,8 +67,8 @@ const getAllProducts = async (req, res) => {
         anotherArray,
         haveLength,
         product,
-        productBasedOnSearch,
         findThisPriceRange,
+        productBasedOnSearch,
       })
     } else {
       const product = await Products.find()
@@ -78,8 +78,8 @@ const getAllProducts = async (req, res) => {
         token,
         product,
         haveLength,
-        productBasedOnSearch,
         findThisPriceRange,
+        productBasedOnSearch,
       })
     }
   } catch (error) {

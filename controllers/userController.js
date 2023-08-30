@@ -4,6 +4,7 @@ const User = require('../models/User')
 const notifier = require('node-notifier')
 
 const { createToken } = require('../config/auth')
+const Product = require('../models/Product')
 
 // getting
 const getLogin = (req, res) => {
@@ -144,21 +145,23 @@ const usingMiddleware = async (req, res, next) => {
   }
 }
 
-const addToCart = (req, res) => {
+const addToCart = async (req, res) => {
   try {
     if (!req.user) {
       // res.send('login first')
       req.flash('error_msg', 'Login first!')
       res.redirect('/auth/login')
     } else {
+      const product = await Product.findOne({ _id: req.body.id })
       req.user
         .addToCart(req.body.id)
         .then(() => {
           notifier.notify({
-            title: `Product ${req.body.id}!`,
+            title: `Product ${product.title}!`,
             message: 'Added.',
             wait: false,
           })
+          // console.log(req.body)
           res.redirect('/products')
         })
         .catch((err) => console.log(err))

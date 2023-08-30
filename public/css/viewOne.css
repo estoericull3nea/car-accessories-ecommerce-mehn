@@ -63,12 +63,6 @@ p {
   font-size: 0.8rem;
 }
 
-.btn {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-}
-
 .parent-2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

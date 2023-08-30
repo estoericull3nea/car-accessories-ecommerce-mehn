@@ -168,15 +168,10 @@
         <!-- filtered by checkboxes -->
 
         <!-- filter by search -->
-          <% if(productBasedOnSearch) { %>
-
-           
-
+          <% if(productBasedOnSearch.length > 0) { %>
             <h4 class="text-center"><%= productBasedOnSearch.length %> Item(s)</h4>
-
               <div class="parent">
                 <% for(let i=0; i<productBasedOnSearch.length; i++) { %>
-
                   
                 <a  href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
                          
@@ -209,7 +204,6 @@
             <% } %>
 
           </div>
-           
       <br>
           <% }  %>
              
