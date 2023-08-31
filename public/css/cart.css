@@ -7,7 +7,7 @@
 * {
   padding: 0;
   margin: 0;
-  text-decoration: none;
+  text-decoration: none !important;
   list-style-type: none;
   scroll-behavior: smooth;
   font-family: 'Nunito', sans-serif;
@@ -21,123 +21,55 @@
   --text-low-opacity: rgba(0, 0, 0, 0.563);
 }
 
-section {
-  padding: 50px 5%;
-}
-
-.main_cart {
-  /* height: 50vh; */
-  height: auto;
-  display: flex;
-  justify-content: center;
-
+.parent {
+  margin-inline: 5%;
   margin-top: 2rem;
-  padding: 0 10%;
 }
 
-.main_cart table {
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
+.parent .card-img-top {
+  height: 100%;
+  max-width: 230px;
+  padding: 5px;
 }
 
-tr {
-  border-bottom: 2px solid black;
-}
-
-td {
-  width: 100px;
-}
-
-tbody img {
-  height: 100px;
-  width: 100px;
-}
-
-td.price {
-  font-weight: 900;
-}
-
-td.totalPrice::before {
-  content: '₱';
-  margin-right: 5px;
-  font-weight: 900;
-}
-
-button.deleteBtn {
-  padding: 5px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button.payNowBtn {
-  padding: 7px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: var(--main-color);
-  color: var(--white);
-  border: none;
-  outline: none;
-}
-
-thead {
-  height: 100px;
-  border-top: 1px solid black;
-}
-
-.lastRow {
-  height: 50px;
-}
-
-td {
-  padding: 10px 0;
-}
-
-td.description {
-  color: var(--text-low-opacity);
-  font-size: 0.9rem;
-}
-
-.cart-text {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.stripe-button-el span {
-  display: block;
+.parent .card {
   position: relative;
-  padding: 0 12px;
-  height: 30px;
-  line-height: 30px;
-  background: var(--main-color) !important;
-  background-image: -webkit-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -moz-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -ms-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -o-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -webkit-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -moz-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -ms-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: -o-linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  background-image: linear-gradient(#7dc5ee, #008cdd 85%, #30a2e4);
-  font-size: 14px;
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -ms-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border: 1px solid #8f500747;
 }
 
-@media (max-width: 430px) {
-  .removeThis {
-    display: none;
-  }
+.parent .card:hover {
+  transform: scale(1.009);
+}
+
+.parent .card:hover > .bookmark {
+  display: block !important;
+}
+
+.parent .card .bookmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  display: none;
+}
+
+/* card body */
+.parent .card-title {
+  margin: 0;
+  margin-top: 0.8rem;
+}
+
+.parent p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.8rem;
 }

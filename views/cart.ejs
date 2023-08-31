@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <%- include("partials/head") %>
+    <link rel="stylesheet" href="css/cart.css" />
+
   </head>
   <body>
     <%- include("partials/header") %>
@@ -9,22 +11,25 @@
     <div class="parent">
       <% if(populated) { %>
         <% for(let i=0; i<populated.length; i++) { %>
-          <div class="card mb-3">
-            <img src="<%= populated[i].productId.imgURL %>" class="card-img-top" alt="<%= populated[i].productId.imgURL %>" />
-            <div class="card-body">
-              <h5 class="card-title"><%= populated[i].productId.title %></h5>
-              <p class="card-text">
-                <%= populated[i].productId.descFull %>
-              </p>
-              <p class="card-text">
-                ₱ <%= populated[i].productId.price %>
-             </p>
-              <p class="card-text">
-                 x<%= populated[i].qty %>
-              </p>
-              
+          <a href="#">
+            <div class="card mb-3">
+              <img src="<%= populated[i].productId.imgURL %>" class="card-img-top" alt="<%= populated[i].productId.imgURL %>" />
+              <div class="card-body">
+                <h5 class="card-title"><%= populated[i].productId.title %></h5>
+                <p class="card-text">
+                  <%= populated[i].productId.descFull %>
+                </p>
+                <p class="card-text">
+                  ₱ <%= populated[i].productId.price %>
+               </p>
+                <p class="card-text">
+                   x<%= populated[i].qty %>
+                </p>
+                
+              </div>
             </div>
-          </div>
+          </a>
+         
         <% } %>
       <% } %>
     </div>

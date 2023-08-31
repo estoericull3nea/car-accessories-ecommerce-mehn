@@ -17,9 +17,6 @@ dependencies:
   cookie-parser:
     specifier: ^1.4.6
     version: 1.4.6
-  date-format:
-    specifier: ^4.0.14
-    version: 4.0.14
   dotenv:
     specifier: ^16.3.1
     version: 16.3.1
@@ -286,11 +283,6 @@ packages:
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
-    dev: false
-
-  /date-format@4.0.14:
-    resolution: {integrity: sha512-39BOQLs9ZjKh0/patS9nrT8wc3ioX3/eA/zgbKNopnF2wCqJEoxywwwElATYvRsXdnOxA/OQeQoFZ3rFjVajhg==}
-    engines: {node: '>=4.0'}
     dev: false
 
   /debug@2.6.9:
