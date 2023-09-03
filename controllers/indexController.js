@@ -24,8 +24,8 @@ transporter.verify((err) => {
 const getHomepage = async (req, res) => {
   const token = req.cookies['access_token'] // check token if generated
 
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('homepage', {
@@ -45,8 +45,8 @@ const getHomepage = async (req, res) => {
 const getOurTeam = async (req, res) => {
   const token = req.cookies['access_token']
 
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('team', { pageTitle: 'Our Team', token, cartCount })
@@ -57,8 +57,8 @@ const getOurTeam = async (req, res) => {
 
 const getFAQ = async (req, res) => {
   const token = req.cookies['access_token']
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('faq', { pageTitle: 'FAQ', token, cartCount })
@@ -69,8 +69,8 @@ const getFAQ = async (req, res) => {
 
 const getTermsAndConditions = async (req, res) => {
   const token = req.cookies['access_token']
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('terms', { pageTitle: 'Terms and Conditions', token, cartCount })
@@ -85,8 +85,8 @@ const getTermsAndConditions = async (req, res) => {
 
 const getPrivacyPolicy = async (req, res) => {
   const token = req.cookies['access_token']
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('privacy', { pageTitle: 'Privacy Policy', token, cartCount })
@@ -97,8 +97,8 @@ const getPrivacyPolicy = async (req, res) => {
 
 const getAboutUs = async (req, res) => {
   const token = req.cookies['access_token']
-  if (req.session.user) {
-    const user = await UserModel.findById({ _id: req.session.user._id })
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('about', { pageTitle: 'About Us', token, cartCount })

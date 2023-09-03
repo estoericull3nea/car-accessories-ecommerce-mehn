@@ -1,6 +1,7 @@
 const router = require('express').Router()
 
 const { validate_token } = require('../config/auth')
+const { usingMiddleware } = require('../controllers/userController')
 
 const {
   getOurTeam,
@@ -11,6 +12,8 @@ const {
   getHomepage,
   postContactUsForm,
 } = require('../controllers/indexController')
+
+router.use(usingMiddleware)
 
 router.get('/', getHomepage)
 router.get('/our-team', getOurTeam)

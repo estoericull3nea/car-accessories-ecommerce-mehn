@@ -65,7 +65,7 @@ const getAllProducts = async (req, res) => {
 
       const token = req.cookies['access_token']
 
-      if (req.session.user) {
+      if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
         const cartCount = user.cart.items.length
 
@@ -95,7 +95,7 @@ const getAllProducts = async (req, res) => {
       const product = await Products.find()
       const token = req.cookies['access_token']
 
-      if (req.session.user) {
+      if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
         const cartCount = user.cart.items.length
 
@@ -138,7 +138,7 @@ const getProduct = async (req, res) => {
 
     const token = req.cookies['access_token']
 
-    if (req.session.user) {
+    if (req.user) {
       const user = await UserModel.findById({ _id: req.session.user._id })
       const cartCount = user.cart.items.length
 

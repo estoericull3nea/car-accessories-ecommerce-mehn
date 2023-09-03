@@ -13,6 +13,9 @@
         <% for(let i=0; i<populated.length; i++) { %>
           <a href="#">
             <div class="card mb-3">
+              <form action="/cart/<%= populated[id].id %>" method="DELETE">
+                <button type="submit" class="btn-close"></button>
+              </form>
               <img src="<%= populated[i].productId.imgURL %>" class="card-img-top" alt="<%= populated[i].productId.imgURL %>" />
               <div class="card-body">
                 <h5 class="card-title"><%= populated[i].productId.title %></h5>
