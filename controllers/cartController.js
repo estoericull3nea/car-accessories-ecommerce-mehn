@@ -1,4 +1,7 @@
 const UserModel = require('../models/user')
+const Product = require('../models/product')
+
+const notifier = require('node-notifier')
 
 const getCart = async (req, res) => {
   try {
@@ -39,10 +42,41 @@ const getCart = async (req, res) => {
   }
 }
 
-const deleteItemInCart = (req, res) => {
+const addToCart = async (req, res) => {
+  try {
+    if (!req.user) {
+      req.flash('error_msg', 'Login first!')
+      res.redirect('/auth/login')
+    } else {
+      const product = await Product.findOne({ _id: req.body.id })
+      req.user
+        .addToCart(req.body.id)
+        .then(() => {
+          notifier.notify({
+            title: `Product ${product.title}!`,
+            message: 'Added.',
+            wait: false,
+          })
+          res.redirect('/products')
+        })
+        .catch((err) => console.log(err))
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
+const deleteItemInCart = async (req, res) => {
+  const product = await Product.findOne({ _id: req.body.id })
+
   req.user
     .removeCart(req.body.id)
     .then(() => {
+      notifier.notify({
+        title: `Product ${product.title}!`,
+        message: 'Removed!.',
+        wait: false,
+      })
       res.redirect('/cart')
     })
     .catch((err) => console.log(err))
@@ -51,4 +85,5 @@ const deleteItemInCart = (req, res) => {
 module.exports = {
   getCart,
   deleteItemInCart,
+  addToCart,
 }

@@ -1,8 +1,6 @@
 const bcrypt = require('bcryptjs')
 const User = require('../models/user')
 
-const notifier = require('node-notifier')
-
 const { createToken } = require('../config/auth')
 const Product = require('../models/product')
 
@@ -145,30 +143,6 @@ const usingMiddleware = async (req, res, next) => {
   }
 }
 
-const addToCart = async (req, res) => {
-  try {
-    if (!req.user) {
-      req.flash('error_msg', 'Login first!')
-      res.redirect('/auth/login')
-    } else {
-      const product = await Product.findOne({ _id: req.body.id })
-      req.user
-        .addToCart(req.body.id)
-        .then(() => {
-          notifier.notify({
-            title: `Product ${product.title}!`,
-            message: 'Added.',
-            wait: false,
-          })
-          res.redirect('/products')
-        })
-        .catch((err) => console.log(err))
-    }
-  } catch (error) {
-    res.json(error.message)
-  }
-}
-
 const getLogout = (req, res) => {
   res.clearCookie('access_token')
   req.session.destroy()
@@ -182,6 +156,5 @@ module.exports = {
   postRegister,
   postLogin,
   getLogout,
-  addToCart,
   usingMiddleware,
 }
