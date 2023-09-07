@@ -1,9 +1,9 @@
 require('dotenv').config()
 
-const UserMessage = require('../models/Message')
 const nodemailer = require('nodemailer')
 
-const UserModel = require('../models/User')
+const UserModel = require('../models/user')
+const MessageModel = require('../models/Message')
 
 let transporter = nodemailer.createTransport({
   service: process.env.SERVICE,

@@ -1,10 +1,10 @@
 const bcrypt = require('bcryptjs')
-const User = require('../models/User')
+const User = require('../models/user')
 
 const notifier = require('node-notifier')
 
 const { createToken } = require('../config/auth')
-const Product = require('../models/Product')
+const Product = require('../models/product')
 
 // getting
 const getLogin = (req, res) => {

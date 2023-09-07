@@ -1,4 +1,4 @@
-const UserModel = require('../models/User')
+const UserModel = require('../models/user')
 
 const getCart = async (req, res) => {
   try {
@@ -11,13 +11,27 @@ const getCart = async (req, res) => {
       const populateProductId = await user.populate('cart.items.productId')
       const populated = populateProductId.cart.items
 
-      res.render('cart', { pageTitle: 'Cart', token, cartCount, populated })
+      const allIdToRemove = []
+      for (let i = 0; i < populateProductId.cart.items.length; i++) {
+        allIdToRemove.push(populateProductId.cart.items[i].productId.id)
+      }
+      // console.log(`all id values are`)
+      // console.log(allIdToRemove)
+
+      res.render('cart', {
+        pageTitle: 'Cart',
+        token,
+        cartCount,
+        populated,
+        allIdToRemove,
+      })
     } else {
       res.render('cart', {
         pageTitle: 'Cart',
         token,
         populated: undefined,
         cartCount: 0,
+        allIdToRemove: [],
       })
     }
   } catch (error) {
@@ -25,15 +39,16 @@ const getCart = async (req, res) => {
   }
 }
 
-// const pDeleteItemCart = (req, res, _) => {
-//   req.user
-//     .removeCart(req.body.id)
-//     .then(() => {
-//       res.redirect('/cart')
-//     })
-//     .catch((err) => console.log(err))
-// }
+const deleteItemInCart = (req, res) => {
+  req.user
+    .removeCart(req.body.id)
+    .then(() => {
+      res.redirect('/cart')
+    })
+    .catch((err) => console.log(err))
+}
 
 module.exports = {
   getCart,
+  deleteItemInCart,
 }

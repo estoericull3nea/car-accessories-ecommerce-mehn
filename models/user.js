@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-const Product = require('./Product')
-
+const Product = require('../models/product')
 const UserSchema = new mongoose.Schema(
   {
     username: {
