@@ -10,7 +10,6 @@ const getCart = async (req, res) => {
       const user = await UserModel.findById({ _id: req.user._id })
       const cartCount = user.cart.items.length
 
-      // getting cart using populate
       const populateProductId = await user.populate('cart.items.productId')
       const populated = populateProductId.cart.items
 
@@ -18,8 +17,8 @@ const getCart = async (req, res) => {
       for (let i = 0; i < populateProductId.cart.items.length; i++) {
         allIdToRemove.push(populateProductId.cart.items[i].productId.id)
       }
-      // console.log(`all id values are`)
-      // console.log(allIdToRemove)
+
+      const user_address = user.address
 
       res.render('cart', {
         pageTitle: 'Cart',
@@ -27,6 +26,7 @@ const getCart = async (req, res) => {
         cartCount,
         populated,
         allIdToRemove,
+        user_address,
       })
     } else {
       res.render('cart', {
@@ -35,6 +35,7 @@ const getCart = async (req, res) => {
         populated: undefined,
         cartCount: 0,
         allIdToRemove: [],
+        user_address: '',
       })
     }
   } catch (error) {

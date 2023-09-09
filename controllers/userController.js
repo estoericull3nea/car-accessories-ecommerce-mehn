@@ -53,6 +53,7 @@ const postRegister = async (req, res) => {
       username,
       email,
       password: hashedPass,
+      address: '',
     })
 
     await userToAdd.save()
@@ -132,6 +133,7 @@ const usingMiddleware = async (req, res, next) => {
     if (req.session.user) {
       const findUserTest = await User.findById({ _id: req.session.user._id })
       req.user = findUserTest
+
       next()
     } else {
       // res.redirect('/auth/login')

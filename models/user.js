@@ -34,18 +34,19 @@ const UserSchema = new mongoose.Schema(
 
       totalPrice: Number,
     },
+    address: {
+      type: String,
+    },
   },
   { timestamps: true }
 )
 
 UserSchema.methods.addToCart = async function (productId) {
-  const product = await Product.findById(productId) // getting productId from product
+  const product = await Product.findById(productId)
 
   if (product) {
-    // pag meron
-    const cart = this.cart // asign this.cart to cart for readability
+    const cart = this.cart
     const isExisting = cart.items.findIndex(
-      // check if existing in your cart
       (objInItems) =>
         new String(objInItems.productId).trim() ===
         new String(product._id).trim()
@@ -78,7 +79,7 @@ UserSchema.methods.removeCart = async function (productId) {
   }
 }
 
-UserSchema.methods.removeAllCart = async function (productId) {
+UserSchema.methods.removeAllCart = async function () {
   const cart = this.cart
   cart.items.splice(0, cart.items.length)
   this.cart.totalPrice = 0
