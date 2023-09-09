@@ -23,8 +23,7 @@ transporter.verify((err) => {
 // getting
 const getHomepage = async (req, res) => {
   const token = req.cookies['access_token'] // check token if generated
-
-  if (req.user) {
+  if (req.user.path) {
     const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 

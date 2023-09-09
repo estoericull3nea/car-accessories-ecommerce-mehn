@@ -1,10 +1,10 @@
 const bcrypt = require('bcryptjs')
 const User = require('../models/user')
-
-const { createToken } = require('../config/auth')
+const notifier = require('node-notifier')
 const Product = require('../models/product')
 
-// getting
+const { createToken } = require('../config/auth')
+
 const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
@@ -152,6 +152,62 @@ const getLogout = (req, res) => {
   res.redirect('/auth/login')
 }
 
+// const addBookmark = async (req, res) => {
+//   const {
+//     imgURL,
+//     title,
+//     price,
+//     quantity,
+//     description,
+//     descFull,
+//     typeOfItem,
+//     id,
+//   } = req.body
+
+//   try {
+//     const user = await User.findById(req.user.id)
+
+//     const newBookmark = new BookmarkModel({
+//       imgURL,
+//       title,
+//       quantity,
+//       description,
+//       descFull,
+//       typeOfItem,
+//       price,
+//       bookmarkByUser: user.id,
+//     })
+
+//     const session = await mongoose.startSession()
+//     session.startTransaction()
+//     await newBookmark.save()
+//     user.bookmarkId.push(id)
+//     await user.save({ session })
+//     await session.commitTransaction()
+
+//     console.log(`added to bookmark`)
+//   } catch (error) {
+//     res.json(error.message)
+//   }
+// }
+
+const addBookmark = async (req, res) => {
+  try {
+    req.user.addToBookmark(req.body.id).then(async () => {
+      const product = await Product.findOne({ _id: req.body.id })
+
+      notifier.notify({
+        title: `Product ${product.title}!`,
+        message: 'Added to bookmark!',
+        wait: false,
+      })
+      res.redirect('/products')
+    })
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   getLogin,
   getRegister,
@@ -159,4 +215,5 @@ module.exports = {
   postLogin,
   getLogout,
   usingMiddleware,
+  addBookmark,
 }

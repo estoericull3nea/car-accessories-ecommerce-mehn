@@ -37,6 +37,11 @@ const UserSchema = new mongoose.Schema(
     address: {
       type: String,
     },
+    bookmarkId: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: 'Product',
+      required: true,
+    },
   },
   { timestamps: true }
 )
@@ -61,6 +66,17 @@ UserSchema.methods.addToCart = async function (productId) {
       cart.totalPrice = 0
     }
     cart.totalPrice += product.price
+    return this.save()
+  }
+}
+
+UserSchema.methods.addToBookmark = async function (productId) {
+  const product = await Product.findById(productId)
+  if (product) {
+    if (!this.bookmarkId.includes(productId)) {
+      this.bookmarkId.push(productId)
+    }
+
     return this.save()
   }
 }

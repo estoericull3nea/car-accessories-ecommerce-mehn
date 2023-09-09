@@ -27,16 +27,22 @@
   transform: scale(1.039);
 }
 
-.parent .card:hover > .bookmark {
+.parent .card:hover > .book {
   display: block !important;
 }
 
-.parent .card .bookmark {
+.parent .card .book {
   position: absolute;
   top: 5px;
   right: 5px;
 
   display: none;
+
+  z-index: 10;
+}
+
+.parent .card .book button {
+  border: none;
 }
 
 /* card body */

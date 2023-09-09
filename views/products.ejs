@@ -170,18 +170,33 @@
         </div>
       </div>
       <div class="right">
-
           <% if(productBasedOnSearch.length > 0) { %>
             <h4 class="text-center"><%= productBasedOnSearch.length %> Item(s)</h4>
               <div class="parent">
                 <% for(let i=0; i<productBasedOnSearch.length; i++) { %>
 
                     <a href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
-                      <span class="bookmark" title="bookmark">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-                          <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-                        </svg>
-                      </span>
+                     
+
+                      <form action="/auth/add-to-bookmark" method="POST" class="book">
+                        <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
+                        <input type="hidden" name="title" value="<%= product[i].title %>">
+                        <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
+                        <input type="hidden" name="price" value="<%= product[i].price %>">
+                        <input type="hidden" name="description" value="<%= product[i].description %>">
+                        <input type="hidden" name="descFull" value="<%= product[i].descFull %>">
+                        <input type="hidden" name="typeOfItem" value="<%= product[i].typeOfItem %>">
+                        <input type="hidden" name="id" value="<%= product[i].id %>">
+   
+                         <button type="submit">
+                           <span class="bookmark" title="bookmark">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                               <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                             </svg>
+                           </span>
+                         </button>
+                        
+                       </form>
                     
                       <img src="<%= productBasedOnSearch[i].imgURL %>" class="card-img-top" alt="<%= productBasedOnSearch[i].imgURL %>" />
                     
@@ -211,11 +226,25 @@
             <div class="parent">
               <% for(let i=0; i<findThisPriceRange.length; i++) { %>
                   <a  href="/products/<%=findThisPriceRange[i].id%>" class="card" style="width: 18rem">
-                        <span class="bookmark" title="bookmark">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-                            <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-                          </svg>
-                        </span>
+                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                      <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
+                      <input type="hidden" name="title" value="<%= product[i].title %>">
+                      <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
+                      <input type="hidden" name="price" value="<%= product[i].price %>">
+                      <input type="hidden" name="description" value="<%= product[i].description %>">
+                      <input type="hidden" name="descFull" value="<%= product[i].descFull %>">
+                      <input type="hidden" name="typeOfItem" value="<%= product[i].typeOfItem %>">
+                      <input type="hidden" name="id" value="<%= product[i].id %>">
+ 
+                       <button type="submit">
+                         <span class="bookmark" title="bookmark">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                             <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                           </svg>
+                         </span>
+                       </button>
+                      
+                     </form>
                     <img src="<%= findThisPriceRange[i].imgURL %>" class="card-img-top" alt="<%= findThisPriceRange[i].imgURL %>" />
                     <div class="card-body">
                      
@@ -247,11 +276,25 @@
               <div class="parent">
               <% for(let i=0; i<anotherArray.length; i++) { %>
                   <a  href="/products/<%=anotherArray[i].id%>" class="card" style="width: 18rem">
-                        <span class="bookmark" title="bookmark">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-                            <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-                          </svg>
-                        </span>
+                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                      <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
+                      <input type="hidden" name="title" value="<%= product[i].title %>">
+                      <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
+                      <input type="hidden" name="price" value="<%= product[i].price %>">
+                      <input type="hidden" name="description" value="<%= product[i].description %>">
+                      <input type="hidden" name="descFull" value="<%= product[i].descFull %>">
+                      <input type="hidden" name="typeOfItem" value="<%= product[i].typeOfItem %>">
+                      <input type="hidden" name="id" value="<%= product[i].id %>">
+ 
+                       <button type="submit">
+                         <span class="bookmark" title="bookmark">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+                             <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+                           </svg>
+                         </span>
+                       </button>
+                      
+                     </form>
                     <img src="<%= anotherArray[i].imgURL %>" class="card-img-top" alt="<%= anotherArray[i].imgURL %>" />
                     <div class="card-body">
                      
@@ -273,14 +316,28 @@
            <% } else{ %>
             <div class="parent">
               <% for(let i=0; i<product.length; i++) { %>
-                  <a  href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
-                     
+                  <a href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
+                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                     <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
+                     <input type="hidden" name="title" value="<%= product[i].title %>">
+                     <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
+                     <input type="hidden" name="price" value="<%= product[i].price %>">
+                     <input type="hidden" name="description" value="<%= product[i].description %>">
+                     <input type="hidden" name="descFull" value="<%= product[i].descFull %>">
+                     <input type="hidden" name="typeOfItem" value="<%= product[i].typeOfItem %>">
+                     <input type="hidden" name="id" value="<%= product[i].id %>">
+
+                      <button type="submit">
                         <span class="bookmark" title="bookmark">
                           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
                             <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
                           </svg>
                         </span>
-                      
+                      </button>
+                     
+                    </form>
+                       
+                     
                      
                     <img src="<%= product[i].imgURL %>" class="card-img-top" alt="<%= product[i].imgURL %>" />
                     <div class="card-body">
