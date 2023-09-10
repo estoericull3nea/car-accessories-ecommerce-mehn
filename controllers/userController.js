@@ -128,23 +128,6 @@ const postLogin = async (req, res) => {
   }
 }
 
-const usingMiddleware = async (req, res, next) => {
-  try {
-    if (req.session.user) {
-      const findUserTest = await User.findById({ _id: req.session.user._id })
-      req.user = findUserTest
-
-      next()
-    } else {
-      // res.redirect('/auth/login')
-      // res.send('log in first')
-      next()
-    }
-  } catch (error) {
-    res.json(error.message)
-  }
-}
-
 const getLogout = (req, res) => {
   res.clearCookie('access_token')
   req.session.destroy()
@@ -175,6 +158,5 @@ module.exports = {
   postRegister,
   postLogin,
   getLogout,
-  usingMiddleware,
   addBookmark,
 }

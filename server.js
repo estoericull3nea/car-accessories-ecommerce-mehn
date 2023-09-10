@@ -12,6 +12,8 @@ const helmet = require('helmet')
 const cookieParser = require('cookie-parser')
 const app = express()
 
+const usingMiddleware = require('./middlewares/checkUserMidlleware')
+
 // setting middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -50,6 +52,8 @@ app.use(
 app.use(express.static(path.join(__dirname, './public')))
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, './views'))
+
+app.use(usingMiddleware)
 
 app.use('/', require('./routes/indexRoute'))
 app.use('/auth', require('./routes/userRoute'))

@@ -6,11 +6,8 @@ const {
   postRegister,
   postLogin,
   getLogout,
-  usingMiddleware,
   addBookmark,
 } = require('../controllers/userController')
-
-router.use(usingMiddleware)
 
 router.route('/register').get(getRegister).post(postRegister)
 router.route('/login').get(getLogin).post(postLogin)
