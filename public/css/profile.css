@@ -48,3 +48,44 @@
   width: 800px;
   margin-left: 1rem;
 }
+
+.profile-container {
+  text-align: center;
+}
+
+.profile-container img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+
+  border: 1px solid #8f4f07;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.badge {
+  font-size: 10px;
+}
+
+.bi-heart-fill,
+.bi-cart4 {
+  cursor: pointer;
+}
+
+.profile-upload {
+  width: 300px;
+}
+
+.profile-file-container {
+  display: flex;
+  justify-content: center;
+  margin-block: 10px;
+}
