@@ -1,5 +1,6 @@
 const notifier = require('node-notifier')
 const Product = require('../models/product')
+const UserModel = require('../models/user')
 
 const addBookmark = async (req, res) => {
   try {
@@ -19,7 +20,24 @@ const addBookmark = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
-  res.end('profile area')
+  const token = req.cookies['access_token'] // check token if generated
+  if (req.user) {
+    const user = await UserModel.findById({ _id: req.user._id })
+    const cartCount = user.cart.items.length
+
+    res.render('profile', {
+      pageTitle: 'Profile',
+      token,
+      cartCount,
+      user,
+    })
+  } else {
+    res.render('profile', {
+      pageTitle: 'Profile',
+      token,
+      cartCount: 0,
+    })
+  }
 }
 
 module.exports = {

@@ -1,0 +1,50 @@
+:root {
+  --white: #f5f1ee;
+  --pure-black: black;
+  --dark-black: #58626c;
+  --main-color: #8f4f07;
+  --text-low-opacity: rgba(0, 0, 0, 0.563);
+}
+
+.left {
+  min-width: 280px !important;
+  background: #8f500730;
+  border-radius: 10px;
+}
+
+.left * {
+  color: black;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: #8f4f07;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+  color: unset;
+}
+
+.bi-info-circle {
+  position: relative;
+  top: -4px;
+}
+
+.username-label {
+  font-size: 13px;
+}
+
+.btns {
+  text-align: end;
+}
+
+.btn-edit,
+.btn-save {
+  width: 100px;
+}
+
+.inside-personal-information {
+  width: 800px;
+  margin-left: 1rem;
+}
