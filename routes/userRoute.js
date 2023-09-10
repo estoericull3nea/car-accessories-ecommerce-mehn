@@ -15,8 +15,6 @@ router.use(usingMiddleware)
 router.route('/register').get(getRegister).post(postRegister)
 router.route('/login').get(getLogin).post(postLogin)
 router.route('/logout').get(getLogout)
-
-// /auth/add-to-bookmark
 router.route('/add-to-bookmark').post(addBookmark)
 
 module.exports = router

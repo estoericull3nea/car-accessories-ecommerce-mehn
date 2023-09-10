@@ -152,45 +152,6 @@ const getLogout = (req, res) => {
   res.redirect('/auth/login')
 }
 
-// const addBookmark = async (req, res) => {
-//   const {
-//     imgURL,
-//     title,
-//     price,
-//     quantity,
-//     description,
-//     descFull,
-//     typeOfItem,
-//     id,
-//   } = req.body
-
-//   try {
-//     const user = await User.findById(req.user.id)
-
-//     const newBookmark = new BookmarkModel({
-//       imgURL,
-//       title,
-//       quantity,
-//       description,
-//       descFull,
-//       typeOfItem,
-//       price,
-//       bookmarkByUser: user.id,
-//     })
-
-//     const session = await mongoose.startSession()
-//     session.startTransaction()
-//     await newBookmark.save()
-//     user.bookmarkId.push(id)
-//     await user.save({ session })
-//     await session.commitTransaction()
-
-//     console.log(`added to bookmark`)
-//   } catch (error) {
-//     res.json(error.message)
-//   }
-// }
-
 const addBookmark = async (req, res) => {
   try {
     req.user.addToBookmark(req.body.id).then(async () => {
