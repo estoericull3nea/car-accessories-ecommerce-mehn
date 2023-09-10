@@ -2,66 +2,54 @@
 <html lang="en">
   <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="css/cart.css" />
-
+    <link rel="stylesheet" href="/css/cart.css" />
   </head>
   <body>
-    <%- include("partials/header") %>
+    <%- include("partials/header") %> <% if(cartCount > 0) { %>
+    <div class="top container mt-3">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/products">Products</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </nav>
+    </div>
 
-    <% if(cartCount > 0) { %>
-      <div class="top container mt-3">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/products">Products</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Cart</li>
-          </ol>
-        </nav>
-      </div>
-  
-      <div class="parent container">
+    <div class="parent container">
       <h1>Cart</h1>
 
-        <% if(populated) { %>
-          <% for(let i=0; i<populated.length; i++) { %>
-            <a href="#">
-              <div class="card mb-3">
-                <form action="/cart/delete" method="POST">
-                  <input type="hidden" name="id" value="<%= allIdToRemove[i] %>">
-                  <button type="submit" class="btn-close" title="Remove"></button>
-                </form>
-                <img src="<%= populated[i].productId.imgURL %>" class="card-img-top" alt="<%= populated[i].productId.imgURL %>" />
-                <div class="card-body">
-                  <h5 class="card-title"><%= populated[i].productId.title %></h5>
-                  <p class="card-text">
-                    <%= populated[i].productId.descFull %>
-                  </p>
-                  <p class="card-text">
-                    ₱ <%= populated[i].productId.price %>
-                 </p>
-                  <p class="card-text">
-                     x<%= populated[i].qty %>
-                  </p>
-                  
-                </div>
-              </div>
-            </a>
-           
-          <% } %>
-        <% } %>
-        <br>
-        <hr>
-          <div class="bottom mb-3">
-            Done? >>>
-            <a href="#" class="btn btn-primary">Checkout</a>
+      <% if(populated) { %> <% for(let i=populated.length-1; i>=0; i--) { %>
+      <a href="#">
+        <div class="card mb-3">
+          <form action="/cart/delete" method="POST">
+            <input type="hidden" name="id" value="<%= allIdToRemove[i] %>" />
+            <button type="submit" class="btn-close" title="Remove"></button>
+          </form>
+          <img
+            src="<%= populated[i].productId.imgURL %>"
+            class="card-img-top"
+            alt="<%= populated[i].productId.imgURL %>"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><%= populated[i].productId.title %></h5>
+            <p class="card-text"><%= populated[i].productId.descFull %></p>
+            <p class="card-text">₱ <%= populated[i].productId.price %></p>
+            <p class="card-text">x<%= populated[i].qty %></p>
           </div>
+        </div>
+      </a>
+
+      <% } %> <% } %>
+      <br />
+      <hr />
+      <div class="bottom mb-3">
+        Done? >>>
+        <a href="#" class="btn btn-primary">Checkout</a>
       </div>
+    </div>
     <% } else { %>
-        <h1 class="container">Empty Cart</h1>
-    <% } %>
-
-    
-
-    <%- include("partials/footer") %>
+    <h1 class="container">Empty Cart</h1>
+    <% } %> <%- include("partials/footer") %>
   </body>
 </html>

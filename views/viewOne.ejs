@@ -23,7 +23,7 @@
           <%= product.descFull %>
         </p>
         
-          <form action="/auth" method="POST">
+          <form action="/cart" method="POST">
             <input type="hidden" name="id" value="<%= product.id %>">
             <button type="submit" href="#" class="btn btn-primary btn-brown btn-single" >Add to cart</button>
           </form>
@@ -43,11 +43,25 @@
 
     <a  href="/products/<%=similarProds[i].id%>" class="card" style="width: 18rem">
            
-      <span class="bookmark" title="bookmark">
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
-          <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
-        </svg>
-      </span>
+      <form action="/user/add-to-bookmark" method="POST" class="book">
+        <input type="hidden" name="imgURL" value="<%= similarProds[i].imgURL %>">
+        <input type="hidden" name="title" value="<%= similarProds[i].title %>">
+        <input type="hidden" name="quantity" value="<%= similarProds[i].quantity %>">
+        <input type="hidden" name="price" value="<%= similarProds[i].price %>">
+        <input type="hidden" name="description" value="<%= similarProds[i].description %>">
+        <input type="hidden" name="descFull" value="<%= similarProds[i].descFull %>">
+        <input type="hidden" name="typeOfItem" value="<%= similarProds[i].typeOfItem %>">
+        <input type="hidden" name="id" value="<%= similarProds[i].id %>">
+
+         <button type="submit">
+           <span class="bookmark" title="bookmark">
+             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#8f4f07" class="bi bi-bookmark-plus-fill" viewBox="0 0 16 16" >
+               <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm6.5-11a.5.5 0 0 0-1 0V6H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V7H10a.5.5 0 0 0 0-1H8.5V4.5z"/>
+             </svg>
+           </span>
+         </button>
+        
+       </form>
     
    
   <img src="<%= similarProds[i].imgURL %>" class="card-img-top" alt="<%= similarProds[i].imgURL %>" />
@@ -61,7 +75,7 @@
       <%= similarProds[i].description %>
     </p>
     
-      <form action="/auth" method="POST">
+      <form action="/cart" method="POST">
         <input type="hidden" name="id" value="<%= similarProds[i].id %>">
         <button type="submit" href="#" class="btn btn-primary btn-brown" >Add to cart</button>
       </form>

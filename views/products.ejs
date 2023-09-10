@@ -1,8 +1,8 @@
 <html lang="en">
   <head>
     <%- include("partials/head") %>
-    <link rel="stylesheet" href="css/ads.css" />
-    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="/css/ads.css" />
+    <link rel="stylesheet" href="/css/products.css" />
   </head>
   <body class="light">
 
@@ -178,7 +178,7 @@
                     <a href="/products/<%=productBasedOnSearch[i].id%>" class="card" style="width: 18rem">
                      
 
-                      <form action="/auth/add-to-bookmark" method="POST" class="book">
+                      <form action="/user/add-to-bookmark" method="POST" class="book">
                         <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
                         <input type="hidden" name="title" value="<%= product[i].title %>">
                         <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
@@ -226,7 +226,7 @@
             <div class="parent">
               <% for(let i=0; i<findThisPriceRange.length; i++) { %>
                   <a  href="/products/<%=findThisPriceRange[i].id%>" class="card" style="width: 18rem">
-                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                    <form action="/user/add-to-bookmark" method="POST" class="book">
                       <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
                       <input type="hidden" name="title" value="<%= product[i].title %>">
                       <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
@@ -276,7 +276,7 @@
               <div class="parent">
               <% for(let i=0; i<anotherArray.length; i++) { %>
                   <a  href="/products/<%=anotherArray[i].id%>" class="card" style="width: 18rem">
-                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                    <form action="/user/add-to-bookmark" method="POST" class="book">
                       <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
                       <input type="hidden" name="title" value="<%= product[i].title %>">
                       <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
@@ -317,7 +317,7 @@
             <div class="parent">
               <% for(let i=0; i<product.length; i++) { %>
                   <a href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
-                    <form action="/auth/add-to-bookmark" method="POST" class="book">
+                    <form action="/user/add-to-bookmark" method="POST" class="book">
                      <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
                      <input type="hidden" name="title" value="<%= product[i].title %>">
                      <input type="hidden" name="quantity" value="<%= product[i].quantity %>">

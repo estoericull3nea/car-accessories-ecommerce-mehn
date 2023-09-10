@@ -34,7 +34,7 @@
   position: relative;
   cursor: pointer;
   transition: transform 200ms ease;
-  height: 300px;
+  width: 230px !important;
 }
 
 .card:hover {
@@ -89,10 +89,10 @@ p {
   color: white;
 }
 
-.parent-2 .card-body {
+.card-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .product-header-similar {
@@ -116,4 +116,22 @@ p {
 .btn-brown:focus {
   background: transparent !important;
   color: black;
+}
+
+.parent .card:hover > .book {
+  display: block !important;
+}
+
+.parent .card .book {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  display: none;
+
+  z-index: 10;
+}
+
+.parent .card .book button {
+  border: none;
 }
