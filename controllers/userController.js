@@ -39,8 +39,42 @@ const getProfile = async (req, res) => {
 }
 
 const editProfile = async (req, res) => {
-  console.log(req.file)
-  console.log(req.body)
+  try {
+    const { username, age, address, gender } = req.body
+    const toBeUpdateOfUser = {}
+
+    if (username) {
+      toBeUpdateOfUser.username = username
+    }
+
+    if (age) {
+      if (age < 0 || age > 300) toBeUpdateOfUser.age = 0
+      else toBeUpdateOfUser.age = age
+    }
+
+    if (address) {
+      toBeUpdateOfUser.address = address
+    }
+
+    if (gender) {
+      toBeUpdateOfUser.gender = gender
+    }
+
+    let profileToBeUpdate = ''
+    if (req.file) {
+      profileToBeUpdate = '/listOfPfps/' + req.file.originalname
+      toBeUpdateOfUser.pfp = profileToBeUpdate
+    }
+
+    if (req.user) {
+      await req.user.addToListOfPfp(profileToBeUpdate)
+      await UserModel.findByIdAndUpdate(req.user._id, toBeUpdateOfUser)
+
+      return res.end('success')
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
 }
 
 module.exports = {

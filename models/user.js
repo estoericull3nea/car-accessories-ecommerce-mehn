@@ -28,6 +28,9 @@ const UserSchema = new mongoose.Schema(
     pfp: {
       type: String,
     },
+    default_pfp: {
+      type: String,
+    },
     listOfPfp: {
       type: [String],
     },
@@ -56,6 +59,15 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+UserSchema.methods.addToListOfPfp = async function (pfpURL) {
+  if (pfpURL) {
+    if (!this.listOfPfp.includes(pfpURL)) {
+      this.listOfPfp.push(pfpURL)
+    }
+
+    return this.save()
+  }
+}
 
 UserSchema.methods.addToCart = async function (productId) {
   const product = await Product.findById(productId)

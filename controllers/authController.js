@@ -50,6 +50,8 @@ const postRegister = async (req, res) => {
       age: '',
       gender: '',
       address: '',
+      pfp: '/icons/default_pfp.png',
+      default_pfp: '/icons/default_pfp.png',
     })
 
     await userToAdd.save()

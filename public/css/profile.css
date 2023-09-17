@@ -140,8 +140,8 @@
 
 .bi-pencil-square {
   position: absolute;
-  bottom: 63px;
-  right: 33px;
+  bottom: 47px;
+  right: 2px;
   cursor: pointer;
 }
 
@@ -218,4 +218,10 @@
 
 .btn-for-logout {
   cursor: pointer;
+  width: 100%;
+}
+
+.btn-for-logout:hover {
+  background: #8f5007cd;
+  color: white;
 }

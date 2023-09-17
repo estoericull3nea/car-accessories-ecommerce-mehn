@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const path = require('path')
 
 const {
   addBookmark,
@@ -9,7 +10,8 @@ const {
 const multer = require('multer')
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './pfps')
+    // cb(null, './pfps')
+    cb(null, path.join(__dirname, '../public/listOfPfps'))
   },
   filename: function (req, file, cb) {
     cb(null, file.originalname)

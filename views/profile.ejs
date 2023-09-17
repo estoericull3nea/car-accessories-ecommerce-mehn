@@ -17,11 +17,11 @@
         <div class="profile-area">
           <div class="img-area">
             <img
-              src="/icons/default_pfp.png"
+              src="<%= user.pfp %>"
               alt=""
               class="default_pfp img-fluid"
             />
-            <p class="text-center name-of-user">name of user</p>
+            <p class="text-center name-of-user"><%= user.username %></p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="12"
@@ -379,7 +379,7 @@
 
                       <div >
                         <label for="formFile" class="form-label"
-                          >Default file input example</label
+                          >Select Your Profile Picture!</label
                         >
                         <input class="form-control every-input" type="file" id="formFile" name="pfp"/>
                       </div>
