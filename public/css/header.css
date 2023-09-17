@@ -3,7 +3,7 @@ header .offcanvas {
 }
 
 header .nav-link {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 header .nav-item:hover {
@@ -63,7 +63,7 @@ header .bi-cart4 {
 }
 
 header .badge {
-  font-size: 0.6rem;
+  font-size: 0.5rem;
 }
 
 header .profile {
@@ -82,4 +82,25 @@ header .btn-register-login {
 header .btn-register-login:hover {
   background: #8f4f07;
   border: 2px solid #8f4f07;
+}
+
+.btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn.dropdown-toggle-split:first-child,
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.btn-group > .btn-group:not(:first-child),
+.btn-group > :not(.btn-check:first-child) + .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
 }

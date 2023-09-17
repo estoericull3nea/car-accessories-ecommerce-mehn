@@ -17,10 +17,9 @@
 
 .parent {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   place-items: center;
-
   margin-inline: 5%;
   margin-top: 2rem;
 }
@@ -34,7 +33,7 @@
   position: relative;
   cursor: pointer;
   transition: transform 200ms ease;
-  width: 230px !important;
+  width: 180px !important;
 }
 
 .card:hover {
@@ -55,12 +54,13 @@
 .card-title {
   margin: 0;
   margin-top: 0.8rem;
+  font-size: 0.8rem;
 }
 
 p {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .parent-2 {
@@ -101,7 +101,9 @@ p {
 
 .btn-brown {
   border: 1px solid #8f4f07;
+  padding: 5px;
   background: hsl(32, 91%, 29%);
+  font-size: 0.8rem;
 }
 
 .btn-brown:hover {
@@ -134,4 +136,10 @@ p {
 
 .parent .card .book button {
   border: none;
+}
+
+.multiple-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

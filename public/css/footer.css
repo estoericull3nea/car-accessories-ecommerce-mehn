@@ -56,23 +56,23 @@ section {
 }
 
 .main-footer .logo-col h1 {
-  font-size: 0.9rem;
-  line-height: 1.1rem;
+  font-size: 0.7rem;
+  /* line-height: 1.1rem; */
   letter-spacing: 0.3rem;
-  margin-top: 1.8rem;
-  cursor: pointer;
+  margin-top: 0.5rem;
+  sor: pointer;
 }
 
 .main-footer .logo-col img {
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  width: 50px;
+  height: 50px;
 }
 
 /* contact info col */
 .main-footer .contact-title {
-  font-size: 1rem;
-  letter-spacing: 0.3rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
   margin-bottom: 1.3rem;
 }
 
@@ -107,14 +107,15 @@ section {
 }
 
 .main-footer .contact-col .flex h1 {
-  font-size: 0.9rem;
+  font-size: 0.6rem;
+  margin: 0;
 }
 
 .main-footer .flex + h1 {
   color: var(--text-low-opacity);
   margin-left: 2rem;
   line-height: 1rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 400;
 }
 
@@ -153,7 +154,7 @@ section {
 }
 
 .main-footer .quick-links-title a {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: var(--text-low-opacity);
   transition: text-decoration 0.2s ease;
 }
@@ -197,28 +198,31 @@ section {
 }
 
 .main-footer .any-queries .bottom-area input {
-  border-radius: 10px;
+  border-radius: 3px;
   outline: none;
   border: none;
   padding: 5px 10px;
-
   color: var(--text-low-opacity);
+  font-size: 0.7rem;
 }
+
 .main-footer .any-queries .bottom-area textarea {
-  height: 100px;
+  height: 66px;
   outline: none;
   border: none;
   padding: 10px;
   color: var(--text-low-opacity);
-  border-radius: 10px;
+  border-radius: 3px;
+  font-size: 0.7rem;
 }
 
 .main-footer .any-queries .bottom-area button {
   border-radius: 5px;
   padding: 5px 0;
-
   background: transparent;
   border: 1px solid var(--main-color);
+  padding: 2px;
+  font-size: 0.8rem;
 }
 
 .main-footer .any-queries .bottom-area button:hover {
