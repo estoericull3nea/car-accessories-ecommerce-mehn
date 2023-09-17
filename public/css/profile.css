@@ -247,3 +247,81 @@
 .alert-dismissible .btn-close:hover {
   box-shadow: unset;
 }
+
+.badge {
+  font-size: 0.5rem !important;
+}
+
+.badge-for-bookmarks {
+  left: 108px !important;
+  top: 7px !important;
+  color: white;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.3rem;
+  place-content: center;
+  margin-inline: 5%;
+  margin-top: 2rem;
+  width: 600px;
+}
+
+.parent .card-img-top {
+  height: 115px;
+  padding: 5px;
+}
+
+.parent .card {
+  position: relative;
+  cursor: pointer;
+  transition: transform 200ms ease;
+  width: 180px !important;
+  border: 1px solid #8f500747;
+}
+
+.parent .card:hover {
+  transform: scale(1.039);
+}
+
+.parent .card:hover > .book {
+  display: block !important;
+}
+
+.parent .card .book {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  display: none;
+
+  z-index: 10;
+}
+
+.parent .card .book button {
+  border: none;
+}
+
+/* card body */
+.parent .card-title {
+  margin: 0;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.parent p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.h4,
+h4 {
+  font-size: 0.9rem;
+}
+
+.card-body {
+  height: 130px;
+}

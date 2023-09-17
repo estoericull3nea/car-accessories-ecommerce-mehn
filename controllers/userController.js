@@ -21,7 +21,9 @@ const addBookmark = async (req, res) => {
 
 const getProfile = async (req, res) => {
   if (req.user) {
-    const user = await UserModel.findById({ _id: req.user._id })
+    const user = await UserModel.findById({ _id: req.user._id }).populate(
+      'bookmarkId'
+    )
     const cartCount = user.cart.items.length
 
     res.render('profile', {
@@ -70,7 +72,8 @@ const editProfile = async (req, res) => {
       await req.user.addToListOfPfp(profileToBeUpdate)
       await UserModel.findByIdAndUpdate(req.user._id, toBeUpdateOfUser)
 
-      return res.end('success')
+      req.flash('success_msg', 'Profile Updated!')
+      res.redirect('/user/profile')
     }
   } catch (error) {
     res.json(error.message)

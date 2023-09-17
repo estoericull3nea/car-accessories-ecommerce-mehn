@@ -65,7 +65,7 @@
           Profile
         </button>
         <button
-          class="nav-link"
+          class="nav-link position-relative"
           id="v-pills-bookmark-tab"
           data-bs-toggle="pill"
           data-bs-target="#v-pills-bookmark"
@@ -87,6 +87,10 @@
             />
           </svg>
           Bookmarks
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge-for-bookmarks">
+            <%= user.bookmarkId.length %>
+            
+            <span class="visually-hidden">unread messages</span>
         </button>
         <button
           class="nav-link"
@@ -409,7 +413,31 @@
           aria-labelledby="v-pills-bookmark-tab"
           tabindex="0"
         >
-          Bookmarks
+          <!-- Bookmarks -->
+          <% if(user.bookmarkId.length > 0) { %>
+            <div class="parent">
+              <% for(let i=0; i<user.bookmarkId.length; i++) { %>
+                  <a class="card" style="width: 18rem">
+                    
+                    <img src="<%= user.bookmarkId[i].imgURL %>" class="card-img-top" alt="<%= user.bookmarkId[i].imgURL %>" />
+                    <div class="card-body">
+                     
+                      <h5 class="card-title"><%= user.bookmarkId[i].title %></h5>
+                      <p class="card-text">
+                        ₱ <%= user.bookmarkId[i].price %>
+                      </p>
+                      <p class="card-text">
+                        <%= user.bookmarkId[i].description %>
+                      </p>
+                    </div>
+                  </a>
+             <% } %>
+                </div>
+          <% } else { %>
+              <h1>Empty Bookmark!</h1>
+          <% } %>
+          
+          <!--  -->
         </div>
         <div
           class="tab-pane fade"
