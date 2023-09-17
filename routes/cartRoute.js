@@ -6,7 +6,10 @@ const {
   addToCart,
 } = require('../controllers/cartController')
 
-router.route('/').get(getCart).post(addToCart)
-router.route('/delete').post(deleteItemInCart)
+const isAuth = require('../middlewares/isLoginMiddleware')
+
+router.get('/', getCart)
+router.post('/', isAuth, addToCart)
+router.post('/delete', isAuth, deleteItemInCart)
 
 module.exports = router

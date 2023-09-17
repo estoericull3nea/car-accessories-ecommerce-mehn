@@ -44,23 +44,18 @@ const getCart = async (req, res) => {
 
 const addToCart = async (req, res) => {
   try {
-    if (!req.user) {
-      req.flash('error_msg', 'Login first!')
-      res.redirect('/auth/login')
-    } else {
-      const product = await Product.findOne({ _id: req.body.id })
-      req.user
-        .addToCart(req.body.id)
-        .then(() => {
-          notifier.notify({
-            title: `Product ${product.title}!`,
-            message: 'Added.',
-            wait: false,
-          })
-          res.redirect('/products')
+    const product = await Product.findOne({ _id: req.body.id })
+    req.user
+      .addToCart(req.body.id)
+      .then(() => {
+        notifier.notify({
+          title: `Product ${product.title}!`,
+          message: 'Added.',
+          wait: false,
         })
-        .catch((err) => console.log(err))
-    }
+        res.redirect('/products')
+      })
+      .catch((err) => console.log(err))
   } catch (error) {
     res.json(error.message)
   }

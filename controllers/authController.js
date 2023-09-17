@@ -114,7 +114,7 @@ const postLogin = async (req, res) => {
   }
 }
 
-const getLogout = (req, res) => {
+const postLogout = (req, res) => {
   req.session.destroy()
   // req.flash('success_msg', 'Logged out!')
   res.redirect('/auth/login')
@@ -125,5 +125,5 @@ module.exports = {
   getRegister,
   postRegister,
   postLogin,
-  getLogout,
+  postLogout,
 }

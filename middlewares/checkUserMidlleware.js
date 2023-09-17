@@ -8,8 +8,6 @@ const usingMiddleware = async (req, res, next) => {
 
       next()
     } else {
-      // res.redirect('/auth/login')
-      // res.send('log in first')
       next()
     }
   } catch (error) {

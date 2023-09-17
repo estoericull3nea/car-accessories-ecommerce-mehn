@@ -5,10 +5,15 @@ const {
   getRegister,
   postRegister,
   postLogin,
-  getLogout,
+  postLogout,
 } = require('../controllers/authController')
-router.route('/register').get(getRegister).post(postRegister)
-router.route('/login').get(getLogin).post(postLogin)
-router.route('/logout').get(getLogout)
+
+router.get('/register', getRegister)
+router.post('/register', postRegister)
+
+router.get('/login', getLogin)
+router.post('/login', postLogin)
+
+router.post('/logout', postLogout)
 
 module.exports = router

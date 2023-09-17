@@ -36,9 +36,10 @@ const upload = multer({
   file_filter,
 })
 
-router.route('/add-to-bookmark').post(addBookmark)
-router.route('/profile').get(getProfile)
+const isAuth = require('../middlewares/isLoginMiddleware')
 
-router.post('/edit-profile', upload.single('pfp'), editProfile)
+router.get('/profile', isAuth, getProfile)
+router.post('/add-to-bookmark', isAuth, addBookmark)
+router.post('/edit-profile', upload.single('pfp'), isAuth, editProfile)
 
 module.exports = router
