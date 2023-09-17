@@ -96,9 +96,18 @@ const deleteProfile = async (req, res) => {
   }
 }
 
+const deleteOneBookmark = async (req, res) => {
+  try {
+    res.end(req.body.id)
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   addBookmark,
   getProfile,
   editProfile,
   deleteProfile,
+  deleteOneBookmark,
 }

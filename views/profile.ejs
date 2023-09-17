@@ -430,6 +430,12 @@
                         <%= user.bookmarkId[i].description %>
                       </p>
                     </div>
+
+                    <form action="/user/delete-bookmark" method="POST" class="position-absolute">
+                      <input type="hidden" name="id" value="<%= user.bookmarkId[i].id %>">
+                      <button type="submit" class="btn-close"></button>
+
+                    </form>
                   </a>
              <% } %>
                 </div>

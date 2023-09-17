@@ -6,6 +6,7 @@ const {
   getProfile,
   editProfile,
   deleteProfile,
+  deleteOneBookmark,
 } = require('../controllers/userController')
 
 const multer = require('multer')
@@ -45,5 +46,6 @@ router.get('/profile', isAuth, getProfile)
 router.post('/add-to-bookmark', isAuth, addBookmark)
 router.post('/edit-profile', upload.single('pfp'), isAuth, editProfile)
 router.post('/delete-profile', deleteProfile)
+router.post('/delete-bookmark', deleteOneBookmark)
 
 module.exports = router
