@@ -97,11 +97,16 @@ const deleteProfile = async (req, res) => {
 }
 
 const deleteOneBookmark = async (req, res) => {
-  try {
-    res.end(req.body.id)
-  } catch (error) {
-    res.json(error.message)
-  }
+  req.user
+    .deleteBookmark(req.body.id)
+    .then(() => {
+      notifier.notify({
+        message: 'Bookmark Removed!.',
+        wait: false,
+      })
+      res.redirect('/user/profile')
+    })
+    .catch((err) => console.log(err))
 }
 
 module.exports = {

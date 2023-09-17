@@ -122,6 +122,15 @@ UserSchema.methods.removeCart = async function (productId) {
   }
 }
 
+UserSchema.methods.deleteBookmark = async function (bookmarkId) {
+  for (let i = 0; i < this.bookmarkId.length; i++) {
+    if (this.bookmarkId[i]._id == bookmarkId) {
+      this.bookmarkId.splice(i, 1)
+      return this.save()
+    }
+  }
+}
+
 UserSchema.methods.removeAllCart = async function () {
   const cart = this.cart
   cart.items.splice(0, cart.items.length)
