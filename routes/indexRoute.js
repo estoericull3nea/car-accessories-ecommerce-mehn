@@ -1,7 +1,5 @@
 const router = require('express').Router()
 
-const { validate_token } = require('../config/auth')
-
 const {
   getOurTeam,
   getFAQ,

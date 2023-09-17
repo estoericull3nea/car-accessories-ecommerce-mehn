@@ -3,9 +3,6 @@ const UserModel = require('../models/user')
 // getting
 const getAllProducts = async (req, res) => {
   try {
-    // const user = await UserModel.findById({ _id: req.session.user._id })
-    // const cartCount = user.cart.items.length
-
     // search item
     const searchOneItem = req.query.search
 
@@ -63,37 +60,36 @@ const getAllProducts = async (req, res) => {
 
       const product = await Products.find({})
 
-      const token = req.cookies['access_token']
-
       if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
         const cartCount = user.cart.items.length
 
         res.render('products', {
           pageTitle: 'Products',
-          token,
+
           anotherArray,
           haveLength,
           product,
           findThisPriceRange,
           productBasedOnSearch,
           cartCount,
+          user,
         })
       } else {
         res.render('products', {
           pageTitle: 'Products',
-          token,
+
           anotherArray,
           haveLength,
           product,
           findThisPriceRange,
           productBasedOnSearch,
           cartCount: 0,
+          user: null,
         })
       }
     } else {
       const product = await Products.find()
-      const token = req.cookies['access_token']
 
       if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
@@ -101,22 +97,22 @@ const getAllProducts = async (req, res) => {
 
         res.render('products', {
           pageTitle: 'Products',
-          token,
           product,
           haveLength,
           findThisPriceRange,
           productBasedOnSearch,
           cartCount,
+          user,
         })
       } else {
         res.render('products', {
           pageTitle: 'Products',
-          token,
           product,
           haveLength,
           findThisPriceRange,
           productBasedOnSearch,
           cartCount: 0,
+          user: null,
         })
       }
     }
@@ -127,8 +123,6 @@ const getAllProducts = async (req, res) => {
 
 const getProduct = async (req, res) => {
   try {
-    // const user = await UserModel.findById({ _id: req.session.user._id })
-    // const cartCount = user.cart.items.length
     const { id } = req.params
 
     const product = await Products.findById({ _id: id })
@@ -136,26 +130,24 @@ const getProduct = async (req, res) => {
 
     const similarProds = await Products.find({ typeOfItem: findThis })
 
-    const token = req.cookies['access_token']
-
     if (req.user) {
       const user = await UserModel.findById({ _id: req.session.user._id })
       const cartCount = user.cart.items.length
 
       res.render('viewOne', {
         pageTitle: 'Product',
-        token,
         product,
         similarProds,
         cartCount,
+        user,
       })
     } else {
       res.render('viewOne', {
         pageTitle: 'Product',
-        token,
         product,
         similarProds,
         cartCount: 0,
+        user: null,
       })
     }
   } catch (error) {

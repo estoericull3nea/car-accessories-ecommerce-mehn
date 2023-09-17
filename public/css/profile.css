@@ -7,9 +7,11 @@
 }
 
 .left {
-  min-width: 280px !important;
+  min-width: 230px !important;
   background: #8f500730;
   border-radius: 10px;
+  display: flex;
+  gap: 0.5rem;
 }
 
 .left * {
@@ -19,6 +21,11 @@
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
   background-color: #8f4f07;
+  text-align: left;
+}
+
+.nav-pills .nav-link {
+  text-align: start;
 }
 
 .nav-link:focus,
@@ -80,6 +87,14 @@
   cursor: pointer;
 }
 
+.bi {
+  margin-right: 5px;
+}
+
+.bi-chat-square {
+  margin-right: 10px;
+}
+
 .profile-upload {
   width: 300px;
 }
@@ -88,4 +103,51 @@
   display: flex;
   justify-content: center;
   margin-block: 10px;
+}
+
+.btn-delete {
+  color: red;
+  margin-bottom: 1rem;
+}
+.btn-delete:hover {
+  background: red;
+  color: black;
+}
+
+.btn-logout {
+  border-top: 2px solid black;
+}
+
+.profile-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.default_pfp {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.img-area {
+  position: relative;
+}
+
+.bi-pencil-square {
+  position: absolute;
+  bottom: 80px;
+  right: 51px;
+  cursor: pointer;
+}
+
+.profile-section {
+  width: 55vw;
+}
+
+.profile-label {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  padding: 0;
 }

@@ -5,7 +5,6 @@ const notifier = require('node-notifier')
 
 const getCart = async (req, res) => {
   try {
-    const token = req.cookies['access_token']
     if (req.user) {
       const user = await UserModel.findById({ _id: req.user._id })
       const cartCount = user.cart.items.length
@@ -22,20 +21,20 @@ const getCart = async (req, res) => {
 
       res.render('cart', {
         pageTitle: 'Cart',
-        token,
         cartCount,
         populated,
         allIdToRemove,
         user_address,
+        user,
       })
     } else {
       res.render('cart', {
         pageTitle: 'Cart',
-        token,
         populated: undefined,
         cartCount: 0,
         allIdToRemove: [],
         user_address: '',
+        user: null,
       })
     }
   } catch (error) {

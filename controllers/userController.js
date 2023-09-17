@@ -20,27 +20,31 @@ const addBookmark = async (req, res) => {
 }
 
 const getProfile = async (req, res) => {
-  const token = req.cookies['access_token'] // check token if generated
   if (req.user) {
     const user = await UserModel.findById({ _id: req.user._id })
     const cartCount = user.cart.items.length
 
     res.render('profile', {
       pageTitle: 'Profile',
-      token,
       cartCount,
       user,
     })
   } else {
     res.render('profile', {
       pageTitle: 'Profile',
-      token,
       cartCount: 0,
+      user: null,
     })
   }
+}
+
+const editProfile = async (req, res) => {
+  console.log(req.file)
+  console.log(req.body)
 }
 
 module.exports = {
   addBookmark,
   getProfile,
+  editProfile,
 }

@@ -1,8 +1,6 @@
 const User = require('../models/user')
 const bcrypt = require('bcryptjs')
 
-const { createToken } = require('../config/auth')
-
 const getLogin = (req, res) => {
   res.render('login', { pageTitle: 'Sign In', message: req.flash('message') })
 }
@@ -49,6 +47,8 @@ const postRegister = async (req, res) => {
       username,
       email,
       password: hashedPass,
+      age: '',
+      gender: '',
       address: '',
     })
 
@@ -63,8 +63,6 @@ const postRegister = async (req, res) => {
 
 const postLogin = async (req, res) => {
   try {
-    res.clearCookie('access_token') // clearing cookie then replace by new one
-
     // vars
     const { email, password } = req.body
     const errors = []
@@ -107,14 +105,6 @@ const postLogin = async (req, res) => {
       })
     }
 
-    // validations passed
-    const access_token = createToken(user) // creating cookie when login
-    res.cookie('access_token', access_token, {
-      maxAge: 3600000, // 1hr
-      httpOnly: true, // can't access in client side
-      secure: true,
-    })
-
     req.session.isAuth = true // setting isAuth to true for validation purposes
     req.session.user = user
 
@@ -125,7 +115,6 @@ const postLogin = async (req, res) => {
 }
 
 const getLogout = (req, res) => {
-  res.clearCookie('access_token')
   req.session.destroy()
   // req.flash('success_msg', 'Logged out!')
   res.redirect('/auth/login')

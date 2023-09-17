@@ -16,7 +16,26 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-
+    age: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    pfp: {
+      type: String,
+    },
+    listOfPfp: {
+      type: [String],
+    },
+    bookmarkId: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: 'Product',
+      required: true,
+    },
     cart: {
       items: [
         {
@@ -33,14 +52,6 @@ const UserSchema = new mongoose.Schema(
       ],
 
       totalPrice: Number,
-    },
-    address: {
-      type: String,
-    },
-    bookmarkId: {
-      type: [mongoose.Schema.Types.ObjectId],
-      ref: 'Product',
-      required: true,
     },
   },
   { timestamps: true }
