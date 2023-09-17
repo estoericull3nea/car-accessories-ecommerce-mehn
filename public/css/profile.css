@@ -227,3 +227,23 @@
   background: #8f5007cd;
   color: white;
 }
+
+.alert-success,
+.alert-danger {
+  height: 30px;
+}
+
+.p-error {
+  font-size: 0.8rem;
+  position: relative;
+  top: -8px;
+}
+
+.alert-dismissible .btn-close {
+  top: -10px;
+  font-size: 0.7rem;
+}
+
+.alert-dismissible .btn-close:hover {
+  box-shadow: unset;
+}

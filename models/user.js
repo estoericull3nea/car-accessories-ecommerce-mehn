@@ -59,12 +59,16 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+UserSchema.methods.deletePfp = async function () {
+  this.pfp = '/icons/default_pfp.png'
+  return this.save()
+}
+
 UserSchema.methods.addToListOfPfp = async function (pfpURL) {
   if (pfpURL) {
     if (!this.listOfPfp.includes(pfpURL)) {
       this.listOfPfp.push(pfpURL)
     }
-
     return this.save()
   }
 }

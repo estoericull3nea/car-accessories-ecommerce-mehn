@@ -79,7 +79,15 @@ const editProfile = async (req, res) => {
 
 const deleteProfile = async (req, res) => {
   try {
-    console.log(`delete`)
+    if (req.user.pfp === '/icons/default_pfp.png') {
+      req.flash('error_msg', 'Nothing Change.')
+      res.redirect('/user/profile')
+    } else {
+      req.user.deletePfp().then(() => {
+        req.flash('success_msg', 'Profile Deleted!')
+        res.redirect('/user/profile')
+      })
+    }
   } catch (error) {
     res.json(error.message)
   }
