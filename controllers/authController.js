@@ -115,9 +115,11 @@ const postLogin = async (req, res) => {
 }
 
 const postLogout = (req, res) => {
-  req.session.destroy()
-  // req.flash('success_msg', 'Logged out!')
+  req.flash('success_msg', 'Logged out!')
   res.redirect('/auth/login')
+  setTimeout(() => {
+    req.session.destroy()
+  }, 2000)
 }
 
 module.exports = {

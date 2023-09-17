@@ -26,6 +26,9 @@
 
 .nav-pills .nav-link {
   text-align: start;
+  font-size: 0.8rem;
+  padding: 7px;
+  padding-left: 1rem;
 }
 
 .nav-link:focus,
@@ -127,8 +130,8 @@
 
 .default_pfp {
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 }
 
 .img-area {
@@ -137,8 +140,8 @@
 
 .bi-pencil-square {
   position: absolute;
-  bottom: 80px;
-  right: 51px;
+  bottom: 63px;
+  right: 33px;
   cursor: pointer;
 }
 
@@ -146,8 +149,73 @@
   width: 55vw;
 }
 
-.profile-label {
+.name-of-user {
+  font-size: 0.9rem;
+}
+
+.every-input {
+  padding: 8px;
+  height: 34px;
   font-size: 0.8rem;
-  margin-top: 1rem;
-  padding: 0;
+}
+
+.btn-edit-profile {
+  font-size: 0.8rem;
+  padding: 5px 28px;
+  background: #8f4f07;
+  border: 1px solid #8f4f07;
+}
+
+.btn-edit-profile:hover {
+  border: 1px solid #8f4f07;
+  background: #8f5007d6;
+}
+
+.profile-label {
+  font-size: 0.6rem;
+}
+
+.col-form-label {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.select-container {
+  font-size: 0.7rem;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.btn-option {
+  font-size: 0.7rem;
+  padding: 5px 30px;
+}
+
+.btn-save {
+  background: #8f4f07;
+  border: 1px solid #8f4f07;
+}
+
+.btn-save:hover {
+  background: #8f5007ef;
+  border: 1px solid #8f4f07;
+}
+
+.btn-save:focus {
+  background: #8f4f07;
+}
+
+.cls-btn {
+  font-size: 0.7rem;
+}
+
+.fs-5 {
+  font-size: 0.8rem !important;
+}
+
+.btn-for-logout {
+  cursor: pointer;
 }
