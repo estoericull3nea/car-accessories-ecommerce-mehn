@@ -138,11 +138,13 @@
   position: relative;
 }
 
-.bi-pencil-square {
+.btn-for-delete-pfp {
   position: absolute;
-  bottom: 47px;
-  right: 2px;
+  bottom: 39px;
+  right: 4px;
   cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
 .profile-section {

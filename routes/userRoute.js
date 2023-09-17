@@ -5,6 +5,7 @@ const {
   addBookmark,
   getProfile,
   editProfile,
+  deleteProfile,
 } = require('../controllers/userController')
 
 const multer = require('multer')
@@ -43,5 +44,6 @@ const isAuth = require('../middlewares/isLoginMiddleware')
 router.get('/profile', isAuth, getProfile)
 router.post('/add-to-bookmark', isAuth, addBookmark)
 router.post('/edit-profile', upload.single('pfp'), isAuth, editProfile)
+router.post('/delete-profile', deleteProfile)
 
 module.exports = router

@@ -77,8 +77,17 @@ const editProfile = async (req, res) => {
   }
 }
 
+const deleteProfile = async (req, res) => {
+  try {
+    console.log(`delete`)
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   addBookmark,
   getProfile,
   editProfile,
+  deleteProfile,
 }
