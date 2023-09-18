@@ -131,6 +131,32 @@ const deleteAccount = async (req, res) => {
   }
 }
 
+const forgotPassword = async (req, res) => {
+  try {
+    const { oldPassword, newPassword, confirmNewPassword } = req.body
+    const match = await bcrypt.compare(oldPassword, req.user.password)
+    if (match) {
+      if (newPassword === confirmNewPassword) {
+        const hashedPass = await bcrypt.hash(newPassword, 10)
+        await UserModel.findByIdAndUpdate(req.user.id, { password: hashedPass })
+        req.flash('success_msg', 'Password changed.')
+        res.redirect('/auth/login')
+      } else if (newPassword.length < 6) {
+        req.flash('error_msg', 'Password must be 6 characters.')
+        res.redirect('/user/profile')
+      } else {
+        req.flash('error_msg', 'Password not match.')
+        res.redirect('/user/profile')
+      }
+    } else {
+      req.flash('error_msg', 'Incorrect password.')
+      res.redirect('/user/profile')
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   addBookmark,
   getProfile,
@@ -138,4 +164,5 @@ module.exports = {
   deleteProfile,
   deleteOneBookmark,
   deleteAccount,
+  forgotPassword,
 }

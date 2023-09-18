@@ -325,3 +325,11 @@ h4 {
 .card-body {
   height: 130px;
 }
+/* .answer {
+  text-decoration: underline !important;
+  font-size: 0.8rem;
+}
+
+.answer:hover {
+  text-decoration: none !important;
+} */

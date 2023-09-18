@@ -8,6 +8,7 @@ const {
   deleteProfile,
   deleteOneBookmark,
   deleteAccount,
+  forgotPassword,
 } = require('../controllers/userController')
 
 const multer = require('multer')
@@ -49,5 +50,6 @@ router.post('/edit-profile', upload.single('pfp'), isAuth, editProfile)
 router.post('/delete-profile', deleteProfile)
 router.post('/delete-bookmark', deleteOneBookmark)
 router.post('/delete-account', deleteAccount)
+router.post('/forgot-password', forgotPassword)
 
 module.exports = router
