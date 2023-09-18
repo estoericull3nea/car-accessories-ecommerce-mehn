@@ -1,6 +1,7 @@
 const notifier = require('node-notifier')
 const Product = require('../models/product')
 const UserModel = require('../models/user')
+const bcrypt = require('bcryptjs')
 
 const addBookmark = async (req, res) => {
   try {
@@ -109,10 +110,32 @@ const deleteOneBookmark = async (req, res) => {
     .catch((err) => console.log(err))
 }
 
+const deleteAccount = async (req, res) => {
+  try {
+    const { password } = req.body
+    const match = await bcrypt.compare(password, req.user.password)
+    if (match) {
+      await UserModel.findByIdAndDelete(req.user.id)
+      setTimeout(() => {
+        req.session.destroy()
+      }, 2000)
+
+      req.flash('success_msg', 'Account deleted.')
+      res.redirect('/auth/login')
+    } else {
+      req.flash('error_msg', 'Incorrect password.')
+      res.redirect('/user/profile')
+    }
+  } catch (error) {
+    res.json(error.message)
+  }
+}
+
 module.exports = {
   addBookmark,
   getProfile,
   editProfile,
   deleteProfile,
   deleteOneBookmark,
+  deleteAccount,
 }
