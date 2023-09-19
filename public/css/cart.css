@@ -83,7 +83,7 @@
 .parent p {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .bottom {
@@ -92,4 +92,61 @@
 
 .btn-place-order {
   text-align: right;
+}
+
+.cart-label {
+  font-size: 2rem;
+}
+
+.for-high-weight {
+  font-weight: 900;
+}
+
+.btn-checkout {
+  font-size: 0.8rem;
+  padding: 5px 28px;
+  background: #8f4f07;
+  border: 1px solid #8f4f07;
+}
+
+.btn-checkout:hover {
+  background: #8f5007e2;
+  border: 1px solid #8f4f07;
+}
+
+.cls-btn {
+  font-size: 0.7rem;
+}
+
+.id {
+  font-size: 0.7rem;
+}
+
+.img-container {
+  height: 100px;
+  width: 100px;
+}
+
+.summary-desc {
+  font-size: 0.8rem;
+}
+
+.price-label {
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.table {
+  vertical-align: middle;
+}
+
+.profile-label {
+  font-size: 0.6rem;
+  padding: 0;
+}
+
+.every-input {
+  padding: 8px;
+  height: 28px;
+  font-size: 0.8rem;
 }
