@@ -2,9 +2,8 @@ const User = require('../models/user')
 const checkout = async (req, res) => {
   try {
     const { address } = req.body
-    console.log(req.user.id)
-
-    res.send(address)
+    await User.findByIdAndUpdate(req.user.id, { address: address })
+    res.end('User address updated!')
   } catch (error) {
     res.json(error.message)
   }

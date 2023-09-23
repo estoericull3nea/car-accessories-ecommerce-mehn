@@ -283,3 +283,8 @@
     padding: 3px 4px;
   }
 }
+
+.accordion-button,
+.accordion-body {
+  font-size: 0.8rem;
+}

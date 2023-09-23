@@ -150,3 +150,9 @@
   height: 28px;
   font-size: 0.8rem;
 }
+
+.empty-container {
+  height: 90vh;
+  display: grid;
+  place-items: center;
+}
