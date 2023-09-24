@@ -51,16 +51,17 @@ const editProfile = async (req, res) => {
     }
 
     if (age) {
-      if (age < 0 || age > 300) toBeUpdateOfUser.age = 0
+      if (age < 0 || age > 300) toBeUpdateOfUser.age = ''
       else toBeUpdateOfUser.age = age
     }
 
-    if (address) {
-      toBeUpdateOfUser.address = address
-    }
+    // if (address) {
+    //   toBeUpdateOfUser.address = address
+    // }
 
     if (gender) {
       toBeUpdateOfUser.gender = gender
+      toBeUpdateOfUser.address = address
     }
 
     let profileToBeUpdate = ''

@@ -108,10 +108,8 @@
           </form>
           <div class="mb-2"></div>
         <% } else { %>
-          <form action="#">
-           
-            <button href="#" class="btn btn-primary btn-checkout">Place Order</button>
-
+          <form action="/order/checkout" method="POST">
+            <button type="submit" class="btn btn-primary btn-checkout">Place Order</button>
           </form>
         <% } %>
       </div>
