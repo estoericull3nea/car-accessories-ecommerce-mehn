@@ -81,7 +81,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <th>Total: ₱<%= user.cart.totalPrice %></th>
+            <th>Total: ₱ <%= user.cart.totalPrice %></th>
           </tr>
         </tbody>
       </table>
@@ -109,6 +109,14 @@
           <div class="mb-2"></div>
         <% } else { %>
           <form action="/order/checkout" method="POST">
+              <script
+                  src="//checkout.stripe.com/v2/checkout.js",
+                  class="stripe-button",
+                  data-key="pk_test_51NI9vwDfPidN2UcqC3WsTSwYUQqlqCZQixEtyEpUivYFZvKxA195eg8IRirPPk2HVCBmCf5leYeGoVkzNACmnYM900xMGM6mGg",
+                  data-locale="auto",
+                  data-description="Test Mode!",
+                  data-amount="<%=(user.cart.totalPrice * 0.0175924698) * 100%>"
+                ></script>
             <button type="submit" class="btn btn-primary btn-checkout">Place Order</button>
           </form>
         <% } %>

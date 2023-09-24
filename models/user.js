@@ -59,6 +59,13 @@ const UserSchema = new mongoose.Schema(
   },
   { timestamps: true }
 )
+
+UserSchema.methods.deleteBookmarkAndCart = async function () {
+  this.cart.items.splice(0, this.cart.items.length)
+  this.bookmarkId.splice(0, this.bookmarkId.length)
+  return this.save()
+}
+
 UserSchema.methods.deletePfp = async function () {
   this.pfp = '/icons/default_pfp.png'
   return this.save()

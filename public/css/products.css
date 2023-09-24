@@ -236,3 +236,28 @@ h4 {
 .page-link:hover {
   color: currentColor;
 }
+
+.btn-close:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.alert-dismissible .btn-close {
+  top: -4px;
+}
+
+.alert-success {
+  width: 247px;
+  font-size: 0.7rem;
+  height: 20px;
+}
+
+.p-error {
+  position: relative;
+  top: -7px;
+}
+
+.btn-close {
+  font-size: 0.6rem;
+  height: 0px;
+}

@@ -156,3 +156,7 @@
   display: grid;
   place-items: center;
 }
+
+.stripe-button-el span {
+  display: none !important;
+}
