@@ -4,21 +4,6 @@ const nodemailer = require('nodemailer')
 
 const UserModel = require('../models/user')
 
-let transporter = nodemailer.createTransport({
-  service: process.env.SERVICE,
-  host: process.env.HOST,
-  auth: {
-    user: process.env.USER_AUTH_FOR_MAILER,
-    pass: process.env.PASS_AUTH_FOR_MAILER,
-  },
-})
-
-transporter.verify((err) => {
-  if (err) {
-    console.log(err)
-  }
-})
-
 // getting
 const getHomepage = async (req, res) => {
   if (req.user) {
@@ -103,41 +88,6 @@ const getAboutUs = async (req, res) => {
 }
 // end of getting
 
-const postContactUsForm = (req, res) => {
-  const { name, email, message } = req.body
-
-  let transporter = nodemailer.createTransport({
-    service: process.env.SERVICE,
-    host: process.env.HOST,
-    auth: {
-      user: process.env.USER_AUTH_FOR_MAILER,
-      pass: process.env.PASS_AUTH_FOR_MAILER,
-    },
-  })
-
-  const newMessage = new UserMessage({
-    name,
-    email,
-    message,
-  })
-
-  newMessage.save().then(() => {
-    const mailOptions = {
-      to: process.env.MY_EMAIL,
-      from: email,
-      subject: 'User Queries! || New Contact Form',
-      text: message,
-    }
-
-    transporter.sendMail(mailOptions, (err) => {
-      if (err) {
-        console.log('failed')
-      }
-      res.render('sentMessage')
-    })
-  })
-}
-
 module.exports = {
   getOurTeam,
   getFAQ,
@@ -145,5 +95,4 @@ module.exports = {
   getPrivacyPolicy,
   getAboutUs,
   getHomepage,
-  postContactUsForm,
 }
