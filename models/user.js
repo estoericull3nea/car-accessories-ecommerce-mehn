@@ -53,9 +53,14 @@ const UserSchema = new mongoose.Schema(
           },
         },
       ],
-
       totalPrice: Number,
     },
+    messages: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Message',
+      },
+    ],
   },
   { timestamps: true }
 )

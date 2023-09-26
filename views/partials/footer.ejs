@@ -89,8 +89,19 @@
     <h1 class="contact-title">Any Queries?</h1>
     <div class="bottom-area">
       <form action="/messages" method="POST">
-        <input type="text" placeholder="Your Name" name="name" required />
-        <input type="email" placeholder="Your Email" name="email" required />
+        <% if(user) { %>
+        <input
+          type="text"
+          name="username"
+          value="<%= user.username %>"
+          readonly
+        />
+        <input type="email" name="email" value="<%= user.email %>" readonly />
+        <% } else { %>
+        <input type="text" name="text" placeholder="Enter name" />
+        <input type="email" name="email" placeholder="Enter email" />
+        <% } %>
+
         <textarea
           id="textarea"
           cols="10"
