@@ -61,6 +61,7 @@ app.use('/user', require('./routes/userRoute'))
 app.use('/products', require('./routes/productRoute'))
 app.use('/cart', require('./routes/cartRoute'))
 app.use('/order', require('./routes/orderRoute'))
+app.use('/messages', require('./routes/messageRoute'))
 
 // error middleware
 app.use((req, res, next) => {
