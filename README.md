@@ -5,8 +5,8 @@
     <li>MVC Architecture/Pattern</li>
     <li>Cookie Session Authorization/Authentication</li>
     <li>MongoDB</li>
-    <li>HTML5</li>
-    <li>CSS3</li>
+    <li>HTML5/EJS</li>
+    <li>CSS3 & Bootstrap 5</li>
     <li>Modern JS</li>
     <li>Compression (GZIP)</li>
     <li>Helmet (Security)</li>
