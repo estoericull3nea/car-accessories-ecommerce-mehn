@@ -318,17 +318,17 @@
                 </div> 
            <% } else{ %>
             <div class="parent">
-              <% for(let i=0; i<product.length; i++) { %>
-                  <a href="/products/<%=product[i].id%>" class="card" style="width: 18rem">
+              <% for(let i=0; i<displayProductsBasedOnPage.length; i++) { %>
+                  <a href="/products/<%=displayProductsBasedOnPage[i].id%>" class="card" style="width: 18rem">
                     <form action="/user/add-to-bookmark" method="POST" class="book">
-                     <input type="hidden" name="imgURL" value="<%= product[i].imgURL %>">
-                     <input type="hidden" name="title" value="<%= product[i].title %>">
-                     <input type="hidden" name="quantity" value="<%= product[i].quantity %>">
-                     <input type="hidden" name="price" value="<%= product[i].price %>">
-                     <input type="hidden" name="description" value="<%= product[i].description %>">
-                     <input type="hidden" name="descFull" value="<%= product[i].descFull %>">
-                     <input type="hidden" name="typeOfItem" value="<%= product[i].typeOfItem %>">
-                     <input type="hidden" name="id" value="<%= product[i].id %>">
+                     <input type="hidden" name="imgURL" value="<%= displayProductsBasedOnPage[i].imgURL %>">
+                     <input type="hidden" name="title" value="<%= displayProductsBasedOnPage[i].title %>">
+                     <input type="hidden" name="quantity" value="<%= displayProductsBasedOnPage[i].quantity %>">
+                     <input type="hidden" name="price" value="<%= displayProductsBasedOnPage[i].price %>">
+                     <input type="hidden" name="description" value="<%= displayProductsBasedOnPage[i].description %>">
+                     <input type="hidden" name="descFull" value="<%= displayProductsBasedOnPage[i].descFull %>">
+                     <input type="hidden" name="typeOfItem" value="<%= displayProductsBasedOnPage[i].typeOfItem %>">
+                     <input type="hidden" name="id" value="<%= displayProductsBasedOnPage[i].id %>">
 
                       <button type="submit">
                         <span class="bookmark" title="bookmark">
@@ -341,20 +341,20 @@
                     </form>
                        
                      
-                     
-                    <img src="<%= product[i].imgURL %>" class="card-img-top" alt="<%= product[i].imgURL %>" />
+                     <!-- this shit -->
+                    <img src="<%= displayProductsBasedOnPage[i].imgURL %>" class="card-img-top" alt="<%= displayProductsBasedOnPage[i].imgURL %>" />
                     <div class="card-body">
                      
-                      <h5 class="card-title"><%= product[i].title %></h5>
+                      <h5 class="card-title"><%= displayProductsBasedOnPage[i].title %></h5>
                       <p class="card-text">
-                        ₱ <%= product[i].price %>
+                        ₱ <%= displayProductsBasedOnPage[i].price %>
                       </p>
                       <p class="card-text">
-                        <%= product[i].description %>
+                        <%= displayProductsBasedOnPage[i].description %>
                       </p>
                       
                         <form action="/cart" method="POST">
-                          <input type="hidden" name="id" value="<%= product[i].id %>">
+                          <input type="hidden" name="id" value="<%= displayProductsBasedOnPage[i].id %>">
                           <button type="submit" href="#" class="btn btn-primary btn-brown btn-down btn-add-to-cart" >Add to cart</button>
                         </form>
                        
@@ -369,13 +369,13 @@
     <nav aria-label="Page navigation example" class="container-for-pagination">
       <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a class="page-link">Previous</a>
+          <a href="/products?page=1" class="page-link">First</a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="/products?page=1">1</a></li>
+        <li class="page-item"><a class="page-link" href="/products?page=2">2</a></li>
+        <li class="page-item"><a class="page-link" href="/products?page=3">3</a></li>
         <li class="page-item">
-          <a class="page-link" href="#">Next</a>
+          <a class="page-link" href="/products?page=3">End</a>
         </li>
       </ul>
     </nav>

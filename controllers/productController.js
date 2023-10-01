@@ -89,7 +89,22 @@ const getAllProducts = async (req, res) => {
         })
       }
     } else {
-      const product = await Products.find()
+      let product = await Products.find()
+      // this
+      const prod1 = await Products.find().limit(14)
+      const prod2 = await Products.find().limit(14).skip(14)
+      const prod3 = await Products.find().limit(16).skip(28)
+
+      const { page } = req.query
+
+      let displayProductsBasedOnPage
+      if (+page === 1) {
+        displayProductsBasedOnPage = prod1
+      } else if (+page === 2) {
+        displayProductsBasedOnPage = prod2
+      } else if (+page === 3) {
+        displayProductsBasedOnPage = prod3
+      }
 
       if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
@@ -98,6 +113,7 @@ const getAllProducts = async (req, res) => {
         res.render('products', {
           pageTitle: 'Products',
           product,
+          displayProductsBasedOnPage,
           haveLength,
           findThisPriceRange,
           productBasedOnSearch,

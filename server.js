@@ -1,6 +1,5 @@
 require('dotenv').config()
 
-// vars
 const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 3000
@@ -14,12 +13,11 @@ const app = express()
 
 const usingMiddleware = require('./middlewares/checkUserMidlleware')
 
-// setting middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 const store = new MongoDBSession({
-  uri: process.env.MONGODB_URI_ATLAS,
+  uri: process.env.MONGODB_URI_COMPASS,
   collection: 'user sessions',
 })
 
@@ -79,7 +77,7 @@ app.use((error, req, res, next) => {
 // function to start
 const start = () => {
   try {
-    require('./db/connect')(process.env.MONGODB_URI_ATLAS)
+    require('./db/connect')(process.env.MONGODB_URI_COMPASS)
     app.listen(PORT, () => {
       console.log(`Server Running`)
     })
