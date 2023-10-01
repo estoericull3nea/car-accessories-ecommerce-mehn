@@ -3,6 +3,21 @@ const UserModel = require('../models/user')
 // getting
 const getAllProducts = async (req, res) => {
   try {
+    const prod1 = await Products.find().limit(14)
+    const prod2 = await Products.find().limit(14).skip(14)
+    const prod3 = await Products.find().limit(16).skip(28)
+
+    const { page } = req.query
+
+    let displayProductsBasedOnPage
+    if (+page === 1) {
+      displayProductsBasedOnPage = prod1
+    } else if (+page === 2) {
+      displayProductsBasedOnPage = prod2
+    } else if (+page === 3) {
+      displayProductsBasedOnPage = prod3
+    }
+
     // search item
     const searchOneItem = req.query.search
 
@@ -66,7 +81,7 @@ const getAllProducts = async (req, res) => {
 
         res.render('products', {
           pageTitle: 'Products',
-
+          displayProductsBasedOnPage,
           anotherArray,
           haveLength,
           product,
@@ -78,7 +93,7 @@ const getAllProducts = async (req, res) => {
       } else {
         res.render('products', {
           pageTitle: 'Products',
-
+          displayProductsBasedOnPage,
           anotherArray,
           haveLength,
           product,
@@ -91,20 +106,6 @@ const getAllProducts = async (req, res) => {
     } else {
       let product = await Products.find()
       // this
-      const prod1 = await Products.find().limit(14)
-      const prod2 = await Products.find().limit(14).skip(14)
-      const prod3 = await Products.find().limit(16).skip(28)
-
-      const { page } = req.query
-
-      let displayProductsBasedOnPage
-      if (+page === 1) {
-        displayProductsBasedOnPage = prod1
-      } else if (+page === 2) {
-        displayProductsBasedOnPage = prod2
-      } else if (+page === 3) {
-        displayProductsBasedOnPage = prod3
-      }
 
       if (req.user) {
         const user = await UserModel.findById({ _id: req.session.user._id })
@@ -123,6 +124,7 @@ const getAllProducts = async (req, res) => {
       } else {
         res.render('products', {
           pageTitle: 'Products',
+          displayProductsBasedOnPage,
           product,
           haveLength,
           findThisPriceRange,
