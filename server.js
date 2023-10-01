@@ -17,7 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 const store = new MongoDBSession({
-  uri: process.env.MONGODB_URI_COMPASS,
+  uri: process.env.MONGODB_URI_ATLAS,
   collection: 'user sessions',
 })
 
@@ -77,7 +77,7 @@ app.use((error, req, res, next) => {
 // function to start
 const start = () => {
   try {
-    require('./db/connect')(process.env.MONGODB_URI_COMPASS)
+    require('./db/connect')(process.env.MONGODB_URI_ATLAS)
     app.listen(PORT, () => {
       console.log(`Server Running`)
     })
