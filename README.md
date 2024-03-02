@@ -11,4 +11,5 @@
     <li>Compression (GZIP)</li>
     <li>Helmet (Security)</li>
     <li>NodeMailer (Mail Provider)</li>
+    <li>Stripe (Payment Gateway)</li>
 </ul>
